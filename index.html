@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MGM event</title>
+        <!-- meta -->
+        <meta property="og:title" content="B-Lifecare" />
+        <meta property="og:url" content="www.batterylifecare.com" />
+        <meta
+            property="og:description"
+            content="채비와 함께하는 B-lifecare 이벤트.. "
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="" />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <div class="mgm-container">
+            <img src="./img/MGM_bg_top.png" />
+            <div class="mgm-sr-only">
+                <h2>효율까지 꽃 피는 봄이 왔어요~</h2>
+                <h1>
+                    꽃보다 아름다운 전기차 친구 초대하고 B-Lifecare 한정판 굿즈
+                    받자!
+                </h1>
+            </div>
+            <div class="mgm-event-info">
+                <div class="mgm-event-info__container">
+                    <div class="mgm-event-info-period">
+                        <p class="mgm-sr-only">이벤트 기간</p>
+                        <p class="mgm-event-info-period__text">
+                            23.05.02~05.31
+                        </p>
+                    </div>
+                    <div class="mgm-event-info-presentation">
+                        <p class="mgm-sr-only">당첨자 발표</p>
+                        <p class="mgm-event-info-presentation__text">
+                            23.06.08
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p class="mgm-sr-only">
+                나만 알기 아까운 B-Lifecare에 전기차 타는 친구를 초대해주세요!
+                내 추천인 코드 쓰고 가입한 친구가 서비스를 신청하면, 추첨을 통해
+                텀블러를 드려요! (친구 + 나) 많은 친구를 모을수록 당첨 확률이
+                높아집니다.
+            </p>
+            <img src="./img/MGM_bg_bottom.png" />
+            <div class="mgm-info">
+                <div class="mgm-info__container">
+                    <div class="mgm-info-number">
+                        <img src="./img/mgm_txt1.png" alt="나의 추천인 현황" />
+                        <div class="mgm-info__box mgm-info__box--number">
+                            <span class="mgm-info-number__count" id="mgmNumber"
+                                >0</span
+                            >
+                            <span>명</span>
+                        </div>
+                    </div>
+                    <div class="mgm-info-code">
+                        <img src="./img/mgm_txt2.png" alt="나의 추천인 코드" />
+                        <div class="mgm-info__box mgm-info__box--code">
+                            <p id="mgmCode">D9SQWE</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="mgm-share-button mgm-share-button--icon">
+                    <i class="mgm-share-button__icon"></i>
+                    친구에게 이벤트 공유하기
+                </button>
+                <!-- 앱 미설치 시 -->
+                <!-- <button class="mgm-share-button mgm-share-button--login">
+                    B-Lifecare 앱 설치하고 이벤트 참여하기
+                </button> -->
+            </div>
+            <div class="mgm-info-text">
+                <p>유의사항 안내</p>
+                <ul>
+                    <li>
+                        신규 가입고객이 내 추천인 코드를 쓰고 가입 및 서비스
+                        정상 이용(배터리 진단장치 장착) 시 자동으로 이벤트에
+                        참여됩니다.
+                    </li>
+                    <li>
+                        경품은 당첨일로부터 약 2주내 발송됩니다. 경품 색상은
+                        랜덤 발송되며, 지정불가한 점 양해바랍니다.
+                    </li>
+                    <li>
+                        잘못 기재된 개인정보로 인한 경품 재발송은 불가하니
+                        유의하여 주시기 바랍니다.
+                    </li>
+                    <li>
+                        당사의 사정에 따라 별도 사전 고지 없이 경품 혹은 이벤트
+                        내용이 일부 변경될 수 있습니다.
+                    </li>
+                    <li>
+                        당첨자의 연락두절이나 경품수령에 대한 의사가 없을 경우,
+                        개인정보 제3자 제공에 동의하지 않는 경우 경품 지급이
+                        제한됩니다.
+                    </li>
+                    <li>
+                        고객의 부주의로 인한 불이익은 당사에서 책임지지
+                        않습니다.
+                    </li>
+                    <li>
+                        본 경품 이벤트 일체에 대하여 Apple이 관여 또는 후원하지
+                        않습니다.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- popup -->
+        <div class="mgm-popup">
+            <div class="mgm-dim"></div>
+            <!-- 비로그인 시 -->
+            <!-- <div class="mgm-popup__container" id="loginPopup">
+                <p>로그인이 필요합니다.</p>
+                <button class="mgm-popup__button mgm-popup__button--login">
+                    로그인
+                </button>
+            </div> -->
+
+            <div class="mgm-popup__container" id="participationPopup">
+                <p>앱에서 참여 가능합니다.</p>
+                <button
+                    class="mgm-popup__button mgm-popup__button--participation"
+                >
+                    이벤트 참여하기
+                </button>
+            </div>
+            <div class="mgm-bottom-sheet">
+                <button class="mgm-bottom-sheet__close">
+                    <span class="mgm-sr-only">close</span>
+                </button>
+                <p>공유하기</p>
+                <div class="mgm-bottom-sheet__share">
+                    <ul>
+                        <li
+                            class="mgm-bottom-sheet__share-item mgm-bottom-sheet__share-item--kakao"
+                        >
+                            <a href="#">
+                                <i class="mgm-bottom-sheet__share-icon"
+                                    ><span class="mgm-sr-only"> kakao </span></i
+                                >
+                                <span>카카오톡</span>
+                            </a>
+                        </li>
+                        <li
+                            class="mgm-bottom-sheet__share-item mgm-bottom-sheet__share-item--url"
+                        >
+                            <a href="#">
+                                <i class="mgm-bottom-sheet__share-icon"
+                                    ><span class="mgm-sr-only"> url </span></i
+                                >
+                                <span>URL</span>
+                            </a>
+                        </li>
+                        <li
+                            class="mgm-bottom-sheet__share-item mgm-bottom-sheet__share-item--message"
+                        >
+                            <a href="#">
+                                <i class="mgm-bottom-sheet__share-icon"
+                                    ><span class="mgm-sr-only">
+                                        message
+                                    </span></i
+                                >
+                                <span>문자</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="./js/script.js"></script>
+    </body>
+</html>
