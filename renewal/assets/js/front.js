@@ -8,6 +8,8 @@ $(()=>{
 const _front = {
     init: function(){
         _front.tab();
+
+        $(document).on("click", "a[href='#'], a[href='#none']", function(e){ e.preventDefault() });
     },
     tab: function(){
         const tabGroups = document.querySelectorAll('[data-role="tab"]');
