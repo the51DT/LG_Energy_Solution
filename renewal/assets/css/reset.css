@@ -61,7 +61,7 @@ input, textarea, select, button, a{
 	outline:none;
 }
 
-button {cursor:pointer; background:none; padding:0; border:0 none;}
+button {cursor:pointer; background:none; padding:0; border:0 none; font-family: 'Apple SD Gothic', 'Spoqa Han Sans Neo', sans-serif;}
 
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-thumb{height:30%;background:rgba(0,0,0,.4);border-radius:10px}
