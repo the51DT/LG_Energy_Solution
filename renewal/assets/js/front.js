@@ -201,7 +201,6 @@ function AccordionScript() {
             accordionBtns.forEach(function(accordionBtn) {
                 // 클릭 이벤트를 실행
                 _$this.clickAction.accordionBtnClick(accordionBtn);
-                accordionBtn.nextElementSibling.style.transitionDuration = accordionBtn.nextElementSibling.scrollHeight * 0.0016 + 's';
                 // 초기 셋팅 : button 의 aria-expanded 값이 false 인 accordion contents 에 hidden 값 넣기
                 if (accordionBtn.ariaExpanded === 'false' && accordionBtn.nextElementSibling !== null) accordionBtn.nextElementSibling.setAttribute('hidden', 'true');
                 // 초기 셋팅 : button 의 aria-expanded 값이 true 인 accordion contents 에 height size 넣기
