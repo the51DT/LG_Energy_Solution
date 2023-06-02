@@ -33,7 +33,24 @@ header.header nav {display: none;}
 .btn__aside-close::after{transform:translate(-50%, -50%) rotate(45deg);}
 
 
-footer.footer{background:#2c2c2c;}
+footer.footer{background:#2c2c2c; padding:3.2rem 2rem 3.6rem;}
+.footer__util{border-top:1px solid #494949; padding:2rem 0 1.2rem;}
+.footer__util ul{display:flex; align-items:center;}
+.footer__util ul li{}
+.footer__util ul li + li {margin-left:2.4rem;}
+.footer__util ul li a{display:block; font-size:1.2rem; color:#a2a2a2;}
+.footer_copy{display:flex; align-items:center; flex-wrap:wrap; line-height:1.8rem; font-size:1.2rem; color:#a2a2a2;}
+.footer_copy p{width:100%;}
+.footer_copy p strong{font-weight:700;}
+.footer_copy dl{display:flex; align-items:center;}
+.footer_copy dl dt{font-weight:700;}
+.footer_copy dl dd{margin-left:0.5rem;}
+.footer_copy .ceo{}
+.footer_copy .call{}
+.footer_copy .num{}
+.footer_copy .add{}
+.footer_link{margin-top:2.2rem;}
+
 
 
 .container{overflow:hidden;}
@@ -68,12 +85,17 @@ textarea.finished {border-color:#aab0b8;}
 .tab-list + .tab-list {margin-left:-1px;}
 .tab-list {flex:1 1 auto; position:relative; display:inline-block; border-radius:4.4rem; z-index:0;}
 .tab-list .tab-button {display:block; width: 100%; height:4.4rem; font-size:1.4rem; color:#a2a2a2; text-align:center; border-radius:4.4rem; border:1px solid transparent; box-sizing:border-box;}
-
 .tab-list.active {background:linear-gradient(116.05deg, #6CFFED 16.42%, #06B5D1 83.58%); z-index: 10;}
 .tab-list.active .tab-button {color:#fff; font-weight:700; background:linear-gradient(116.05deg, #263533 16.42%, #1c2d30 83.58%); background-clip:padding-box;}
-
 .wrap-tab-contents {width:100%; margin-top:3rem;}
 .wrap-tab-contents .tab-contents {width:100%;}
+
+/* accordion */
+.accordion-btn {display:block; position:relative; width:100%; padding:16px 40px 16px 20px; font-size:13px; color:#EFEFEF; line-height:18px; text-align:left}
+.accordion-btn::after {content:''; display:inline-block; position:absolute; top:50%; right:22px; width:10px; height:10px; margin-top:-3px; margin-right:-7px; border-top:1px solid #7C7C7C; border-right:1px solid #7C7C7C; transform:translate(0, -60%) rotate(135deg)}
+.accordion-btn[aria-expanded="true"]::after {transform:translate(0, -40%) rotate(-45deg)}
+.wrap-accordion-contents {background:#2C2C2C; overflow:hidden;}
+.inner-accordion-contents {padding:20px; color:#EFEFEF; font-size:13px; line-height:18px}
 
 
 

@@ -1,15 +1,14 @@
 $(()=>{
-    console.log("test");
     _front.init();
 })
 
-// var accordionScript;
+var accordionScript;
 const _front = {
     init: function(){
         _front.tab();
-        _front.AccordionScript();
+        // _front.Accordion();
         // accordionScript = new _front.AccordionScript();
-        var accordionScript = new _front.AccordionScript();
+        // var accordionScript = new _front.Accordion();
     },
     tab: function(){
         const tabGroups = document.querySelectorAll('[data-role="tab"]');
@@ -148,6 +147,7 @@ const _front = {
     },
     AccordionScript: function(){
         const _$this = this;
+        console.log('d',_$this);
         let accordionGroups;
         
         _$this.init = {
@@ -251,5 +251,9 @@ const _front = {
                 _$this.init.getAccordionGroups();
             }
         };
-    }
+    },
+    // Accordion_init : function(){
+
+    // },
 }
+accordionScript = new _front.AccordionScript();
