@@ -221,21 +221,9 @@ function AccordionScript() {
                     accordionBtn.setAttribute('aria-expanded', 'false');
                     if (accordionBtn.nextElementSibling !== null) {
                         accordionBtn.nextElementSibling.style.height = 0;
-                        accordionBtn.nextElementSibling.addEventListener('transitionend', _$this.accordionEvent.accordionTransitionend);
                     };
                 };
             };
-        },
-        accordionTransitionend: () => {
-            const accordionContentsAll = document.querySelectorAll('.wrap-accordion-contents');
-            accordionContentsAll.forEach((accordionContent) => {
-                if (accordionContent.previousElementSibling.ariaExpanded === 'false') {
-                    accordionContent.setAttribute('hidden', 'true');
-                } else if (accordionContent.previousElementSibling.ariaExpanded === 'true') {
-                    accordionContent.removeAttribute('hidden');
-                };
-            });
-
         },
     },
     _$this.heightSizeTransiton = {
@@ -248,7 +236,6 @@ function AccordionScript() {
         removeEvent: (target, targetContents) => {
             target.setAttribute('aria-expanded', 'false');
             targetContents.style.height = 0;
-            targetContents.addEventListener('transitionend', _$this.accordionEvent.accordionTransitionend);
         },
     };
     _$this.clickEvent = {
