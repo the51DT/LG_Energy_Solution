@@ -42,6 +42,7 @@ const _device = {
 const _front = {
     init: function(){
         _front.tab();
+        _front.accordion();
         _front.select();
 
         $(document).on("click", "a[href='#'], a[href='#none']", function(e){ e.preventDefault() });
@@ -181,6 +182,49 @@ const _front = {
             });
         });
     },
+    accordion:function(){
+        const accordion = $(document).find(".wrap-accordion-group");
+        if( accordion.length < 1 ) return;
+
+        let _this;
+
+        accordion.attr("data-role", "accordion-group");
+        accordion.find("li").each((idx, item)=>{
+            $(item).find(".wrap-accordion-contents").attr({"role":"region"});
+            if( $(item).hasClass("on") ){
+                $(item).find(".accordion-btn").attr({"aria-expanded":"true"});
+            } else {
+                $(item).find(".accordion-btn").attr({"aria-expanded":"false"});
+            }
+        })
+
+        // click
+        accordion.find(".accordion-btn").on("click", function(){
+            _this = $(this).parents(".wrap-accordion-group");
+            const li = $(this).parents("li");
+            const liAll = li.siblings();
+
+            const isOnly = _this.attr("accordion-option") == "only";
+            console.log(isOnly);
+
+            if(isOnly){
+                liAll.removeClass("on");
+                liAll.find(".accordion-btn").attr("aria-expanded", false);
+                liAll.find(".wrap-accordion-contents").slideUp();
+            }
+
+            if( li.hasClass("on") ){
+                li.removeClass("on");
+                li.find(".accordion-btn").attr("aria-expanded", false);
+                li.find(".wrap-accordion-contents").slideUp();
+            } else {
+                li.addClass("on");
+                li.find(".accordion-btn").attr("aria-expanded", true);
+                li.find(".wrap-accordion-contents").slideDown();
+            }
+
+        })
+    },
     select: function(){
         const select = $(document).find(".select_box");
         if( select.length < 1){ return };
@@ -256,103 +300,108 @@ const _aside = {
     }
 }
 
-function AccordionScript() {
-    const _$this = this;
-    let accordionGroups;
-    
-    _$this.init = {
-        // 여러 개의 accordion 을 각각 독립적으로 이벤트 실행
-        getAccordionGroups: () => {
-            // 현재 페이지에 있는 모든 accordion 을 배열로 담음
-            accordionGroups = document.querySelectorAll('[data-role="accordion-group"]');
-            accordionGroups.forEach(function(accordionGroup) {
-                _$this.init.getAccordionBtns(accordionGroup);
-            });
-        },
-        // accordion 버튼 클릭 이벤트를 독립적으로 실행
-        getAccordionBtns: (accordionGroup) => {
-            // 배열에 담긴 accordion 내부 버튼을 찾아서
-            const accordionBtns = accordionGroup.querySelectorAll('.accordion-btn');
-            accordionBtns.forEach(function(accordionBtn) {
-                // 클릭 이벤트를 실행
-                _$this.clickAction.accordionBtnClick(accordionBtn);
-                // 초기 셋팅 : button 의 aria-expanded 값이 false 인 accordion contents 에 hidden 값 넣기
-                if (accordionBtn.ariaExpanded === 'false' && accordionBtn.nextElementSibling !== null) accordionBtn.nextElementSibling.setAttribute('hidden', 'true');
-                // 초기 셋팅 : button 의 aria-expanded 값이 true 인 accordion contents 에 height size 넣기
-                if (accordionBtn.ariaExpanded === 'true' && accordionBtn.nextElementSibling !== null) {
-                    accordionBtn.nextElementSibling.style.height = accordionBtn.nextElementSibling.scrollHeight + 'px'
-                } else {
-                    accordionBtn.nextElementSibling.style.height = 0
-                };
-            });
-        },
-    };
-    _$this.accordionEvent = {
-        removeEvent: (target, accordionGroup) => {
-            const accordionBtns = accordionGroup.querySelectorAll('.accordion-btn');
-            for (let accordionBtn of accordionBtns) {
-                // 기존에 선택 된 accordion 속성 false 로 만들기
-                if (accordionBtn.ariaExpanded === 'true') {
-                    accordionBtn.setAttribute('aria-expanded', 'false');
-                    if (accordionBtn.nextElementSibling !== null) {
-                        accordionBtn.nextElementSibling.style.height = 0;
-                    };
-                };
-            };
-        },
-    },
-    _$this.heightSizeTransiton = {
-        activeEvent: (target, targetContents) => {
-            target.setAttribute('aria-expanded', 'true');
-            targetContents.removeAttribute('hidden');
-            targetContents.style.height = targetContents.scrollHeight + 'px';
-            // targetContents.style.height = 'auto';
-        },
-        removeEvent: (target, targetContents) => {
-            target.setAttribute('aria-expanded', 'false');
-            targetContents.style.height = 0;
-        },
-    };
-    _$this.clickEvent = {
-        accordionBtnclickEvent: (e) => {
-            let target = e.target.tagName;
-            target === 'BUTTON' ? target = e.target : target = e.target.closest('button');
-            const accordionOption = target.closest('[accordion-option]').getAttribute('accordion-option');
-            const accordionGroup = target.closest('[data-role="accordion-group"]');
-            const targetContents = accordionGroup.querySelector(`[aria-labelledby="${target.id}"]`);
-            // 연결된 accordion은 무조건 하나씩 만 열리는 type
-            if (accordionOption === 'only') {
-                if (target.ariaExpanded === 'false') {
-                    // 미선택된 accordion 속성 false 상태로 만들기
-                    _$this.accordionEvent.removeEvent(target, accordionGroup);
-                    // 선택 된 accordion 속성 true 상태로 만들기
-                    _$this.heightSizeTransiton.activeEvent(target, targetContents);
-                } else if (target.ariaExpanded === 'true') {
-                    _$this.heightSizeTransiton.removeEvent(target, targetContents);
-                };
-            // toggle type (default)
-            } else {
-                if (target.ariaExpanded === 'false') {
-                    _$this.heightSizeTransiton.activeEvent(target, targetContents);
-                } else if (target.ariaExpanded === 'true') {
-                    _$this.heightSizeTransiton.removeEvent(target, targetContents);
-                };
-            };
-        },
-    };
-    _$this.clickAction = {
-        accordionBtnClick: (accordionBtn) => {
-            // 클릭 이벤트
-            accordionBtn.addEventListener('click', _$this.clickEvent.accordionBtnclickEvent);
-        },
-    };
-    return {
-        init: () => {
-            _$this.init.getAccordionGroups();
-        }
-    };
-};
-var accordionScript = new AccordionScript();
-window.addEventListener('load', function() {
-    accordionScript.init();
-});
+// function AccordionScript() {
+//     const _$this = this;
+//     let accordionGroups;
+
+//     _$this.init = {
+//         // 여러 개의 accordion 을 각각 독립적으로 이벤트 실행
+//         getAccordionGroups: () => {
+//             // 현재 페이지에 있는 모든 accordion 을 배열로 담음
+//             accordionGroups = document.querySelectorAll('[data-role="accordion-group"]');
+//             accordionGroups.forEach(function(accordionGroup) {
+//                 _$this.init.getAccordionBtns(accordionGroup);
+//             });
+//         },
+//         // accordion 버튼 클릭 이벤트를 독립적으로 실행
+//         getAccordionBtns: (accordionGroup) => {
+//             // 배열에 담긴 accordion 내부 버튼을 찾아서
+//             const accordionBtns = accordionGroup.querySelectorAll('.accordion-btn');
+//             accordionBtns.forEach(function(accordionBtn) {
+//                 // 클릭 이벤트를 실행
+//                 _$this.clickAction.accordionBtnClick(accordionBtn);
+//                 // 초기 셋팅 : button 의 aria-expanded 값이 false 인 accordion contents 에 hidden 값 넣기
+//                 if (accordionBtn.ariaExpanded === 'false' && accordionBtn.nextElementSibling !== null) accordionBtn.nextElementSibling.setAttribute('hidden', 'true');
+//                 // 초기 셋팅 : button 의 aria-expanded 값이 true 인 accordion contents 에 height size 넣기
+//                 if (accordionBtn.ariaExpanded === 'true' && accordionBtn.nextElementSibling !== null) {
+//                     accordionBtn.nextElementSibling.style.height = accordionBtn.nextElementSibling.scrollHeight + 'px'
+//                 } else {
+//                     accordionBtn.nextElementSibling.style.height = 0
+//                 };
+//             });
+//         },
+//     };
+
+
+
+
+//     _$this.accordionEvent = {
+//         removeEvent: (target, accordionGroup) => {
+//             const accordionBtns = accordionGroup.querySelectorAll('.accordion-btn');
+//             for (let accordionBtn of accordionBtns) {
+//                 // 기존에 선택 된 accordion 속성 false 로 만들기
+//                 if (accordionBtn.ariaExpanded === 'true') {
+//                     accordionBtn.setAttribute('aria-expanded', 'false');
+//                     if (accordionBtn.nextElementSibling !== null) {
+//                         accordionBtn.nextElementSibling.style.height = 0;
+//                     };
+//                 };
+//             };
+//         },
+//     },
+//     _$this.heightSizeTransiton = {
+//         activeEvent: (target, targetContents) => {
+//             target.setAttribute('aria-expanded', 'true');
+//             targetContents.removeAttribute('hidden');
+//             targetContents.style.height = targetContents.scrollHeight + 'px';
+//             // targetContents.style.height = 'auto';
+//         },
+//         removeEvent: (target, targetContents) => {
+//             target.setAttribute('aria-expanded', 'false');
+//             targetContents.style.height = 0;
+//         },
+//     };
+//     _$this.clickEvent = {
+//         accordionBtnclickEvent: (e) => {
+//             let target = e.target.tagName;
+//             target === 'BUTTON' ? target = e.target : target = e.target.closest('button');
+//             const accordionOption = target.closest('[accordion-option]').getAttribute('accordion-option');
+//             const accordionGroup = target.closest('[data-role="accordion-group"]');
+//             const targetContents = accordionGroup.querySelector(`[aria-labelledby="${target.id}"]`);
+//             // 연결된 accordion은 무조건 하나씩 만 열리는 type
+//             if (accordionOption === 'only') {
+//                 if (target.ariaExpanded === 'false') {
+//                     // 미선택된 accordion 속성 false 상태로 만들기
+//                     _$this.accordionEvent.removeEvent(target, accordionGroup);
+//                     // 선택 된 accordion 속성 true 상태로 만들기
+//                     _$this.heightSizeTransiton.activeEvent(target, targetContents);
+//                 } else if (target.ariaExpanded === 'true') {
+//                     _$this.heightSizeTransiton.removeEvent(target, targetContents);
+//                 };
+//             // toggle type (default)
+//             } else {
+//                 if (target.ariaExpanded === 'false') {
+//                     _$this.heightSizeTransiton.activeEvent(target, targetContents);
+//                 } else if (target.ariaExpanded === 'true') {
+//                     _$this.heightSizeTransiton.removeEvent(target, targetContents);
+//                 };
+//             };
+//         },
+//     };
+//     _$this.clickAction = {
+//         accordionBtnClick: (accordionBtn) => {
+//             // 클릭 이벤트
+//             accordionBtn.addEventListener('click', _$this.clickEvent.accordionBtnclickEvent);
+//         },
+//     };
+//     return {
+//         init: () => {
+//             _$this.init.getAccordionGroups();
+//         }
+//     };
+// };
+// var accordionScript = new AccordionScript();
+
+// window.addEventListener('load', function() {
+//     accordionScript.init();
+// });
