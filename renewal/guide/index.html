@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퍼블리싱 리스트</title>
+    <link rel="stylesheet" href="../assets/ia/ia.css">
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/front.js"></script>
+    <script src="../assets/ia/ia.js"></script>
+</head>
+<body>
+    <div class="ia_wrap">
+        <header>
+            <h1>퍼블리싱 리스트</h1>
+        </header>
+        <div class="ia_container">
+            <div class="ia_table">
+                <table>
+                    <caption>퍼블리싱 작업 목록</caption>
+                    <colgroup>
+                        <col style="width:60px">
+                        <col style="width:100px">
+                        <!-- <col style="width:150px"> -->
+                        <col style="width:200px">
+                        <col style="width:120px">
+                        <col style="width:80px">
+                        <col style="width:80px">
+                        <col style="width:100px">
+                        <col style="width:80px">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Path</th>
+                            <!-- <th scope="col">화면명</th> -->
+                            <th scope="col">File name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Worker</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr class="x">
+                            <td>no</td>
+                            <td>test</td>
+                            <td></td>
+                            <td>index</td>
+                            <td><a href="../html/index.html" target="_blank">index</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p><b>[2023.00.00]</b> 페이지 생성</p>
+                            </td>
+                        </tr>
+                        <tr class="ing">
+                            <td>no</td>
+                            <td>test</td>
+                            <td></td>
+                            <td>index</td>
+                            <td><a href="../html/index.html" target="_blank">index</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p><b>[2023.00.00]</b> 페이지 생성</p>
+                            </td>
+                        </tr>
+                        <tr class="end">
+                            <td>no</td>
+                            <td>test</td>
+                            <td></td>
+                            <td>index</td>
+                            <td><a href="../html/index.html" target="_blank">index</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p><b>[2023.00.00]</b> 페이지 생성</p>
+                            </td>
+                        </tr>
+                        <tr class="modify">
+                            <td>no</td>
+                            <td>test</td>
+                            <td></td>
+                            <td>index</td>
+                            <td><a href="../html/index.html" target="_blank">index</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p><b>[2023.00.00]</b> 페이지 생성</p>
+                            </td>
+                        </tr> -->
+
+                        <tr class="ing">
+                            <td>no</td>
+                            <td>template</td>
+                            <td><p>template</p></td>
+                            <!-- <td></td> -->
+                            <td><a href="template.html" target="_blank">template</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p>tab, accordion</p>
+                            </td>
+                        </tr>
+
+
+                        <tr class="divide">
+                            <td colspan="9"></td>
+                        </tr>
+
+                        <tr class="">
+                            <td>no</td>
+                            <td>main</td>
+                            <td><p>index</p></td>
+                            <!-- <td></td> -->
+                            <td><a href="../html/index.html" target="_blank">index</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>no</td>
+                            <td>공통</td>
+                            <td></td>
+                            <!-- <td></td> -->
+                            <td><a href="../html/index.html" target="_blank">index</a></td>
+                            <td>ui</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+
+                        <tr class="divide">
+                            <td colspan="9"></td>
+                        </tr>
+
+                        <tr class="">
+                            <td>no</td>
+                            <td>sub</td>
+                            <td><p>주요서비스</p></td>
+                            <!-- <td></td> -->
+                            <td><a href="../html/service.html" target="_blank">service</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>no</td>
+                            <td>sub</td>
+                            <td><p>배터리 인증서</p></td>
+                            <!-- <td></td> -->
+                            <td><a href="../html/battery.html" target="_blank">battery</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>no</td>
+                            <td>sub</td>
+                            <td><p>이용안내</p></td>
+                            <!-- <td></td> -->
+                            <td><a href="../html/guide.html" target="_blank">guide</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>no</td>
+                            <td>sub</td>
+                            <td><p>제휴문의</p></td>
+                            <!-- <td></td> -->
+                            <td><a href="../html/inquiry.html" target="_blank">inquiry</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>no</td>
+                            <td>sub</td>
+                            <td><p>공지사항</p></td>
+                            <!-- <td></td> -->
+                            <td><a href="../html/notice.html" target="_blank">notice</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p>상세 : 아코디언</p>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>no</td>
+                            <td>sub</td>
+                            <td><p>FAQ</p></td>
+                            <!-- <td></td> -->
+                            <td><a href="../html/faq.html" target="_blank">faq</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p>상세 : 아코디언</p>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>no</td>
+                            <td>sub</td>
+                            <td><p>EV Life</p></td>
+                            <!-- <td></td> -->
+                            <td><a href="../html/index.html" target="_blank">index</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>no</td>
+                            <td>sub</td>
+                            <td><p>이벤트 > list</p></td>
+                            <!-- <td></td> -->
+                            <td><a href="../html/event.html" target="_blank">event</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>no</td>
+                            <td>sub</td>
+                            <td><p>이벤트 > detail</p></td>
+                            <!-- <td></td> -->
+                            <td><a href="../html/event_detail.html" target="_blank">event_detail</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>no</td>
+                            <td>etc</td>
+                            <td><p>개인정보처리방침</p></td>
+                            <!-- <td></td> -->
+                            <td><a href="../html/privacy.html" target="_blank">privacy</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>no</td>
+                            <td>etc</td>
+                            <td><p>이용약관</p></td>
+                            <!-- <td></td> -->
+                            <td><a href="../html/term.html" target="_blank">term</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>no</td>
+                            <td>etc</td>
+                            <td><p>오픈소스 라이선스</p></td>
+                            <!-- <td></td> -->
+                            <td><a href="../html/license.html" target="_blank">license</a></td>
+                            <td>page</td>
+                            <td>-</td>
+                            <td>2023.00.00</td>
+                            <td class="status"></td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <footer>
+            
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+:root{
+    --fc-main:#efefef;
+}
+
+body{background:#000; color:#efefef;}
+.wrap{padding-top:5.6rem;}
+
+header.header{position:fixed; left:0; top:0; width:100%; height:5.6rem;}
+header.header h1 a{display:block; width:9.8rem; height:1.7rem; background:url(https://www.batterylifecare.com/images/common/logo.png) 0 0 no-repeat; background-size:100% auto;}
+
+footer.footer{background:#2c2c2c;}
+
+/* layout */
+.container{overflow:hidden;}
+.section{margin:4rem 2rem 0;}
+
+
+/* etc */
+.hidden {position:relative; display:block; height:1px; width:1px; border:0; clip:rect(1px, 1px, 1px, 1px); clip-path:inset(50%); word-break:initial; word-wrap:initial; z-index:-1; overflow:hidden;}
+.dimmed {position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); filter:alpha(opacity=60); touch-action:none; z-index:200;}
+.no_scroll {overflow:hidden;}
+
+
+/* form */
+.input input:disabled,
+.input input[readonly] {background:var(--bg_02, #f7f7f8); -webkit-text-fill-color:var(--fc_02, #26282c); -webkit-opacity:1; color:var(--fc_02, #26282c); text-overflow:ellipsis; overflow:hidden; border-color:var(--fc_08, #dde1e4);} 
+.input input.bg_white:disabled {background:var(--fc_10, #f7f7f8) !important;}
+.input input.finished[readonly] {border-color:var(--fc_08, #dde1e4); background:var(--bg_02, #f7f7f8);}
+textarea.finished {border-color:#aab0b8;}
+.input input.bg_white.finished + .unit {color:var(--fc_02, #26282c);}
+.input input.bg_white[readonly],
+.input input.bg_white.finished[readonly] {border-color:#b0986a; background:var(--bg_02, #f7f7f8);}
+
+
+
+
+
+/* tab */
+.wrap-tab-container + .wrap-tab-container{margin-top:2rem;}
+.wrap-tab-list {position:relative; display:flex; align-items:center; justify-content:space-between; border-radius:4.4rem; background:#2C2C2C; overflow:hidden; z-index:0;}
+.tab-list + .tab-list {margin-left:-1px;}
+.tab-list {flex:1 1 auto; position:relative; display:inline-block; border-radius:4.4rem; z-index:0;}
+.tab-list .tab-button {display:block; width: 100%; height:4.4rem; font-size:1.4rem; color:#a2a2a2; text-align:center; border-radius:4.4rem; border:1px solid transparent; box-sizing:border-box;}
+
+.tab-list.active {background:linear-gradient(116.05deg, #6CFFED 16.42%, #06B5D1 83.58%); z-index: 10;}
+.tab-list.active .tab-button {color:#fff; font-weight:700; background:linear-gradient(116.05deg, #263533 16.42%, #1c2d30 83.58%); background-clip:padding-box;}
+
+.wrap-tab-contents {width:100%; margin-top:3rem;}
+.wrap-tab-contents .tab-contents {width:100%;}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:1440px) {
+	
+}
+
+@media only screen and (max-width:1280px) {
+	
+}
+
+@media only screen and (max-width:1024px) {
+
+}
+
+@media only screen and (max-width:768px) {
+	
+}
+
+@media only screen and (max-width:640px) {
+	
+}
+
+@media only screen and (max-width:425px) {
+	
+}
+
+@media only screen and (max-width:375px) {
+	
+}
+
+@media only screen and (max-width:320px) {
+	
+}
