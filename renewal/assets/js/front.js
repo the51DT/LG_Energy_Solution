@@ -1,6 +1,7 @@
 $(()=>{
     console.log("test");
     _front.init();
+    _aside.init();
 })
 
 
@@ -144,4 +145,37 @@ const _front = {
         }
     },
     
+}
+
+
+const _aside = {
+    init: function(){
+        $(document).find(".btn__aside-open").on("click", function(){
+            _aside.open();
+        })
+        $(document).find(".btn__aside-close").on("click", function(){
+            _aside.close();
+        })
+    },
+    open: function(){
+        const elem = $(document).find(".aside__wrap");
+        const btn_open = $(document).find(".btn__aside-open");
+        elem.addClass("open");
+        elem.removeAttr("aria-hidden");
+        btn_open.attr("aria-expanded", true);
+
+        const dimmed = `<div class="dimmed"></div>`;
+        $("body").append(dimmed);
+        $("html, body").addClass("no_scroll");
+    },
+    close: function(){
+        const elem = $(document).find(".aside__wrap");
+        const btn_open = $(document).find(".btn__aside-open");
+        elem.removeClass("open");
+        elem.attr("aria-hidden", true);
+        btn_open.attr("aria-expanded", false);
+
+        $(document).find(".dimmed").remove();
+        $("html, body").removeClass("no_scroll");
+    }
 }

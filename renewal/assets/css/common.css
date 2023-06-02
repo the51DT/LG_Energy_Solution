@@ -4,22 +4,47 @@
     --fc-main:#efefef;
 }
 
+/* layout */
 body{background:#000; color:#efefef;}
 .wrap{padding-top:5.6rem;}
 
-header.header{position:fixed; left:0; top:0; width:100%; height:5.6rem;}
-header.header h1 a{display:block; width:9.8rem; height:1.7rem; background:url(https://www.batterylifecare.com/images/common/logo.png) 0 0 no-repeat; background-size:100% auto;}
+header.header{}
+header .header__inner{position:fixed; left:0; top:0; width:100%; height:5.6rem;}
+header.header h1 a{display:block; width:9.8rem; height:5.6rem; background:url(https://www.batterylifecare.com/images/common/logo.png) 0 50% no-repeat; background-size:100% auto; margin-left:2rem;}
+header.header nav {display: none;}
+.header__util {position:absolute; right:0; top:0; display:flex; align-items:center;}
+.header__app {}
+.btn__aside-open {position:relative; width:5.8rem; height:5.8rem; padding:0 2rem;}
+.btn__aside-open span{position:absolute;}
+.btn__aside-open span,
+.btn__aside-open span::before,
+.btn__aside-open span::after {display:block; width:2rem; height:2px; background:#fff;}
+.btn__aside-open span::before,
+.btn__aside-open span::after{content:''; position:absolute;}
+.btn__aside-open span::before{top:7px;}
+.btn__aside-open span::after{top:-7px;}
+
+.aside__wrap{position:fixed; top:0; right:0; width:80%; height:100%; box-sizing:border-box; padding:2rem; background:#1E1E1E; z-index:101; transform:translateX(100%); transition:transform .3s;}
+.aside__wrap.open{transform:translateX(0);}
+.btn__aside-close{position:absolute; right:0; top:0; width:5.6rem; height:5.6rem;}
+.btn__aside-close::before,
+.btn__aside-close::after{content:''; position:absolute; left:50%; top:50%; display:block; width:2rem; height:2px; background:#fff;}
+.btn__aside-close::before{transform:translate(-50%, -50%) rotate(-45deg);}
+.btn__aside-close::after{transform:translate(-50%, -50%) rotate(45deg);}
+
 
 footer.footer{background:#2c2c2c;}
 
-/* layout */
+
 .container{overflow:hidden;}
 .section{margin:4rem 2rem 0;}
 
 
+
+
 /* etc */
 .hidden {position:relative; display:block; height:1px; width:1px; border:0; clip:rect(1px, 1px, 1px, 1px); clip-path:inset(50%); word-break:initial; word-wrap:initial; z-index:-1; overflow:hidden;}
-.dimmed {position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); filter:alpha(opacity=60); touch-action:none; z-index:200;}
+.dimmed {position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); filter:alpha(opacity=60); touch-action:none; z-index:100;}
 .no_scroll {overflow:hidden;}
 
 
