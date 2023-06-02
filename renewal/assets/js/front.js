@@ -1,8 +1,42 @@
 $(()=>{
-    console.log("test");
+    _device.init();
     _front.init();
     _aside.init();
 })
+
+
+const _device = {
+    init: function(){
+        _device.chk();
+    },
+    /**
+     * body에 pc, mobile, ios, aos 클래스 부여
+     */
+    chk: function(){
+        const elem = $("body");
+        const userAgent = navigator.userAgent;
+        const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+        const ios = /iPhone|iPad|iPod/i;
+        const aos = /Android/i;
+        
+        ( mobile.test(userAgent) ) ? elem.addClass("mobile") : elem.addClass("pc");
+        ( ios.test(userAgent) ) ? elem.addClass("ios") : null;
+        ( aos.test(userAgent) ) ? elem.addClass("aos") : null;
+    },
+    /**
+     * 모바일 디바이스 일 때 true 반환
+     * @returns boolean
+     */
+    isMobile: function(){
+        const userAgent = navigator.userAgent;
+        const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+        if( mobile.test(userAgent) ){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
 
 
 const _front = {
@@ -184,7 +218,6 @@ const _aside = {
 
 function AccordionScript() {
     const _$this = this;
-    console.log(_$this);
     let accordionGroups;
     
     _$this.init = {

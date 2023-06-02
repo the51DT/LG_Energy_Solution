@@ -100,11 +100,11 @@ textarea.finished {border-color:#aab0b8;}
 .wrap-tab-contents .tab-contents {width:100%;}
 
 /* accordion */
-.accordion-btn {display:block; position:relative; width:100%; padding:16px 40px 16px 20px; font-size:13px; color:#EFEFEF; line-height:18px; text-align:left}
-.accordion-btn::after {content:''; display:inline-block; position:absolute; top:50%; right:22px; width:10px; height:10px; margin-top:-3px; margin-right:-7px; border-top:1px solid #7C7C7C; border-right:1px solid #7C7C7C; transform:translate(0, -60%) rotate(135deg); transition:all 0.3s;}
+.accordion-btn {display:block; position:relative; width:100%; padding:1.6rem 4rem 1.6rem 2rem; font-size:1.3rem; color:#efefef; line-height:1.8rem; text-align:left}
+.accordion-btn::after {content:''; display:inline-block; position:absolute; top:50%; right:2.2rem; width:1rem; height:1rem; margin-top:-0.3rem; margin-right:-0.7rem; border-top:1px solid #7C7C7C; border-right:1px solid #7C7C7C; transform:translate(0, -60%) rotate(135deg); transition:all 0.3s;}
 .accordion-btn[aria-expanded="true"]::after {transform:translate(0, -40%) rotate(-45deg)}
 .wrap-accordion-contents {background:#2C2C2C; overflow:hidden; transition:all 0.3s;}
-.inner-accordion-contents {padding:20px; color:#EFEFEF; font-size:13px; line-height:18px}
+.inner-accordion-contents {padding:2rem; color:#EFEFEF; font-size:1.3rem; line-height:1.8rem}
 
 
 
