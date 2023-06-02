@@ -216,7 +216,6 @@ function AccordionScript() {
     _$this.accordionEvent = {
         removeEvent: (target, accordionGroup) => {
             const accordionBtns = accordionGroup.querySelectorAll('.accordion-btn');
-            const accordionContents = accordionGroup.querySelectorAll('[role="region"]');
             for (let accordionBtn of accordionBtns) {
                 // 기존에 선택 된 accordion 속성 false 로 만들기
                 if (accordionBtn.ariaExpanded === 'true') {
