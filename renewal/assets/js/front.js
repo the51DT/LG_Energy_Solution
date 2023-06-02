@@ -205,7 +205,7 @@ function AccordionScript() {
                 // 초기 셋팅 : button 의 aria-expanded 값이 false 인 accordion contents 에 hidden 값 넣기
                 if (accordionBtn.ariaExpanded === 'false' && accordionBtn.nextElementSibling !== null) accordionBtn.nextElementSibling.setAttribute('hidden', 'true');
                 // 초기 셋팅 : button 의 aria-expanded 값이 true 인 accordion contents 에 height size 넣기
-                if (accordionBtn.ariaExpanded === 'true' && accordionBtn.nextElementSibling !== null) accordionBtn.nextElementSibling.style.height = accordionBtn.nextElementSibling.scrollHeight + 'px';
+                if (accordionBtn.ariaExpanded === 'true' && accordionBtn.nextElementSibling !== null) {accordionBtn.nextElementSibling.style.height = accordionBtn.nextElementSibling.scrollHeight + 'px'} else {accordionBtn.nextElementSibling.style.height = 0};
             });
         },
     };
