@@ -42,11 +42,19 @@ const _device = {
 
 const _front = {
     init: function(){
+        _front.vh();
         _front.tab();
         _front.accordion();
         _front.select();
 
         $(document).on("click", "a[href='#'], a[href='#none']", function(e){ e.preventDefault() });
+    },
+    vh: function(){
+        const setVh = () => {
+            document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
+        };
+        window.addEventListener('resize', setVh);
+        setVh();
     },
     tab: function(){
         const tabGroups = document.querySelectorAll('[data-role="tab"]');
@@ -233,7 +241,7 @@ const _front = {
         select.each((idx, item)=>{
             const _this = $(item);
 
-            _this.find('.btn_select').attr({'aria-owns': $(this).find('.select_list_box').attr('id'), 'data-toggle' :'dropdown', 'role' : 'combobox', 'aria-haspopup' : 'listbox', 'aria-expanded': 'false'});
+            _this.find('.btn_select').attr({'aria-owns': _this.find('.select_list_box').attr('id'), 'data-toggle' :'dropdown', 'role' : 'combobox', 'aria-haspopup' : 'listbox', 'aria-expanded': 'false'});
             _this.find('.select_list_box').attr({ 'role' : 'listbox' , 'aria-expanded' : 'false' });
             _this.find('.select_list_box .select_list').attr('role', 'presentation');
             _this.find('.select_list_box .select_list > li').attr('role', 'option');
@@ -273,9 +281,11 @@ const _aside = {
     init: function(){
         $(document).find(".btn__aside-open").on("click", function(){
             _aside.open();
+            $(document).find(".aside__wrap").attr("tabindex", 0).focus();
         })
         $(document).find(".btn__aside-close").on("click", function(){
             _aside.close();
+            $(document).find(".btn__aside-open").attr("tabindex", 0).focus();
         })
     },
     open: function(){
@@ -285,8 +295,8 @@ const _aside = {
         elem.removeAttr("aria-hidden");
         btn_open.attr("aria-expanded", true);
 
-        const dimmed = `<div class="dimmed"></div>`;
-        $("body").append(dimmed);
+        // const dimmed = `<div class="aside_dimmed"></div>`;
+        // $("body").append(dimmed);
         $("html, body").addClass("no_scroll");
     },
     close: function(){
@@ -296,7 +306,7 @@ const _aside = {
         elem.attr("aria-hidden", true);
         btn_open.attr("aria-expanded", false);
 
-        $(document).find(".dimmed").remove();
+        // $(document).find(".aside_dimmed").remove();
         $("html, body").removeClass("no_scroll");
     }
 }
@@ -321,31 +331,60 @@ const _layout = {
                 </nav>
                 <div class="header__util">
                     <div class="header__app">
-                        앱 다운로드
+                        <div class="header__app-inner">
+                            <a href="#" class="header__app-btn" role="button">앱 다운로드</a>
+                            <div class="header__app-content" id="appDownload">
+                                <ul>
+                                    <li class="qrcode_appstore">
+                                        <span class="hidden">AppStore QR Code</span>
+                                        <a href="#" target="blank" title="새창으로 열림" class="bn_appstore"><span class="hidden">앱스토어</span></a>
+                                    </li>
+                                    <li class="qrcode_googleplay">
+                                        <span class="hidden">AppStore QR Code</span>
+                                        <a href="#" target="blank" title="새창으로 열림" class="bn_googleplay"><span class="hidden">구글플레이</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <button type="button" class="btn__aside-open" aria-expanded="false" aria-label="메뉴"><span></span></button>
                 </div>
             </div>
             <div class="aside__wrap" aria-hidden="true">
-                <div class="aside__header">
-                    menu
-                </div>
-                <div class="aside__menu">
-                    <ul>
-                        <li><a href="#">주요서비스</a></li>
-                        <li><a href="#">배터리 인증서</a></li>
-                        <li><a href="#">이용안내</a></li>
-                        <li><a href="#">제휴문의</a></li>
-                        <li><a href="#">공지사항</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">EV Life</a></li>
-                        <li><a href="#">이벤트</a></li>
-                    </ul>
+                <div class="aside__inner">
+                    <div class="aside__menu">
+                        <ul>
+                            <li><a href="#">주요서비스</a></li>
+                            <li><a href="#">배터리 인증서</a></li>
+                            <li><a href="#">이용안내</a></li>
+                            <li><a href="#">제휴문의</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">EV Life</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <button type="button" class="btn__aside-close" aria-label="닫기"></button>
             </div>
         `;
         $(document).find("header.header").html(html);
+
+        // 
+        $(document).find(".header__app-btn").attr({'aria-owns': $(document).find('.header__app-content').attr('id'), 'data-toggle' :'dropdown', 'role' : 'combobox', 'aria-haspopup' : 'listbox', 'aria-expanded': 'false'});
+        $(document).find(".header__app-content").attr({"role":"listbox"})
+
+        $(document).on("click", ".header__app-btn", function(){
+            const parents = $(this).parents(".header__app");
+            if( parents.hasClass("on") ){
+                parents.removeClass("on");
+                $(this).attr("aria-expanded", false);
+            } else {
+                parents.addClass("on");
+                $(this).attr("aria-expanded", true);
+            }
+        })
+
     },
     footer: function(){
         const html = `
@@ -353,12 +392,12 @@ const _layout = {
                 <div class="footer__app">
                     <p class="footer__app-ttl">B-Lifecare 앱 다운로드</p>
                     <div class="footer_app-cont">
-                        <a href="#" target="blank" title="새창으로 열림" class="appstore"><span class="hidden">앱스토어</span></a>
-                        <a href="#" target="blank" title="새창으로 열림" class="googleplay"><span class="hidden">구글플레이</span></a>
+                        <a href="#" target="blank" title="새창으로 열림" class="bn_appstore"><span class="hidden">앱스토어</span></a>
+                        <a href="#" target="blank" title="새창으로 열림" class="bn_googleplay"><span class="hidden">구글플레이</span></a>
                     </div>
                 </div>
                 <div class="footer__cs">
-                    <p class="footer__cs-ttl">고객센터</p>
+                    <p class="footer__cs-ttl">고객만족센터</p>
                     <div class="footer__cs-cont">
                         <span>1544-8773</span>
                         <a href="#" role="button" class="cs_kakao"><span class="hidden">카카오톡 채널 1:1 채팅 버튼</span></a>

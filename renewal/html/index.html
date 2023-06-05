@@ -30,17 +30,76 @@
             
 
 
-            <div class="swiper mySwiper">
+            <div class="swiper idxSwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                    <div class="swiper-slide">Slide 4</div>
-                    <div class="swiper-slide">Slide 5</div>
-                    <div class="swiper-slide">Slide 6</div>
-                    <div class="swiper-slide">Slide 7</div>
-                    <div class="swiper-slide">Slide 8</div>
-                    <div class="swiper-slide">Slide 9</div>
+                    <div class="swiper-slide slide1">
+                        <div class="slide-inner">
+                            <div class="slogan">
+                                <span>여러분의 전기차 배터리는 안녕한가요?</span>
+                                <p>
+                                    <strong>Be safe!</strong>
+                                    <strong>B-Lifecare</strong>
+                                    <span>지금 바로 비라이프케어에서 다양한 기능을 체험해보세요.</span>
+                                </p>
+                            </div>
+                            <div class="event_mo">
+                                <p>선착순 한정 EVENT<br>30만원 상당 B-Checkup 무상 대여!</p>
+                                <span>B-Checkup 무상대여 이벤트는 이벤트 기간 내 신청한 고객에 한해 제공되며, 사전 고지 없이 종료될 수 있습니다.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide2">
+                        <div class="slide-inner">
+                            <div class="slogan">
+                                <span>주행거리 정보만으론 만족할 수 없다면?</span>
+                                <p>
+                                    <strong>정보제공을 넘어</strong>
+                                    <strong>운전습관 케어까지!</strong>
+                                    <span>주행정보 | 주변 충전소 | 배터리 케어</span>
+                                </p>
+                                <a href="#" class="btn_detail">자세히 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide3">
+                        <div class="slide-inner">
+                            <div class="slogan">
+                                <span>오직 B-Lifecare에서만 가능한~</span>
+                                <p>
+                                    <strong>중고차 거래 시 필수!</strong>
+                                    <strong>배터리 인증서</strong>
+                                    <span>오직 B-Lifecare에서만 가능한 글로벌 배터리 제조사가 발급하는 공신력있는<br>배터리 인증서를 발급해보세요. 내 차 배터리의 상세한 성능 진단을 할 수 있습니다.</span>
+                                </p>
+                                <a href="#" class="btn_detail">자세히 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide4">
+                        <div class="slide-inner">
+                            <div class="slogan">
+                                <span>내 전기차 B-Lifecare를 이용할 수 있을까?</span>
+                                <p>
+                                    <strong>쉽고 간편한</strong>
+                                    <strong>서비스 이용안내</strong>
+                                    <span>신청과 장착은 초보자도 쉽고 간편하게! 배터리 정보는 전문가보다 상세하게!<br>서비스 지원 가능 차량부터 신청, 장착방법까지 지금 바로 확인해보세요.</span>
+                                </p>
+                                <a href="#" class="btn_detail">자세히 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide5">
+                        <div class="slide-inner">
+                            <div class="slogan">
+                                <span>B-Lifecare가 알려주는 배터리 정보</span>
+                                <p><strong>EV Life</strong></p>
+                            </div>
+                            <ul class="idxSwiper-evlife">
+                                <li><a href="#"><img src="https://www.batterylifecare.com/evLife/20211118/20211118054145_43029.jpg" alt="EV Life"></a></li>
+                                <li><a href="#"><img src="https://www.batterylifecare.com/evLife/20211118/20211118054145_43029.jpg" alt="EV Life"></a></li>
+                                <li><a href="#"><img src="https://www.batterylifecare.com/evLife/20211118/20211118054145_43029.jpg" alt="EV Life"></a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -49,14 +108,47 @@
         </div>
         <footer class="footer"></footer>
     </div>
+
     <script>
-        var swiper = new Swiper(".mySwiper", {
-          direction: "vertical",
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-        });
+        $(()=>{
+
+            var mySwiper = new Swiper(".idxSwiper", {
+                speed: 500,
+                direction: "vertical",
+                mousewheel: true,
+                // draggable: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                watchOverflow : true,
+                on: {
+                    slideChange: function() {
+                        setTimeout(function () {
+                            mySwiper.params.touchReleaseOnEdges = false;  
+                            mySwiper.params.mousewheel.releaseOnEdges = false;
+                        });
+
+                        const scroll = $(window).scrollTop();
+                        if( scroll > 0 ){
+                            setTimeout(() => { $("html, body").animate({scrollTop: '0'}, 300) }, 301);
+                        }
+                    },
+                    reachEnd: function() {
+                        setTimeout(function () {
+                            mySwiper.params.touchReleaseOnEdges = true;
+                            mySwiper.params.mousewheel.releaseOnEdges = true;
+                        }, 300);
+                    },
+                    reachBeginning: function() {
+                        setTimeout(function () {
+                            mySwiper.params.touchReleaseOnEdges = true;
+                            mySwiper.params.mousewheel.releaseOnEdges = true;
+                        }, 300);
+                    }
+                }
+            });
+        })
       </script>
 </body>
 </html>
