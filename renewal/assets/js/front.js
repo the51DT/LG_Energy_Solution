@@ -233,7 +233,7 @@ const _front = {
         select.each((idx, item)=>{
             const _this = $(item);
 
-            _this.find('.btn_select').attr({'aria-owns': $(this).find('.select_list_box').attr('id'), 'data-toggle' :'dropdown', 'role' : 'combobox', 'aria-haspopup' : 'listbox', 'aria-expanded': 'false'});
+            _this.find('.btn_select').attr({'aria-owns': _this.find('.select_list_box').attr('id'), 'data-toggle' :'dropdown', 'role' : 'combobox', 'aria-haspopup' : 'listbox', 'aria-expanded': 'false'});
             _this.find('.select_list_box').attr({ 'role' : 'listbox' , 'aria-expanded' : 'false' });
             _this.find('.select_list_box .select_list').attr('role', 'presentation');
             _this.find('.select_list_box .select_list > li').attr('role', 'option');
@@ -273,9 +273,11 @@ const _aside = {
     init: function(){
         $(document).find(".btn__aside-open").on("click", function(){
             _aside.open();
+            $(document).find(".aside__wrap").attr("tabindex", 0).focus();
         })
         $(document).find(".btn__aside-close").on("click", function(){
             _aside.close();
+            $(document).find(".btn__aside-open").attr("tabindex", 0).focus();
         })
     },
     open: function(){
@@ -285,8 +287,8 @@ const _aside = {
         elem.removeAttr("aria-hidden");
         btn_open.attr("aria-expanded", true);
 
-        const dimmed = `<div class="dimmed"></div>`;
-        $("body").append(dimmed);
+        // const dimmed = `<div class="aside_dimmed"></div>`;
+        // $("body").append(dimmed);
         $("html, body").addClass("no_scroll");
     },
     close: function(){
@@ -296,7 +298,7 @@ const _aside = {
         elem.attr("aria-hidden", true);
         btn_open.attr("aria-expanded", false);
 
-        $(document).find(".dimmed").remove();
+        // $(document).find(".aside_dimmed").remove();
         $("html, body").removeClass("no_scroll");
     }
 }
@@ -323,7 +325,7 @@ const _layout = {
                     <div class="header__app">
                         <div class="header__app-inner">
                             <a href="#" class="header__app-btn" role="button">앱 다운로드</a>
-                            <div class="header__app-content">
+                            <div class="header__app-content" id="appDownload">
                                 <ul>
                                     <li class="qrcode_appstore">
                                         <span class="hidden">AppStore QR Code</span>
@@ -341,29 +343,40 @@ const _layout = {
                 </div>
             </div>
             <div class="aside__wrap" aria-hidden="true">
-                <div class="aside__header">
-                    menu
-                </div>
-                <div class="aside__menu">
-                    <ul>
-                        <li><a href="#">주요서비스</a></li>
-                        <li><a href="#">배터리 인증서</a></li>
-                        <li><a href="#">이용안내</a></li>
-                        <li><a href="#">제휴문의</a></li>
-                        <li><a href="#">공지사항</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">EV Life</a></li>
-                        <li><a href="#">이벤트</a></li>
-                    </ul>
+                <div class="aside__inner">
+                    <div class="aside__menu">
+                        <ul>
+                            <li><a href="#">주요서비스</a></li>
+                            <li><a href="#">배터리 인증서</a></li>
+                            <li><a href="#">이용안내</a></li>
+                            <li><a href="#">제휴문의</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">EV Life</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <button type="button" class="btn__aside-close" aria-label="닫기"></button>
             </div>
         `;
         $(document).find("header.header").html(html);
 
+        // 
+        $(document).find(".header__app-btn").attr({'aria-owns': $(document).find('.header__app-content').attr('id'), 'data-toggle' :'dropdown', 'role' : 'combobox', 'aria-haspopup' : 'listbox', 'aria-expanded': 'false'});
+        $(document).find(".header__app-content").attr({"role":"listbox"})
+
         $(document).on("click", ".header__app-btn", function(){
-            $(this).parents(".header__app").toggleClass("on");
+            const parents = $(this).parents(".header__app");
+            if( parents.hasClass("on") ){
+                parents.removeClass("on");
+                $(this).attr("aria-expanded", false);
+            } else {
+                parents.addClass("on");
+                $(this).attr("aria-expanded", true);
+            }
         })
+
     },
     footer: function(){
         const html = `
