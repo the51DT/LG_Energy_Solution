@@ -34,7 +34,7 @@ html {
 }
 body {
 	line-height: 1;
-    color:#333;
+    color:#1E1E1E;
 	font-family: 'Apple SD Gothic', 'Spoqa Han Sans Neo', sans-serif;
 	font-size:1.6rem;
 }
@@ -63,9 +63,9 @@ input, textarea, select, button, a{
 
 button {cursor:pointer; background:none; padding:0; border:0 none; font-family: 'Apple SD Gothic', 'Spoqa Han Sans Neo', sans-serif;}
 
-::-webkit-scrollbar{width:5px}
+/* ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-thumb{height:30%;background:rgba(0,0,0,.4);border-radius:10px}
-::-webkit-scrollbar-track{background:rgba(33,122,244,.03)}
+::-webkit-scrollbar-track{background:rgba(33,122,244,.03)} */
 
 
 ::-webkit-input-placeholder {color:var(--placeholder,#929292); -webkit-text-fill-color:var(--placeholder,#929292); font-size:1.9rem; font-weight:700; text-align:left;}
