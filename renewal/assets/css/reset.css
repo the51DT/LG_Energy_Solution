@@ -59,6 +59,7 @@ a, a:visited, a:hover, a:active{
 }
 input, textarea, select, button, a{
 	outline:none;
+	font-family: 'Apple SD Gothic', 'Spoqa Han Sans Neo', sans-serif;
 }
 
 button {cursor:pointer; background:none; padding:0; border:0 none; font-family: 'Apple SD Gothic', 'Spoqa Han Sans Neo', sans-serif;}
