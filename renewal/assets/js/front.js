@@ -42,11 +42,19 @@ const _device = {
 
 const _front = {
     init: function(){
+        _front.vh();
         _front.tab();
         _front.accordion();
         _front.select();
 
         $(document).on("click", "a[href='#'], a[href='#none']", function(e){ e.preventDefault() });
+    },
+    vh: function(){
+        const setVh = () => {
+            document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
+        };
+        window.addEventListener('resize', setVh);
+        setVh();
     },
     tab: function(){
         const tabGroups = document.querySelectorAll('[data-role="tab"]');
