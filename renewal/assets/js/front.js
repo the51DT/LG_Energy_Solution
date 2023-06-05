@@ -321,7 +321,21 @@ const _layout = {
                 </nav>
                 <div class="header__util">
                     <div class="header__app">
-                        앱 다운로드
+                        <div class="header__app-inner">
+                            <a href="#" class="header__app-btn" role="button">앱 다운로드</a>
+                            <div class="header__app-content">
+                                <ul>
+                                    <li class="qrcode_appstore">
+                                        <span class="hidden">AppStore QR Code</span>
+                                        <a href="#" target="blank" title="새창으로 열림" class="bn_appstore"><span class="hidden">앱스토어</span></a>
+                                    </li>
+                                    <li class="qrcode_googleplay">
+                                        <span class="hidden">AppStore QR Code</span>
+                                        <a href="#" target="blank" title="새창으로 열림" class="bn_googleplay"><span class="hidden">구글플레이</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <button type="button" class="btn__aside-open" aria-expanded="false" aria-label="메뉴"><span></span></button>
                 </div>
@@ -346,6 +360,10 @@ const _layout = {
             </div>
         `;
         $(document).find("header.header").html(html);
+
+        $(document).on("click", ".header__app-btn", function(){
+            $(this).parents(".header__app").toggleClass("on");
+        })
     },
     footer: function(){
         const html = `
@@ -353,12 +371,12 @@ const _layout = {
                 <div class="footer__app">
                     <p class="footer__app-ttl">B-Lifecare 앱 다운로드</p>
                     <div class="footer_app-cont">
-                        <a href="#" target="blank" title="새창으로 열림" class="appstore"><span class="hidden">앱스토어</span></a>
-                        <a href="#" target="blank" title="새창으로 열림" class="googleplay"><span class="hidden">구글플레이</span></a>
+                        <a href="#" target="blank" title="새창으로 열림" class="bn_appstore"><span class="hidden">앱스토어</span></a>
+                        <a href="#" target="blank" title="새창으로 열림" class="bn_googleplay"><span class="hidden">구글플레이</span></a>
                     </div>
                 </div>
                 <div class="footer__cs">
-                    <p class="footer__cs-ttl">고객센터</p>
+                    <p class="footer__cs-ttl">고객만족센터</p>
                     <div class="footer__cs-cont">
                         <span>1544-8773</span>
                         <a href="#" role="button" class="cs_kakao"><span class="hidden">카카오톡 채널 1:1 채팅 버튼</span></a>
