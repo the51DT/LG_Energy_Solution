@@ -2,13 +2,35 @@
 
 /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap'); */
 
-@font-face {
+/* @font-face {
     font-family: 'Apple SD Gothic';
     src: url('../font/AppleSDGothicNeoM.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
     unicode-range: U+0-10FFFF;
+} */
+
+@font-face {
+    font-family: 'Apple SD Gothic';
+    font-style:normal;
+    font-weight: 400;
+    src: url('../font/AppleSDGothicNeoM.ttf') format('truetype');
+    unicode-range: U+0-10FFFF;
 }
+@font-face {
+    font-family: 'Apple SD Gothic';
+    font-style:normal;
+    font-weight: 700;
+    src: url('../font/AppleSDGothicNeoB.ttf') format('truetype');
+    unicode-range: U+0-10FFFF;
+}
+/* @font-face {
+    font-family: 'Apple SD Gothic';
+    font-style:normal;
+    font-weight: 700;
+    src: url('../font/AppleSDGothicNeoM.ttf') format('truetype');
+    unicode-range: U+0-10FFFF;
+} */
 
 
 @font-face {
