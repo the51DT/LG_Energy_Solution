@@ -24,43 +24,15 @@
 </head>
 <body>
     <div class="wrap">
-        <header class="header">
-            <div class="header__inner">
-                <div class="header__sub-ttl">
-                    <button type="button" class="btn__history-back" aria-label="뒤로가기"></button>
-                    <h1>template</h1>
-                </div>
-                <div class="header__util">
-                    <div class="header__app">
-                        앱 다운로드
-                    </div>
-                    <button type="button" class="btn__aside-open" aria-expanded="false" aria-label="메뉴"><span></span></button>
-                </div>
-            </div>
-            <div class="aside__wrap" aria-hidden="true">
-                <!-- <div class="aside__header">
-                    menu
-                </div>
-                <div class="aside__menu">
-                    <ul>
-                        <li><a href="#">주요서비스</a></li>
-                        <li><a href="#">배터리 인증서</a></li>
-                        <li><a href="#">이용안내</a></li>
-                        <li><a href="#">제휴문의</a></li>
-                        <li><a href="#">공지사항</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">EV Life</a></li>
-                        <li><a href="#">이벤트</a></li>
-                    </ul>
-                </div> -->
-                <button type="button" class="btn__aside-close" aria-label="닫기"></button>
-            </div>
-        </header>
+        <header class="header"></header>
         <div class="container">
             
             <section class="section">
                 
-                <h3>tab</h3>
+                <div class="tit_wrap">
+                    <h2>tab</h2>
+                    <p class="des">타이틀 아래 설명글</p>
+                </div>
                 <div class="wrap-tab-container" data-role="tab">
                     <ul class="wrap-tab-list" role="tablist">
                         <li class="tab-list active">
@@ -91,7 +63,10 @@
             </section>
 
             <section class="section">
-                <h3>selecbox</h3>
+                <div class="tit_wrap">
+                    <h2>selecbox</h2>
+                    <p class="des">타이틀 아래 설명글</p>
+                </div>
                 <div class="select_box">
                     <button class="btn_select">전체 카테고리</button>
                     <div class="select_list_box" id="selectbox">
@@ -123,7 +98,10 @@
             </section>
 
             <section class="section">
-                <h3>toggle</h3>
+                <div class="tit_wrap">
+                    <h2>toggle</h2>
+                    <p class="des">타이틀 아래 설명글</p>
+                </div>
                 <ul class="wrap-accordion-group" accordion-option="toggle">
                     <li class="on">
                         <button id="accordion-head-1" aria-level="2" aria-expanded="false" class="accordion-btn" aria-controls="accordion-region-1">
@@ -189,7 +167,10 @@
             </section>
 
             <section class="section">
-                <h3>accordion</h3>
+                <div class="tit_wrap">
+                    <h2>accordion</h2>
+                    <p class="des">타이틀 아래 설명글</p>
+                </div>
                 <ul class="wrap-accordion-group" accordion-option="only">
                     <li class="on">
                         <button id="accordion-head-11" aria-level="2" class="accordion-btn" aria-controls="accordion-region-11">
@@ -255,6 +236,7 @@
             </section>
 
         </div>
+        <footer class="footer"></footer>
     </div>
 </body>
 </html>
