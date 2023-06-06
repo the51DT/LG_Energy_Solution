@@ -25,7 +25,7 @@
 <body>
     <div class="wrap">
         <header class="header"></header>
-        <div class="container">
+        <div class="container inquiry">
             
             <section class="section">
                 <div class="tit_wrap">
@@ -44,7 +44,9 @@
                         <div class="item_cont">
                             <div class="input_wrap">
                                 <input type="text" title="성" placeholder="입력해주세요.">
+                                <button type="button" class="btn_clear" style="display:none">삭제</button>
                             </div>
+                            <p class="msg error">에러메시지</p>
                         </div>
                     </div>
 
@@ -53,7 +55,9 @@
                         <div class="item_cont">
                             <div class="input_wrap">
                                 <input type="text" title="이름" placeholder="입력해주세요.">
+                                <button type="button" class="btn_clear" style="display:none">삭제</button>
                             </div>
+                            <p class="msg error">에러메시지</p>
                         </div>
                     </div>
 
@@ -62,35 +66,41 @@
                         <div class="item_cont">
                             <div class="input_wrap">
                                 <input type="number" title="연락처" placeholder="입력해주세요.">
+                                <button type="button" class="btn_clear" style="display:none">삭제</button>
                             </div>
+                            <p class="msg error" style="display:none">에러메시지</p>
                         </div>
                     </div>
 
                     <div class="form_item req">
                         <div class="item_tit">회사메일</div>
-                        <div class="item_cont email">
-                            <div class="input_wrap">
-                                <input type="text" title="회사메일" placeholder="입력해주세요.">
-                            </div>
-                            <div class="select_box">
-                                <button class="btn_select">선택해주세요.</button>
-                                <div class="select_list_box" id="email">
-                                    <ul class="select_list">
-                                        <li>
-                                            <input type="radio" id="email01" name="inqType">
-                                            <label for="email01">naver.com</label>
-                                        </li>
-                                        <li>
-                                            <input type="radio" id="email02" name="inqType">
-                                            <label for="email02">daum.net</label>
-                                        </li>
-                                        <li>
-                                            <input type="radio" id="email03" name="inqType">
-                                            <label for="email03">google.com</label>
-                                        </li>
-                                    </ul>
+                        <div class="item_cont">
+                            <div class="email_wrap">
+                                <div class="input_wrap">
+                                    <input type="text" title="회사메일" placeholder="입력해주세요.">
+                                    <button type="button" class="btn_clear" style="display:none">삭제</button>
+                                </div>
+                                <div class="select_box">
+                                    <button class="btn_select">선택해주세요.</button>
+                                    <div class="select_list_box" id="email">
+                                        <ul class="select_list">
+                                            <li>
+                                                <input type="radio" id="email01" name="inqType">
+                                                <label for="email01">naver.com</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="email02" name="inqType">
+                                                <label for="email02">daum.net</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="email03" name="inqType">
+                                                <label for="email03">google.com</label>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
+                            <p class="msg error" style="display:none">에러메시지</p>
                         </div>
                     </div>
                     
@@ -99,7 +109,9 @@
                         <div class="item_cont">
                             <div class="input_wrap">
                                 <input type="text" title="회사(소속)" placeholder="입력해주세요.">
+                                <button type="button" class="btn_clear" style="display:none">삭제</button>
                             </div>
+                            <p class="msg error" style="display:none">에러메시지</p>
                         </div>
                     </div>
 
@@ -125,6 +137,7 @@
                                     </ul>
                                 </div>
                             </div>
+                            <p class="msg error" style="display:none">에러메시지</p>
                         </div>
                     </div>
 
@@ -162,6 +175,7 @@
                                     </ul>
                                 </div>
                             </div>
+                            <p class="msg error" style="display:none">에러메시지</p>
                         </div>
                     </div>
 
@@ -170,10 +184,15 @@
                         <div class="item_cont">
                             <div class="input_wrap">
                                 <input type="text" title="문의내용" placeholder="제목을 입력하세요.">
+                                <button type="button" class="btn_clear" style="display:none">삭제</button>
                             </div>
                             <div class="input_wrap">
-                                <textarea placeholder="내용을 입력하세요."></textarea>
+                                <div class="textarea">
+                                    <textarea placeholder="내용을 입력하세요."></textarea>
+                                    <button type="button" class="btn_clear" style="display:none">삭제</button>
+                                </div>
                             </div>
+                            <p class="msg error" style="display:none">에러메시지</p>
                         </div>
                     </div>
 
@@ -215,6 +234,24 @@
 <script>
     document.querySelector("form").addEventListener("submit", (e)=>{
         e.preventDefault();
+    })
+    document.querySelectorAll(".input_wrap input").forEach((item)=>{
+        item.addEventListener("keyup", ()=>{
+            item.nextElementSibling.style.display = "block"
+        })
+    })
+    document.querySelectorAll("textarea").forEach((item)=>{
+        item.addEventListener("keyup", ()=>{
+            item.nextElementSibling.style.display = "block"
+        })
+    })
+    document.querySelectorAll(".btn_clear").forEach((item)=>{
+        item.addEventListener("click", ()=>{
+            if(item.previousElementSibling.value !== ""){
+                item.previousElementSibling.value = "";
+                item.style.display = "none";
+            }
+        })
     })
 </script>
 </body>
