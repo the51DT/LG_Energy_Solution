@@ -162,7 +162,11 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
     .tab-list.active .tab-button::after {height:0.6rem;}
     .wrap-tab-contents {margin-top:4rem;} 
 
+    /* 제휴문의 페이지 */
+    .container.inquiry {padding-bottom:7rem;}
+
     /* 주요 서비스 페이지 */
+    .container.service {padding-bottom:7rem;}
     .service_wrap .box_list > li {gap:1.5rem;}
     .service_wrap .box_list > li + li {margin-top:1.4rem;}
     .service_wrap .box_list .icon_box {width:10.2rem; height:10rem;}
