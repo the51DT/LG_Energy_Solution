@@ -299,20 +299,7 @@
             }
         })
     })
-    document.querySelector(".terms_wrap").addEventListener("change", function(e){
-        // console.log(this);
-        let chkBox = this.querySelectorAll("input");
-        let chkSub = this.querySelectorAll(".check_sub");
-        if(e.target === document.getElementById("check_all")){
-            let is_checked = e.target.checked;
-            chkBox.forEach((item)=>{
-                item.checked = is_checked;
-            })
-        }
-        chkSub.forEach((item)=>{
-            console.log(item.checked === true)
-        })
-    })
+    
 </script>
 </body>
 </html>
