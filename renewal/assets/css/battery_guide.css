@@ -15,7 +15,7 @@
 .battery .certification .list_wrap .icon.diagnosis{background-image: url(../img/battery/battery_icon4.svg);}
 .battery .certification .list_wrap p{margin-top: 1.4rem; color: #FFFFFF;}
 
-.battery .img_mockup{width: 100vw; height: 68rem; margin: 0 0 12rem -6rem; background: #2C2C2C; background-image: url(../img/battery/battery_mockup_pc.svg); background-position: center; background-repeat: no-repeat;}
+.battery .img_mockup{width: 100vw; height: 68rem; margin: 0 0 12rem -6rem; background: #2C2C2C; background-image: url(../img/battery/battery_mockup_pc.svg); background-position: center; background-repeat: no-repeat; background-size: contain;}
 
 
 @media only screen and (max-width:1024px) {
