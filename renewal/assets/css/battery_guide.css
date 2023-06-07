@@ -2,7 +2,7 @@
 
 .battery .certification{margin-bottom: 10rem;}
 .battery .certification .img_wrap{text-align: center; margin-bottom: 6rem;}
-.battery .certification .img_wrap .card{display: inline-block; width: 16.8rem; height: 26.4rem;}
+.battery .certification .img_wrap .card{display: inline-block; width: 16.8rem; height: 26.4rem; background-size: contain; background-repeat: no-repeat;}
 .battery .certification .img_wrap .card1{background-image: url(../img/battery/battery_card1.svg);}
 .battery .certification .img_wrap .card2{margin-left: 5rem; background-image: url(../img/battery/battery_card2.svg);}
 .battery .certification .list_wrap ul{display: flex; flex-wrap: wrap; justify-content: center; text-align: center;}
