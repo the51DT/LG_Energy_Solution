@@ -116,6 +116,9 @@ footer.footer .footer__inner{position:relative; width:calc(100% - 12rem); max-wi
 .section{padding:12rem 6rem 0;}
 /* .section-wide{margin:4rem 0 0;} */
 
+/* br */
+.br_mo{display: none;}
+
 
 /* title */
 .tit_wrap {margin-bottom:6rem; text-align:center;}
@@ -208,7 +211,11 @@ textarea.finished {border-color:#aab0b8;}
 }
 
 @media only screen and (max-width:1024px) {
+    .br_mo{display: block;}
+    .br_pc{display: none;}
+
     .section {padding:4rem 2rem 0;}
+
     .tit_wrap {margin-bottom:4rem;}
     .tit_wrap h2 {font-size:2.4rem; line-height:3.3rem;}
     .tit_wrap .des {margin-top:1.4rem; font-size:1.5rem; line-height:2rem;}
