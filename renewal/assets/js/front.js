@@ -9,6 +9,9 @@ $(()=>{
 const _device = {
     init: function(){
         _device.chk();
+        $(window).on("resize", function(){
+            _device.chk();
+        })
     },
     /**
      * body에 pc, mobile, ios, aos 클래스 부여
@@ -19,6 +22,8 @@ const _device = {
         const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
         const ios = /iPhone|iPad|iPod/i;
         const aos = /Android/i;
+
+        elem.removeClass("mobile pc ios aos");
         
         ( mobile.test(userAgent) ) ? elem.addClass("mobile") : elem.addClass("pc");
         ( ios.test(userAgent) ) ? elem.addClass("ios") : null;
