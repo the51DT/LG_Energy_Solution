@@ -68,6 +68,7 @@ header.header h1 a{display:block; width:12.2rem; height:2.2rem; background:url(.
 footer.footer{background:#fff; padding:6rem 0;}
 footer.footer .footer__inner{position:relative; width:calc(100% - 12rem); max-width:136.6rem; box-sizing:border-box; margin:0 auto;}
 
+
 .footer__cs-ttl{font-size:2rem; font-weight:700; line-height:2.8rem;}
 .footer__cs-cont{display:flex; align-items:center; margin-top:1rem;}
 .footer__cs-cont span{display:inline-block; font-size:2.4rem; line-height:3.3rem; font-weight:700;}
@@ -244,7 +245,6 @@ textarea.finished {border-color:#aab0b8;}
     header .header__inner{height:8rem; padding:0 3rem;}
     .btn__aside-close{right:3rem; top:2rem;}
     footer.footer .footer__inner{width:calc(100% - 6rem);}
-	
 }
 
 @media only screen and (max-width:425px) {
