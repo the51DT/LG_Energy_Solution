@@ -376,10 +376,32 @@ const _layout = {
         $(document).find("header.header").html(html);
 
         // 
-        $(document).find(".header__app-btn").attr({'aria-owns': $(document).find('.header__app-content').attr('id'), 'data-toggle' :'dropdown', 'role' : 'combobox', 'aria-haspopup' : 'listbox', 'aria-expanded': 'false'});
-        $(document).find(".header__app-content").attr({"role":"listbox"})
+        const setAppDownload = function(){
+            const media = window.matchMedia("only screen and (max-width:425px)").matches;
+            if( media ){
+                //reset
+                $(document).find(".header__app-btn").removeAttr('aria-owns data-toggle role aria-haspopup aria-expanded');
+                $(document).find(".header__app-content").removeAttr("role");
+                $(document).find(".header__app").removeClass("on");
 
-        $(document).on("click", ".header__app-btn", function(){
+                // set
+                $(document).find(".header__app-btn").attr({'title': "새창으로 열림"});
+                $(document).find(".header__app-content").attr("aria-hidden", true);
+
+            } else {
+                // reset
+                $(document).find(".header__app-btn").removeAttr('title');
+                $(document).find(".header__app-content").removeAttr("aria-hidden");
+
+                // set
+                $(document).find(".header__app-btn").attr({'aria-owns': $(document).find('.header__app-content').attr('id'), 'data-toggle' :'dropdown', 'role' : 'combobox', 'aria-haspopup' : 'listbox', 'aria-expanded': 'false'});
+                $(document).find(".header__app-content").attr({"role":"listbox"})
+            }
+        }
+        setAppDownload();
+        $(window).on("resize", function(){ setAppDownload() })
+
+        $(document).on("click", ".header__app-btn[role='combobox']", function(e){
             const parents = $(this).parents(".header__app");
             if( parents.hasClass("on") ){
                 parents.removeClass("on");
