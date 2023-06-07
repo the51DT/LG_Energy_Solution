@@ -144,7 +144,6 @@
         </div>
         <footer class="footer"></footer>
     </div>
-
     <script>
         $(document).ready(function(){
             $(".btn_list").click(function(){
@@ -160,13 +159,22 @@
                 scrollAble()
             })
 
+            let posY;
+
             function scrollDisable(){
-                $('body').addClass('scrollDisable').on('scroll touchmove mousewheel', function(e){
+                posY = $(window).scrollTop();
+                $("html, body").addClass("not_scroll");
+                $('.wrap').css('top',-posY);
+
+                /* $('body').addClass('scrollDisable').on('scroll touchmove mousewheel', function(e){
                     e.preventDefault();
-                });
+                }); */
             }
             function scrollAble(){
-                $('body').removeClass('scrollDisable').off('scroll touchmove mousewheel');
+                $("html, body").removeClass("not_scroll");
+                posY = $(window).scrollTop(posY);
+
+                /* $('body').removeClass('scrollDisable').off('scroll touchmove mousewheel'); */
             }
         })
     </script>
