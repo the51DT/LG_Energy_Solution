@@ -45,7 +45,7 @@ textarea::-webkit-scrollbar-thumb {border-radius:0.4rem; background:#4C4C4C;}
 textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 
 /* checkbox */
-.check_item {display:flex; justify-content:space-between; padding:1.2rem 2rem 1.2rem 0;}
+.check_item {display:flex; justify-content:space-between; padding:1.2rem 2.4rem 1.2rem 0;}
 .check_item input {position:absolute; width:1px; height:1px; font-size:0; text-indent:-9999%; overflow:hidden;}
 .check_item label {display:flex; flex-wrap:wrap; align-items:center; gap:0.2rem; position:relative; width:100%; padding-left:5.2rem; color:#EFEFEF; font-size:1.8rem; line-height:2.4rem; cursor:pointer;}
 .check_item label::before {content:''; display:block; position:absolute; top:0.1rem; left:1.8rem; width:2rem; height:2rem; border-radius:50%; background-color:#494949;}
@@ -159,11 +159,11 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 
     /* checkbox */
     .check_item {padding:1rem 0;}
-    .check_item label {padding:0 2.8rem; font-size:1.5rem; line-height:2rem;}
+    .check_item label {padding-left:2.8rem; font-size:1.5rem; line-height:2rem;}
     .check_item label::before {left:0; top:0;}
     .check_item label span.sm {font-size:1.2rem; line-height:2rem;}
     .check_group .btn_more {flex:0 0 1.6rem; width:1.6rem; height:1.6rem; background:url(../img/common/ico_arrow_right_gray_sm.svg) no-repeat center / contain;}
-    .check_group .check_item {padding:1.1rem 1.6rem 1.1rem 0;}
+    .check_group .check_item {padding:1.1rem 2rem 1.1rem 0;}
     .check_group .check_item label {font-size:1.4rem; line-height:1.8rem;}
     .check_group .check_item label::before {left:0; top:-0.1rem;}
 
