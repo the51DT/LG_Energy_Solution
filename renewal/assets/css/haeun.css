@@ -45,7 +45,7 @@ textarea::-webkit-scrollbar-thumb {border-radius:0.4rem; background:#4C4C4C;}
 textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 
 /* checkbox */
-.check_item {display:flex; justify-content:space-between; padding:1.2rem 1.8rem 1.2rem 0;}
+.check_item {display:flex; justify-content:space-between; padding:1.2rem 2.4rem 1.2rem 0;}
 .check_item input {position:absolute; width:1px; height:1px; font-size:0; text-indent:-9999%; overflow:hidden;}
 .check_item label {display:flex; flex-wrap:wrap; align-items:center; gap:0.2rem; position:relative; width:100%; padding-left:5.2rem; color:#EFEFEF; font-size:1.8rem; line-height:2.4rem; cursor:pointer;}
 .check_item label::before {content:''; display:block; position:absolute; top:0.1rem; left:1.8rem; width:2rem; height:2rem; border-radius:50%; background-color:#494949;}
@@ -53,7 +53,6 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 .check_item label span {color:#7C7C7C;}
 .check_item label span.sm {font-size:1.6rem;}
 .check_item label span.req {color:#50CCE0;}
-.check_item .btn_more {flex:0 0 2rem; width:2rem; height:2rem; margin-top:0.1rem; background:url(../img/common/ico_arrow_right_gray.svg) no-repeat center / contain;}
 
 /* button */
 .btn_area {margin-top:6rem; text-align:center;}
@@ -78,7 +77,10 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 .terms_wrap {margin-top:6rem;}
 .terms_wrap .info_txt {margin-bottom:1.6rem; color:#7C7C7C; font-size:1.6rem; line-height:2.1rem;}
 .check_group {margin-top:1.4rem; padding:0 3.3rem;}
+.check_group > li {position:relative;}
 .check_group > li.on {border-bottom:1px solid #2C2C2C;}
+.check_group .btn_more {display:block; position:absolute; top:1.3rem; right:0; width:2rem; height:2rem; background:url(../img/common/ico_arrow_right_gray.svg) no-repeat center / contain; transform:rotate(90deg);}
+.check_group > li.on .btn_more {transform:rotate(-90deg);}
 .check_group > li.on .terms_txt_wrap {display:block;}
 .terms_txt_wrap {display:none; max-height:9.6rem; margin:1.2rem 0.8rem; color:#A2A2A2; font-size:1.2rem; line-height:1.6rem; overflow:auto;}
 .terms_txt_wrap .txt_inner {padding-right:1.6rem;}
@@ -157,11 +159,11 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 
     /* checkbox */
     .check_item {padding:1rem 0;}
-    .check_item label {padding:0 2.8rem; font-size:1.5rem; line-height:2rem;}
+    .check_item label {padding-left:2.8rem; font-size:1.5rem; line-height:2rem;}
     .check_item label::before {left:0; top:0;}
     .check_item label span.sm {font-size:1.2rem; line-height:2rem;}
-    .check_item .btn_more {flex:0 0 1.6rem; width:1.6rem; height:1.6rem; background:url(../img/common/ico_arrow_right_gray_sm.svg) no-repeat center / contain;}
-    .check_group .check_item {padding:1.1rem 0;}
+    .check_group .btn_more {flex:0 0 1.6rem; width:1.6rem; height:1.6rem; background:url(../img/common/ico_arrow_right_gray_sm.svg) no-repeat center / contain;}
+    .check_group .check_item {padding:1.1rem 2rem 1.1rem 0;}
     .check_group .check_item label {font-size:1.4rem; line-height:1.8rem;}
     .check_group .check_item label::before {left:0; top:-0.1rem;}
 
@@ -203,8 +205,8 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
     .icon.icon_charging {background-color:#203453; background-image:url(../img/service/icon_charging_mo.svg);}
     .icon.icon_ranking {background-color:#3B3C62; background-image:url(../img/service/icon_ranking_mo.svg);}
     .icon.icon_battery_life {background-color:#212D3C; background-image:url(../img/service/icon_battery_life_mo.svg);}
-    .img_item.c_station_01 {background-image:url(../img/service/img_c_station_01_mo.svg);}
-    .img_item.c_station_02 {background-image:url(../img/service/img_c_station_02_mo.svg);}
-    .img_item.c_station_03 {background-image:url(../img/service/img_c_station_03_mo.svg);}
-    .img_item.c_station_04 {background-image:url(../img/service/img_c_station_04_mo.svg);}
+    .img_item.c_station_01 {background-image:url(../img/service/img_c_station_01_mo.png);}
+    .img_item.c_station_02 {background-image:url(../img/service/img_c_station_02_mo.png);}
+    .img_item.c_station_03 {background-image:url(../img/service/img_c_station_03_mo.png);}
+    .img_item.c_station_04 {background-image:url(../img/service/img_c_station_04_mo.png);}
 }
