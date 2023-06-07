@@ -45,10 +45,10 @@
                         5분 간격으로 데이터가 수집되어, <br class="br_mo">B-Lifecare 앱에서 분석된 데이터를 볼 수 있어요!
                     </p>
                     <p class="notice">
-                        <img src="../assets/img/guide/guide_notice.svg" alt="notice">B-Chekup은 B-Lifecare의 소중한 자산입니다.<br>
+                        <i class="danger"></i>B-Chekup은 B-Lifecare의 소중한 자산입니다.<br>
                         데이터수집장치의 권리는 회사에 귀속하며, <br class="br_mo">사용자는 서비스 미 사용 시 장치 반환의 의무가 있습니다.
                     </p>
-                    <button class="btn_list">서비스 지원차종 확인하기<img src="../assets/img/common/ico_arrow_down.svg" alt="arrow down"></button>
+                    <button class="btn_list">서비스 지원차종 확인하기<i class="arrow"></i></button>
                 </div>
             </section>
 
@@ -96,11 +96,12 @@
             </section>
 
             <div class="pop_up">
+                <div class="pop_bg"></div>
                 <div class="pop_con">
                     <button class="btn_close"><span class="hidden">닫기</span></button>
                     <div class="title">
                         <h3>B-Lifecare 서비스 지원 차종</h3>
-                        <p><img src="../assets/img/guide/guide_tooltip.svg" alt="tooptip">하이브리드 차량은 본 서비스 이용이 불가해요.</p>
+                        <p><i class="tooltip"></i>하이브리드 차량은 본 서비스 이용이 불가해요.</p>
                     </div>
                     <ul class="pop_list">
                         <li class="list_item">
@@ -151,6 +152,10 @@
                 scrollDisable()
             })
             $(".btn_close").click(()=>{
+                $(".pop_up").css("display", "none")
+                scrollAble()
+            })
+            $(".pop_bg").click(()=>{
                 $(".pop_up").css("display", "none")
                 scrollAble()
             })
