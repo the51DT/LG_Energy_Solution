@@ -27,6 +27,7 @@
 .idxSwiper .swiper-pagination-bullet{display:block; width:1rem; height:1rem; border:2px solid #4D4D4D; border-radius:1rem; margin:0 auto;}
 .idxSwiper .swiper-pagination-bullet-active{background:var(--fc-point); border-color:var(--fc-point); box-shadow:0 0 0.6px 2px var(--fc-point);}
 .idxSwiper .swiper-pagination-bullet + .swiper-pagination-bullet{margin-top:1.6rem;}
+.idxSwiper #scrollDown{position:absolute; bottom:5rem; left:calc(50% - 2.5rem); width:5rem; height:5rem; background:url(../img/index/icon_scroll_down.svg) no-repeat center / contain;}
 
 .idxSwiper .bn_event{max-width:51.6rem; margin-top:6rem;}
 .idxSwiper .bn_event .bn_inner{padding:2.4rem 4rem; background:var(--fc-point); border-radius:2rem;}
@@ -51,6 +52,7 @@
 	.idxSwiper .swiper-slide{height:calc( var(--vh) - 10rem)!important;}
 
 	.idxSwiper .swiper-pagination{display:none;}
+	.idxSwiper #scrollDown{display:none;}
 
 	.idxSwiper .slide-inner{max-width:100%;}
 	.idxSwiper .slogan{padding:0 4rem;}

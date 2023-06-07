@@ -109,6 +109,7 @@
                         </div>
                     </div>
                 </div>
+                <button type="button" id="scrollDown"><span class="hidden">다음</span></button>
                 <div class="swiper-pagination"></div>
             </div>
 
@@ -162,6 +163,10 @@
                     }
                 }
             });
+
+            document.getElementById("scrollDown").addEventListener("click", ()=>{
+                mySwiper.slideNext()
+            })
         })
       </script>
 </body>
