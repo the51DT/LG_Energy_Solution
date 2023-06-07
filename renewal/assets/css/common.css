@@ -254,7 +254,8 @@ textarea.finished {border-color:#aab0b8;}
 
     .header__app{width:12rem; height:3.2rem;}
     .header__app-inner{width:12rem; height:3.2rem; border-radius:2rem;}
-    .header__app-btn{width:12rem; height:3.2rem; line-height:3.2rem; padding-left:1.2rem; font-size:1.5rem; background-position:right 1.2rem top 50%;}
+    .header__app-btn{width:12rem; height:3.2rem; line-height:3.2rem; padding-left:1.2rem; font-size:1.5rem; background-image:url(../img/common/ico_download.svg); background-position:right 1.2rem top 50%;}
+
     .btn__aside-open{margin-left:0; padding:0 1.1rem;}
     .btn__aside-open span,
     .btn__aside-open span::before,
