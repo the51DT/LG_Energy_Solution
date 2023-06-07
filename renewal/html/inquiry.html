@@ -299,7 +299,20 @@
             }
         })
     })
-    
+    document.querySelector(".terms_wrap").addEventListener("change", function(e){
+        let chkAll = document.getElementById("check_all");
+        let chkSub = this.querySelectorAll(".check_sub");
+        let checkedSub = this.querySelectorAll(".check_sub:checked");
+        
+        if(e.target === document.getElementById("check_all")){
+            let is_checked = e.target.checked;
+            chkSub.forEach((item)=>{
+                item.checked = is_checked;
+            })
+            return;
+        }
+        checkedSub.length === chkSub.length ? chkAll.checked = true : chkAll.checked = false;
+    })
 </script>
 </body>
 </html>
