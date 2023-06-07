@@ -2,10 +2,17 @@
 
 .battery .certification{margin-bottom: 10rem;}
 .battery .certification .img_wrap{text-align: center; margin-bottom: 6rem;}
-.battery .certification .img_wrap img+img{margin-left: 5rem;}
+.battery .certification .img_wrap .card{display: inline-block; width: 16.8rem; height: 26.4rem;}
+.battery .certification .img_wrap .card1{background-image: url(../img/battery/battery_card1.svg);}
+.battery .certification .img_wrap .card2{margin-left: 5rem; background-image: url(../img/battery/battery_card2.svg);}
 .battery .certification .list_wrap ul{display: flex; flex-wrap: wrap; justify-content: center; text-align: center;}
 .battery .certification .list_wrap li{margin-bottom: 0; width: 20rem;}
 .battery .certification .list_wrap li+li{margin-left: 2rem;}
+.battery .certification .list_wrap .icon{display: block; margin: 0 auto; width: 7rem; height: 7rem;}
+.battery .certification .list_wrap .icon.results{background-image: url(../img/battery/battery_icon1.svg);}
+.battery .certification .list_wrap .icon.performance{background-image: url(../img/battery/battery_icon2.svg);}
+.battery .certification .list_wrap .icon.check{background-image: url(../img/battery/battery_icon3.svg);}
+.battery .certification .list_wrap .icon.diagnosis{background-image: url(../img/battery/battery_icon4.svg);}
 .battery .certification .list_wrap p{margin-top: 1.4rem; color: #FFFFFF;}
 
 .battery .img_mockup{width: 100vw; height: 68rem; margin: 0 0 12rem -6rem; background: #2C2C2C; background-image: url(../img/battery/battery_mockup_pc.svg); background-position: center; background-repeat: no-repeat;}
@@ -13,8 +20,8 @@
 
 @media only screen and (max-width:1024px) {
     .battery .certification{margin-bottom: 7.8rem;}
-    .battery .certification .img_wrap img{width: 13rem;}
-    .battery .certification .img_wrap img+img{margin-left: 3.5rem}
+    .battery .certification .img_wrap .card{width: 13rem; height: 20.6rem; background-size: contain; background-repeat: no-repeat;}
+    .battery .certification .img_wrap .card2{margin-left: 3.5rem}
     .battery .certification .list_wrap li{margin-bottom: 4.2rem; width: calc(50% - 1.5rem); min-width: 14rem;}
     .battery .certification .list_wrap li+li{margin-left: 0;}
     .battery .certification .list_wrap li:nth-child(even){margin-left: 1.5rem;}
