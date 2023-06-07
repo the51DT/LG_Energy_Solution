@@ -46,7 +46,7 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 .terms_wrap .terms_txt {margin-bottom:1.6rem; color:#7C7C7C; font-size:1.6rem; line-height:2.1rem;}
 .check_item {display:flex; justify-content:space-between; padding:1.2rem 0;}
 .check_item input {position:absolute; width:1px; height:1px; font-size:0; text-indent:-9999%; overflow:hidden;}
-.check_item label {display:block; position:relative; padding:0 1.8rem 0 5.2rem; color:#EFEFEF; font-size:1.8rem; line-height:2.4rem; cursor:pointer;}
+.check_item label {display:flex; flex-wrap:wrap; align-items:center; gap:0.2rem; position:relative; padding:0 1.8rem 0 5.2rem; color:#EFEFEF; font-size:1.8rem; line-height:2.4rem; cursor:pointer;}
 .check_item label::before {content:''; display:block; position:absolute; top:0.1rem; left:1.8rem; width:2rem; height:2rem; border-radius:50%; background-color:#494949;}
 .check_item input:checked + label::before {background:url(../img/common/icon_check_select.svg) no-repeat center / contain;}
 .check_item label span {color:#7C7C7C;}
@@ -61,9 +61,9 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 
 /* tab */
 .tit_wrap + .wrap-tab-container {margin-top:-2.4rem;}
-.wrap-tab-list {position:relative; display:flex; align-items:center; justify-content:space-between; max-width:62.8rem; margin:0 auto; overflow:hidden; z-index:0;}
+.wrap-tab-list {position:relative; display:flex; align-items:center; justify-content:space-between; gap:6.2rem; max-width:62.8rem; margin:0 auto; overflow:hidden; z-index:0;}
 .wrap-tab-list::after {content:''; display:block; position:absolute; left:0; right:0; bottom:0; width:100%; height:2px; background-color:#4D4D4D;}
-.tab-list {flex:1 1 auto; position:relative; display:inline-block; max-width:16.8rem; border-radius:4.4rem; z-index:0;}
+.tab-list {flex:1 1 auto; position:relative; display:inline-block; width:calc(100% / 3); max-width:16.8rem; z-index:0;}
 .tab-list .tab-button {display:block; width:100%; padding:3.6rem 0; color:#A2A2A2; font-size:2.4rem; line-height:2.8rem; text-align:center; box-sizing:border-box;}
 .tab-list.active {z-index:10;}
 .tab-list.active .tab-button {color:#50CCE0; font-weight:700;}
@@ -73,6 +73,9 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 
 /* 제휴문의 페이지 */
 .container.inquiry {padding-bottom:22rem;}
+.visual_wrap {display:flex; width:100%; height:48rem;}
+.visual_wrap .img_item {display:block; width:100%; height:100%}
+.img_item.infographic {background:url(../img/inquiry/img_inquiry_infographic.svg) no-repeat center / contain;}
 
 /* 주요 서비스 페이지 */
 .container.service {padding-bottom:22rem;}
@@ -116,7 +119,7 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 }
 @media only screen and (max-width:1024px) {
     /* form */
-    .form_wrap {margin:5.2rem auto 0;}
+    .form_wrap {max-width:100%; margin:5.2rem auto 0;}
     .form_item {flex-direction:column; gap:0;}
     .form_item .item_tit {flex:0 0 100%; padding:0.8rem 0; font-size:1.3rem; line-height:1.8rem;}
     .form_item.req .item_tit::after {content:''; display:inline-block; position:absolute; top:0.8rem; width:0.4rem; height:0.4rem; margin-left:0.2rem; border-radius:50%; background-color:#50CCE0;}
@@ -140,7 +143,7 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 
     /* checkbox */
     .terms_wrap {margin-top:2.4rem;}
-    .terms_wrap .terms_txt {margin-bottom:4rem; font-size:1.5rem; line-height:2rem;}
+    .terms_wrap .terms_txt {margin-bottom:3rem; font-size:1.5rem; line-height:2rem;}
     .check_item {padding:1rem 0;}
     .check_item label {padding:0 2.8rem; font-size:1.5rem; line-height:2rem;}
     .check_item label::before {left:0; top:0;}
@@ -157,7 +160,8 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 
     /* tab */
     .tit_wrap + .wrap-tab-container {margin-top:-1.5rem;}
-    .tab-list {max-width:9rem;}
+    .wrap-tab-list {gap:2.4rem;}
+    .tab-list {min-width:9rem;}
     .tab-list .tab-button {padding:1.5rem 0; font-size:1.4rem; line-height:2.2rem;}
     .tab-list.active .tab-button::after {height:0.6rem;}
     .wrap-tab-contents {margin-top:4rem;} 
