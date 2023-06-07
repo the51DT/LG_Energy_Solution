@@ -323,7 +323,8 @@
     const btnMore = document.querySelectorAll(".check_item .btn_more");
     btnMore.forEach((item)=>{
         item.addEventListener("click",()=>{
-            item.parentNode.parentNode.classList.toggle("on")
+            item.parentNode.parentNode.classList.toggle("on");
+            item.parentNode.parentNode.classList.contains("on") ? item.setAttribute("aria-expanded", true) : item.setAttribute("aria-expanded", false);
         })
     })
 
