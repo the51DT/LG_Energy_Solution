@@ -61,9 +61,9 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 
 /* tab */
 .tit_wrap + .wrap-tab-container {margin-top:-2.4rem;}
-.wrap-tab-list {position:relative; display:flex; align-items:center; justify-content:space-between; max-width:62.8rem; margin:0 auto; overflow:hidden; z-index:0;}
+.wrap-tab-list {position:relative; display:flex; align-items:center; justify-content:space-between; gap:6.2rem; max-width:62.8rem; margin:0 auto; overflow:hidden; z-index:0;}
 .wrap-tab-list::after {content:''; display:block; position:absolute; left:0; right:0; bottom:0; width:100%; height:2px; background-color:#4D4D4D;}
-.tab-list {flex:1 1 auto; position:relative; display:inline-block; max-width:16.8rem; border-radius:4.4rem; z-index:0;}
+.tab-list {flex:1 1 auto; position:relative; display:inline-block; width:calc(100% / 3); max-width:16.8rem; z-index:0;}
 .tab-list .tab-button {display:block; width:100%; padding:3.6rem 0; color:#A2A2A2; font-size:2.4rem; line-height:2.8rem; text-align:center; box-sizing:border-box;}
 .tab-list.active {z-index:10;}
 .tab-list.active .tab-button {color:#50CCE0; font-weight:700;}
@@ -157,7 +157,8 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 
     /* tab */
     .tit_wrap + .wrap-tab-container {margin-top:-1.5rem;}
-    .tab-list {max-width:9rem;}
+    .wrap-tab-list {gap:2.4rem;}
+    .tab-list {min-width:9rem;}
     .tab-list .tab-button {padding:1.5rem 0; font-size:1.4rem; line-height:2.2rem;}
     .tab-list.active .tab-button::after {height:0.6rem;}
     .wrap-tab-contents {margin-top:4rem;} 
