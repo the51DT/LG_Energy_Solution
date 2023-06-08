@@ -165,8 +165,11 @@
                             height = (height < getH) ? getH : height;
 
                             $(document).find(".idxSwiper").css("height",`${height}rem`);
+
+                            $(document).find("#scrollDown").hide();
                         } else {
                             $(document).find(".idxSwiper").css("height","");
+                            $(document).find("#scrollDown").show();
                         }
                     },
                     reachEnd: function() {
