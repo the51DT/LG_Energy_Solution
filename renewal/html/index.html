@@ -18,9 +18,11 @@
 
     <title>B-Lifecare</title>
 
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" /> -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/swiper-bundle.js"></script>
+    <!-- <script src="../assets/js/swiper-bundle.min.js"></script> -->
     <script src="../assets/js/front.js"></script>
 </head>
 <body>
@@ -32,7 +34,7 @@
 
             <div class="swiper idxSwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide slide1">
+                    <div class="swiper-slide idxSlide slide1">
                         <div class="slide-inner">
                             <div class="slogan">
                                 <span>여러분의 전기차 배터리는 안녕한가요?</span>
@@ -42,15 +44,27 @@
                                     <span>지금 바로 비라이프케어에서 다양한 기능을 체험해보세요.</span>
                                 </p>
                             </div>
-                            <div class="bn_event">
-                                <div class="bn_inner">
-                                    <p>선착순 한정 EVENT<br>30만원 상당 B-Checkup 무상 대여!</p>
+                            <div class="bn_event_wrap">
+                                <div class="bn_event">
+                                    <div class="bn_inner">
+                                        <p>선착순 한정 EVENT<br>30만원 상당 B-Checkup 무상 대여!</p>
+                                    </div>
+                                    <span>이벤트 기간 내 신청한 고객에 한해 제공되며, 사전 고지 없이 종료될 수 있습니다.</span>
                                 </div>
-                                <span>이벤트 기간 내 신청한 고객에 한해 제공되며, 사전 고지 없이 종료될 수 있습니다.</span>
+                                <div class="bn_event_swiper">
+                                    <div class="swiper eventSwiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><a href="#"><img src="../assets/img/index/bn_event.png" alt="event"></a></div>
+                                            <div class="swiper-slide"><a href="#"><img src="../assets/img/index/bn_event.png" alt="event"></a></div>
+                                            <div class="swiper-slide"><a href="#"><img src="../assets/img/index/bn_event.png" alt="event"></a></div>
+                                        </div>
+                                        <div class="swiper-event-pagination"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide slide2">
+                    <div class="swiper-slide idxSlide slide2">
                         <div class="slide-inner">
                             <div class="slogan">
                                 <span>주행거리 정보만으론 만족할 수 없다면?</span>
@@ -63,7 +77,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide slide3">
+                    <div class="swiper-slide idxSlide slide3">
                         <div class="slide-inner">
                             <div class="slogan">
                                 <span>오직 B-Lifecare에서만 가능합니다.</span>
@@ -76,7 +90,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide slide4">
+                    <div class="swiper-slide idxSlide slide4">
                         <div class="slide-inner">
                             <div class="slogan">
                                 <span>내 전기차 B-Lifecare를 이용할 수 있을까?</span>
@@ -89,7 +103,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide slide5">
+                    <div class="swiper-slide idxSlide slide5">
                         <div class="slide-inner">
                             <div class="slogan">
                                 <span>B-Lifecare가 알려주는 배터리 정보</span>
@@ -102,15 +116,12 @@
                                     <li><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></li>
                                 </ul>
                             </div>
-                            <div class="bn_sns">
-                                <p>SNS 공유 이벤트</p>
-                                <p>2021.11.11~2021.12.31</p>
-                            </div>
+                            <div class="bn_evlife"><a href="#"><img src="../assets/img/index/bn_event.png" alt="event"></a></div>
                         </div>
                     </div>
                 </div>
                 <button type="button" id="scrollDown"><span class="hidden">다음</span></button>
-                <div class="swiper-pagination"></div>
+                <div class="swiper-idx-pagination"></div>
             </div>
 
 
@@ -126,7 +137,7 @@
                 direction: "vertical",
                 mousewheel: true,
                 pagination: {
-                    el: ".swiper-pagination",
+                    el: ".swiper-idx-pagination",
                     clickable: true,
                 },
                 autoHeight:true,
@@ -173,7 +184,15 @@
 
             document.getElementById("scrollDown").addEventListener("click", ()=>{
                 mySwiper.slideNext()
-            })
+            });
+
+            var eventSwiper = new Swiper(".eventSwiper", {
+                autoHeight:true,
+                // spaceBetween: 0,
+                pagination: {
+                    el: ".swiper-event-pagination",
+                },
+            });
         })
       </script>
 </body>

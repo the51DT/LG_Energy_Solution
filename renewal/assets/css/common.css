@@ -16,6 +16,7 @@ header.header h1 a{display:block; width:12.2rem; height:2.2rem; background:url(.
 .header__nav ul{display:flex; align-items:center; justify-content:space-between;}
 .header__nav ul li + li{margin-left:3rem;}
 .header__nav ul li a{display:block; width:13.2rem; text-align:center; font-size:1.8rem; color:#fff; font-weight:700; line-height:2.5rem;}
+.header__nav ul li.on a{color:var(--fc-point);}
 
 .header__util {display:flex; align-items:center; margin-left:auto;}
 

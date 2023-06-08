@@ -328,7 +328,7 @@ const _layout = {
                 <h1><a href="#"><span class="hidden">B-Lifecare</span></a></h1>
                 <nav class="header__nav">
                     <ul>
-                        <li><a href="#">주요 서비스</a></li>
+                        <li class="on"><a href="#">주요 서비스</a></li>
                         <li><a href="#">배터리 인증서</a></li>
                         <li><a href="#">이용안내</a></li>
                         <li><a href="#">제휴문의</a></li>
