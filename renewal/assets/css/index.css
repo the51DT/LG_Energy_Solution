@@ -119,8 +119,8 @@
 	.idxSwiper .bn_event_swiper{display:block;}
 }
 
-@media only screen and (max-width:640px) and (max-height:700px){
-	.idxSwiper .slide-inner{background-position:left 50% bottom 0;}	
+@media only screen and (max-width:640px) and (min-height:400px){
+	.idxSwiper .slide-inner{background-position:left 50% bottom -2rem;}	
 }
 
 

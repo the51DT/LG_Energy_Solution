@@ -150,10 +150,14 @@
                         observer: true,
                         observeParents: true,
                     },
-                    640:{        
+                    640:{
+                        resize:false,
+                        resizeObserver: false,
+                        updateOnWindowResize:false,
+                        autoHeight:false,
                         observer: false,
                         observeParents: false,
-                    }
+                    },
                 },
                 // resize:true,
                 // resizeObserver: true,
@@ -203,10 +207,10 @@
                             mySwiper.params.mousewheel.releaseOnEdges = true;
                         }, 300);
                     },
-                    beforeResize: function(e){
-                        console.log("beforeResize", e);
-                        mySwiper.update();
-                    }
+                    // beforeResize: function(e){
+                    //     console.log("beforeResize", e);
+                    //     mySwiper.update();
+                    // }
                 }
             });
 
