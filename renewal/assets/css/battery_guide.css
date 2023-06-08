@@ -35,9 +35,9 @@
 
 /* guide */
 
-.guide .event{width: 100%; height: 15rem; padding: 3rem 0; background: #50CCE0; border-radius: 2rem; text-align: center; color: #FFFFFF; font-weight: 700; font-size: 3.2rem; line-height: 4.5rem;}
+.guide .event{width: 96rem; height: 15rem; margin: 0 auto; padding: 3rem 0; background: #50CCE0; border-radius: 2rem; text-align: center; color: #FFFFFF; font-weight: 700; font-size: 3.2rem; line-height: 4.5rem;}
 
-.guide .checkup{margin: 6rem 0 22rem; padding: 6rem 0; background: #2C2C2C; border-radius: 2rem; text-align: center;}
+.guide .checkup{width: 96rem; margin: 6rem auto 22rem; padding: 6rem 0; background: #2C2C2C; border-radius: 2rem; text-align: center;}
 .guide .checkup .car{display: block; margin: 0 auto; width: 64rem; height: 34.8rem; background-image: url(../img/guide/guide_car.png); background-size: contain; background-repeat: no-repeat; background-position: center;}
 .guide .checkup h3{margin: 4rem 0; font-weight: 700; font-size: 3.2rem; color: #50CCE0;}
 .guide .checkup p{font-size: 2.4rem; line-height: 147%; color: #A2A2A2;}
