@@ -2,7 +2,7 @@
 
 *,
 *:before,
-*:after{-webkit-box-sizing: border-box; box-sizing: border-box; /*outline:none;*/ -webkit-tap-highlight-color:transparent !important;}
+*:after{-webkit-box-sizing: border-box; box-sizing: border-box; outline:none; -webkit-tap-highlight-color:transparent !important;}
 
 /* reset */
 html, body, div, span, applet, object, iframe,
@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 html {
 	font-size:10px;
+	overscroll-behavior-y:none;
 }
 body {
 	line-height: 1;

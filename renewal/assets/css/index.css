@@ -28,6 +28,7 @@
 .idxSwiper .swiper-idx-pagination .swiper-pagination-bullet-active{background:var(--fc-point); border-color:var(--fc-point); box-shadow:0 0 0.6px 2px var(--fc-point);}
 .idxSwiper .swiper-idx-pagination .swiper-pagination-bullet + .swiper-pagination-bullet{margin-top:1.6rem;}
 .idxSwiper #scrollDown{position:absolute; bottom:5rem; left:calc(50% - 2.5rem); width:5rem; height:5rem; background:url(../img/index/icon_scroll_down.svg) no-repeat center / contain;}
+.idxSwiper.idxSwiperEnd #scrollDown{display:none;}
 
 /* event */
 .idxSwiper .bn_event{max-width:51.6rem; margin-top:6rem;}
