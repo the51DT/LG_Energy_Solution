@@ -130,7 +130,13 @@
                     el: ".swiper-pagination",
                     clickable: true,
                 },
+                autoHeight:true,
                 watchOverflow : true,
+                // breakpoints: {
+                //     640: {
+                //         autoHeight:true,
+                //     }
+                // },
                 on: {
                     slideChange: function(e) {
                         setTimeout(function () {
@@ -144,9 +150,18 @@
                         }
 
                         if( e.activeIndex == 4 ){
-                            $(document).find("footer.footer").removeClass("close").addClass("open");
+                            const winH = $(window).outerHeight(true) * 0.1;
+                            const headH = $(document).find("header.header .header__inner").outerHeight(true) * 0.1;
+                            const footH = $(document).find("footer.footer").outerHeight(true) * 0.1;
+                            let height = $(document).find(".idxSwiper .swiper-slide.slide5").outerHeight(true) * 0.1;
+
+                            const getH = winH - headH - footH;
+                            console.log(winH, headH, footH, ':' ,height, getH);
+                            height = (height < getH) ? getH : height;
+
+                            $(document).find(".idxSwiper").css("height",`${height}rem`);
                         } else {
-                            $(document).find("footer.footer").removeClass("open").addClass("close");
+                            $(document).find(".idxSwiper").css("height","");
                         }
                     },
                     reachEnd: function() {
