@@ -75,12 +75,6 @@
 }
 
 @media only screen and (max-width:1024px) {
-	/* .idxSwiper .slogan > span{display: block; font-size:2.4rem; line-height:3.1rem;}
-	.idxSwiper .slogan p{margin-top:2.4rem;}
-	.idxSwiper .slogan p strong{display:block; font-size:7.2rem; line-height:8.6rem; font-weight:700;}
-	.idxSwiper .slogan p span{display:block; font-size:1.6rem; line-height:2.1rem; margin-top:2rem;}
-	.idxSwiper .slogan .btn_detail{display:block; width:12.8rem; height:4.9rem; line-height:4.9rem; border-radius:2.5rem; background:#fff; text-align:center; font-size:1.8rem; color:#1e1e1e; font-weight:700; margin-top:6rem;} */
-
 	.idxSwiper .slogan > span{font-size:2.2rem; line-height:2.8rem;}
 	.idxSwiper .slogan p strong{font-size:5rem; line-height:6rem;}
 	.idxSwiper .bn_event{max-width:43rem;}
@@ -132,14 +126,11 @@
 @media only screen and (max-width:425px) {
 	.idxSwiper,
 	.idxSwiper .idxSlide{height:calc( var(--vh) - 5.6rem);}
-	
 	.idxSwiper .slogan{padding:0 2rem;}
-
 	.idxSwiper-evlife ul{padding:0 2rem;}
 }
 
 @media only screen and (max-width:375px) {
-	
 }
 
 @media only screen and (max-width:320px) {
