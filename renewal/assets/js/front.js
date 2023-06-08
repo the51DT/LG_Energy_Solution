@@ -297,11 +297,9 @@ const _aside = {
     init: function(){
         $(document).find(".btn__aside-open").on("click", function(){
             _aside.open();
-            $(document).find(".aside__wrap").attr("tabindex", 0).focus();
         })
         $(document).find(".btn__aside-close").on("click", function(){
             _aside.close();
-            $(document).find(".btn__aside-open").attr("tabindex", 0).focus();
         })
     },
     open: function(){
@@ -310,6 +308,10 @@ const _aside = {
         elem.addClass("open");
         elem.removeAttr("aria-hidden");
         btn_open.attr("aria-expanded", true);
+        
+        
+        $(".container, footer.footer, .btn__aside-open").attr({"aria-hidden":true, "tabindex":-1});
+        $(document).find(".aside__wrap h2").attr("tabindex", 0).focus();
 
         // const dimmed = `<div class="aside_dimmed"></div>`;
         // $("body").append(dimmed);
@@ -317,11 +319,17 @@ const _aside = {
         _front.noScroll(0);
     },
     close: function(){
+
+        $(document).find(".btn__aside-open").attr("tabindex", 0).focus();
+        $(".container, footer.footer, .btn__aside-open").removeAttr("aria-hidden tabindex");
+
         const elem = $(document).find(".aside__wrap");
         const btn_open = $(document).find(".btn__aside-open");
         elem.removeClass("open");
         elem.attr("aria-hidden", true);
         btn_open.attr("aria-expanded", false);
+
+        $(".wrap").removeAttr("aria-hidden tabindex");
 
         // $(document).find(".aside_dimmed").remove();
         // $("html, body").removeClass("no_scroll");
@@ -369,6 +377,7 @@ const _layout = {
                 </div>
             </div>
             <div class="aside__wrap" aria-hidden="true">
+                <div class="aside__ttl"><h2><span class="hidden">메뉴</span></h2></div>
                 <div class="aside__inner">
                     <div class="aside__menu">
                         <ul>
