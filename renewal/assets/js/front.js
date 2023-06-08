@@ -51,12 +51,18 @@ const _front = {
         _front.tab();
         _front.accordion();
         _front.select();
+        
+        $(window).on("resize", function(){
+            _front.vh();
+        })
 
         $(document).on("click", "a[href='#'], a[href='#none']", function(e){ e.preventDefault() });
     },
     vh: function(){
+        // console.log(window.innerHeight);
         // const setVh = () => {
             document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
+            
         // };
         // window.addEventListener('resize', setVh);
         // setVh();

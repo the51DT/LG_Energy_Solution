@@ -6,9 +6,7 @@
 }
 
 /* layout */
-html,
-body,
-.wrap {overscroll-behavior-y:none;}
+html, body, .wrap {overscroll-behavior-y:none;}
 body{background:#1E1E1E; color:#1e1e1e;}
 .wrap{box-sizing:border-box; padding-top:15rem; transition:padding .3s;}
 

@@ -133,51 +133,57 @@
     <script>
         $(()=>{
 
-            var mySwiper = new Swiper(".idxSwiper", {
-                // speed: 500,
-                direction: "vertical",
-                mousewheel: true,
-                pagination: {
-                    el: ".swiper-idx-pagination",
-                    clickable: true,
-                },
-                breakpoints:{
-                    1440:{
-                        resize:true,
-                        resizeObserver: true,
-                        updateOnWindowResize:true,
-                        autoHeight:true,
-                        observer: true,
-                        observeParents: true,
-                    },
-                    640:{
-                        resize:false,
-                        resizeObserver: false,
-                        updateOnWindowResize:false,
-                        autoHeight:false,
-                        observer: false,
-                        observeParents: false,
-                    },
-                },
-                // resize:true,
-                // resizeObserver: true,
-                // updateOnWindowResize:true,
-                // autoHeight:true,
-                // watchOverflow : true,
-                on: {
-                    slideChange: function(e) {
-                        setTimeout(function () {
-                            mySwiper.params.touchReleaseOnEdges = false;  
-                            mySwiper.params.mousewheel.releaseOnEdges = false;
-                        });
+            var mySwiper;
 
-                        const scroll = $(window).scrollTop();
-                        if( scroll > 0 ){
-                            setTimeout(() => { $("html, body").animate({scrollTop: '0'}, 300) }, 301);
-                        }
+            setTimeout(() => {
+                
+                mySwiper = new Swiper(".idxSwiper", {
+                    // speed: 500,
+                    direction: "vertical",
+                    mousewheel: true,
+                    pagination: {
+                        el: ".swiper-idx-pagination",
+                        clickable: true,
+                    },
+                    breakpoints:{
+                        1440:{
+                            resize:true,
+                            resizeObserver: true,
+                            updateOnWindowResize:true,
+                            autoHeight:true,
+                            observer: true,
+                            observeParents: true,
+                        },
+                        640:{
+                            resize:false,
+                            resizeObserver: false,
+                            updateOnWindowResize:false,
+                            autoHeight:false,
+                            observer: false,
+                            observeParents: false,
+                        },
+                    },
+                    // resize:true,
+                    // resizeObserver: true,
+                    // updateOnWindowResize:true,
+                    // autoHeight:true,
+                    // watchOverflow : true,
+                    on: {
+                        init:function(){
+                            _front.noScroll(0);
+                        },
+                        slideChange: function(e) {
+                            setTimeout(function () {
+                                mySwiper.params.touchReleaseOnEdges = false;
+                                mySwiper.params.mousewheel.releaseOnEdges = false;
+                            });
 
-                        if( e.activeIndex == 4 ){
-                            // setTimeout(() => {
+                            const scroll = $(window).scrollTop();
+                            if( scroll > 0 ){
+                                setTimeout(() => { $("html, body").animate({scrollTop: '0'}, 300) }, 301);
+                            }
+
+                            if( e.activeIndex == 4 ){
                                 const winH = $(window).outerHeight(true) * 0.1;
                                 const headH = $(document).find("header.header .header__inner").outerHeight(true) * 0.1;
                                 const footH = $(document).find("footer.footer").outerHeight(true) * 0.1;
@@ -187,32 +193,31 @@
 
                                 $(document).find(".idxSwiper").css("height",`${height}rem`);
                                 $(document).find(".idxSwiper").addClass("idxSwiperEnd");
-                                
-                            // }, 501);
                             
-                        } else {
-                            $(document).find(".idxSwiper").css("height","");
-                            $(document).find(".idxSwiper").removeClass("idxSwiperEnd");
-                        }
-                    },
-                    reachEnd: function() {
-                        setTimeout(function () {
-                            mySwiper.params.touchReleaseOnEdges = true;
-                            mySwiper.params.mousewheel.releaseOnEdges = true;
-                        }, 300);
-                    },
-                    reachBeginning: function() {
-                        setTimeout(function () {
-                            mySwiper.params.touchReleaseOnEdges = true;
-                            mySwiper.params.mousewheel.releaseOnEdges = true;
-                        }, 300);
-                    },
-                    // beforeResize: function(e){
-                    //     console.log("beforeResize", e);
-                    //     mySwiper.update();
-                    // }
-                }
-            });
+                                _front.noScroll(1);
+                                
+                            } else {
+                                $(document).find(".idxSwiper").css("height","");
+                                $(document).find(".idxSwiper").removeClass("idxSwiperEnd");
+                                _front.noScroll(0);
+                            }
+                        },
+                        reachEnd: function() {
+                            setTimeout(function () {
+                                mySwiper.params.touchReleaseOnEdges = true;
+                                mySwiper.params.mousewheel.releaseOnEdges = true;
+                            }, 300);
+                        },
+                        reachBeginning: function() {
+                            setTimeout(function () {
+                                mySwiper.params.touchReleaseOnEdges = true;
+                                mySwiper.params.mousewheel.releaseOnEdges = true;
+                            }, 300);
+                        },
+                    }
+                });
+            
+            }, 250);
 
             document.getElementById("scrollDown").addEventListener("click", ()=>{
                 mySwiper.slideNext()

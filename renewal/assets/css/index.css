@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 .mobile .wrap.index{position:relative; overflow-y:scroll; height:var(--vh);}
+.no_scroll .wrap.index{overflow:hidden;}
 
 .idxSwiper {width:100%; color:#fff; overflow:hidden; z-index:1;}
 .idxSwiper,
@@ -145,6 +146,9 @@
 	.idxSwiper,
 	.idxSwiper .idxSlide{height:calc( var(--vh) - 5.6rem);}
 	.idxSwiper .slogan{padding:0 2rem;}
+
+	.idxSwiper .bn_event{margin:4rem 2rem 0;}
+
 	.idxSwiper-evlife ul{padding:0 2rem;}
 }
 
