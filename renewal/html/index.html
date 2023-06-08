@@ -140,8 +140,13 @@
                     el: ".swiper-idx-pagination",
                     clickable: true,
                 },
-                autoHeight:true,
-                watchOverflow : true,
+                // observer: true,
+                // observeParents: true,
+                // resize:true,
+                // resizeObserver: true,
+                // updateOnWindowResize:true,
+                // autoHeight:true,
+                // watchOverflow : true,
                 on: {
                     slideChange: function(e) {
                         setTimeout(function () {
@@ -155,16 +160,22 @@
                         }
 
                         if( e.activeIndex == 4 ){
-                            const winH = $(window).outerHeight(true) * 0.1;
-                            const headH = $(document).find("header.header .header__inner").outerHeight(true) * 0.1;
-                            const footH = $(document).find("footer.footer").outerHeight(true) * 0.1;
-                            let height = $(document).find(".idxSwiper .swiper-slide.slide5").outerHeight(true) * 0.1;
-                            const getH = winH - headH - footH;
-                            height = (height < getH) ? getH : height;
+                            // setTimeout(() => {
+                                const winH = $(window).outerHeight(true) * 0.1;
+                                const headH = $(document).find("header.header .header__inner").outerHeight(true) * 0.1;
+                                const footH = $(document).find("footer.footer").outerHeight(true) * 0.1;
+                                let height = $(document).find(".idxSwiper .swiper-slide.slide5").outerHeight(true) * 0.1;
+                                const getH = winH - headH - footH;
+                                height = (height < getH) ? getH : height;
 
-                            $(document).find(".idxSwiper").css("height",`${height}rem`);
+                                $(document).find(".idxSwiper").css("height",`${height}rem`);
+                                $(document).find(".idxSwiper").addClass("idxSwiperEnd");
+                                
+                            // }, 501);
+                            
                         } else {
                             $(document).find(".idxSwiper").css("height","");
+                            $(document).find(".idxSwiper").removeClass("idxSwiperEnd");
                         }
                     },
                     reachEnd: function() {
@@ -193,6 +204,11 @@
                     el: ".swiper-event-pagination",
                 },
             });
+
+            // $(window).on("resize", function(){
+            //     console.log("dd");
+            //     mySwiper.update();
+            // })
         })
       </script>
 </body>
