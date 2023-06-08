@@ -61,6 +61,17 @@ const _front = {
         // window.addEventListener('resize', setVh);
         // setVh();
     },
+    /**
+     * 
+     * @param {*} type 0:no_Scroll, 1:scroll
+     */
+    noScroll:function(type){
+        if(type){
+            $("html, body").removeClass("no_scroll");
+        } else {
+            $("html, body").addClass("no_scroll");
+        }
+    },
     tab: function(){
         const tabGroups = document.querySelectorAll('[data-role="tab"]');
         if( tabGroups.length < 1 ){ return }
@@ -302,7 +313,8 @@ const _aside = {
 
         // const dimmed = `<div class="aside_dimmed"></div>`;
         // $("body").append(dimmed);
-        $("html, body").addClass("no_scroll");
+        // $("html, body").addClass("no_scroll");
+        _front.noScroll(0);
     },
     close: function(){
         const elem = $(document).find(".aside__wrap");
@@ -312,7 +324,8 @@ const _aside = {
         btn_open.attr("aria-expanded", false);
 
         // $(document).find(".aside_dimmed").remove();
-        $("html, body").removeClass("no_scroll");
+        // $("html, body").removeClass("no_scroll");
+        _front.noScroll(1);
     }
 }
 
