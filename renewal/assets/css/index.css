@@ -119,8 +119,25 @@
 	.idxSwiper .bn_event_swiper{display:block;}
 }
 
-@media only screen and (max-width:640px) and (min-height:400px){
+
+
+@media only screen and (max-width:640px) and (min-height:100px){
 	.idxSwiper .slide-inner{background-position:left 50% bottom -2rem;}	
+}
+@media only screen and (max-width:640px) and (min-height:600px){
+	.idxSwiper .slide-inner{background-position:left 50% bottom -2rem;}	
+}
+@media only screen and (max-width:640px) and (min-height:700px){
+	.idxSwiper .slide-inner{background-position:left 50% bottom 0rem;}	
+}
+@media only screen and (max-width:640px) and (min-height:800px){
+	.idxSwiper .slide-inner{background-position:left 50% bottom 2rem;}	
+}
+@media only screen and (max-width:640px) and (min-height:900px){
+	.idxSwiper .slide-inner{background-position:left 50% bottom 4rem;}	
+}
+@media only screen and (max-width:640px) and (min-height:9999px){
+	.idxSwiper .slide-inner{background-position:left 50% bottom 4rem;}	
 }
 
 
