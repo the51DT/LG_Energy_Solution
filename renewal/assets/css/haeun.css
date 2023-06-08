@@ -45,13 +45,13 @@ textarea::-webkit-scrollbar-thumb {border-radius:0.4rem; background:#4C4C4C;}
 textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 
 /* checkbox */
-.check_item {display:flex; justify-content:space-between; padding:1.2rem 2.4rem 1.2rem 0;}
+.check_item {display:flex; justify-content:space-between; padding:1.2rem 4.8rem 1.2rem 0;}
 .check_item input {position:absolute; width:1px; height:1px; font-size:0; text-indent:-9999%; overflow:hidden;}
 .check_item label {display:flex; flex-wrap:wrap; align-items:center; gap:0.2rem; position:relative; width:100%; padding-left:5.2rem; color:#EFEFEF; font-size:1.8rem; line-height:2.4rem; cursor:pointer;}
 .check_item label::before {content:''; display:block; position:absolute; top:0.1rem; left:1.8rem; width:2rem; height:2rem; border-radius:50%; background-color:#494949;}
 .check_item input:checked + label::before {background:url(../img/common/icon_check_select.svg) no-repeat center / contain;}
 .check_item label span {color:#7C7C7C;}
-.check_item label span.sm {font-size:1.6rem;}
+.check_item label span.sm {font-size:1.4rem;}
 .check_item label span.req {color:#50CCE0;}
 
 /* button */
@@ -76,10 +76,10 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
 .visual_wrap img {width:100%;}
 .terms_wrap {margin-top:6rem;}
 .terms_wrap .info_txt {margin-bottom:1.6rem; color:#7C7C7C; font-size:1.6rem; line-height:2.1rem;}
-.check_group {margin-top:1.4rem; padding:0 3.3rem;}
+.check_group {margin-top:1.4rem; padding:0 3.7rem 0 3.3rem;}
 .check_group > li {position:relative;}
 .check_group > li.on {border-bottom:1px solid #2C2C2C;}
-.check_group .btn_more {display:block; position:absolute; top:1.3rem; right:0; width:2rem; height:2rem; background:url(../img/common/ico_arrow_right_gray.svg) no-repeat center / contain; transform:rotate(90deg);}
+.check_group .btn_more {display:block; position:absolute; top:0; right:0; width:4.8rem; height:4.8rem; background:url(../img/common/ico_arrow_right_gray.svg) no-repeat center / 2rem 2rem; transform:rotate(90deg);}
 .check_group > li.on .btn_more {transform:rotate(-90deg);}
 .check_group > li.on .terms_txt_wrap {display:block;}
 .terms_txt_wrap {display:none; max-height:9.6rem; margin:1.2rem 0.8rem; color:#A2A2A2; font-size:1.2rem; line-height:1.6rem; overflow:auto;}
@@ -160,12 +160,12 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:#1E1E1E;}
     /* checkbox */
     .check_item {padding:1rem 0;}
     .check_item label {padding-left:2.8rem; font-size:1.5rem; line-height:2rem;}
-    .check_item label::before {left:0; top:0;}
+    .check_item label::before {left:0; top:-0.1rem;}
     .check_item label span.sm {font-size:1.2rem; line-height:2rem;}
-    .check_group .btn_more {flex:0 0 1.6rem; width:1.6rem; height:1.6rem; background:url(../img/common/ico_arrow_right_gray_sm.svg) no-repeat center / contain;}
-    .check_group .check_item {padding:1.1rem 2rem 1.1rem 0;}
+    .check_group .btn_more {flex:0 0 4rem; width:4rem; height:4rem; background:url(../img/common/ico_arrow_right_gray_sm.svg) no-repeat center / 1.6rem 1.6rem;}
+    .check_group .check_item {padding:1.1rem 4rem 1.1rem 0;}
     .check_group .check_item label {font-size:1.4rem; line-height:1.8rem;}
-    .check_group .check_item label::before {left:0; top:-0.1rem;}
+    .check_group .check_item label::before {left:0; top:-0.2rem;}
 
     /* button */
     .btn_area {margin-top:2.4rem;}
