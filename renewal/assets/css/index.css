@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+.mobile .wrap.index{position:relative; overflow-y:scroll; height:var(--vh);}
+
 .idxSwiper {width:100%; color:#fff; overflow:hidden; z-index:1;}
 .idxSwiper,
 .idxSwiper .idxSlide{height:calc( var(--vh) - 15rem); transition:height .3s;}
