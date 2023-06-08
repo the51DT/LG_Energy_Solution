@@ -55,11 +55,11 @@ const _front = {
         $(document).on("click", "a[href='#'], a[href='#none']", function(e){ e.preventDefault() });
     },
     vh: function(){
-        const setVh = () => {
+        // const setVh = () => {
             document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
-        };
-        window.addEventListener('resize', setVh);
-        setVh();
+        // };
+        // window.addEventListener('resize', setVh);
+        // setVh();
     },
     tab: function(){
         const tabGroups = document.querySelectorAll('[data-role="tab"]');

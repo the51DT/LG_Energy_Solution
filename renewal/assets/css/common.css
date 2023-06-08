@@ -10,7 +10,7 @@ html,
 body,
 .wrap {overscroll-behavior-y:none;}
 body{background:#1E1E1E; color:#1e1e1e;}
-.wrap{height:var(--vh); overflow-y:scroll; box-sizing:border-box; padding-top:15rem; transition:padding .3s;}
+.wrap{box-sizing:border-box; padding-top:15rem; transition:padding .3s;}
 
 header .header__inner{position:fixed; left:0; top:0; display:flex; align-items:center; justify-content:space-between; width:100%; height:15rem; background:#1E1E1E; box-sizing:border-box; padding:0 6rem; z-index:9; transition:height .3s, padding .3s;}
 header.header h1 a{display:block; width:12.2rem; height:2.2rem; background:url(../img/common/logo.svg) 0 50% no-repeat; background-size:100% auto;}
@@ -19,6 +19,7 @@ header.header h1 a{display:block; width:12.2rem; height:2.2rem; background:url(.
 .header__nav ul{display:flex; align-items:center; justify-content:space-between;}
 .header__nav ul li + li{margin-left:3rem;}
 .header__nav ul li a{display:block; width:13.2rem; text-align:center; font-size:1.8rem; color:#fff; font-weight:700; line-height:2.5rem;}
+.header__nav ul li.on a{color:var(--fc-point);}
 
 .header__util {display:flex; align-items:center; margin-left:auto;}
 

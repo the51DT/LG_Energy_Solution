@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+.mobile .wrap.index{position:relative; overflow-y:scroll; height:var(--vh);}
+
 .idxSwiper {width:100%; color:#fff; overflow:hidden; z-index:1;}
 .idxSwiper,
 .idxSwiper .idxSlide{height:calc( var(--vh) - 15rem); transition:height .3s;}
@@ -39,6 +41,7 @@
 
 /* event swiper */
 .bn_event_wrap{width:100%; overflow:hidden;}
+
 .bn_event_swiper{position:relative; margin-top:3rem; width:100%; overflow:hidden; display: none;}
 .eventSwiper{position:relative; width:100%; z-index:1; overflow:hidden;}
 .eventSwiper .swiper-wrapper{position:relative; display:flex; align-items:center; width:100%; height:100%; z-index: 1;}
