@@ -48,7 +48,7 @@
                         <i class="danger"></i>B-Chekup은 B-Lifecare의 소중한 자산입니다.<br>
                         데이터수집장치의 권리는 회사에 귀속하며, <br class="br_mo">사용자는 서비스 미 사용 시 장치 반환의 의무가 있습니다.
                     </p>
-                    <button class="btn_list">서비스 지원차종 확인하기<i class="arrow"></i></button>
+                    <button type="button" aria-haspopup="true" data-popup="service_list" class="btn_list">서비스 지원차종 확인하기<i class="arrow"></i></button>
                 </div>
             </section>
 
@@ -100,7 +100,7 @@
         <footer class="footer"></footer>
     </div>
 
-    <div class="pop_up">
+    <div id="service_list" class="pop_up" role="dialog" aria-hidden="true">
         <div class="pop_bg"></div>
         <div class="pop_con">
             <div class="title">
@@ -149,32 +149,41 @@
     <script>
         $(document).ready(function(){
             $(".btn_list").click(function(){
-                $(".pop_up").css("display", "block")
-                scrollDisable()
+                pop_open()
             })
             $(".btn_close").click(()=>{
-                $(".pop_up").css("display", "none")
-                scrollAble()
+                pop_close()
             })
             $(".pop_bg").click(()=>{
-                $(".pop_up").css("display", "none")
-                scrollAble()
+                pop_close()
             })
 
             let posY;
 
-            function scrollDisable(){
+            function pop_open(){
+                $(".pop_up").css("display", "block").attr("aria-hidden", "false").focus();
+                $(".pop_up .title").attr("tabindex", "0");
+
                 posY = $(window).scrollTop();
-                $("html, body").addClass("not_scroll");
                 $('.wrap').css('top',-posY);
+
+                $("html, body").addClass("no_scroll");
+
+
 
                 /* $('body').addClass('scrollDisable').on('scroll touchmove mousewheel', function(e){
                     e.preventDefault();
                 }); */
             }
-            function scrollAble(){
-                $("html, body").removeClass("not_scroll");
+            function pop_close(){
+                $(".pop_up").css("display", "none").attr("aria-hidden", "true").blur();
+                $(".pop_up .title").attr("tabindex", "-1");
+
+                $("html, body").removeClass("no_scroll");
+
                 posY = $(window).scrollTop(posY);
+
+
 
                 /* $('body').removeClass('scrollDisable').off('scroll touchmove mousewheel'); */
             }
