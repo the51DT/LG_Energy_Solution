@@ -177,6 +177,7 @@
             }
             function pop_close(){
                 $(".pop_up").css("display", "none").attr("aria-hidden", "true").blur();
+                $(".pop_up .title").attr("tabindex", "-1");
 
                 $("html, body").removeClass("no_scroll");
 
