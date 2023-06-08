@@ -125,18 +125,12 @@
                 speed: 500,
                 direction: "vertical",
                 mousewheel: true,
-                // draggable: true,
                 pagination: {
                     el: ".swiper-pagination",
                     clickable: true,
                 },
                 autoHeight:true,
                 watchOverflow : true,
-                // breakpoints: {
-                //     640: {
-                //         autoHeight:true,
-                //     }
-                // },
                 on: {
                     slideChange: function(e) {
                         setTimeout(function () {
@@ -154,9 +148,7 @@
                             const headH = $(document).find("header.header .header__inner").outerHeight(true) * 0.1;
                             const footH = $(document).find("footer.footer").outerHeight(true) * 0.1;
                             let height = $(document).find(".idxSwiper .swiper-slide.slide5").outerHeight(true) * 0.1;
-
                             const getH = winH - headH - footH;
-                            console.log(winH, headH, footH, ':' ,height, getH);
                             height = (height < getH) ? getH : height;
 
                             $(document).find(".idxSwiper").css("height",`${height}rem`);

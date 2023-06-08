@@ -70,12 +70,8 @@
 	.idxSwiper,
 	.idxSwiper .swiper-slide{height:calc( var(--vh) - 8rem);}
 
-	/* .idxSwiper, */
-	/* .idxSwiper.EndSwiper{height:fit-content!important; } */
 	.idxSwiper .swiper-slide.slide5{height:auto!important;}
 	.idxSwiper .swiper-slide.slide5 .slide-inner{padding-bottom:8rem;}
-	/* .idxSwiper,
-	.idxSwiper .swiper-slide{height:calc( var(--vh) - 15rem)!important;} */
 
 	.idxSwiper .slide-inner{padding-top:4rem; background-position:50% 100%; background-size:calc(100% - 4rem) auto;}
 	.idxSwiper .slogan{padding:0 3rem;}
@@ -85,7 +81,6 @@
 	.idxSwiper .slogan p span{font-size:1.5rem; line-height:2rem; margin-top:1.4rem;}
 	.idxSwiper .slogan .btn_detail{width:10rem; height:3.2rem; line-height:3.2rem; font-size:1.5rem; margin-top:3rem;}
 	
-
 	.idxSwiper-evlife{position:relative; margin-top:2rem; width:100%; padding:0;}
 	.idxSwiper-evlife ul::after{content:''; position:absolute; right:0; top:0; display:block; width:8rem; height:100%; background:linear-gradient(270deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 48.65%);;}
 	.idxSwiper-evlife ul{padding:0 3rem;overflow-y:scroll;}
@@ -103,17 +98,6 @@
 	.idxSwiper .bn_sns{display:block;}
 	
 }
-
-
-/* index swiper 대응 */
-/* @media only screen and (max-width:640px) and (min-height:768px) {
-    footer.footer.open{margin-top:-20rem; transition:margin .5s;}
-    footer.footer.close{margin-top:0; transition:margin .5s;}
-}
-@media only screen and (max-width:640px) and (min-height:800px) {
-    footer.footer.open{margin-top:-30rem;}
-} */
-
 
 
 @media only screen and (max-width:425px) {
