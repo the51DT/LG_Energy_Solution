@@ -140,8 +140,8 @@
                     el: ".swiper-idx-pagination",
                     clickable: true,
                 },
-                observer: true,
-                observeParents: true,
+                // observer: true,
+                // observeParents: true,
                 autoHeight:true,
                 watchOverflow : true,
                 on: {
@@ -166,10 +166,10 @@
 
                             $(document).find(".idxSwiper").css("height",`${height}rem`);
 
-                            $(document).find("#scrollDown").hide();
+                            $(document).find("#scrollDown").css("display","block");
                         } else {
                             $(document).find(".idxSwiper").css("height","");
-                            $(document).find("#scrollDown").show();
+                            $$(document).find("#scrollDown").css("display");
                         }
                     },
                     reachEnd: function() {
