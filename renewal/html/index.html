@@ -191,12 +191,11 @@
                                 $(document).find(".idxSwiper").css("height","");
                                 $(document).find(".idxSwiper").removeClass("idxSwiperEnd");
 
-                                const scroll = $(".wrap").scrollTop();
+                                let target = $("body").hasClass("pc") ? $("html") : $(".wrap");
+                                let scroll = target.scrollTop();
+
                                 if( scroll > 0 ){
-                                    setTimeout(() => {
-                                        $(".wrap").animate({scrollTop: '0'}, 300);
-                                    }, 301);
-                                    
+                                    setTimeout(() => { target.animate({scrollTop: '0'}, 300) }, 301);
                                 }
 
                                 _front.noScroll(0);
