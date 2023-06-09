@@ -98,7 +98,8 @@ const _front = {
         // 클릭 이벤트
         const tabClickEvt = (e) => {
             init(e);
-            if (currentTarget.ariaSelected === "false") {
+            // if (currentTarget.ariaSelected === "false") {
+            if(currentTarget.getAttribute("aria-selected")){
                 tabRemoveEvt(targetTabListWrap, targetPanelWrap);   // 미선택된 탭 속성 false 상태로 만들기
                 tabAddEvt(currentTarget, targetTabWrap);            // 선택 된 탭 속성 true 상태로 만들기
             }
