@@ -130,7 +130,7 @@ footer.footer .footer__inner{position:relative; width:calc(100% - 12rem); max-wi
 
 /* title */
 .tit_wrap {margin-bottom:6rem; text-align:center;}
-.tit_wrap h2 {color:#EFEFEF; font-size:3.2rem; line-height:4.5rem;}
+.tit_wrap h2 {color:#EFEFEF; font-size:3.2rem; line-height:4.5rem; font-weight:700;}
 .tit_wrap .des {margin-top:4rem; color:#A2A2A2; font-size:2.4rem; line-height:3.1rem;}
 
 
@@ -188,7 +188,7 @@ footer.footer .footer__inner{position:relative; width:calc(100% - 12rem); max-wi
 
     header .header__inner{height:10rem; padding:0 4rem;}
 	.header__nav{display:none;}
-    
+
     .btn__aside-close{right:4rem; top:3rem;}
 
     footer.footer .footer__inner{width:calc(100% - 8rem);}

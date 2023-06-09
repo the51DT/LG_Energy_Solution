@@ -522,4 +522,9 @@ const _page_guide = {
 
         }, 130);
     }
-};
+}
+
+
+const _page_inquery = {
+    //  여기다 합쳐보세여^.^
+}
