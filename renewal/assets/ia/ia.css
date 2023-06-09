@@ -31,11 +31,11 @@ body {font-family: 'Roboto Mono', 'Spoqa Han Sans Neo', sans-serif; font-size:1.
 .ia_table table .ing .status::before,
 .ia_table table .end .status::before,
 .ia_table table .modify .status::before{content:''; display:inline-block; background:tomato; width:6rem; height:2.5rem; line-height:2.5rem; border-radius:0.3rem; color:#fff; letter-spacing:-0.075rem;}
-.ia_table table .ing {}
+/* .ia_table table .ing {} */
 .ia_table table .ing .status::before{content:'진행중'; background:#bbb;}
 .ia_table table .end {background:rgba(0, 145, 242, 0.05);}
 .ia_table table .end .status::before{content:'완료'; background:#666;}
-.ia_table table .modify {}
+/* .ia_table table .modify {} */
 .ia_table table .modify .status::before{content:'수정'; background:tomato;}
 .ia_table table .x {background:#f9f9f9; color:#bbb; text-decoration:line-through; font-style:italic;}
 .ia_table table .x .status::before{content:'';}
