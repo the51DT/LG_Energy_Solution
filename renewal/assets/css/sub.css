@@ -152,12 +152,12 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:var(--bg_01,
 .pop_up .dimmed{z-index: 1; cursor: pointer;}
 .pop_con{position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 37.5rem; height: 80%; max-height: 89.3rem; background: #2C2C2C; border-radius: 2rem; overflow: scroll; z-index: 2;}
 .pop_con .title{margin: 6rem 0 2.4rem; padding: 0 2rem;}
-.pop_con .title h3{margin-bottom: 1.2rem; text-align: center; font-size: 2.8rem; color: #EFEFEF;}
-.pop_con .title p{font-size: 1.5rem; color: #FFC045; vertical-align: bottom;}
+.pop_con .title h3{margin-bottom: 1.2rem; text-align: center; font-size: 2.8rem; color: #EFEFEF; line-height: 3.4rem;}
+.pop_con .title p{font-size: 1.5rem; color: #FFC045; vertical-align: bottom; line-height: 2rem;}
 .pop_con .title .tooltip{display: inline-block; width: 2rem; height: 2rem; margin-right: 0.4rem; vertical-align: middle; background-image: url(../img/guide/guide_tooltip.svg);}
 .pop_con .pop_list{background: rgba(57, 57, 57, 0.5); width: 100%;}
-.pop_con .list_item p{padding: 0.8rem 2rem; font-size: 1.3rem; color: #7C7C7C;}
-.pop_con .list_item ul{padding: 1.4rem 3.5rem 2rem; background: #2C2C2C; font-size: 1.6rem; color: #EFEFEF;}
+.pop_con .list_item p{padding: 0.8rem 2rem; font-size: 1.3rem; color: #7C7C7C; line-height: 1.8rem;}
+.pop_con .list_item ul{padding: 1.4rem 3.5rem 2rem; background: #2C2C2C; font-size: 1.6rem; color: #EFEFEF; line-height: 1.8rem;}
 .pop_con .list_item li{cursor: pointer;}
 .pop_con .list_item li+li{margin-top: 2.8rem;}
 .pop_up button{position: fixed; top: max(11%, calc(50% - 43.65rem)) ; right: calc(50% - 2rem/2 - 16.7rem); width: 4rem; height: 4rem; background: url(../img/guide/guide_close.svg) no-repeat center center; z-index: 3;}
@@ -214,8 +214,9 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:var(--bg_01,
     .guide .video_wrap video{position:absolute; top:50%; left:50%; width: 100%; transform:translate(-50%, -50%);}
 
     .pop_con{overflow: scroll; width: 100%; height: 100%; max-height: max-content; padding-bottom: 7rem; border-radius: 0; background: var(--bg_01, #1E1E1E);}
-    .pop_up button{top: 2rem; right: 2rem;}
-    .pop_con .list_item ul{background: var(--bg_01, #1E1E1E);}
+    .pop_con .title{margin-top: 5.6rem;}
+    .pop_up button{top: 0.8rem; right: 1rem; background: url(../img/guide/guide_close_mo.svg) no-repeat center / contain;}
+    .pop_con .list_item ul{background: var(--bg_01, #1E1E1E); font-size: 1.3rem;}
 
 
     /* form */
