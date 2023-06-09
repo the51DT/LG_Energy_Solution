@@ -311,7 +311,7 @@ const _front = {
             elem.find(".btn_select").removeClass('on').attr("aria-expanded", "false")
             elem.find('.select_list_box').removeClass("on").attr("aria-expanded", "false");
         }
-        
+
     }
    
 }

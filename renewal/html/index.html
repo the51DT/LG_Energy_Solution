@@ -130,9 +130,9 @@
     </div>
 
     <script>
+        var mySwiper;
         $(()=>{
 
-            var mySwiper;
 
             setTimeout(() => {
                 
@@ -163,9 +163,11 @@
                         },
                     },
                     on: {
-                        init:function(){
-                            // _front.noScroll(0);
+                        init:function(e){
                             $("html, body").addClass("no_scroll_idx");
+                        },
+                        resize: function(e){
+                            setTimeout(() => { mySwiper.update() }, 301);
                         },
                         slideChange: function(e) {
                             setTimeout(function () {
@@ -236,6 +238,14 @@
             // $(document).on("resize", function(){
             //     mySwiper.update();
             // });
+
+            // window.addEventListener('orientationchange', function () {
+            //     setTimeout(() => {
+            //         smySwiper.update();
+            //     }, 1000);
+            // }, true);
+
+
         })
       </script>
 </body>
