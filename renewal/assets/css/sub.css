@@ -213,7 +213,7 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:var(--bg_01,
     .guide .video_wrap{position:relative; width: 100%; height: auto; margin: 0 auto 7rem; padding-bottom:56.71%;}
     .guide .video_wrap video{position:absolute; top:50%; left:50%; width: 100%; transform:translate(-50%, -50%);}
 
-    .pop_con{overflow: scroll; width: 100%; height: 100%; padding-bottom: 7rem; border-radius: 0; background: var(--bg_01, #1E1E1E);}
+    .pop_con{overflow: scroll; width: 100%; height: 100%; max-height: max-content; padding-bottom: 7rem; border-radius: 0; background: var(--bg_01, #1E1E1E);}
     .pop_up button{top: 2rem; right: 2rem;}
     .pop_con .list_item ul{background: var(--bg_01, #1E1E1E);}
 
