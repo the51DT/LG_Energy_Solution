@@ -174,7 +174,7 @@
                                 mySwiper.params.touchReleaseOnEdges = false;
                                 mySwiper.params.mousewheel.releaseOnEdges = false;
                             });
-                            
+
                             if( e.activeIndex == 4 ){
                                 const winH = $(window).outerHeight(true) * 0.1;
                                 const headH = $(document).find("header.header .header__inner").outerHeight(true) * 0.1;
@@ -233,16 +233,14 @@
                 },
             });
 
-            // $(document).on("resize", function(){
-            //     mySwiper.update();
-            // });
-
-            // window.addEventListener('orientationchange', function () {
-            //     setTimeout(() => {
-            //         smySwiper.update();
-            //     }, 1000);
-            // }, true);
-
+            
+            $(document).on("resize", function(){
+                setTimeout(() => {
+                    _front.vh();
+                    mySwiper.update()
+                }, 301);
+            });
+            // orientationchange
 
         })
       </script>
