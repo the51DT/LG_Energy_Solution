@@ -19,7 +19,7 @@
 .idxSwiper .slogan p span{display:block; font-size:1.6rem; line-height:2.1rem; margin-top:2rem;}
 .idxSwiper .slogan .btn_detail{display:block; width:12.8rem; height:4.9rem; line-height:4.9rem; border-radius:2.5rem; background:#fff; text-align:center; font-size:1.8rem; color:var(--fc_01, #1e1e1e); font-weight:700; margin-top:6rem;}
 
-.idxSwiper-evlife{margin-top:12.2rem;}
+.idxSwiper-evlife{margin-top:8rem;}
 .idxSwiper-evlife ul{display:flex; align-items:center; justify-content:space-between;}
 .idxSwiper-evlife li{flex:1 1 38rem;}
 .idxSwiper-evlife li + li{margin-left:3rem;}
@@ -34,10 +34,10 @@
 .idxSwiper.idxSwiperEnd #scrollDown{display:none;}
 
 /* event */
-.idxSwiper .bn_event{max-width:51.6rem; margin-top:6rem;}
-.idxSwiper .bn_event .bn_inner{padding:2.4rem 4rem; background:var(--bg_02, #50CCE0); border-radius:2rem;}
-.idxSwiper .bn_event p{font-size:2.4rem; line-height:3.3rem;}
-.idxSwiper .bn_event span{display:block; margin-top:2rem; color:#A2A2A2; font-size:1.5rem; line-height:2rem}
+.idxSwiper .bn_event{margin-top:4rem;}
+.idxSwiper .bn_event .bn_inner{max-width:44rem; padding:1.6rem 2rem; background:var(--bg_02, #50CCE0); border-radius:1.2rem; box-sizing:border-box;}
+.idxSwiper .bn_event p{font-size:1.8rem; line-height:2.5rem;}
+.idxSwiper .bn_event span{display:block; margin-top:1.2rem; color:#A2A2A2; font-size:1.5rem; line-height:2rem}
 .idxSwiper .bn_event span::before{content:'※'; margin-right:0.4rem;}
 
 /* event swiper */
@@ -124,6 +124,9 @@
 
 @media only screen and (max-width:640px) and (min-height:100px){
 	.idxSwiper .slide-inner{background-position:left 50% bottom -2rem;}	
+}
+@media only screen and (max-width:640px) and (min-height:500px){
+	.idxSwiper .slide-inner{background-size:22.5rem auto; background-position:left 50% bottom -2rem;}
 }
 @media only screen and (max-width:640px) and (min-height:600px){
 	.idxSwiper .slide-inner{background-position:left 50% bottom -2rem;}	
