@@ -18,11 +18,9 @@
 
     <title>B-Lifecare</title>
 
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" /> -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/swiper-bundle.js"></script>
-    <!-- <script src="../assets/js/swiper-bundle.min.js"></script> -->
     <script src="../assets/js/front.js"></script>
 </head>
 <body>
@@ -163,11 +161,6 @@
                             observeParents: false,
                         },
                     },
-                    // resize:true,
-                    // resizeObserver: true,
-                    // updateOnWindowResize:true,
-                    // autoHeight:true,
-                    // watchOverflow : true,
                     on: {
                         init:function(){
                             _front.noScroll(0);
@@ -178,10 +171,7 @@
                                 mySwiper.params.mousewheel.releaseOnEdges = false;
                             });
 
-                            const scroll = $(window).scrollTop();
-                            if( scroll > 0 ){
-                                setTimeout(() => { $("html, body").animate({scrollTop: '0'}, 300) }, 301);
-                            }
+                            
 
                             if( e.activeIndex == 4 ){
                                 const winH = $(window).outerHeight(true) * 0.1;
@@ -199,6 +189,15 @@
                             } else {
                                 $(document).find(".idxSwiper").css("height","");
                                 $(document).find(".idxSwiper").removeClass("idxSwiperEnd");
+
+                                const scroll = $(".wrap").scrollTop();
+                                if( scroll > 0 ){
+                                    setTimeout(() => {
+                                        $(".wrap").animate({scrollTop: '0'}, 300);
+                                    }, 301);
+                                    
+                                }
+
                                 _front.noScroll(0);
                             }
                         },

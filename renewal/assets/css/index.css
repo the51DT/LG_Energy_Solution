@@ -104,7 +104,7 @@
 	
 	.idxSwiper-evlife{position:relative; margin-top:2rem; width:100%; padding:0;}
 	.idxSwiper-evlife ul::after{content:''; position:absolute; right:0; top:0; display:block; width:8rem; height:100%; background:linear-gradient(270deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 48.65%);;}
-	.idxSwiper-evlife ul{padding:0 3rem;overflow-y:scroll;}
+	.idxSwiper-evlife ul{padding:0 3rem; overflow-y:scroll;}
 	.idxSwiper-evlife ul li{flex:0 0 60%;}
 	.idxSwiper-evlife ul li + li{margin-left:1.4rem;}
 
