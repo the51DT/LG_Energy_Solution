@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.mobile .wrap.index{position:relative; overflow-y:scroll; height:var(--vh);}
+.mobile .wrap.index{position:relative; overflow-y:scroll; height:var(--vh); /*height:100%;*/}
 .no_scroll .wrap.index{overflow:hidden;}
 
 .idxSwiper {width:100%; color:#fff; overflow:hidden; z-index:1;}
