@@ -3,6 +3,8 @@
 :root{
     --fc-main:#1e1e1e;
     --fc-point:#50CCE0;
+
+    --placeholder:#929292;
 }
 
 /* layout */

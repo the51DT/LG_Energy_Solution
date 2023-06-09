@@ -314,10 +314,10 @@
     })
     document.querySelectorAll(".btn_clear").forEach((item)=>{
         item.addEventListener("click", ()=>{
-            if(item.previousElementSibling.value !== ""){
+            // if(item.previousElementSibling.value !== ""){
                 item.previousElementSibling.value = "";
                 item.style.display = "none";
-            }
+            // }
         })
     })
     const btnMore = document.querySelectorAll(".check_group .btn_more");
