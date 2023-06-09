@@ -5,11 +5,11 @@
 
 body {font-family: 'Roboto Mono', 'Spoqa Han Sans Neo', sans-serif; font-size:1.3rem; background:#fff; color:#000;}
 
-.ia_wrap {overflow:hidden;}
+.ia_wrap {position:relative; overflow:hidden;}
 .ia_wrap header {background:#212121; padding:2.5rem;}
 .ia_wrap header h1{color:#fff; font-weight:700; font-size:2rem;}
 
-.ia_container {padding:2rem 2rem 5rem;}
+.ia_container {position:relative; margin:2rem 2rem 5rem;}
 
 /*  */
 .ia_table {padding:1rem 0 0;}
@@ -47,3 +47,49 @@ body {font-family: 'Roboto Mono', 'Spoqa Han Sans Neo', sans-serif; font-size:1.
 .ia_progress .graph{width:20rem; height:0.6rem; border-radius:0.5rem; background:#e8e8e8; overflow:hidden; margin:0 1rem;}
 .ia_progress .graph span{display:block; width:50%; height:100%; background: linear-gradient(95.98deg, rgba(131, 72, 255, 0.5) 0%, rgba(0, 208, 242, 0.5) 100%);}
 .ia_progress .total b{color:#000; font-weight:700;}
+
+
+@media only screen and (max-width:1440px) {
+
+}
+
+@media only screen and (max-width:1280px) {
+    .ia_container{margin-top:4rem;}
+
+    .ia_table{padding-top:6rem; overflow-y:scroll;}
+    .ia_table table{min-width:1200px}
+    .ia_table::-webkit-scrollbar{width:10px; height:10px}
+    .ia_table::-webkit-scrollbar-thumb{height:30%;background:rgba(0,0,0,.3); border-radius:10px}
+    .ia_table::-webkit-scrollbar-track{background:rgba(255,255,255, .5)}
+    .ia_table table caption{display:none;}
+
+    .ia_progress{position:absolute; left:0; top:0; width:100%; max-width:500px; flex-wrap:wrap; justify-content:flex-start; padding:0;}
+    .ia_progress .total{width:100%;}
+    .ia_progress .graph {width:100%; margin:1.5rem 0 0;}
+    .ia_progress .done{position:absolute; right:0; top:0;}
+
+}
+
+@media only screen and (max-width:1024px) {
+
+}
+
+@media only screen and (max-width:768px) {
+
+}
+
+@media only screen and (max-width:640px) {
+
+}
+
+@media only screen and (max-width:425px) {
+
+}
+
+@media only screen and (max-width:375px) {
+
+}
+
+@media only screen and (max-width:320px) {
+
+}
