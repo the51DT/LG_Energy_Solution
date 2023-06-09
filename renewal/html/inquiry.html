@@ -90,7 +90,6 @@
                         <div class="item_cont">
                             <div class="input_wrap">
                                 <input type="text" title="성" placeholder="입력해주세요.">
-                                <button type="button" class="btn_clear" style="display:none">삭제</button>
                             </div>
                             <p class="msg error">에러메시지</p>
                         </div>
@@ -101,7 +100,6 @@
                         <div class="item_cont">
                             <div class="input_wrap">
                                 <input type="text" title="이름" placeholder="입력해주세요.">
-                                <button type="button" class="btn_clear" style="display:none">삭제</button>
                             </div>
                             <p class="msg error">에러메시지</p>
                         </div>
@@ -112,7 +110,6 @@
                         <div class="item_cont">
                             <div class="input_wrap">
                                 <input type="number" title="연락처" placeholder="입력해주세요.">
-                                <button type="button" class="btn_clear" style="display:none">삭제</button>
                             </div>
                             <p class="msg error" style="display:none">에러메시지</p>
                         </div>
@@ -124,7 +121,6 @@
                             <div class="email_wrap">
                                 <div class="input_wrap">
                                     <input type="text" title="회사메일" placeholder="입력해주세요.">
-                                    <button type="button" class="btn_clear" style="display:none">삭제</button>
                                 </div>
                                 <div class="select_box">
                                     <button class="btn_select">선택해주세요.</button>
@@ -155,7 +151,6 @@
                         <div class="item_cont">
                             <div class="input_wrap">
                                 <input type="text" title="회사(소속)" placeholder="입력해주세요.">
-                                <button type="button" class="btn_clear" style="display:none">삭제</button>
                             </div>
                             <p class="msg error" style="display:none">에러메시지</p>
                         </div>
@@ -230,12 +225,10 @@
                         <div class="item_cont">
                             <div class="input_wrap">
                                 <input type="text" title="문의내용" placeholder="제목을 입력하세요.">
-                                <button type="button" class="btn_clear" style="display:none">삭제</button>
                             </div>
                             <div class="input_wrap">
                                 <div class="textarea">
                                     <textarea placeholder="내용을 입력하세요."></textarea>
-                                    <button type="button" class="btn_clear" style="display:none">삭제</button>
                                 </div>
                             </div>
                             <p class="msg error" style="display:none">에러메시지</p>
@@ -297,51 +290,5 @@
         </div>
         <footer class="footer"></footer>
     </div>
-
-<script>
-    document.querySelector("form").addEventListener("submit", (e)=>{
-        e.preventDefault();
-    })
-    document.querySelectorAll(".input_wrap input").forEach((item)=>{
-        item.addEventListener("keyup", ()=>{
-            item.nextElementSibling.style.display = "block"
-        })
-    })
-    document.querySelectorAll("textarea").forEach((item)=>{
-        item.addEventListener("keyup", ()=>{
-            item.nextElementSibling.style.display = "block"
-        })
-    })
-    document.querySelectorAll(".btn_clear").forEach((item)=>{
-        item.addEventListener("click", ()=>{
-            // if(item.previousElementSibling.value !== ""){
-                item.previousElementSibling.value = "";
-                item.style.display = "none";
-            // }
-        })
-    })
-    const btnMore = document.querySelectorAll(".check_group .btn_more");
-    btnMore.forEach((item)=>{
-        item.addEventListener("click",()=>{
-            item.parentNode.classList.toggle("on");
-            item.parentNode.classList.contains("on") ? item.setAttribute("aria-expanded", true) : item.setAttribute("aria-expanded", false);
-        })
-    })
-
-    document.querySelector(".terms_wrap").addEventListener("change", function(e){
-        let chkAll = document.getElementById("check_all");
-        let chkSub = this.querySelectorAll(".check_sub");
-        let checkedSub = this.querySelectorAll(".check_sub:checked");
-        
-        if(e.target === document.getElementById("check_all")){
-            let is_checked = e.target.checked;
-            chkSub.forEach((item)=>{
-                item.checked = is_checked;
-            })
-            return;
-        }
-        checkedSub.length === chkSub.length ? chkAll.checked = true : chkAll.checked = false;
-    })
-</script>
 </body>
 </html>
