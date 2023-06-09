@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 html {
 	font-size:10px;
+	overflow-x: hidden;
 }
 body {
 	line-height: 1;

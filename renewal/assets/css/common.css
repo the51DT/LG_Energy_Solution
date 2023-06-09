@@ -281,5 +281,5 @@ footer.footer .footer__inner{position:relative; width:calc(100% - 12rem); max-wi
 }
 
 @media only screen and (max-width:320px) {
-	html {font-size:9px; min-width:280px;}
+	html {font-size:9px; min-width:280px; overflow-x:initial;}
 }
