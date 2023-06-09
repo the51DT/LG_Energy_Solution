@@ -277,25 +277,41 @@ const _front = {
             // click
             _this.find(".btn_select").on("click", function(){
                 const select_box = $(this).parents(".select_box");
-                ($(this).hasClass("on")) ? selectOff() : selectOn();
+
+                $(document).find(".select_box").filter((idx, item2)=> $(item2)[0] != select_box[0] ).each((idx, item3)=>{
+                    selectOff( $(item3) );
+                });
+
+                ($(this).hasClass("on")) ? selectOff(_this) : selectOn(_this);
             });
 
             // change
             _this.find("input[type='radio']").on("change", function(){
                 const value = $(this).next().text();
                 _this.find(".btn_select").text(value).addClass("selected");
-                selectOff();
+                selectOff(_this);
             });
 
-            const selectOn = function(){
-                _this.find(".btn_select").addClass('on').attr( 'aria-expanded', 'true');
-                _this.find('.select_list_box').addClass('on').attr( 'aria-expanded', 'true');
-            };
-            const selectOff = function(){
-                _this.find(".btn_select").removeClass('on').attr("aria-expanded", "false")
-                _this.find('.select_list_box').removeClass("on").attr("aria-expanded", "false");
-            }
+            // const selectOn = function(){
+            //     _this.find(".btn_select").addClass('on').attr( 'aria-expanded', 'true');
+            //     _this.find('.select_list_box').addClass('on').attr( 'aria-expanded', 'true');
+            // };
+            // const selectOff = function(){
+            //     _this.find(".btn_select").removeClass('on').attr("aria-expanded", "false")
+            //     _this.find('.select_list_box').removeClass("on").attr("aria-expanded", "false");
+            // }
         });
+        
+
+        const selectOn = function(elem){
+            elem.find(".btn_select").addClass('on').attr( 'aria-expanded', 'true');
+            elem.find('.select_list_box').addClass('on').attr( 'aria-expanded', 'true');
+        };
+        const selectOff = function(elem){
+            elem.find(".btn_select").removeClass('on').attr("aria-expanded", "false")
+            elem.find('.select_list_box').removeClass("on").attr("aria-expanded", "false");
+        }
+        
     }
    
 }
