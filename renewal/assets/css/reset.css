@@ -64,9 +64,12 @@ input, textarea, select, button, a{
 
 button {cursor:pointer; background:none; padding:0; border:0 none; font-family: 'Apple SD Gothic', 'Spoqa Han Sans Neo', sans-serif;}
 
-.pc::-webkit-scrollbar{width:5px; height:5px;}
-.pc::-webkit-scrollbar-thumb{height:30%;background:rgba(255,255,255,.3); border-radius:10px}
-.pc::-webkit-scrollbar-track{background:rgba(0,0,0, .5)}
+.pc::-webkit-scrollbar,
+.pc ::-webkit-scrollbar{width:5px; height:5px;}
+.pc::-webkit-scrollbar-thumb,
+.pc ::-webkit-scrollbar-thumb{height:30%;background:rgba(255,255,255,.3); border-radius:10px}
+.pc::-webkit-scrollbar-track,
+.pc ::-webkit-scrollbar-track{background:rgba(0,0,0, .5)}
 
 ::-webkit-input-placeholder {color:var(--placeholder,#929292); -webkit-text-fill-color:var(--placeholder,#929292);}
 ::placeholder {color:var(--placeholder,#929292); -webkit-text-fill-color:var(--placeholder,#929292);}
