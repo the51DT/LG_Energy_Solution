@@ -34,7 +34,7 @@ html {
 }
 body {
 	line-height: 1;
-    color:#1E1E1E;
+    color:var(--fc_01, #1E1E1E);
 	font-family: 'Apple SD Gothic', 'Spoqa Han Sans Neo', sans-serif;
 	font-size:1.6rem;
 }
@@ -73,7 +73,6 @@ button {cursor:pointer; background:none; padding:0; border:0 none; font-family: 
 
 input,select,textarea,button {border:0; border-radius:0; -webkit-appearance:none; appearance:none;}
 button {background-color:transparent; color:inherit; cursor:pointer;}
-/* button:hover {color:inherit;} */
 input::-ms-clear,
 input::-ms-reveal {display:none; width:0; height:0;}
 input::-webkit-search-decoration,
@@ -87,5 +86,5 @@ input[type=number] {-moz-appearance:textform;}
 /* input[type=checkbox]:focus{outline:none;} */
 select::-ms-expand {display:none;}
 select:required:invalid {color:#A0A4AF;}
-option {color:var(--fc_01, #000);}
+option {color:#000;}
 option[value=""][disabled] {display:none;}
