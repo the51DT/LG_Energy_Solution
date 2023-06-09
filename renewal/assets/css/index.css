@@ -79,7 +79,7 @@
 
 	.idxSwiper .slogan > span{font-size:2.2rem; line-height:2.8rem;}
 	.idxSwiper .slogan p strong{font-size:5rem; line-height:6rem;}
-	.idxSwiper .bn_event{max-width:43rem;}
+	.idxSwiper .bn_event{}
 	.idxSwiper .bn_event p{font-size:2rem; line-height:3rem;}
 	.idxSwiper .bn_event span{font-size:1.3rem; line-height:1.8rem;}
 }
@@ -111,8 +111,8 @@
 	.idxSwiper .br_pc{display:none;}
 	.idxSwiper .br_mo{display:block;}
 
-	.idxSwiper .bn_event{margin:4rem 3rem 0; max-width:100%; text-align:center;}
-	.idxSwiper .bn_event .bn_inner{padding:1.4rem 2rem; border-radius:1.2rem;}
+	.idxSwiper .bn_event{margin:4rem 3rem 0; text-align:center;}
+	.idxSwiper .bn_event .bn_inner{max-width:100%; padding:1.4rem 2rem; border-radius:1.2rem;}
 	.idxSwiper .bn_event p{font-size:1.4rem; line-height:1.9rem;}
 	.idxSwiper .bn_event span{margin-top:1.4rem;text-align:center; font-size:1rem; line-height:1.3rem;}
 	.idxSwiper .bn_event span::before{display:none;}
@@ -123,13 +123,13 @@
 
 
 @media only screen and (max-width:640px) and (min-height:100px){
-	.idxSwiper .slide-inner{background-position:left 50% bottom -2rem;}	
+	.idxSwiper .slide-inner{background-size:22.5rem auto; background-position:left 50% bottom -2rem;}	
 }
 @media only screen and (max-width:640px) and (min-height:500px){
 	.idxSwiper .slide-inner{background-size:22.5rem auto; background-position:left 50% bottom -2rem;}
 }
 @media only screen and (max-width:640px) and (min-height:600px){
-	.idxSwiper .slide-inner{background-position:left 50% bottom -2rem;}	
+	.idxSwiper .slide-inner{background-size:calc(100% - 4rem) auto; background-position:left 50% bottom -2rem;}	
 }
 @media only screen and (max-width:640px) and (min-height:700px){
 	.idxSwiper .slide-inner{background-position:left 50% bottom 0rem;}	
