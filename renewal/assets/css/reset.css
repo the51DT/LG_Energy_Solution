@@ -74,6 +74,8 @@ button {cursor:pointer; background:none; padding:0; border:0 none; font-family: 
 .pc::-webkit-scrollbar-corner,
 .pc ::-webkit-scrollbar-corner{background:rgba(0,0,0, 0)}
 
+.pc .index::-webkit-scrollbar{width:0; height:0;}
+
 ::-webkit-input-placeholder {color:var(--placeholder,#929292); -webkit-text-fill-color:var(--placeholder,#929292);}
 ::placeholder {color:var(--placeholder,#929292); -webkit-text-fill-color:var(--placeholder,#929292);}
 
