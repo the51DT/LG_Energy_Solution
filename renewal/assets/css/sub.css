@@ -214,7 +214,7 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:var(--bg_01,
 
     .pop_con{width: 100%; height: 100%; max-height: var(--vh); border-radius: 0; background: var(--bg_01, #1E1E1E);}
     .pop_con .title{margin-top: 5.6rem;}
-    .pop_con .pop_list{height: calc(100% - 15rem); max-height: 71.2rem;}
+    .pop_con .pop_list{height: calc(100% - 15rem); max-height: 100%;}
     .pop_con .list_item ul{background: var(--bg_01, #1E1E1E); font-size: 1.3rem;}
     .pop_up button{top: 0.8rem; right: 1rem; background: url(../img/guide/guide_close_mo.svg) no-repeat center / contain;}
 
