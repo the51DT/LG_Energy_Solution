@@ -418,8 +418,10 @@ const _layout = {
 
         // 
         const setAppDownload = function(){
-            const media = window.matchMedia("only screen and (max-width:425px)").matches;
-            if( media ){
+            // const media = window.matchMedia("only screen and (max-width:425px)").matches;
+            const mobile = _device.isMobile();
+
+            if( mobile ){
                 //reset
                 $(document).find(".header__app-btn").removeAttr('aria-owns data-toggle role aria-haspopup aria-expanded');
                 $(document).find(".header__app-content").removeAttr("role");

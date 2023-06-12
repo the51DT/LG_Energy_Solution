@@ -37,6 +37,9 @@ header.header h1 a{display:block; width:12.2rem; height:2.2rem; background:url(.
 .header__app.on .header__app-inner{/*width:32rem; height:21.3rem; z-index:9;*/ animation-name:appDownOpen; animation-duration: .2s; animation-timing-function: linear; animation-fill-mode: forwards;}
 .header__app.on .header__app-content{display:block;}
 .header__app-btn {display:block; width:15.4rem; height:4.9rem; line-height:4.9rem; font-size:1.8rem; font-weight:700; box-sizing:border-box; padding-left:2rem; background:url(../img/common/ico_arrow_down.svg) right 2rem top 50% no-repeat; background-size:2rem auto; margin-left:auto;}
+
+.mobile .header__app-btn{background-image: url(../img/common/ico_download.svg);}
+
 .header__app-content {border-top:1px solid #d9d9d9; margin:0 2rem 2rem; padding-top:1.2rem; display: none;}
 .header__app-content ul{display:flex; align-items:center; justify-content:center;}
 .header__app-content ul li + li{margin-left:3.2rem;}
@@ -256,7 +259,7 @@ footer.footer .footer__inner{position:relative; width:calc(100% - 12rem); max-wi
 
     .header__app{width:12rem; height:3.2rem;}
     .header__app-inner{width:12rem; height:3.2rem; border-radius:2rem;}
-    .header__app-btn{width:12rem; height:3.2rem; line-height:3.2rem; padding-left:1.2rem; font-size:1.5rem; background-image:url(../img/common/ico_download.svg); background-position:right 1.2rem top 50%;}
+    .header__app-btn{width:12rem; height:3.2rem; line-height:3.2rem; padding-left:1.2rem; font-size:1.5rem; /*background-image:url(../img/common/ico_download.svg);*/ background-position:right 1.2rem top 50%;}
 
     .btn__aside-open{margin-left:0; padding:0 1.1rem;}
     .btn__aside-open span,
