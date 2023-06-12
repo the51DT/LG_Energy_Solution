@@ -338,6 +338,7 @@ const _aside = {
         $(document).find(".aside__wrap h2").attr("tabindex", 0).focus();
 
         _front.noScroll(0);
+        if( $(".wrap").hasClass("index") ) myFullpage.setAllowScrolling(false);
     },
     close: function(){
 
@@ -353,6 +354,7 @@ const _aside = {
         $(".wrap").removeAttr("aria-hidden tabindex");
         
         _front.noScroll(1);
+        if( $(".wrap").hasClass("index") ) myFullpage.setAllowScrolling(true);
     }
 }
 
