@@ -75,18 +75,22 @@
 #fullpage .section{height:var(--vh); min-height:60rem; box-sizing:border-box; padding:15rem 0 0; margin:0;}
 #fullpage .fp-overflow{height:100%;}
 
-#fullpage .section-inner{position:relative; width:100%; max-width:120rem; height:100%; margin:0 auto; padding:8.2rem 0 0; background:url(../img/index/visual1.png) right 55% no-repeat; background-size:56rem auto;}
+#fullpage #section6{height:auto; min-height:auto;}
 
+#fullpage .section-inner{position:relative; width:100%; max-width:120rem; height:100%; margin:0 auto; padding:8.2rem 0 0; text-align:left; background:url(../img/index/visual1.png) right 55% no-repeat; background-size:56rem auto;}
 
-#scrollDown{position:fixed; bottom:5rem; left:calc(50% - 2.5rem); width:5rem; height:5rem; background:url(../img/index/icon_scroll_down.svg) no-repeat center / contain;}
-.fp-viewing-slide5 #scrollDown{display:none;}
-/* #fullpage.idxSwiperEnd #scrollDown{display:none;} */
 
 #fullpage #section1 .section-inner{background-image:url(../img/index/visual1.png);}
 #fullpage #section2 .section-inner{background-image:url(../img/index/visual2.png);}
 #fullpage #section3 .section-inner{background-image:url(../img/index/visual3.png);}
 #fullpage #section4 .section-inner{background-image:url(../img/index/visual4.png);}
 #fullpage #section5 .section-inner{background:none;}
+#fullpage #section6 .section-inner{background:none; max-width:100%;}
+
+
+#scrollDown{position:fixed; bottom:5rem; left:calc(50% - 2.5rem); width:5rem; height:5rem; background:url(../img/index/icon_scroll_down.svg) no-repeat center / contain;}
+.fp-viewing-slide5 #scrollDown,
+.fp-viewing-footer #scrollDown{display:none;}
 
 #fullpage .slogan > span{display: block; font-size:2.4rem; line-height:3.1rem;}
 #fullpage .slogan p{margin-top:2.4rem;}
@@ -123,6 +127,9 @@
 #fp-nav ul li + li{margin-top:1.6rem;}
 #fp-nav ul li span{display:block; width:1rem; height:1rem; border-radius:1rem; border:2px solid #4d4d4d;}
 #fp-nav ul li .active span{background:var(--bg_02, #50CCE0); border-color:#50CCE0; box-shadow:0 0 0.6px 2px #50CCE0;}
+#fp-nav ul li:last-child{display:none;}
+
+.fp-viewing-footer #fp-nav{display:none;}
 
 
 

@@ -19,19 +19,130 @@
 
     <title>B-Lifecare</title>
 
+    <!-- <link rel="stylesheet" href="../assets/css/fullpage.css"> -->
+    <!-- <link rel="stylesheet" href="../assets/css/examples.css"> -->
+
     <link rel="stylesheet" href="../assets/css/style.css">
+
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/swiper-bundle.js"></script>
+
+    <script src="../assets/js/fullpage.js"></script>
+    <!-- <script src="../assets/js/examples.js"></script> -->
+
     <script src="../assets/js/front.js"></script>
 </head>
 <body>
     <div class="wrap index">
         <header class="header"></header>
         <div class="container">
+
+            <div id="fullpage">
+                <div class="section" id="section1">
+                    <div class="section-inner">
+                        <div class="slogan">
+                            <span>여러분의 전기차 배터리는 안녕한가요?</span>
+                            <p>
+                                <strong>Be safe!</strong>
+                                <strong>B-Lifecare</strong>
+                                <span>지금 바로 비라이프케어에서 다양한 기능을 체험해보세요.</span>
+                            </p>
+                        </div>
+                        <div class="bn_event">
+                            <div class="bn_inner">
+                                <p>선착순 한정 EVENT<br>30만원 상당 B-Checkup 무상 대여!</p>
+                            </div>
+                            <span>이벤트 기간 내 신청한 고객에 한해 제공되며, 사전 고지 없이 종료될 수 있습니다.</span>
+                        </div>
+                    </div>
+                </div><!-- #section1 -->
+                <div class="section" id="section2">
+                    <div class="section-inner">
+                        <div class="slogan">
+                            <span>주행거리 정보만으론 만족할 수 없다면?</span>
+                            <p>
+                                <strong>정보제공을 넘어</strong>
+                                <strong>운전습관 케어까지!</strong>
+                                <span>주행정보 | 주변 충전소 | 배터리 케어</span>
+                            </p>
+                            <a href="#" class="btn_detail">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="section" id="section3">
+                    <div class="section-inner">
+                        <div class="slogan">
+                            <span>오직 B-Lifecare에서만 가능합니다.</span>
+                            <p>
+                                <strong>중고차 거래 시 필수!</strong>
+                                <strong>배터리 인증서</strong>
+                                <span>오직 B-Lifecare에서만 가능한 글로벌 배터리 제조사가 발급하는 공신력있는<br class="br_pc">배터리 인증서를 발급해보세요. 내 차 배터리의 상세한 성능 진단을 할 수 있습니다.</span>
+                            </p>
+                            <a href="#" class="btn_detail">자세히 보기</a>
+                        </div>
+                        <!-- <h1>Section 3</h1>
+                        <div class="slide">
+                            <h1>Section 1.1</h1>
+                        </div>
+                        <div class="slide desktopOnly">
+                            <h1>Section 1.2</h1>
+                        </div>
+                        <div class="slide">
+                            <h1>Section 1.2</h1>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="section" id="section4">
+                    <div class="section-inner">
+                        <div class="slogan">
+                            <span>내 전기차 B-Lifecare를 이용할 수 있을까?</span>
+                            <p>
+                                <strong>쉽고 간편한</strong>
+                                <strong>서비스 이용안내</strong>
+                                <span>신청과 장착은 초보자도 쉽고 간편하게! 배터리 정보는 전문가보다 상세하게!<br class="br_pc">서비스 지원 가능 차량부터 신청, 장착방법까지 지금 바로 확인해보세요.</span>
+                            </p>
+                            <a href="#" class="btn_detail">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="section fp-auto-height" id="section5">
+                    <div class="section-inner">
+                        <div class="slogan">
+                            <span>B-Lifecare가 알려주는 배터리 정보</span>
+                            <p><strong>EV Life</strong></p>
+                        </div>
+                        <div class="idxSwiper-evlife">
+                            <ul>
+                                <li><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></li>
+                                <li><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></li>
+                                <li><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="bn_event_swiper">
+                            <div class="swiper eventSwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><a href="#"><img src="../assets/img/index/bn_event.png" alt="event"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="../assets/img/index/bn_event.png" alt="event"></a></div>
+                                    <div class="swiper-slide"><a href="#"><img src="../assets/img/index/bn_event.png" alt="event"></a></div>
+                                </div>
+                            </div>
+                            <div class="swiper-event-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section fp-auto-height" id="section6">
+                    <div class="section-inner">
+                        <footer class="footer"></footer>
+                    </div>
+                </div>
+
+
+            </div><!-- #Fullpage -->
             
 
 
-            <div class="swiper idxSwiper">
+            <!-- <div class="swiper idxSwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide idxSlide slide1">
                         <div class="slide-inner">
@@ -122,108 +233,109 @@
                 </div>
                 <button type="button" id="scrollDown"><span class="hidden">다음</span></button>
                 <div class="swiper-idx-pagination"></div>
-            </div>
+            </div> -->
 
+            <button type="button" id="scrollDown"><span class="hidden">다음</span></button>
 
         </div>
-        <footer class="footer"></footer>
+        <!-- <footer class="footer"></footer> -->
     </div>
 
     <script>
-        var mySwiper;
+        // var mySwiper;
         $(()=>{
 
 
-            setTimeout(() => {
+            // setTimeout(() => {
                 
-                mySwiper = new Swiper(".idxSwiper", {
-                    // speed: 500,
-                    direction: "vertical",
-                    mousewheel: true,
-                    pagination: {
-                        el: ".swiper-idx-pagination",
-                        clickable: true,
-                    },
-                    breakpoints:{
-                        1440:{
-                            resize:true,
-                            resizeObserver: true,
-                            updateOnWindowResize:true,
-                            autoHeight:true,
-                            observer: true,
-                            observeParents: true,
-                        },
-                        640:{
-                            resize:false,
-                            resizeObserver: false,
-                            updateOnWindowResize:false,
-                            autoHeight:false,
-                            observer: false,
-                            observeParents: false,
-                        },
-                    },
-                    on: {
-                        init:function(e){
-                            $("html, body").addClass("no_scroll_idx");
-                        },
-                        resize: function(e){
-                            setTimeout(() => { mySwiper.update() }, 301);
-                        },
-                        slideChange: function(e) {
-                            setTimeout(function () {
-                                mySwiper.params.touchReleaseOnEdges = false;
-                                mySwiper.params.mousewheel.releaseOnEdges = false;
-                            });
+            //     mySwiper = new Swiper(".idxSwiper", {
+            //         // speed: 500,
+            //         direction: "vertical",
+            //         mousewheel: true,
+            //         pagination: {
+            //             el: ".swiper-idx-pagination",
+            //             clickable: true,
+            //         },
+            //         breakpoints:{
+            //             1440:{
+            //                 resize:true,
+            //                 resizeObserver: true,
+            //                 updateOnWindowResize:true,
+            //                 autoHeight:true,
+            //                 observer: true,
+            //                 observeParents: true,
+            //             },
+            //             640:{
+            //                 resize:false,
+            //                 resizeObserver: false,
+            //                 updateOnWindowResize:false,
+            //                 autoHeight:false,
+            //                 observer: false,
+            //                 observeParents: false,
+            //             },
+            //         },
+            //         on: {
+            //             init:function(e){
+            //                 $("html, body").addClass("no_scroll_idx");
+            //             },
+            //             resize: function(e){
+            //                 setTimeout(() => { mySwiper.update() }, 301);
+            //             },
+            //             slideChange: function(e) {
+            //                 setTimeout(function () {
+            //                     mySwiper.params.touchReleaseOnEdges = false;
+            //                     mySwiper.params.mousewheel.releaseOnEdges = false;
+            //                 });
 
-                            if( e.activeIndex == 4 ){
-                                const winH = $(window).outerHeight(true) * 0.1;
-                                const headH = $(document).find("header.header .header__inner").outerHeight(true) * 0.1;
-                                const footH = $(document).find("footer.footer").outerHeight(true) * 0.1;
-                                let height = $(document).find(".idxSwiper .swiper-slide.slide5").outerHeight(true) * 0.1;
-                                const getH = winH - headH - footH;
-                                height = (height < getH) ? getH : height;
+            //                 if( e.activeIndex == 4 ){
+            //                     const winH = $(window).outerHeight(true) * 0.1;
+            //                     const headH = $(document).find("header.header .header__inner").outerHeight(true) * 0.1;
+            //                     const footH = $(document).find("footer.footer").outerHeight(true) * 0.1;
+            //                     let height = $(document).find(".idxSwiper .swiper-slide.slide5").outerHeight(true) * 0.1;
+            //                     const getH = winH - headH - footH;
+            //                     height = (height < getH) ? getH : height;
 
-                                $(document).find(".idxSwiper").css("height",`${height}rem`);
-                                $(document).find(".idxSwiper").addClass("idxSwiperEnd");
+            //                     $(document).find(".idxSwiper").css("height",`${height}rem`);
+            //                     $(document).find(".idxSwiper").addClass("idxSwiperEnd");
                             
-                                // _front.noScroll(1);
-                                $("html, body").removeClass("no_scroll_idx");
+            //                     // _front.noScroll(1);
+            //                     $("html, body").removeClass("no_scroll_idx");
                                 
-                            } else {
-                                $(document).find(".idxSwiper").css("height","");
-                                $(document).find(".idxSwiper").removeClass("idxSwiperEnd");
+            //                 } else {
+            //                     $(document).find(".idxSwiper").css("height","");
+            //                     $(document).find(".idxSwiper").removeClass("idxSwiperEnd");
 
-                                let target = $("body").hasClass("pc") ? $("html") : $(".wrap");
-                                let scroll = target.scrollTop();
+            //                     let target = $("body").hasClass("pc") ? $("html") : $(".wrap");
+            //                     let scroll = target.scrollTop();
 
-                                if( scroll > 0 ){
-                                    setTimeout(() => { target.animate({scrollTop: '0'}, 300) }, 301);
-                                }
+            //                     if( scroll > 0 ){
+            //                         setTimeout(() => { target.animate({scrollTop: '0'}, 300) }, 301);
+            //                     }
 
-                                // _front.noScroll(0);
-                                $("html, body").addClass("no_scroll_idx");
-                            }
-                        },
-                        reachEnd: function() {
-                            setTimeout(function () {
-                                mySwiper.params.touchReleaseOnEdges = true;
-                                mySwiper.params.mousewheel.releaseOnEdges = true;
-                            }, 300);
-                        },
-                        reachBeginning: function() {
-                            setTimeout(function () {
-                                mySwiper.params.touchReleaseOnEdges = true;
-                                mySwiper.params.mousewheel.releaseOnEdges = true;
-                            }, 300);
-                        },
-                    }
-                });
+            //                     // _front.noScroll(0);
+            //                     $("html, body").addClass("no_scroll_idx");
+            //                 }
+            //             },
+            //             reachEnd: function() {
+            //                 setTimeout(function () {
+            //                     mySwiper.params.touchReleaseOnEdges = true;
+            //                     mySwiper.params.mousewheel.releaseOnEdges = true;
+            //                 }, 300);
+            //             },
+            //             reachBeginning: function() {
+            //                 setTimeout(function () {
+            //                     mySwiper.params.touchReleaseOnEdges = true;
+            //                     mySwiper.params.mousewheel.releaseOnEdges = true;
+            //                 }, 300);
+            //             },
+            //         }
+            //     });
             
-            }, 250);
+            // }, 250);
 
-            document.getElementById("scrollDown").addEventListener("click", ()=>{
-                mySwiper.slideNext()
-            });
+            // document.getElementById("scrollDown").addEventListener("click", ()=>{
+            //     mySwiper.slideNext()
+            // });
 
             var eventSwiper = new Swiper(".eventSwiper", {
                 autoHeight:true,
@@ -234,15 +346,82 @@
             });
 
             
-            $(document).on("resize", function(){
-                setTimeout(() => {
-                    _front.vh();
-                    mySwiper.update()
-                }, 301);
-            });
+            // $(document).on("resize", function(){
+            //     setTimeout(() => {
+            //         _front.vh();
+            //         mySwiper.update()
+            //     }, 301);
+            // });
             // orientationchange
+
+            
 
         })
       </script>
+
+
+      <script>
+        var myFullpage;
+        $(()=>{
+            myFullpage = new fullpage('#fullpage', {
+                // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'orange', '#ccddff'],
+                anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'footer'],
+                slidesNavigation: true, 
+                navigation: true,
+                // menu: '#menu',
+                scrollBar: true,
+                // responsiveHeight: 500,
+                // responsiveWidth: 1024,  // 너비가 1000일때 수동 원페이지 -> 스크롤
+                onLeave:function(origin, destination, direction){
+                    // console.log(origin, destination, direction);
+
+                    // const idx = destination.index;
+                    // console.log(idx);
+                    // if( idx == 4 ){
+                    //     $("body").addClass("lastIdx");
+                    // } else {
+                    //     $("body").removeClass("lastIdx");
+                    // }
+                },
+                beforeLeave: function(origin, destination, direction, trigger){
+
+                    // prevents scroll until we scroll 4 times
+                    // cont++;
+                    // return cont === 4;
+                },
+                onScroll:function(){
+                    console.log('scroll');
+                },
+                onScrollOverflow: function( section, slide, position, direction){
+                    console.log(section);
+                    console.log("position: " + position);
+                }
+            });
+
+            document.getElementById("scrollDown").addEventListener("click", ()=>{
+
+
+                // const test = myFullpage.getActiveSection();
+                // console.log(test.anchor);
+
+                myFullpage.moveSectionDown();
+
+                // console.log(myFullpage.moveTo(1,1));
+
+                // myFullpage.moveTo(1,1)
+
+                //$.fn.fullpage.setScrollingSpeed(0); 효과를 없애고싶을때
+                // $.fn.myFullpage.moveTo(1, 1); // 이동하고싶은 페이지
+                //$.fn.fullpage.setScrollingSpeed(700); 효과를 없애고싶을때
+            });
+        })
+
+        // 메인에서 상단이동
+		// $('#btnGoTop').click(function () {
+		// 	//$.fn.fullpage.setScrollingSpeed(0); 효과를 없애고싶을때
+		// 	$.fn.fullpage.moveTo(1, 1); // 이동하고싶은 페이지
+		// 	//$.fn.fullpage.setScrollingSpeed(700); 효과를 없애고싶을때
+		// });
+    </script>
 </body>
 </html>
