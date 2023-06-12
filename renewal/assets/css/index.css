@@ -72,7 +72,7 @@
 
 /* fullpage */
 #fullpage {height:var(--vh); color:#fff;}
-#fullpage .section{height:var(--vh); min-height:60rem; box-sizing:border-box; padding:15rem 0 0; margin:0;}
+#fullpage .section{height:var(--vh); box-sizing:border-box; padding:15rem 0 0; margin:0;}
 #fullpage .fp-overflow{height:100%;}
 
 #fullpage #section6{height:auto; min-height:auto;}
