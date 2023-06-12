@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div><!-- #section1 -->
-                <div class="section desktopOnly" id="section2" data-disable="down">
+                <div class="section" id="section2">
                     <div class="section-inner">
                         <div class="slogan">
                             <span>주행거리 정보만으론 만족할 수 없다면?</span>
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="section" id="section5">
+                <div class="section fp-auto-height" id="section5">
                     <div class="section-inner">
                         <div class="slogan">
                             <span>B-Lifecare가 알려주는 배터리 정보</span>
@@ -129,6 +129,11 @@
                             </div>
                             <div class="swiper-event-pagination"></div>
                         </div>
+                    </div>
+                </div>
+                <div class="section fp-auto-height" id="section6">
+                    <div class="section-inner">
+                        <footer class="footer"></footer>
                     </div>
                 </div>
 
@@ -233,7 +238,7 @@
             <button type="button" id="scrollDown"><span class="hidden">다음</span></button>
 
         </div>
-        <footer class="footer"></footer>
+        <!-- <footer class="footer"></footer> -->
     </div>
 
     <script>
@@ -360,15 +365,15 @@
         $(()=>{
             myFullpage = new fullpage('#fullpage', {
                 // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'orange', '#ccddff'],
-                anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5'],
+                anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'footer'],
                 slidesNavigation: true, 
                 navigation: true,
                 // menu: '#menu',
                 scrollBar: true,
-                responsiveHeight: 600,
+                // responsiveHeight: 500,
                 // responsiveWidth: 1024,  // 너비가 1000일때 수동 원페이지 -> 스크롤
                 onLeave:function(origin, destination, direction){
-                    console.log(origin, destination, direction);
+                    // console.log(origin, destination, direction);
 
                     // const idx = destination.index;
                     // console.log(idx);
@@ -377,6 +382,19 @@
                     // } else {
                     //     $("body").removeClass("lastIdx");
                     // }
+                },
+                beforeLeave: function(origin, destination, direction, trigger){
+
+                    // prevents scroll until we scroll 4 times
+                    // cont++;
+                    // return cont === 4;
+                },
+                onScroll:function(){
+                    console.log('scroll');
+                },
+                onScrollOverflow: function( section, slide, position, direction){
+                    console.log(section);
+                    console.log("position: " + position);
                 }
             });
 

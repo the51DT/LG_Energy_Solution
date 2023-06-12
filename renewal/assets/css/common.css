@@ -73,7 +73,7 @@ header.header h1 a{display:block; width:12.2rem; height:2.2rem; background:url(.
 .btn__history-back {display:block; width:5.6rem; height:5.6rem; background:url(../img/common/btn_prev.png) 2.5rem 50% no-repeat; background-size:1.1rem auto;}
 
 /* footer */
-footer.footer{background:#fff; padding:6rem 0;}
+footer.footer{background:#fff; color:var(--fc_01); padding:6rem 0;}
 footer.footer .footer__inner{position:relative; width:calc(100% - 12rem); max-width:136.6rem; box-sizing:border-box; margin:0 auto;}
 
 .footer__cs-ttl{font-size:2rem; font-weight:700; line-height:2.8rem;}
