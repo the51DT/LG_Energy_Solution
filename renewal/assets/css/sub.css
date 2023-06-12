@@ -213,9 +213,9 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:var(--bg_01,
     .guide .video_wrap{position:relative; width: 100%; height: auto; margin: 0 auto 7rem; padding-bottom:56.71%;}
     .guide .video_wrap video{position:absolute; top:50%; left:50%; width: 100%; transform:translate(-50%, -50%);}
 
-    .pop_con{width: 100%; height: 100%; max-height: max-content; padding-bottom: 4rem; border-radius: 0; background: var(--bg_01, #1E1E1E);}
+    .pop_con{width: 100%; height: 100%; max-height: max-content; border-radius: 0; background: var(--bg_01, #1E1E1E);}
     .pop_con .title{margin-top: 5.6rem;}
-    .pop_con .pop_list{height: calc(100% - 6.636rem); padding-bottom: 8rem;}
+    .pop_con .pop_list{height: calc(100% - 15rem);}
     .pop_con .list_item ul{background: var(--bg_01, #1E1E1E); font-size: 1.3rem;}
     .pop_up button{top: 0.8rem; right: 1rem; background: url(../img/guide/guide_close_mo.svg) no-repeat center / contain;}
 
