@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+
+    <meta name="description" content="전기차의 상태와 미래가치를 확인하는 실시간 모니터링 서비스"/>
+    <meta property="og:title" content="B-Lifecare">
+    <meta property="og:url" content="https://www.batterylifecare.com">
+    <meta property="og:image" content="https://www.batterylifecare.com/images/challenge/kakao_sns.jpg">
+    <meta property="og:description" content="전기차의 상태와 미래가치를 확인하는 실시간 모니터링 서비스"/>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:url" content="https://www.batterylifecare.com">
+    <meta name="twitter:image" content="https://www.batterylifecare.com/images/challenge/kakao_sns.jpg">
+    <meta name="twitter:description" content="전기차의 상태와 미래가치를 확인하는 실시간 모니터링 서비스"/>
+
+    <title>template</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/front.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header"></header>
+        <div class="container">
+            
+            <section class="section">
+                
+                <div class="tit_wrap">
+                    <h2>tab</h2>
+                    <p class="des">타이틀 아래 설명글</p>
+                </div>
+                <div class="wrap-tab-container" data-role="tab">
+                    <ul class="wrap-tab-list" role="tablist">
+                        <li class="tab-list active">
+                            <button id="tab-11" class="tab-button" role="tab" aria-selected="true" aria-controls="tab-panel-11">서비스 소개</button>
+                        </li>
+                        <li class="tab-list">
+                            <button id="tab-12" class="tab-button" role="tab" aria-selected="false" aria-controls="tab-panel-12" tabindex="-1">이용절차</button>
+                        </li>
+                        <li class="tab-list">
+                            <button id="tab-13" class="tab-button" role="tab" aria-selected="false" aria-controls="tab-panel-13" tabindex="-1">장치안내</button>
+                        </li>
+                    </ul>
+                    <div class="wrap-tab-contents">
+                        <div id="tab-panel-11" class="tab-contents" role="tabpanel" aria-labelledby="tab-11" tabindex="0">
+                            <h3 class="hidden">서비스 소개</h3>
+                            <p>tab contents 11</p>
+                        </div>
+                        <div id="tab-panel-12" class="tab-contents" role="tabpanel" aria-labelledby="tab-12" tabindex="0" hidden="true">
+                            <h3 class="hidden">이용절차</h3>
+                            <p>tab contents 12</p>
+                        </div>
+                        <div id="tab-panel-13" class="tab-contents" role="tabpanel" aria-labelledby="tab-13" tabindex="0" hidden="true">
+                            <h3 class="hidden">장치안내</h3>
+                            <p>tab contents 13</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="tit_wrap">
+                    <h2>selecbox</h2>
+                    <p class="des">타이틀 아래 설명글</p>
+                </div>
+                <div class="select_box">
+                    <button class="btn_select">전체 카테고리</button>
+                    <div class="select_list_box" id="selectbox">
+                        <ul class="select_list">
+                            <li>
+                                <input type="radio" id="inqTypeAll" name="inqType" checked>
+                                <label for="inqTypeAll">전체 카테고리</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="inqType01" name="inqType">
+                                <label for="inqType01">데이터 수집장치 관련</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="inqType02" name="inqType">
+                                <label for="inqType02">사이트 이용 관련</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="inqType03" name="inqType">
+                                <label for="inqType03">서비스 이용 관련</label>
+                            </li>
+                            <li>
+                                <input type="radio" id="inqType04" name="inqType">
+                                <label for="inqType04">기타</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </section>
+
+            <section class="section">
+                <div class="tit_wrap">
+                    <h2>toggle</h2>
+                    <p class="des">타이틀 아래 설명글</p>
+                </div>
+                <ul class="wrap-accordion-group" accordion-option="toggle">
+                    <li class="on">
+                        <button id="accordion-head-1" aria-level="2" aria-expanded="false" class="accordion-btn" aria-controls="accordion-region-1">
+                            <span>Accordion Head 1</span>
+                        </button>
+                        <div class="wrap-accordion-contents" id="accordion-region-1" role="region" aria-labelledby="accordion-head-1">
+                            <div class="inner-accordion-contents">
+                                Accordion contents 1 Accordion contents 1 Accordion contents 1 Accordion contents 1
+                                Accordion contents 1 Accordion contents 1 Accordion contents 1 Accordion contents 1
+                                Accordion contents 1 Accordion contents 1 Accordion contents 1 Accordion contents 1
+                                Accordion contents 1 Accordion contents 1 Accordion contents 1 Accordion contents 1
+                                Accordion contents 1 Accordion contents 1 Accordion contents 1 Accordion contents 1
+                                Accordion contents 1 Accordion contents 1 Accordion contents 1 Accordion contents 1
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button id="accordion-head-2" aria-level="2" aria-expanded="false" class="accordion-btn" aria-controls="accordion-region-2">
+                            <span>Accordion Head 2</span>
+                        </button>
+                        <div class="wrap-accordion-contents" id="accordion-region-2" role="region" aria-labelledby="accordion-head-2">
+                            <div class="inner-accordion-contents">
+                                Accordion contents 2 Accordion contents 2 Accordion contents 2 Accordion contents 2
+                                Accordion contents 2 Accordion contents 2 Accordion contents 2 Accordion contents 2
+                                Accordion contents 2 Accordion contents 2 Accordion contents 2 Accordion contents 2
+                                Accordion contents 2 Accordion contents 2 Accordion contents 2 Accordion contents 2
+                                Accordion contents 2 Accordion contents 2 Accordion contents 2 Accordion contents 2
+                                Accordion contents 2 Accordion contents 2 Accordion contents 2 Accordion contents 2
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button id="accordion-head-3" aria-level="2" aria-expanded="false" class="accordion-btn" aria-controls="accordion-region-3">
+                            <span>Accordion Head 3</span>
+                        </button>
+                        <div class="wrap-accordion-contents" id="accordion-region-3" role="region" aria-labelledby="accordion-head-3">
+                            <div class="inner-accordion-contents">
+                                Accordion contents 3 Accordion contents 3 Accordion contents 3 Accordion contents 3
+                                Accordion contents 3 Accordion contents 3 Accordion contents 3 Accordion contents 3
+                                Accordion contents 3 Accordion contents 3 Accordion contents 3 Accordion contents 3
+                                Accordion contents 3 Accordion contents 3 Accordion contents 3 Accordion contents 3
+                                Accordion contents 3 Accordion contents 3 Accordion contents 3 Accordion contents 3
+                                Accordion contents 3 Accordion contents 3 Accordion contents 3 Accordion contents 3
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button id="accordion-head-4" aria-level="2" aria-expanded="false" class="accordion-btn" aria-controls="accordion-region-4">
+                            <span>Accordion Head 4</span>
+                        </button>
+                        <div class="wrap-accordion-contents" id="accordion-region-4" role="region" aria-labelledby="accordion-head-4">
+                            <div class="inner-accordion-contents">
+                                Accordion contents 4 Accordion contents 4 Accordion contents 4 Accordion contents 4
+                                Accordion contents 4 Accordion contents 4 Accordion contents 4 Accordion contents 4
+                                Accordion contents 4 Accordion contents 4 Accordion contents 4 Accordion contents 4
+                                Accordion contents 4 Accordion contents 4 Accordion contents 4 Accordion contents 4
+                                Accordion contents 4 Accordion contents 4 Accordion contents 4 Accordion contents 4
+                                Accordion contents 4 Accordion contents 4 Accordion contents 4 Accordion contents 4
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <div class="tit_wrap">
+                    <h2>accordion</h2>
+                    <p class="des">타이틀 아래 설명글</p>
+                </div>
+                <ul class="wrap-accordion-group" accordion-option="only">
+                    <li class="on">
+                        <button id="accordion-head-11" aria-level="2" class="accordion-btn" aria-controls="accordion-region-11">
+                            <span>Accordion Head 1</span>
+                        </button>
+                        <div class="wrap-accordion-contents" id="accordion-region-11" role="region" aria-labelledby="accordion-head-11">
+                            <div class="inner-accordion-contents">
+                                Accordion contents 1 Accordion contents 1 Accordion contents 1 Accordion contents 1
+                                Accordion contents 1 Accordion contents 1 Accordion contents 1 Accordion contents 1
+                                Accordion contents 1 Accordion contents 1 Accordion contents 1 Accordion contents 1
+                                Accordion contents 1 Accordion contents 1 Accordion contents 1 Accordion contents 1
+                                Accordion contents 1 Accordion contents 1 Accordion contents 1 Accordion contents 1
+                                Accordion contents 1 Accordion contents 1 Accordion contents 1 Accordion contents 1
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button id="accordion-head-21" aria-level="2" aria-expanded="false" class="accordion-btn" aria-controls="accordion-region-21">
+                            <span>Accordion Head 2</span>
+                        </button>
+                        <div class="wrap-accordion-contents" id="accordion-region-21" role="region" aria-labelledby="accordion-head-21">
+                            <div class="inner-accordion-contents">
+                                Accordion contents 2 Accordion contents 2 Accordion contents 2 Accordion contents 2
+                                Accordion contents 2 Accordion contents 2 Accordion contents 2 Accordion contents 2
+                                Accordion contents 2 Accordion contents 2 Accordion contents 2 Accordion contents 2
+                                Accordion contents 2 Accordion contents 2 Accordion contents 2 Accordion contents 2
+                                Accordion contents 2 Accordion contents 2 Accordion contents 2 Accordion contents 2
+                                Accordion contents 2 Accordion contents 2 Accordion contents 2 Accordion contents 2
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button id="accordion-head-31" aria-level="2" aria-expanded="false" class="accordion-btn" aria-controls="accordion-region-31">
+                            <span>Accordion Head 3</span>
+                        </button>
+                        <div class="wrap-accordion-contents" id="accordion-region-31" role="region" aria-labelledby="accordion-head-31">
+                            <div class="inner-accordion-contents">
+                                Accordion contents 3 Accordion contents 3 Accordion contents 3 Accordion contents 3
+                                Accordion contents 3 Accordion contents 3 Accordion contents 3 Accordion contents 3
+                                Accordion contents 3 Accordion contents 3 Accordion contents 3 Accordion contents 3
+                                Accordion contents 3 Accordion contents 3 Accordion contents 3 Accordion contents 3
+                                Accordion contents 3 Accordion contents 3 Accordion contents 3 Accordion contents 3
+                                Accordion contents 3 Accordion contents 3 Accordion contents 3 Accordion contents 3
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button id="accordion-head-41" aria-level="2" aria-expanded="false" class="accordion-btn" aria-controls="accordion-region-41">
+                            <span>Accordion Head 4</span>
+                        </button>
+                        <div class="wrap-accordion-contents" id="accordion-region-41" role="region" aria-labelledby="accordion-head-41">
+                            <div class="inner-accordion-contents">
+                                Accordion contents 4 Accordion contents 4 Accordion contents 4 Accordion contents 4
+                                Accordion contents 4 Accordion contents 4 Accordion contents 4 Accordion contents 4
+                                Accordion contents 4 Accordion contents 4 Accordion contents 4 Accordion contents 4
+                                Accordion contents 4 Accordion contents 4 Accordion contents 4 Accordion contents 4
+                                Accordion contents 4 Accordion contents 4 Accordion contents 4 Accordion contents 4
+                                Accordion contents 4 Accordion contents 4 Accordion contents 4 Accordion contents 4
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+        <footer class="footer"></footer>
+    </div>
+</body>
+</html>
