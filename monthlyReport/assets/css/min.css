@@ -1,0 +1,27 @@
+/* layout */
+.member {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.member .section {position: relative; width: 80rem; margin: 0 auto; padding: 5.2rem 10rem; background: #FFF; border: 1px solid #E1E1E1; box-sizing: border-box;}
+.member .section+.section {margin-top: 1.4rem;}
+.member .section:last-of-type {margin-bottom: 1rem;}
+.member .section.join_guide {margin-bottom: 14.9rem; padding-bottom: 12rem;}
+.member .section.join_form {margin-bottom: 4.1rem; padding: 5.2rem 6rem 12rem;}
+.member .section.join_ok {margin-bottom: -1.3rem; padding: 32.2rem 19.9rem 38.2rem;}
+
+/* pop_up */
+.pop_up {display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40rem; padding: 3rem 2rem; text-align: center; background: #FFF; border: 1px solid #E1E1E1; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); border-radius: 6px;}
+.pop_up p {font-size: 1.6rem; line-height: 2.3rem; color: var(--fc_01, #1E1E1E);}
+.pop_up u {text-underline-position: under;}
+.pop_up .pop_close {width: 10.6rem; height: 3.2rem; margin-top: 2rem; padding: 0.6rem 4rem; font-size: 1.4rem; line-height: 2rem; vertical-align: middle; background: #B4B4B4; border-radius: 4px; color: #FFF;}
+.pop_up.open{display: block;}
+
+/* title */
+.tit_wrap {margin-bottom:4rem; text-align:center;}
+.tit_wrap h2 {color:#1E1E1E; font-size:2rem; line-height:2.9rem; font-weight:700;}
+.tit_wrap .des {margin-top:2.4rem; color:#B4B4B4; font-size:1.4rem; line-height:2.4rem;}
+
+/* radio */
+.radio_wrap {display: flex; justify-content: end;}
+.radio_wrap label {margin-right: 3rem;}
+.radio_wrap label input[type='radio'] {width: 1.6rem; height: 1.6rem; margin: 0; background: #FFF; border: 1px solid #E1E1E1; vertical-align: middle;}
+.radio_wrap label input[type='radio']:checked {background: #777777; background-image: url(../img/common/ico_check.svg); background-repeat: no-repeat; background-position: center; border: none;}
+.radio_wrap label span{display: inline-block; padding: 0 0 0 1rem; font-size: 1.4rem; line-height: 2.4rem; color: var(--fc_01, #1E1E1E); vertical-align: middle;}
