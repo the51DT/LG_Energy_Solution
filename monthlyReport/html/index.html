@@ -18,27 +18,516 @@
 
             <div class="car_list_wrap">
                 <div class="content_box">
-                    <div class="car_list_ttl">
+                    <div class="car_list_status">
                         <h3>보유 차량 리스트</h3>
                         <strong class="total">(총 <span>32</span>대)</strong>
                         <dl class="battery_info">
                             <dt>배터리 잔량 : </dt>
                             <dd>
-                                <span>0~30</span>
-                                <span>31~80</span>
-                                <span>81~100</span>
+                                <span class="state0">0~30</span>
+                                <span class="state1">31~80</span>
+                                <span class="state2">81~100</span>
                             </dd>
                         </dl>
-                    </div>
+                    </div><!-- .car_list_status -->
+                    <div class="car_list_table">
+                        <table class="table">
+                            <caption>보유 차량 리스트</caption>
+                            <colgroup>
+                                <col style="width:50px">
+                                <col style="width:120px">
+                                <col style="width:100px">
+                                <col style="width:120px">
+                                <col style="width:130px">
+                                <col style="width:100px">
+                                <col style="width:180px">
+                                <col style="width:70px">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>순번</th>
+                                    <th>차종</th>
+                                    <th>차량번호</th>
+                                    <th>현재상태</th>
+                                    <th>배터리 잔량</th>
+                                    <th>주행가능거리</th>
+                                    <th>최종 통신일</th>
+                                    <th>상세</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge parking">주차중</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state0">
+                                            <span class="state">30%</span>
+                                            <span class="graph"><span class="per" style="width:30%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge drive">주행중</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state1">
+                                            <span class="state">55.2%</span>
+                                            <span class="graph"><span class="per" style="width:55.2%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge drive">주행중</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state1">
+                                            <span class="state">55.2%</span>
+                                            <span class="graph"><span class="per" style="width:55.2%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge drive">주행중</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state0">
+                                            <span class="state">55.2%</span>
+                                            <span class="graph"><span class="per" style="width:55.2%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge parking">주차중</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state1">
+                                            <span class="state">73.5%</span>
+                                            <span class="graph"><span class="per" style="width:73.5%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge parking">주차중</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state2">
+                                            <span class="state">88.6%</span>
+                                            <span class="graph"><span class="per" style="width:88.6%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge parking">주차중</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state2">
+                                            <span class="state">95%</span>
+                                            <span class="graph"><span class="per" style="width:95%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge quickcharging">충전중(급속)</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state2">
+                                            <span class="state">88%</span>
+                                            <span class="graph"><span class="per" style="width:88%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge charging">충전중(완속)</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state1">
+                                            <span class="state">65.4%</span>
+                                            <span class="graph"><span class="per" style="width:65.4%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge parking">주차중</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state0">
+                                            <span class="state">21%</span>
+                                            <span class="graph"><span class="per" style="width:21%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge parking">주차중</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state0">
+                                            <span class="state">32.5%</span>
+                                            <span class="graph"><span class="per" style="width:32.5%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>12</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge parking">주차중</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state0">
+                                            <span class="state">31.1%</span>
+                                            <span class="graph"><span class="per" style="width:31.1%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge parking">주차중</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state1">
+                                            <span class="state">48.9%</span>
+                                            <span class="graph"><span class="per" style="width:48.9%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge parking">주차중</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state0">
+                                            <span class="state">48.9%</span>
+                                            <span class="graph"><span class="per" style="width:48.9%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>아이오닉5</td>
+                                    <td>15허1234</td>
+                                    <td>
+                                        <span class="badge parking">주차중</span>
+                                    </td>
+                                    <td>
+                                        <div class="battery_state state2">
+                                            <span class="state">97%</span>
+                                            <span class="graph"><span class="per" style="width:97%;"></span></span>
+                                        </div>
+                                    </td>
+                                    <td>324km</td>
+                                    <td>
+                                        <div class="chk_day">
+                                            <span>2023-05-08</span>
+                                            <span>18:34</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_detail">보기</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><!-- .car_list_table -->
+                    <div class="pagination">
+                        <div class="state">
+                            <span class="current">1 ~ 15</span>
+                            <span class="total">32</span>
+                        </div>
+                        <div class="navigation">
+                            <button type="button" class="btn_prev" disabled><span class="hidden">이전 페이지</span></button>
+                            <button type="button" class="btn_next"><span class="hidden">다음 페이지</span></button>
+                        </div>
+                    </div><!-- .pagination -->
                 </div>
             </div><!-- .car_list_wrap -->
 
             <div class="car_info_wrap">
-                ddd
-            </div>
+                
+                <div class="wrap-tab-container" data-role="tab">
+                    <ul class="wrap-tab-list" role="tablist">
+                        <li class="tab-list active">
+                            <button id="tab-11" class="tab-button" role="tab" aria-selected="true" aria-controls="tab-panel-11">전체 차량 요약 정보</button>
+                        </li>
+                        <li class="tab-list">
+                            <button id="tab-12" class="tab-button" role="tab" aria-selected="false" aria-controls="tab-panel-12" tabindex="-1">전체 차량 위치 정보</button>
+                        </li>
+                    </ul>
+                    <div class="wrap-tab-contents">
+                        <div id="tab-panel-11" class="tab-contents" role="tabpanel" aria-labelledby="tab-11" tabindex="0">
+                            <h3 class="hidden">전체 차량 요약 정보</h3>
+                            <div class="car_sum_ttl">
+                                <div class="period">기간 : 당월 포함 최근 6개월 <span>(2022.12.01 ~ 2023.05.08 현재)</span></div>
+                                <div class="filter">
+                                    <div class="form_check">
+                                        <input type="checkbox" id="this_month">
+                                        <label for="this_month">당월 등록 자량 제외 계산</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="car_sum_wrap">
+                                <div class="content_box sum_cost">
+                                    <h4 class="ttl">연료비 절감 추이</h4>
+                                    <div class="car_sum_cont">
+                                        <img src="../assets/img/index/graph_cost.png" alt="그래프">
+                                    </div>
+                                </div>
+                                <div class="content_box sum_drive">
+                                    <h4 class="ttl">평균 주행거리</h4>
+                                    <div class="car_sum_cont">
+                                        <img src="../assets/img/index/graph_drive.png" alt="그래프">
+                                    </div>
+                                </div>
+                                <div class="content_box wide">
+                                    <div class="col sum_stress">
+                                        <h4 class="ttl">평균 스트레스 관리</h4>
+                                        <div class="car_sum_cont">
+                                            <img src="../assets/img/index/graph_stress.png" alt="그래프">
+                                        </div>
+                                    </div>
+                                    <div class="col sum_average">
+                                        <h4 class="ttl">평균 전비</h4>
+                                        <div class="car_sum_cont">
+                                            <img src="../assets/img/index/graph_average.png" alt="그래프">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content_box wide">
+                                    <div class="col sum_habit">
+                                        <h4 class="ttl">운전습관</h4>
+                                        <div class="car_sum_cont">
+                                            <img src="../assets/img/index/graph_habit.png" alt="그래프">
+                                        </div>
+                                    </div>
+                                    <div class="col sum_charging">
+                                        <h4 class="ttl">충전정보</h4>
+                                        <div class="car_sum_cont">
+                                            <img src="../assets/img/index/graph_charging.png" alt="그래프">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- .car_sum_wrap -->
+                        </div>
+                        <div id="tab-panel-12" class="tab-contents" role="tabpanel" aria-labelledby="tab-12" tabindex="0" hidden="true">
+                            <div class="car_location_ttl">
+                                <h3>전체 차량 위치 정보</h3>
+                                <div class="time_info">
+                                    <span>2023년 5월 9일 오후 4시 39분 48초 기준</span>
+                                    <button type="button" class="btn_refresh"><span class="hidden">위치정보 다시 불러오기</span></button>
+                                </div>
+                            </div>
+                            <div class="content_box">
+                                <div class="car_location">
+                                    <img src="../assets/img/index/map.png" alt="map">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- .car_info_wrap -->
 
         </div>
         <footer class="footer"></footer>
     </div>
+
+    <script>
+        $(()=>{
+            $(document).find(".car_list_wrap .content_box").css("height", "1040px");
+            $(document).find(".car_info_wrap #tab-panel-12 .content_box").css("height", "885px");
+            $(document).find(".car_info_wrap .car_sum_wrap .content_box").css("height", "284px");
+        })
+    </script>
 </body>
 </html>
