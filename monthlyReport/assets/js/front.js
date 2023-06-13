@@ -1,7 +1,7 @@
 $(()=>{
-    // _device.init();
-    // _layout.init();
-    // _front.init();
+    _device.init();
+    _layout.init();
+    _front.init();
     // _aside.init();
 
     // page
@@ -367,7 +367,7 @@ const _layout = {
     header: function(){
         const html = `
             <div class="header__inner">
-                <h1><a href="#"><span class="hidden">B-Lifecare</span></a></h1>
+                <h1><a href="#"><span class="hidden">LG Energy Solution</span></a></h1>
                 <nav class="header__nav">
                     <ul>
                         <li class="on"><a href="#">주요 서비스</a></li>
