@@ -1,3 +1,4 @@
 @charset "utf-8";
 
-.index{}
+.container.index{display:flex; align-items:flex-start; justify-content:space-between; box-sizing:border-box;}
+
