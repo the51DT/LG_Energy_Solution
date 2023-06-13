@@ -11,7 +11,7 @@
 .header__nav{margin-left:4.8rem;}
 .header__nav ul{display:flex; align-items:center; justify-content:flex-start;}
 .header__nav ul li + li{margin-left:4.8rem;}
-.header__nav ul li a{display:block; color:#fff; line-height:2rem; padding-left:2.2rem; background:url(../img/common/nav_control.png) 0 50% no-repeat; background-size:2rem auto;}
+.header__nav ul li a{display:block; color:#fff; font-size:1.4rem; line-height:2.6rem; padding-left:2.2rem; background:url(../img/common/nav_control.png) 0 50% no-repeat; background-size:2rem auto;}
 .header__nav ul li:nth-child(1) a{background-image:url(../img/common/nav_control.png);}
 .header__nav ul li:nth-child(2) a{background-image:url(../img/common/nav_setting.png);}
 
