@@ -36,7 +36,7 @@ html {
 body {
 	line-height: 1;
     color:var(--fc_01, #1E1E1E);
-	font-family: 'Noto Sans KR', sans-serif;
+	font-family: 'Roboto', 'Noto Sans KR', sans-serif;
 	font-size:1.6rem;
 }
 ol, ul {
@@ -60,10 +60,10 @@ a, a:visited, a:hover, a:active{
 }
 input, textarea, select, button, a{
 	/* outline:none; */
-	font-family: 'Noto Sans KR', sans-serif;
+	font-family: 'Roboto', 'Noto Sans KR', sans-serif;
 }
 
-button {cursor:pointer; background:none; padding:0; border:0 none; font-family: 'Noto Sans KR', sans-serif;}
+button {cursor:pointer; background:none; padding:0; border:0 none; font-family: 'Roboto', 'Noto Sans KR', sans-serif;}
 
 ::-webkit-input-placeholder {color:var(--placeholder,#B4B4B4); -webkit-text-fill-color:var(--placeholder,#B4B4B4);}
 ::placeholder {color:var(--placeholder,#B4B4B4); -webkit-text-fill-color:var(--placeholder,#B4B4B4);}
