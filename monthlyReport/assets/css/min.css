@@ -1,6 +1,7 @@
 /* layout */
 .member .section {position: relative; width: 80rem; margin: 0 auto; padding: 5.2rem 9.9rem; background: #FFF; border: 1px solid #E1E1E1; box-sizing: border-box;}
 .member .section+.section {margin-top: 1.4rem;}
+.login {display: flex; flex-direction: column; justify-content: center; align-items: center; background: #FFF;}
 .login .section {width: 40.2rem; margin: 0 auto;}
 .join .section {position: relative; width: 80rem; margin: 0 auto; padding: 5.2rem 5.9rem; background: #FFF; border: 1px solid #E1E1E1; box-sizing: border-box;}
 
