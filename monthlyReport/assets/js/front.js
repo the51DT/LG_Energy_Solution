@@ -461,8 +461,10 @@ const _form = {
                 
                 if(item.parentNode.getElementsByClassName("btn_clear").length){
                     item.parentNode.getElementsByClassName("btn_clear")[0].style.display = "block";
+                    item.parentNode.getElementsByClassName("msg")[0].style.right = "5.6rem";
                 } else {
                     item.parentNode.appendChild(btnClear);
+                    item.parentNode.getElementsByClassName("msg")[0].style.right = "5.6rem";
                 }
                 _form.clickBtnClear();
             })
@@ -473,6 +475,7 @@ const _form = {
             item.addEventListener("click", ()=>{
                 item.parentNode.querySelector("input").value = "";
                 item.style.display = "none";
+                item.parentNode.getElementsByClassName("msg")[0].style.right = "1.7rem";
             })
         })
     },
