@@ -1,0 +1,13 @@
+/* layout */
+.member {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.member .section {width: 80rem; margin: 0 auto; padding: 5.2rem 10rem; background: #FFF; border: 0.1rem solid #E1E1E1; box-sizing: border-box;}
+.member .section+.section {margin-top: 1.4rem;}
+.member .section:last-of-type {margin-bottom: 1rem;}
+.member .section.join_guide {margin-bottom: 14.9rem;}
+.member .section.join_form {margin-bottom: 4.1rem; padding: 5.2rem 6rem;}
+.member .section.join_ok {margin-bottom: -1.3rem;}
+
+/* title */
+.tit_wrap {margin-bottom:4rem; text-align:center;}
+.tit_wrap h2 {color:#1E1E1E; font-size:2rem; line-height:2.9rem; font-weight:700;}
+.tit_wrap .des {margin-top:2.4rem; color:#B4B4B4; font-size:1.4rem; line-height:2.4rem;}
