@@ -419,50 +419,11 @@ const _layout = {
 
     },
     footer: function(){
-        const html = `
-            <div class="footer__inner">
-                <div class="footer__app">
-                    <p class="footer__app-ttl">B-Lifecare 앱 다운로드</p>
-                    <div class="footer_app-cont">
-                        <a href="#" target="blank" title="새창으로 열림" class="bn_appstore"><span class="hidden">앱스토어</span></a>
-                        <a href="#" target="blank" title="새창으로 열림" class="bn_googleplay"><span class="hidden">구글플레이</span></a>
-                    </div>
-                </div>
-                <div class="footer__cs">
-                    <p class="footer__cs-ttl">고객만족센터</p>
-                    <div class="footer__cs-cont">
-                        <span>1544-8773</span>
-                        <a href="#" role="button" class="cs_kakao"><span class="hidden">카카오톡 채널 1:1 채팅 버튼</span></a>
-                        <a href="tel:1544-8773" role="button" class="cs_tel"><span class="hidden">전화걸기</span></a>
-                    </div>
-                    <p class="footer__cs-txt">월~금요일 오전 9시 ~ 오후 5시 (공휴일 제외)</p>
-                </div>
-                <div class="footer__util">
-                    <ul>
-                        <li><a href="#">개인정보처리방침</a></li>
-                        <li><a href="#">이용약관</a></li>
-                        <li><a href="#">오픈소스 라이선스</a></li>
-                        <li><a href="#">제휴문의</a></li> 
-                    </ul>
-                </div>
-                <div class="footer_copy">
-                    <dl class="ceo">
-                        <dt>대표이사</dt>
-                        <dd>권영수</dd>
-                    </dl>
-                    <dl class="num">
-                        <dt>사업자등록번호</dt>
-                        <dd>851-81-02050</dd>
-                    </dl>
-                    <dl class="add">
-                        <dt>주소</dt>
-                        <dd>07335 서울특별시 영등포구 여의대로 108</dd>
-                    </dl>
-                    <p><strong>LG Energy Solution</strong> All rights Reserved.</p>
-                </div>
-            </div>
-        `;
+        // const html = `
+        //     <div class="footer__inner"></div>
+        // `;
         // $(document).find("footer.footer").html(html);
+        $(document).find("footer.footer").remove();
     }
 }
 
