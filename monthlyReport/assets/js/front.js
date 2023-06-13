@@ -1,83 +1,14 @@
 $(()=>{
-    _device.init();
     _layout.init();
     _front.init();
-    // _aside.init();
-
-    // page
-    // const page_guide = $(document).find(".container.guide");
-    // const page_inquiry = $(document).find(".container.inquiry");
-    // if( page_guide.length ){
-    //     _page_guide.init();
-    // }
-    // if( page_inquiry.length ){
-        _form.init();
-    // }
+    _form.init();
 })
-
-
-const _device = {
-    init: function(){
-        _device.chk();
-        $(window).on("resize", function(){ _device.chk() });
-    },
-    /**
-     * body에 pc, mobile, ios, aos 클래스 부여
-     */
-    chk: function(){
-        const elem = $("body");
-        const userAgent = navigator.userAgent;
-        const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-        const ios = /iPhone|iPad|iPod/i;
-        const aos = /Android/i;
-
-        elem.removeClass("mobile pc ios aos");
-        
-        ( mobile.test(userAgent) ) ? elem.addClass("mobile") : elem.addClass("pc");
-        ( ios.test(userAgent) ) ? elem.addClass("ios") : null;
-        ( aos.test(userAgent) ) ? elem.addClass("aos") : null;
-    },
-    /**
-     * 모바일 디바이스 일 때 true 반환
-     * @returns boolean
-     */
-    isMobile: function(){
-        const userAgent = navigator.userAgent;
-        const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-        if( mobile.test(userAgent) ){
-            return true;
-        } else {
-            return false;
-        }
-    }
-}
-
 
 const _front = {
     init: function(){
-        _front.vh();
         _front.tab();
-        _front.accordion();
-        _front.select();
-        
-        $(window).on("resize", function(){ _front.vh() })
 
         $(document).on("click", "a[href='#'], a[href='#none']", function(e){ e.preventDefault() });
-    },
-    vh: function(){
-        const innerHeight = window.innerHeight;
-        document.documentElement.style.setProperty('--vh', `${innerHeight}px`);
-    },
-    /**
-     * html, body에 no_scroll 클래스 부여, 해제
-     * @param {*} number [0, 1] 0:no_Scroll, 1:no_Scroll 해제
-     */
-    noScroll:function(type){
-        if(type){
-            $("html, body").removeClass("no_scroll");
-        } else {
-            $("html, body").addClass("no_scroll");
-        }
     },
     tab: function(){
         const tabGroups = document.querySelectorAll('[data-role="tab"]');
@@ -214,147 +145,6 @@ const _front = {
                 tabBtn.addEventListener("keyup", tabKeyUpEvt);
             });
         });
-    },
-    accordion:function(){
-        const accordion = $(document).find(".wrap-accordion-group");
-        if( accordion.length < 1 ) return;
-
-        let _this;
-
-        accordion.attr("data-role", "accordion-group");
-        accordion.find("li").each((idx, item)=>{
-            $(item).find(".wrap-accordion-contents").attr({"role":"region"});
-            if( $(item).hasClass("on") ){
-                $(item).find(".accordion-btn").attr({"aria-expanded":"true"});
-            } else {
-                $(item).find(".accordion-btn").attr({"aria-expanded":"false"});
-            }
-        })
-
-        // click
-        accordion.find(".accordion-btn").on("click", function(){
-            _this = $(this).parents(".wrap-accordion-group");
-            const li = $(this).parents("li");
-            const liAll = li.siblings();
-
-            const isOnly = _this.attr("accordion-option") == "only";
-            console.log(isOnly);
-
-            if(isOnly){
-                liAll.removeClass("on");
-                liAll.find(".accordion-btn").attr("aria-expanded", false);
-                liAll.find(".wrap-accordion-contents").slideUp();
-            }
-
-            if( li.hasClass("on") ){
-                li.removeClass("on");
-                li.find(".accordion-btn").attr("aria-expanded", false);
-                li.find(".wrap-accordion-contents").slideUp();
-            } else {
-                li.addClass("on");
-                li.find(".accordion-btn").attr("aria-expanded", true);
-                li.find(".wrap-accordion-contents").slideDown();
-            }
-
-        })
-    },
-    select: function(){
-        const select = $(document).find(".select_box");
-        if( select.length < 1){ return };
-
-        select.each((idx, item)=>{
-            const _this = $(item);
-
-            _this.find('.btn_select').attr({'aria-owns': _this.find('.select_list_box').attr('id'), 'data-toggle' :'dropdown', 'role' : 'combobox', 'aria-haspopup' : 'listbox', 'aria-expanded': 'false'});
-            _this.find('.select_list_box').attr({ 'role' : 'listbox' , 'aria-expanded' : 'false' });
-            _this.find('.select_list_box .select_list').attr('role', 'presentation');
-            _this.find('.select_list_box .select_list > li').attr('role', 'option');
-            _this.find('.select_list input[type="radio"] + label').attr({'aria-selected' : 'false', 'tabindex' : '0'});
-            _this.find('.select_list_box .select_list > li').each((idx, item)=>{
-                $(item).find('label').attr( 'aria-posinset', idx+1 );
-            });
-
-            // click
-            _this.find(".btn_select").on("click", function(){
-                const select_box = $(this).parents(".select_box");
-
-                $(document).find(".select_box").filter((idx, item2)=> $(item2)[0] != select_box[0] ).each((idx, item3)=>{
-                    selectOff( $(item3) );
-                });
-
-                ($(this).hasClass("on")) ? selectOff(_this) : selectOn(_this);
-            });
-
-            // change
-            _this.find("input[type='radio']").on("change", function(){
-                const value = $(this).next().text();
-                _this.find(".btn_select").text(value).addClass("selected");
-                selectOff(_this);
-            });
-
-            // const selectOn = function(){
-            //     _this.find(".btn_select").addClass('on').attr( 'aria-expanded', 'true');
-            //     _this.find('.select_list_box').addClass('on').attr( 'aria-expanded', 'true');
-            // };
-            // const selectOff = function(){
-            //     _this.find(".btn_select").removeClass('on').attr("aria-expanded", "false")
-            //     _this.find('.select_list_box').removeClass("on").attr("aria-expanded", "false");
-            // }
-        });
-        
-
-        const selectOn = function(elem){
-            elem.find(".btn_select").addClass('on').attr( 'aria-expanded', 'true');
-            elem.find('.select_list_box').addClass('on').attr( 'aria-expanded', 'true');
-        };
-        const selectOff = function(elem){
-            elem.find(".btn_select").removeClass('on').attr("aria-expanded", "false")
-            elem.find('.select_list_box').removeClass("on").attr("aria-expanded", "false");
-        }
-
-    }
-   
-}
-
-
-const _aside = {
-    init: function(){
-        $(document).find(".btn__aside-open").on("click", function(){
-            _aside.open();
-        })
-        $(document).find(".btn__aside-close").on("click", function(){
-            _aside.close();
-        })
-    },
-    open: function(){
-        const elem = $(document).find(".aside__wrap");
-        const btn_open = $(document).find(".btn__aside-open");
-        elem.addClass("open");
-        elem.removeAttr("aria-hidden");
-        btn_open.attr("aria-expanded", true);
-        
-        
-        $(".container, footer.footer, .btn__aside-open").attr({"aria-hidden":true, "tabindex":-1});
-        $(document).find(".aside__wrap h2").attr("tabindex", 0).focus();
-
-        _front.noScroll(0);
-        if( $(".wrap").hasClass("index") ) myFullpage.setAllowScrolling(false);
-    },
-    close: function(){
-
-        $(document).find(".btn__aside-open").attr("tabindex", 0).focus();
-        $(".container, footer.footer, .btn__aside-open").removeAttr("aria-hidden tabindex");
-
-        const elem = $(document).find(".aside__wrap");
-        const btn_open = $(document).find(".btn__aside-open");
-        elem.removeClass("open");
-        elem.attr("aria-hidden", true);
-        btn_open.attr("aria-expanded", false);
-
-        $(".wrap").removeAttr("aria-hidden tabindex");
-        
-        _front.noScroll(1);
-        if( $(".wrap").hasClass("index") ) myFullpage.setAllowScrolling(true);
     }
 }
 
@@ -379,57 +169,9 @@ const _layout = {
         $(document).find("header.header").html(html);
     },
     footer: function(){
-        // const html = `
-        //     <div class="footer__inner"></div>
-        // `;
-        // $(document).find("footer.footer").html(html);
         $(document).find("footer.footer").remove();
     }
 }
-
-const _page_guide = {
-    init: function(){
-        console.log("_page_guide");
-
-        // open
-        $(document).find(".container.guide .btn_list").on("click", function(e){
-            console.log($(this));
-            _page_guide.lastFocused = $(this);
-            _page_guide.popup_open();
-        });
-        
-        // close
-        $(document).find(".pop_up .btn_close, .pop_up .dimmed").on("click", ()=>{
-            _page_guide.popup_close();
-        });
-    },
-    lastFocused: $("body"),
-    popup_open: function(){
-        const _this = $(".pop_up");
-        _this.addClass("open").attr("aria-hidden", false);
-        _this.find(".title").attr("tabindex", 0).focus();
-
-        $(".wrap").attr({"aria-hidden":true, "tabindex":-1});
-
-        _front.noScroll(0);
-    },
-    popup_close: function(){
-
-        setTimeout(() => {
-            _page_guide.lastFocused.focus();
-            
-            const _this = $(".pop_up");
-            _this.removeClass("open").removeAttr("aria-hidden");
-            _this.find(".title").removeAttr("tabindex");
-
-            $(".wrap").removeAttr("aria-hidden tabindex");
-            
-            _front.noScroll(1);
-
-        }, 130);
-    }
-}
-
 
 const _form = {
     init: function(){
