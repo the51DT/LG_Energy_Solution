@@ -1,6 +1,7 @@
 @charset "utf-8";
 
-.container.index{display:flex; align-items:flex-start; justify-content:space-between; box-sizing:border-box; min-width:192rem;}
+body.index{min-width:192rem;}
+body.index .container{display:flex; align-items:flex-start; justify-content:space-between; box-sizing:border-box;}
 
 .car_list_wrap{width:50%;}
 .car_info_wrap{width:calc(50% - 4.8rem)}

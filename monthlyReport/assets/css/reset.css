@@ -31,7 +31,6 @@ footer, header, hgroup, menu, nav, section {
 }
 html {
 	font-size:10px;
-	overflow-x: hidden;
 }
 body {
 	line-height: 1;
@@ -79,7 +78,8 @@ input::-webkit-search-results-decoration {display:none;}
 input[type=date]::-webkit-inner-spin-button {display:none;}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-calendar-picker-indicator {display:none;}
-input[type=number] {-moz-appearance:textform;}
+input[type=number] {-moz-appearance:textfield;}
+
 /* input[type=checkbox]:focus{outline:none;} */
 input[type=password]:not(:placeholder-shown){font-family:'pass', sans-serif;}
 select::-ms-expand {display:none;}
