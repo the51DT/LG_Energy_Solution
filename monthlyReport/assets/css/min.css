@@ -10,6 +10,7 @@
 /* pop_up */
 .pop_up {display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40rem; padding: 3rem 2rem; text-align: center; background: #FFF; border: 1px solid #E1E1E1; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); border-radius: 6px;}
 .pop_up p {font-size: 1.6rem; line-height: 2.3rem; color: var(--fc_01, #1E1E1E);}
+.pop_up u {text-underline-position: under;}
 .pop_up .pop_close {width: 10.6rem; height: 3.2rem; margin-top: 2rem; padding: 0.6rem 4rem; font-size: 1.4rem; line-height: 2rem; vertical-align: middle; background: #B4B4B4; border-radius: 4px; color: #FFF;}
 .pop_up.open{display: block;}
 
