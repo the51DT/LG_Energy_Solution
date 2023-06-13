@@ -1,19 +1,111 @@
 @charset "utf-8";
 
-.container.index{display:flex; align-items:flex-start; justify-content:space-between; box-sizing:border-box;}
+.container.index{display:flex; align-items:flex-start; justify-content:space-between; box-sizing:border-box; min-width:192rem;}
 
 .car_list_wrap{width:50%;}
 .car_info_wrap{width:calc(50% - 4.8rem)}
 
 .content_box{background:#fff; box-sizing:border-box; border-radius:1rem; box-shadow:0px 0px 30px rgba(0, 0, 0, 0.05); padding:3rem;}
-.car_info_wrap .content_box{padding:4rem;}
+.car_info_wrap .content_box{padding:3rem 4rem 0;}
 
 /* 보유 차량 리스트 */
-.car_list_ttl{display:flex; align-items:center; justify-content:space-between;}
-.car_list_ttl h3,
-.car_list_ttl .total{font-size:1.6rem; font-weight:700; line-height:3rem;}
-.car_list_ttl h3{padding-left:4.6rem; background:url(../img/index/ico_carlist.png) 0 50% no-repeat; background-size:3.6rem auto;}
-.car_list_ttl .total{margin-right:auto;}
-.car_list_ttl .total span{color:#FF5252;}
-.car_list_ttl dl{display:flex; align-items:center; font-size:1.4rem; color:#a2a2a2;}
-.car_list_ttl dl dd{}
+.car_list_status{display:flex; align-items:center; justify-content:space-between;}
+.car_list_status h3,
+.car_list_status .total{font-size:1.6rem; font-weight:700; line-height:3rem;}
+.car_list_status h3{padding-left:4.6rem; background:url(../img/index/ico_carlist.png) 0 50% no-repeat; background-size:3.6rem auto;}
+.car_list_status .total{margin-right:auto;}
+.car_list_status .total span{color:#FF5252;}
+.car_list_status dl{display:flex; align-items:center; font-size:1.4rem; color:#a2a2a2;}
+.car_list_status dl dd{display:flex; align-items:center; font-weight:700; padding-left:1rem;}
+.car_list_status dl dd span + span{margin-left:1.2rem;}
+.car_list_status dl dd .state0{color:#FF5353;}
+.car_list_status dl dd .state1{color:#FFC045;}
+.car_list_status dl dd .state2{color:#7EE050;}
+
+.car_list_table{margin-top:2.3rem;}
+.car_list_table table{width:100%; border-top:1px solid #1e1e1e;}
+.car_list_table table caption{display:none;}
+.car_list_table table thead th,
+.car_list_table table thead td{height:4.8rem;}
+.car_list_table table tbody th,
+.car_list_table table tbody td{height:5.4rem;}
+.car_list_table table th,
+.car_list_table table td{padding:0 0.2rem; font-size:1.4rem; line-height:1.6rem; text-align:center; font-weight:normal; vertical-align:middle; border-bottom:1px solid #E1E1E1;}
+.car_list_table .btn_detail{width:4.6rem; height:2.2rem; font-size:1.4rem; color:#7a7a7a; border-radius:2.2rem; background:#d9d9d9;}
+
+.battery_state{text-align:center;}
+.battery_state .state{font-size:1.4rem; color:#000;}
+.battery_state .graph{display:block; width:6rem; height:0.5rem; background:#e1e1e1; border-radius:0.5rem; margin:0.4rem auto 0;}
+.battery_state .graph .per{display:block; height:100%; border-radius:0.5rem; background:#FF5353;}
+.battery_state.state0 .per{background:#FF5353;}
+.battery_state.state1 .per{background:#FFC045;}
+.battery_state.state2 .per{background:#7EE050;}
+
+.chk_day{display:flex; align-items:center; justify-content:center;}
+.chk_day span{display:flex; align-items:center; justify-content:center;}
+.chk_day span + span::before{content:''; display:inline-block; width:1px; height:1rem; background:#c7c7c7; margin:0 0.4rem;}
+
+.badge{display:inline-block; font-size:1.4rem; color:#fff; line-height:2.2rem; padding:0 1.2rem; border-radius:2.2rem; background:#9A9A9A;}
+.badge.parking{background:#9A9A9A;}
+.badge.drive{background:#55A8F4;}
+.badge.charging{background:#FFC045;}
+.badge.quickcharging{background:#50CCE0;}
+
+
+.pagination{margin:3rem 0 0; display:flex; align-items:center; justify-content:flex-end;}
+.pagination .state{display:flex; align-items:center; font-size:1.4rem; color:#000;}
+.pagination .state .total::before{content:'of'; display:inline-block; margin:0 1rem;}
+.pagination .navigation{display:flex; align-items:center; margin-left:4.8rem;}
+.pagination .navigation button{width:2rem; height:2rem; background:url(../img/common/page_next.png) 0 0 no-repeat; background-size:100% auto;}
+.pagination .navigation button[disabled]{opacity:0.4;}
+.pagination .navigation button + button{margin-left:3.8rem;}
+.pagination .navigation .btn_prev{transform:rotate(180deg);}
+
+
+/* tab */
+.wrap-tab-list {position:relative; display:flex; align-items:center; justify-content:space-between; margin:0.5rem auto 0; overflow:hidden; z-index:0;}
+.wrap-tab-list::after {content:''; display:block; position:absolute; left:0; right:0; bottom:0; width:100%; height:1px; background-color:#E1E1E1;}
+.tab-list {flex:1 1 50%; position:relative; z-index:0;}
+.tab-list .tab-button {display:block; width:100%; height:8rem; line-height:8rem; color:#7A7A7A; font-size:1.6rem; text-align:center; box-sizing:border-box;}
+.tab-list.active {z-index:10;}
+.tab-list.active .tab-button {color:var(--fc_01, #1E1E1E); font-weight:700;}
+.tab-list.active .tab-button::after {content:''; display:block; position:absolute; bottom:0; left:0; right:0; width:100%; height:0.6rem; background-color:var(--bg_02, #1E1E1E);}
+.wrap-tab-contents {width:100%;}
+.wrap-tab-contents .tab-contents {width:100%;}
+
+/* 전체 차량 요약 정보 */
+.car_sum_ttl{display:flex; align-items:flex-start; justify-content:space-between; height:7rem; padding:2rem 0 0; font-size:1.4rem; color:#a2a2a2; line-height:2rem; box-sizing:border-box;}
+.car_sum_ttl .period{padding-left:2.4rem; background:url(../img/index/ico_info.png) 0 50% no-repeat; background-size:2rem auto;}
+.car_sum_ttl .period span{color:#3C3C3C; font-weight:700;}
+
+.car_sum_ttl .form_check{position:relative;}
+.car_sum_ttl .form_check input{position:absolute; left:0; top:0; width:1px; height:1px;}
+.car_sum_ttl .form_check label{position:relative; display:block; padding-left:2.6rem; cursor:pointer;}
+.car_sum_ttl .form_check label::before{content:''; position:absolute; left:0; top:1px; display:block; width:1.6rem; height:1.6rem; box-sizing:border-box; background:#fff; border:1px solid #e1e1e1;}
+.car_sum_ttl .form_check input:checked + label::before{background:#ddd}
+
+
+.car_sum_wrap{display:flex; flex-wrap:wrap; align-items:center; justify-content: space-between;}
+.car_sum_wrap .content_box{flex:0 0 calc(50% - 0.8rem); overflow:hidden;}
+.car_sum_wrap .content_box + .content_box{margin-left:1.6rem;}
+.car_sum_wrap .content_box.wide{flex: 0 0 100%; display:flex; align-items:flex-start; justify-content:space-between; margin:1.6rem 0 0;}
+.car_sum_wrap .content_box.wide .col{flex:0 0 calc(50% - 4.5rem);}
+
+.car_sum_wrap h4.ttl{font-size:1.6rem; line-height:2.3rem; font-weight:500; padding-left:2.6rem; background:url(../img/index/ico_cost.png) 0 50% no-repeat; background-size:2rem auto;}
+.car_sum_wrap .sum_cost h4.ttl{background-image:url(../img/index/ico_cost.png)}
+.car_sum_wrap .sum_drive h4.ttl{background-image:url(../img/index/ico_drive.png)}
+.car_sum_wrap .sum_stress h4.ttl{background:none; padding-left:0;}
+.car_sum_wrap .sum_average h4.ttl{background-image:url(../img/index/ico_average.png)}
+.car_sum_wrap .sum_habit h4.ttl{background-image:url(../img/index/ico_drive.png)}
+.car_sum_wrap .sum_charging h4.ttl{background-image:url(../img/index/ico_charging.png)}
+
+.car_sum_wrap .car_sum_cont{margin-top:1.5rem; text-align:center;}
+.car_sum_wrap .car_sum_cont img{width:100%; max-width:35.5rem; max-height:18.3rem;}
+.car_sum_wrap .sum_stress .car_sum_cont img{max-width:18.8rem; max-height:auto;}
+
+
+/* 전체 차량 위치 정보 */
+.car_info_wrap .car_location_ttl{display:flex; align-items:flex-start; justify-content:space-between; height:7rem; padding:2rem 0 0; font-size:1.4rem; color:#a2a2a2; line-height:2rem; box-sizing:border-box;}
+.car_info_wrap .car_location_ttl .time_info{display:flex; align-items:center;}
+.car_info_wrap .car_location_ttl .btn_refresh{margin-left:0.4rem; width:2rem; height:2rem; background:url(../img/index/btn_refresh.png) 0 0 no-repeat; background-size:100% auto;}
+.car_info_wrap .car_location img {width: 100%;}
