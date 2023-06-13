@@ -11,7 +11,7 @@ $(()=>{
     //     _page_guide.init();
     // }
     // if( page_inquiry.length ){
-    //     _page_inquiry.init();
+        _page_inquiry.init();
     // }
 })
 
@@ -511,7 +511,6 @@ const _page_guide = {
 
 
 const _page_inquiry = {
-    //  여기다 합쳐보세여^.^
     init: function(){
         console.log("_page_inquiry");
 
