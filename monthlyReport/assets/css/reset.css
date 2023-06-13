@@ -4,11 +4,6 @@
 *:before,
 *:after{-webkit-box-sizing: border-box; box-sizing: border-box; outline:none; -webkit-tap-highlight-color:transparent !important; -webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none;}
 
-
-/* -webkit-text-size-adjust: none;
--moz-text-size-adjust: none;
--ms-text-size-adjust: none; */
-
 /* reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -41,7 +36,7 @@ html {
 body {
 	line-height: 1;
     color:var(--fc_01, #1E1E1E);
-	font-family: 'Apple SD Gothic', 'Spoqa Han Sans Neo', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	font-size:1.6rem;
 }
 ol, ul {
@@ -65,21 +60,10 @@ a, a:visited, a:hover, a:active{
 }
 input, textarea, select, button, a{
 	/* outline:none; */
-	font-family: 'Apple SD Gothic', 'Spoqa Han Sans Neo', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
-button {cursor:pointer; background:none; padding:0; border:0 none; font-family: 'Apple SD Gothic', 'Spoqa Han Sans Neo', sans-serif;}
-
-.pc::-webkit-scrollbar,
-.pc ::-webkit-scrollbar{width:5px; height:5px;}
-.pc::-webkit-scrollbar-thumb,
-.pc ::-webkit-scrollbar-thumb{height:30%;background:rgba(255,255,255,.3); border-radius:10px}
-.pc::-webkit-scrollbar-track,
-.pc ::-webkit-scrollbar-track{background:rgba(0,0,0, .5)}
-.pc::-webkit-scrollbar-corner,
-.pc ::-webkit-scrollbar-corner{background:rgba(0,0,0, 0)}
-
-.pc .index::-webkit-scrollbar{width:0; height:0;}
+button {cursor:pointer; background:none; padding:0; border:0 none; font-family: 'Noto Sans KR', sans-serif;}
 
 ::-webkit-input-placeholder {color:var(--placeholder,#929292); -webkit-text-fill-color:var(--placeholder,#929292);}
 ::placeholder {color:var(--placeholder,#929292); -webkit-text-fill-color:var(--placeholder,#929292);}

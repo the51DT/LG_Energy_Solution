@@ -1,18 +1,18 @@
 $(()=>{
-    _device.init();
-    _layout.init();
-    _front.init();
-    _aside.init();
+    // _device.init();
+    // _layout.init();
+    // _front.init();
+    // _aside.init();
 
     // page
-    const page_guide = $(document).find(".container.guide");
-    const page_inquiry = $(document).find(".container.inquiry");
-    if( page_guide.length ){
-        _page_guide.init();
-    }
-    if( page_inquiry.length ){
-        _page_inquiry.init();
-    }
+    // const page_guide = $(document).find(".container.guide");
+    // const page_inquiry = $(document).find(".container.inquiry");
+    // if( page_guide.length ){
+    //     _page_guide.init();
+    // }
+    // if( page_inquiry.length ){
+    //     _page_inquiry.init();
+    // }
 })
 
 
@@ -416,7 +416,7 @@ const _layout = {
                 <button type="button" class="btn__aside-close" aria-label="닫기"></button>
             </div>
         `;
-        $(document).find("header.header").html(html);
+        // $(document).find("header.header").html(html);
 
         // 
         const setAppDownload = function(){
@@ -502,7 +502,7 @@ const _layout = {
                 </div>
             </div>
         `;
-        $(document).find("footer.footer").html(html);
+        // $(document).find("footer.footer").html(html);
     }
 }
 
