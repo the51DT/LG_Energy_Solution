@@ -95,7 +95,7 @@ input::-webkit-search-results-decoration {display:none;}
 input[type=date]::-webkit-inner-spin-button {display:none;}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-calendar-picker-indicator {display:none;}
-input[type=number] {-moz-appearance:textform;}
+input[type=number] {-moz-appearance:textfield;}
 /* input[type=checkbox]:focus{outline:none;} */
 select::-ms-expand {display:none;}
 select:required:invalid {color:#A0A4AF;}
