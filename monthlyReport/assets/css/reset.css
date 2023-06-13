@@ -79,7 +79,6 @@ input[type=date]::-webkit-inner-spin-button {display:none;}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-calendar-picker-indicator {display:none;}
 input[type=number] {-moz-appearance:textfield;}
-
 /* input[type=checkbox]:focus{outline:none;} */
 input[type=password]:not(:placeholder-shown){font-family:'pass', sans-serif;}
 select::-ms-expand {display:none;}
