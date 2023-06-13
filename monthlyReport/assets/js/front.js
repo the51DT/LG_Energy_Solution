@@ -370,53 +370,13 @@ const _layout = {
                 <h1><a href="#"><span class="hidden">LG Energy Solution</span></a></h1>
                 <nav class="header__nav">
                     <ul>
-                        <li class="on"><a href="#">주요 서비스</a></li>
-                        <li><a href="#">배터리 인증서</a></li>
-                        <li><a href="#">이용안내</a></li>
-                        <li><a href="#">제휴문의</a></li>
+                        <li class="on"><a href="#">차량관제</a></li>
+                        <li><a href="#">차량관리</a></li>
                     </ul>
                 </nav>
-                <div class="header__util">
-                    <div class="header__app">
-                        <div class="header__app-inner">
-                            <a href="#" class="header__app-btn" role="button">앱 다운로드</a>
-                            <div class="header__app-content" id="appDownload">
-                                <ul>
-                                    <li class="qrcode_appstore">
-                                        <span class="hidden">AppStore QR Code</span>
-                                        <a href="#" target="blank" title="새창으로 열림" class="bn_appstore"><span class="hidden">앱스토어</span></a>
-                                    </li>
-                                    <li class="qrcode_googleplay">
-                                        <span class="hidden">AppStore QR Code</span>
-                                        <a href="#" target="blank" title="새창으로 열림" class="bn_googleplay"><span class="hidden">구글플레이</span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="button" class="btn__aside-open" aria-expanded="false" aria-label="메뉴"><span></span></button>
-                </div>
-            </div>
-            <div class="aside__wrap" aria-hidden="true">
-                <div class="aside__ttl"><h2><span class="hidden">메뉴</span></h2></div>
-                <div class="aside__inner">
-                    <div class="aside__menu">
-                        <ul>
-                            <li><a href="#">주요서비스</a></li>
-                            <li><a href="#">배터리 인증서</a></li>
-                            <li><a href="#">이용안내</a></li>
-                            <li><a href="#">제휴문의</a></li>
-                            <li><a href="#">공지사항</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">EV Life</a></li>
-                            <li><a href="#">이벤트</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <button type="button" class="btn__aside-close" aria-label="닫기"></button>
             </div>
         `;
-        // $(document).find("header.header").html(html);
+        $(document).find("header.header").html(html);
 
         // 
         const setAppDownload = function(){
