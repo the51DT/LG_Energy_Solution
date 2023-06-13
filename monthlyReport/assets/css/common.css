@@ -1,7 +1,9 @@
 @charset "utf-8";
 
 :root{
-    --fc_01: #1E1E1E; 
+    --fc_01: #1E1E1E;
+
+    --placeholder:#B4B4B4;
 }
 
 body{background:#F4F4F4;}
