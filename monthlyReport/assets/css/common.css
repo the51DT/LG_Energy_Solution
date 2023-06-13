@@ -1,9 +1,12 @@
 @charset "utf-8";
 
 :root{
-    --fc_01: #1E1E1E; 
+    --fc_01: #1E1E1E;
+
+    --placeholder:#B4B4B4;
 }
 
+body{background:#F4F4F4;}
 
 /* header */
 .header__inner{display:flex; align-items:center; justify-content:flex-start; height:6rem; padding:0 4.8rem; background:#1E1E1E}
@@ -17,7 +20,7 @@
 
 
 /* layout */
-.container{overflow:hidden; padding:4.8rem; background:#F4F4F4;}
+.container{overflow:hidden; padding:4.8rem;}
 /* .section{padding:12rem 6rem 0;} */
 
 /* etc */
