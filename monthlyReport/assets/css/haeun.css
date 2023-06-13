@@ -9,7 +9,7 @@
 .form_item .input_wrap {position:relative; display:flex; flex:auto; padding:0 5.6rem 0 1.4rem; border:1px solid #E1E1E1; border-radius:0.6rem; background-color:#fff; overflow:hidden;}
 .form_item .input_wrap + .input_wrap {margin-top:2rem;}
 .form_item .input_wrap .btn_clear {display:block; position:absolute; top:-0.1rem; right:0.8rem; width:4.8rem; height:4.8rem; background:url(../img/common/btn_input_delete.svg) no-repeat center / 1.5rem 1.5rem; font-size:0; text-indent:-9999%; overflow:hidden;}
-.form_item .msg {position:absolute; top:1.3rem; right:1.7rem; padding-left:1.8rem; font-size:1.6rem; line-height:2rem;}
+.form_item .msg {position:absolute; top:1.3rem; right:1.7rem; font-size:1.6rem; line-height:2rem;}
 .form_item .msg.error {color:#FF5757;}
 .form_item .email_wrap {display:flex; gap:2rem; }
 .form_item .email_wrap .input_wrap {width:34%; min-width:19rem;}
@@ -25,5 +25,11 @@ input[type="file"] {position:absolute; width:0; height:0; padding:0; font-size:0
 input[type="file"] + label {min-width:13rem; padding:0 1.7rem; border:1px solid #E1E1E1; border-radius:0.6rem; background-color:#fff; color:#1E1E1E; font-size:1.6rem; line-height:5rem; text-align:center; cursor:pointer;}
 
 /* button */
-.btn_confirm_wrap {display:flex; justify-content:center;}
-.btn_primary {display:inline-block; width:100%; max-width:40.2rem; margin-top:4rem; border-radius:0.6rem; background-color:#1E1E1E; color:#fff; font-size:1.6rem; font-weight:700; line-height:4.8rem; text-align:center;}
+.btn_confirm_wrap {display:flex; justify-content:center; margin-top:4rem;}
+.btn_primary {display:inline-block; width:100%; max-width:40.2rem; border-radius:0.6rem; background-color:#1E1E1E; color:#fff; font-size:1.6rem; font-weight:700; line-height:4.8rem; text-align:center;}
+
+/* [join_ok.html] 회원가입완료 */
+.join_comp_wrap {margin-bottom:12.4rem;}
+.join_comp_wrap .icon {display:block; width:6.2rem; height:6.2rem; margin:0 auto;}
+.join_comp_wrap .icon.icon_check {background:url(../img/common/ico_check_mint.svg) no-repeat center / contain;}
+.join_comp_wrap .comp_msg_wrap {margin-top:4rem; font-size:2rem; line-height:3rem; text-align:center;}
