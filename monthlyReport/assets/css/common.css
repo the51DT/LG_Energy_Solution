@@ -4,9 +4,21 @@
     --fc_01: #1E1E1E; 
 }
 
+
+/* header */
+.header__inner{display:flex; align-items:center; justify-content:flex-start; height:6rem; padding:0 4.8rem; background:#1E1E1E}
+.header__inner h1 a{display:block; width:21.3rem; height:3.2rem; background:url(../img/common/logo.png) 0 0 no-repeat; background-size:100% auto;}
+.header__nav{margin-left:4.8rem;}
+.header__nav ul{display:flex; align-items:center; justify-content:flex-start;}
+.header__nav ul li + li{margin-left:4.8rem;}
+.header__nav ul li a{display:block; color:#fff; font-size:1.4rem; line-height:2.6rem; padding-left:2.2rem; background:url(../img/common/nav_control.png) 0 50% no-repeat; background-size:2rem auto;}
+.header__nav ul li:nth-child(1) a{background-image:url(../img/common/nav_control.png);}
+.header__nav ul li:nth-child(2) a{background-image:url(../img/common/nav_setting.png);}
+
+
 /* layout */
 .container{overflow:hidden;}
-.section{padding:12rem 6rem 0;}
+/* .section{padding:12rem 6rem 0;} */
 
 /* etc */
 .hidden {position:relative; display:block; height:1px; width:1px; border:0; clip:rect(1px, 1px, 1px, 1px); clip-path:inset(50%); word-break:initial; word-wrap:initial; z-index:-1; overflow:hidden;}
