@@ -2,3 +2,18 @@
 
 .container.index{display:flex; align-items:flex-start; justify-content:space-between; box-sizing:border-box;}
 
+.car_list_wrap{width:50%;}
+.car_info_wrap{width:calc(50% - 4.8rem)}
+
+.content_box{background:#fff; box-sizing:border-box; border-radius:1rem; box-shadow:0px 0px 30px rgba(0, 0, 0, 0.05); padding:3rem;}
+.car_info_wrap .content_box{padding:4rem;}
+
+/* 보유 차량 리스트 */
+.car_list_ttl{display:flex; align-items:center; justify-content:space-between;}
+.car_list_ttl h3,
+.car_list_ttl .total{font-size:1.6rem; font-weight:700; line-height:3rem;}
+.car_list_ttl h3{padding-left:4.6rem; background:url(../img/index/ico_carlist.png) 0 50% no-repeat; background-size:3.6rem auto;}
+.car_list_ttl .total{margin-right:auto;}
+.car_list_ttl .total span{color:#FF5252;}
+.car_list_ttl dl{display:flex; align-items:center; font-size:1.4rem; color:#a2a2a2;}
+.car_list_ttl dl dd{}
