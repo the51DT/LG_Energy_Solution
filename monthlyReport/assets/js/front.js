@@ -523,10 +523,10 @@ const _page_inquiry = {
         _page_inquiry.setBtnClear();
 
         // 약관 동의
-        _page_inquiry.checkTerms();
+        // _page_inquiry.checkTerms();
 
         // 약관 더보기
-        _page_inquiry.openTerms();
+        // _page_inquiry.openTerms();
     },
     setBtnClear: function(){
         document.querySelectorAll(".input_wrap input").forEach((item)=>{
@@ -554,28 +554,28 @@ const _page_inquiry = {
             })
         })
     },
-    checkTerms: function(){
-        document.querySelector(".terms_wrap").addEventListener("change", function(e){
-            let chkAll = document.getElementById("check_all");
-            let chkSub = this.querySelectorAll(".check_sub");
-            let checkedSub = this.querySelectorAll(".check_sub:checked");
+    // checkTerms: function(){
+    //     document.querySelector(".terms_wrap").addEventListener("change", function(e){
+    //         let chkAll = document.getElementById("check_all");
+    //         let chkSub = this.querySelectorAll(".check_sub");
+    //         let checkedSub = this.querySelectorAll(".check_sub:checked");
             
-            if(e.target === document.getElementById("check_all")){
-                let is_checked = e.target.checked;
-                chkSub.forEach((item)=>{
-                    item.checked = is_checked;
-                })
-                return;
-            }
-            checkedSub.length === chkSub.length ? chkAll.checked = true : chkAll.checked = false;
-        })
-    },
-    openTerms: function(){
-        document.querySelectorAll(".check_group .btn_more").forEach((item)=>{
-            item.addEventListener("click",()=>{
-                item.parentNode.classList.toggle("on");
-                item.parentNode.classList.contains("on") ? item.setAttribute("aria-expanded", true) : item.setAttribute("aria-expanded", false);
-            })
-        })
-    }
+    //         if(e.target === document.getElementById("check_all")){
+    //             let is_checked = e.target.checked;
+    //             chkSub.forEach((item)=>{
+    //                 item.checked = is_checked;
+    //             })
+    //             return;
+    //         }
+    //         checkedSub.length === chkSub.length ? chkAll.checked = true : chkAll.checked = false;
+    //     })
+    // },
+    // openTerms: function(){
+    //     document.querySelectorAll(".check_group .btn_more").forEach((item)=>{
+    //         item.addEventListener("click",()=>{
+    //             item.parentNode.classList.toggle("on");
+    //             item.parentNode.classList.contains("on") ? item.setAttribute("aria-expanded", true) : item.setAttribute("aria-expanded", false);
+    //         })
+    //     })
+    // }
 }
