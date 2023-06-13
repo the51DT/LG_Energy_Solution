@@ -14,8 +14,123 @@
 <body>
     <div class="wrap">
         <header class="header"></header>
-        <div class="container">
-            컨텐츠
+        <div class="container member">
+            
+            <section class="section join_form">
+                <div class="tit_wrap">
+                    <h2>타이틀</h2>
+                    <p class="des">서브 타이틀</p>
+                </div>
+
+                <form class="form_wrap">
+                    
+                    <div class="form_item">
+                        <div class="item_tit">아이디</div>
+                        <div class="item_cont">
+                            <div class="input_wrap">
+                                <input type="text" title="아이디" placeholder="아이디">
+                                <p class="msg error">에러메시지</p>
+                            </div>
+                            <button type="button" class="btn_form gray">중복체크</button>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <div class="item_tit">비밀번호</div>
+                        <div class="item_cont">
+                            <div class="input_wrap">
+                                <input type="password" title="비밀번호" placeholder="비밀번호">
+                                <p class="msg error">에러메시지</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <div class="item_tit">비밀번호 확인</div>
+                        <div class="item_cont">
+                            <div class="input_wrap">
+                                <input type="password" title="비밀번호 확인" placeholder="비밀번호 확인">
+                                <p class="msg error">에러메시지</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <div class="item_tit">이메일</div>
+                        <div class="item_cont">
+                            <div class="input_wrap">
+                                <input type="text" title="이메일" placeholder="이메일 입력">
+                                <p class="msg error">에러메시지</p>
+                            </div>
+                            <button type="button" class="btn_form gray">중복체크</button>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <div class="item_tit">휴대폰 번호</div>
+                        <div class="item_cont">
+                            <div class="input_wrap">
+                                <input type="number" title="휴대폰 번호" placeholder="-없이 숫자만 입력">
+                                <p class="msg error">에러메시지</p>
+                            </div>
+                            <button type="button" class="btn_form gray">중복체크</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form_item">
+                        <div class="item_tit">회사명</div>
+                        <div class="item_cont">
+                            <div class="input_wrap">
+                                <input type="text" title="회사명" placeholder="회사명 입력">
+                                <p class="msg error">에러메시지</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <div class="item_tit">대표자명</div>
+                        <div class="item_cont">
+                            <div class="input_wrap">
+                                <input type="text" title="대표자명" placeholder="대표자명 입력">
+                                <p class="msg error">에러메시지</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <div class="item_tit">주소</div>
+                        <div class="item_cont">
+                            <div class="input_wrap">
+                                <input type="text" title="주소" placeholder="주소를 입력하세요.">
+                                <p class="msg error">에러메시지</p>
+                            </div>
+                            <button type="button" class="btn_form">우편번호</button>
+                            <div class="input_wrap">
+                                <input type="text" title="주소" placeholder="나머지 주소를 입력하세요.">
+                                <p class="msg error">에러메시지</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form_item">
+                        <div class="item_tit">사업자등록증</div>
+                        <div class="item_cont">
+                            <div class="file_wrap">
+                                <input type="text" placeholder="이곳에 첨부할 파일을 끌어다 놓으세요." class="file_name" readonly>
+                                <input type="file" id="inputFile" class="input_file">
+                                <label for="inputFile">파일첨부</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+                <div class="btn_confirm_wrap">
+                    <button type="button" class="btn_primary">다음</button>
+                    <!-- <a href="#" class="btn_primary">다음</a> -->
+                </div>
+            </section>
+
         </div>
         <footer class="footer"></footer>
     </div>

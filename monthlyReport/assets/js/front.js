@@ -11,7 +11,7 @@ $(()=>{
     //     _page_guide.init();
     // }
     // if( page_inquiry.length ){
-        _page_inquiry.init();
+        _form.init();
     // }
 })
 
@@ -431,26 +431,27 @@ const _page_guide = {
 }
 
 
-const _page_inquiry = {
+const _form = {
     init: function(){
-        console.log("_page_inquiry");
-
         // 폼 submit 방지
         document.querySelector("form").addEventListener("submit", (e)=>{
             e.preventDefault();
         })
         
         // 인풋 클리어버튼
-        _page_inquiry.setBtnClear();
+        _form.setBtnClear();
+
+        // 파일첨부
+        _form.inputFile();
 
         // 약관 동의
-        // _page_inquiry.checkTerms();
+        // _form.checkTerms();
 
         // 약관 더보기
-        // _page_inquiry.openTerms();
+        // _form.openTerms();
     },
     setBtnClear: function(){
-        document.querySelectorAll(".input_wrap input").forEach((item)=>{
+        document.querySelectorAll(".input_wrap input:not([readonly]):not([disabled])").forEach((item)=>{
             item.addEventListener("keyup", ()=>{
                 let btnClear = document.createElement("button");
                 let btnClearText = document.createTextNode("삭제");
@@ -458,23 +459,30 @@ const _page_inquiry = {
                 btnClear.classList.add("btn_clear");
                 btnClear.appendChild(btnClearText);
                 
-                if(item.nextElementSibling === null){
-                    item.parentNode.appendChild(btnClear);
+                if(item.parentNode.getElementsByClassName("btn_clear").length){
+                    item.parentNode.getElementsByClassName("btn_clear")[0].style.display = "block";
                 } else {
-                    item.nextElementSibling.style.display = "block";
+                    item.parentNode.appendChild(btnClear);
                 }
-                _page_inquiry.clickBtnClear();
+                _form.clickBtnClear();
             })
         })
     },
     clickBtnClear: function(){
         document.querySelectorAll(".btn_clear").forEach((item)=>{
             item.addEventListener("click", ()=>{
-                item.previousElementSibling.value = "";
+                item.parentNode.querySelector("input").value = "";
                 item.style.display = "none";
             })
         })
     },
+    inputFile: function(){
+        document.querySelectorAll(".input_file").forEach((item)=>{
+            item.addEventListener("change", ()=>{
+                item.parentNode.getElementsByClassName("file_name")[0].value = item.value;
+            })
+        })
+    }
     // checkTerms: function(){
     //     document.querySelector(".terms_wrap").addEventListener("change", function(e){
     //         let chkAll = document.getElementById("check_all");
