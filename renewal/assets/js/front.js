@@ -551,7 +551,6 @@ const _page_guide = {
 
 
 const _page_inquiry = {
-    //  여기다 합쳐보세여^.^
     init: function(){
         console.log("_page_inquiry");
 
