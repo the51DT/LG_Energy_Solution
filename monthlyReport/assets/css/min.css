@@ -21,7 +21,8 @@
 
 /* radio */
 .radio_wrap {display: flex; justify-content: end;}
-.radio_wrap label {margin-right: 3rem; cursor: pointer;}
+.radio_wrap label {cursor: pointer;}
+.radio_wrap label+label {margin-left: 3rem;}
 .radio_wrap label input[type='radio'] {width: 1.6rem; height: 1.6rem; margin: 0; background: #FFF; border: 1px solid #E1E1E1; vertical-align: middle;}
 .radio_wrap label input[type='radio']:checked {background: #777777; background-image: url(../img/common/ico_check.svg); background-repeat: no-repeat; background-position: center; border: none;}
 .radio_wrap label span{display: inline-block; padding: 0 0 0 1rem; font-size: 1.4rem; line-height: 2.4rem; color: var(--fc_01, #1E1E1E); vertical-align: middle;}
