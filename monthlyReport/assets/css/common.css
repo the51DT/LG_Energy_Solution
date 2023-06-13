@@ -17,7 +17,7 @@
 
 
 /* layout */
-.container{overflow:hidden;}
+.container{overflow:hidden; padding:4.8rem; background:#F4F4F4;}
 /* .section{padding:12rem 6rem 0;} */
 
 /* etc */
