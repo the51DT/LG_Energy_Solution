@@ -4,7 +4,7 @@
 .form_wrap {max-width:68rem; margin:10rem auto 0;}
 .form_item + .form_item {margin-top:2rem;}
 .form_item {display:flex; gap:1.4rem;}
-.form_item .item_tit {position:relative; flex:0 0 18%; min-width:12rem; padding:1.4rem 0; color:#EFEFEF; font-size:1.6rem; line-height:2rem;}
+.form_item .item_tit {position:relative; flex:0 0 18%; max-width:12rem; padding:1.4rem 0; color:#EFEFEF; font-size:1.6rem; line-height:2rem;}
 .form_item.req .item_tit::after {content:'*'; margin-left:0.1rem; color:var(--fc_02, #50CCE0); font-size:1.6rem; line-height:1.6rem;}
 .form_item .item_cont {flex:0 082%; min-width:calc(100% - 26rem)}
 .form_item .input_wrap {position:relative; display:flex;}
@@ -222,7 +222,7 @@ textarea::-webkit-scrollbar-track {border-radius:0.4rem; background:var(--bg_01,
     /* form */
     .form_wrap {max-width:100%; margin:5.2rem auto 0;}
     .form_item {flex-direction:column; gap:0;}
-    .form_item .item_tit {flex:0 0 100%; padding:0.8rem 0; font-size:1.3rem; line-height:1.8rem;}
+    .form_item .item_tit {flex:0 0 100%; max-width:100%; padding:0.8rem 0; font-size:1.3rem; line-height:1.8rem;}
     .form_item.req .item_tit::after {content:''; display:inline-block; position:absolute; top:0.8rem; width:0.4rem; height:0.4rem; margin-left:0.2rem; border-radius:50%; background-color:var(--bg_02, #50CCE0);}
     .form_item .input_wrap + .input_wrap {margin-top:0.8rem;}
     .form_item .input_wrap .btn_clear {width:4.6rem; height:5rem;}
