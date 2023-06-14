@@ -1,7 +1,12 @@
 $(()=>{
     _layout.init();
     _front.init();
-    _form.init();
+
+    // page
+    const form = $(document).find("form");
+    if( form.length ){
+        _form.init();
+    }
 })
 
 const _front = {
@@ -179,55 +184,85 @@ const _form = {
         document.querySelector("form").addEventListener("submit", (e)=>{
             e.preventDefault();
         })
-        
+
         // 인풋 클리어버튼
         _form.setBtnClear();
 
         // 파일첨부
         _form.inputFile();
 
-        // 약관 동의
-        // _form.checkTerms();
+        // 정규표현식
+        $(document).find("input[type=number]").on("propertychange change keyup keypress keydown paste input", function(e){
 
-        // 약관 더보기
-        // _form.openTerms();
+            if(!((e.keyCode > 95 && e.keyCode < 106)
+                || (e.keyCode > 47 && e.keyCode < 58)
+                || e.keyCode == 8
+                || e.keyCode == 9
+                || e.keyCode == 0)) {
+                return false;
+            }
+
+            // if( !((e.keyCode > 95 && e.keyCode < 106)
+            //   || (e.keyCode > 47 && e.keyCode < 58) 
+            //   || e.keyCode == 8)) {
+            //     return false;
+            // }
+
+            this.value = this.value.replace(/[^0-9]/g, '');
+        })
     },
     setBtnClear: function(){
         document.querySelectorAll(".input_wrap input:not([readonly]):not([disabled])").forEach((item)=>{
-            item.addEventListener("keyup", ()=>{
+            $(item).on("keyup keydown", ()=>{
                 let btnClear = document.createElement("button");
                 let btnClearText = document.createTextNode("삭제");
                 btnClear.setAttribute("type", "button");
                 btnClear.classList.add("btn_clear");
                 btnClear.appendChild(btnClearText);
+                let pdRight = 5.2;
                 
                 if(item.parentNode.getElementsByClassName("btn_clear").length){
                     item.parentNode.getElementsByClassName("btn_clear")[0].style.display = "block";
-
-                    if(item.parentNode.getElementsByClassName("msg").length){
-                        item.parentNode.getElementsByClassName("msg")[0].style.right = "5.6rem";
-                    }
+                    _form.setInputSize(item, pdRight);
                 } else {
                     item.parentNode.appendChild(btnClear);
-
-                    if(item.parentNode.getElementsByClassName("msg").length){
-                        item.parentNode.getElementsByClassName("msg")[0].style.right = "5.6rem";
-                    }
+                    _form.setInputSize(item, pdRight);
                 }
+
+                _form.hideBtnClear(item);
                 _form.clickBtnClear();
+            })
+            item.addEventListener("blur", ()=>{
+                _form.hideBtnClear(item);
             })
         })
     },
     clickBtnClear: function(){
         document.querySelectorAll(".btn_clear").forEach((item)=>{
             item.addEventListener("click", ()=>{
+                let pdRight = 1.4;
                 item.parentNode.querySelector("input").value = "";
                 item.style.display = "none";
-                if(item.parentNode.getElementsByClassName("msg").length){
-                    item.parentNode.getElementsByClassName("msg")[0].style.right = "1.7rem";
-                }
+                _form.setInputSize(item, pdRight);
             })
         })
+    },
+    hideBtnClear: function(item){
+        if(item.value === "" && item.parentNode.getElementsByClassName("btn_clear").length){
+            let pdRight = 1.4;
+            item.parentNode.getElementsByClassName("btn_clear")[0].style.display = "none";
+            _form.setInputSize(item, pdRight);
+        }
+    },
+    setInputSize: function(item, pdRight){
+        if(item.parentNode.getElementsByClassName("msg").length){
+            let msg = item.parentNode.getElementsByClassName("msg")[0];
+            let msgWidth = (msg.clientWidth * 0.1) + 1.4;
+            item.parentNode.style.paddingRight = `${pdRight}rem`;
+            item.parentNode.querySelector("input").style.width = `calc(100% - ${msgWidth}rem)`
+        } else {
+            item.parentNode.style.paddingRight = `${pdRight}rem`;
+        }
     },
     inputFile: function(){
         document.querySelectorAll(".input_file").forEach((item)=>{
@@ -236,28 +271,4 @@ const _form = {
             })
         })
     }
-    // checkTerms: function(){
-    //     document.querySelector(".terms_wrap").addEventListener("change", function(e){
-    //         let chkAll = document.getElementById("check_all");
-    //         let chkSub = this.querySelectorAll(".check_sub");
-    //         let checkedSub = this.querySelectorAll(".check_sub:checked");
-            
-    //         if(e.target === document.getElementById("check_all")){
-    //             let is_checked = e.target.checked;
-    //             chkSub.forEach((item)=>{
-    //                 item.checked = is_checked;
-    //             })
-    //             return;
-    //         }
-    //         checkedSub.length === chkSub.length ? chkAll.checked = true : chkAll.checked = false;
-    //     })
-    // },
-    // openTerms: function(){
-    //     document.querySelectorAll(".check_group .btn_more").forEach((item)=>{
-    //         item.addEventListener("click",()=>{
-    //             item.parentNode.classList.toggle("on");
-    //             item.parentNode.classList.contains("on") ? item.setAttribute("aria-expanded", true) : item.setAttribute("aria-expanded", false);
-    //         })
-    //     })
-    // }
 }
