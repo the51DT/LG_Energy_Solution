@@ -109,4 +109,5 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .car_info_wrap .car_location_ttl{display:flex; align-items:flex-start; justify-content:space-between; height:7rem; padding:2rem 0 0; font-size:1.4rem; color:#a2a2a2; line-height:2rem; box-sizing:border-box;}
 .car_info_wrap .car_location_ttl .time_info{display:flex; align-items:center;}
 .car_info_wrap .car_location_ttl .btn_refresh{margin-left:0.4rem; width:2rem; height:2rem; background:url(../img/index/btn_refresh.png) 0 0 no-repeat; background-size:100% auto;}
+.car_info_wrap .car_location_ttl .btn_refresh.click{transform:rotate(360deg); transition:transform 1s;}
 .car_info_wrap .car_location img {width: 100%;}
