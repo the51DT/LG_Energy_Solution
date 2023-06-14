@@ -1,9 +1,9 @@
 /* layout */
-.member .section {position: relative; width: 80rem; margin: 0 auto; padding: 5.2rem 13.1rem; background: #FFF; border: 1px solid #E1E1E1; box-sizing: border-box;}
+.member .section {position: relative; width: 80rem; margin: 0 auto; padding: 5.1rem 13.1rem; background: #FFF; border: 1px solid #E1E1E1; box-sizing: border-box;}
 .member .section+.section {margin-top: 1.4rem;}
 .login {display: flex; flex-direction: column; justify-content: center; align-items: center; background: #FFF;}
 .login .section {width: 40.2rem; margin: 0 auto;}
-.join .section {position: relative; width: 80rem; margin: 0 auto; padding: 5.2rem 5.9rem 12rem; background: #FFF; border: 1px solid #E1E1E1; box-sizing: border-box;}
+.join .section {position: relative; width: 80rem; margin: 0 auto; padding: 5.1rem 5.9rem 11.9rem; background: #FFF; border: 1px solid #E1E1E1; box-sizing: border-box;}
 
 /* pop_up */
 .pop_up {display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40rem; padding: 3rem 2rem; text-align: center; background: #FFF; border: 1px solid #E1E1E1; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); border-radius: 6px;}
