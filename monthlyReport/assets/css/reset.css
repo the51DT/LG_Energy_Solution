@@ -64,8 +64,8 @@ input, textarea, select, button, a{
 
 button {cursor:pointer; background:none; padding:0; border:0 none; font-family: 'Roboto', 'Noto Sans KR', sans-serif;}
 
-::-webkit-input-placeholder {color:var(--placeholder,#B4B4B4); -webkit-text-fill-color:var(--placeholder,#B4B4B4);}
-::placeholder {color:var(--placeholder,#B4B4B4); -webkit-text-fill-color:var(--placeholder,#B4B4B4);}
+::-webkit-input-placeholder {color:var(--placeholder,#B4B4B4); -webkit-text-fill-color:var(--placeholder,#B4B4B4); opacity:1;}
+::placeholder {color:var(--placeholder,#B4B4B4); -webkit-text-fill-color:var(--placeholder,#B4B4B4); opacity:1;}
 
 input,select,textarea,button {border:0; border-radius:0; -webkit-appearance:none; appearance:none;}
 button {background-color:transparent; color:inherit; cursor:pointer;}
