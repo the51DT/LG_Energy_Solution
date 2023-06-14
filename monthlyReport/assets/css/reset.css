@@ -58,7 +58,7 @@ a, a:visited, a:hover, a:active{
 	text-decoration: none;
 }
 input, textarea, select, button, a{
-	/* outline:none; */
+	outline:none;
 	font-family: 'Roboto', 'Noto Sans KR', sans-serif;
 }
 
