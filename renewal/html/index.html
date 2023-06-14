@@ -95,13 +95,29 @@
                             <span>B-Lifecare가 알려주는 배터리 정보</span>
                             <p><strong>EV Life</strong></p>
                         </div>
-                        <div class="idxSwiper-evlife">
-                            <ul>
-                                <li><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></li>
-                                <li><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></li>
-                                <li><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></li>
-                            </ul>
+
+                        <div class="swiper evlifeSwiper dim">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                                <div class="swiper-slide"><a href="#"><img src="../assets/img/index/evlife_thumbnail.png" alt="EV Life"></a></div>
+                            </div>
+                            <!-- <div class="swiper-evlife-pagination"></div> -->
                         </div>
+
+
 
                         <div class="bn_event_swiper">
                             <div class="swiper eventSwiper">
@@ -129,8 +145,9 @@
     </div>
 
     <script>
-        var eventSwiper;
         var myFullpage;
+        var eventSwiper;
+        var evlifeSwiper;
 
         $(()=>{
 
@@ -157,7 +174,35 @@
                 },
             });
 
+            evlifeSwiper = new Swiper(".evlifeSwiper", {
+                slidesPerView: "auto",
+                spaceBetween: 14,
+                on:{
+                    init:function(e){ setEvlifeSwiperDim(e) },
+                    sliderMove: function(e){ setEvlifeSwiperDim(e) }
+                },
+                breakpoints: {
+                    640: {
+                        spaceBetween: 30,
+                    },
+                },
+            });
+
+            setTimeout(() => {
+                $(document).find(".fp-overflow").removeAttr("tabindex");
+            }, 200);
+
         })
+        
+        const setEvlifeSwiperDim = function(e){
+            const media640 = window.matchMedia("screen and (min-width: 640px)").matches;
+
+            if( e.slides.length < 3 && media640 ){
+                $(document).find(".evlifeSwiper").removeClass("dim");
+            } else {
+                $(document).find(".evlifeSwiper").addClass("dim");
+            }
+        }
       </script>
 </body>
 </html>
