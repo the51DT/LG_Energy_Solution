@@ -5,7 +5,7 @@
 .member .section {position: relative; width: 80rem; margin: 0 auto; padding: 5.1rem 13.1rem; background: #FFF; border: 1px solid #E1E1E1; box-sizing: border-box;}
 .member .section + .section {margin-top: 1.4rem;}
 
-.login {display: flex; flex-direction: column; justify-content: center; align-items: center; background: #FFF;}
+.login {display: flex; flex-direction: column; justify-content: center; align-items: center; background: #FFF; min-height:50rem;}
 .login .section {width: 40.2rem; margin: 0 auto;}
 
 .join_agree .section {position: relative; width: 80rem; margin: 0 auto; padding: 5.1rem 9.9rem 11.9rem; background: #FFF; border: 1px solid #E1E1E1; box-sizing: border-box;}
