@@ -223,7 +223,9 @@ const _form = {
             item.addEventListener("click", ()=>{
                 item.parentNode.querySelector("input").value = "";
                 item.style.display = "none";
-                item.parentNode.getElementsByClassName("msg")[0].style.right = "1.7rem";
+                if(item.parentNode.getElementsByClassName("msg").length){
+                    item.parentNode.getElementsByClassName("msg")[0].style.right = "1.7rem";
+                }
             })
         })
     },
