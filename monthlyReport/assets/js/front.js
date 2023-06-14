@@ -194,6 +194,8 @@ const _form = {
         // 정규표현식
         $(document).find("input[type=number]").on("propertychange change keyup keypress keydown paste input", function(e){
 
+            this.value = this.value.replace(/[^0-9]/g, '');
+
             if(!((e.keyCode > 95 && e.keyCode < 106)
                 || (e.keyCode > 47 && e.keyCode < 58)
                 || e.keyCode == 8
@@ -208,7 +210,6 @@ const _form = {
             //     return false;
             // }
 
-            this.value = this.value.replace(/[^0-9]/g, '');
         })
     },
     setBtnClear: function(){
