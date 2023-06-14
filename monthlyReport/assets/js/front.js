@@ -219,14 +219,14 @@ const _form = {
                 btnClear.setAttribute("type", "button");
                 btnClear.classList.add("btn_clear");
                 btnClear.appendChild(btnClearText);
-                let pdRight = 5.2;
+                let msgPos = 5.1;
                 
                 if(item.parentNode.getElementsByClassName("btn_clear").length){
                     item.parentNode.getElementsByClassName("btn_clear")[0].style.display = "block";
-                    _form.setInputSize(item, pdRight);
+                    _form.setInputSize(item, msgPos);
                 } else {
                     item.parentNode.appendChild(btnClear);
-                    _form.setInputSize(item, pdRight);
+                    _form.setInputSize(item, msgPos);
                 }
 
                 _form.hideBtnClear(item);
@@ -240,28 +240,29 @@ const _form = {
     clickBtnClear: function(){
         document.querySelectorAll(".btn_clear").forEach((item)=>{
             item.addEventListener("click", ()=>{
-                let pdRight = 1.4;
+                let msgPos = 1.7;
                 item.parentNode.querySelector("input").value = "";
                 item.style.display = "none";
-                _form.setInputSize(item, pdRight);
+                _form.setInputSize(item, msgPos);
             })
         })
     },
     hideBtnClear: function(item){
         if(item.value === "" && item.parentNode.getElementsByClassName("btn_clear").length){
-            let pdRight = 1.4;
+            let msgPos = 1.7;
             item.parentNode.getElementsByClassName("btn_clear")[0].style.display = "none";
-            _form.setInputSize(item, pdRight);
+            _form.setInputSize(item, msgPos);
         }
     },
-    setInputSize: function(item, pdRight){
+    setInputSize: function(item, msgPos){
         if(item.parentNode.getElementsByClassName("msg").length){
             let msg = item.parentNode.getElementsByClassName("msg")[0];
             let msgWidth = (msg.clientWidth * 0.1) + 1.4;
-            item.parentNode.style.paddingRight = `${pdRight}rem`;
+            msg.style.right = `${msgPos}rem`;
+            item.parentNode.style.paddingRight = `${msgPos}rem`;
             item.parentNode.querySelector("input").style.width = `calc(100% - ${msgWidth}rem)`
         } else {
-            item.parentNode.style.paddingRight = `${pdRight}rem`;
+            item.parentNode.style.paddingRight = `${msgPos}rem`;
         }
     },
     inputFile: function(){

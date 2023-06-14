@@ -8,7 +8,9 @@
 .login {display: flex; flex-direction: column; justify-content: center; align-items: center; background: #FFF;}
 .login .section {width: 40.2rem; margin: 0 auto;}
 
-.join .section {position: relative; width: 80rem; margin: 0 auto; padding: 5.1rem 5.9rem 11.9rem; background: #FFF; border: 1px solid #E1E1E1; box-sizing: border-box;}
+.join_agree .section {position: relative; width: 80rem; margin: 0 auto; padding: 5.1rem 9.9rem 11.9rem; background: #FFF; border: 1px solid #E1E1E1; box-sizing: border-box;}
+.join_form .section {position: relative; width: 80rem; margin: 0 auto; padding: 5.1rem 5.9rem 11.9rem; background: #FFF; border: 1px solid #E1E1E1; box-sizing: border-box;}
+.join_ok .section {position: relative; display: flex; flex-direction: column; justify-content: center; width: 80rem; min-height: calc(100vh - 15.6rem); margin: 0 auto; padding: 5.1rem 5.9rem; background: #FFF; border: 1px solid #E1E1E1; box-sizing: border-box;}
 
 
 /* pop_up */
@@ -38,7 +40,6 @@
 .terms_wrap .radio_wrap {margin-top:0.8rem;}
 
 /* [join_ok.html] 가입완료 */
-.join .section.join_ok {display:flex; flex-direction:column; justify-content:center; min-height:calc(100vh - 15.6rem); padding:5.2rem 5.9rem;}
 .join_comp_wrap {margin-bottom:8.4rem;}
 .join_comp_wrap .icon {display:block; width:6.2rem; height:6.2rem; margin:0 auto;}
 .join_comp_wrap .icon.icon_check {background:url(../img/common/ico_check_mint.svg) no-repeat center / contain;}
