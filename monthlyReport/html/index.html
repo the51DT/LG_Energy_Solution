@@ -527,6 +527,11 @@
             $(document).find(".car_list_wrap .content_box").css("height", "1040px");
             $(document).find(".car_info_wrap #tab-panel-12 .content_box").css("height", "885px");
             $(document).find(".car_info_wrap .car_sum_wrap .content_box").css("height", "284px");
+
+            $(document).on("click", ".btn_refresh", function(e){
+                $(this).addClass("click");
+                setTimeout(() => { $(this).removeClass("click") }, 1000);
+            })
         })
     </script>
 </body>

@@ -32,7 +32,7 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .car_list_table table tbody td{height:5.4rem;}
 .car_list_table table th,
 .car_list_table table td{padding:0 0.2rem; font-size:1.4rem; line-height:1.6rem; text-align:center; font-weight:normal; vertical-align:middle; border-bottom:1px solid #E1E1E1;}
-.car_list_table .btn_detail{width:4.6rem; height:2.2rem; font-size:1.4rem; color:#7a7a7a; border-radius:2.2rem; background:#d9d9d9;}
+.car_list_table .btn_detail{width:4.6rem; height:2.2rem; line-height:2.3rem; font-size:1.4rem; color:#7a7a7a; border-radius:2.2rem; background:#d9d9d9;}
 
 .battery_state{text-align:center;}
 .battery_state .state{font-size:1.4rem; color:#000;}
@@ -109,4 +109,5 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .car_info_wrap .car_location_ttl{display:flex; align-items:flex-start; justify-content:space-between; height:7rem; padding:2rem 0 0; font-size:1.4rem; color:#a2a2a2; line-height:2rem; box-sizing:border-box;}
 .car_info_wrap .car_location_ttl .time_info{display:flex; align-items:center;}
 .car_info_wrap .car_location_ttl .btn_refresh{margin-left:0.4rem; width:2rem; height:2rem; background:url(../img/index/btn_refresh.png) 0 0 no-repeat; background-size:100% auto;}
+.car_info_wrap .car_location_ttl .btn_refresh.click{transform:rotate(360deg); transition:transform 1s;}
 .car_info_wrap .car_location img {width: 100%;}
