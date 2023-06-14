@@ -53,7 +53,7 @@ body{background:var(--bg_02, #f4f4f4); min-width:102.4rem;}
 .form_item .input_wrap {position:relative; display:flex; flex:auto; padding:0 1.7rem; border:1px solid #E1E1E1; border-radius:0.6rem; background-color:#fff; overflow:hidden;}
 .form_item .input_wrap + .input_wrap {margin-top:2rem;}
 .form_item .input_wrap .btn_clear {display:block; position:absolute; top:-0.1rem; right:0.3rem; width:4.8rem; height:4.8rem; background:url(../img/common/btn_input_delete.svg) no-repeat center / 2rem 2rem; font-size:0; text-indent:-9999%; overflow:hidden;}
-.form_item .msg {position:absolute; top:0; right:1.7rem; padding:1.3rem 0; font-size:1.6rem; line-height:2rem;}
+.form_item .msg {position:absolute; top:0; right:1.7rem; padding:1.3rem 0; font-size:1.6rem; line-height:2rem; transition:right .3s;}
 .form_item .msg.error {color:#FF5757;}
 .form_item .email_wrap {display:flex; gap:2rem;}
 .form_item .email_wrap .input_wrap {width:34%; min-width:19rem;}
