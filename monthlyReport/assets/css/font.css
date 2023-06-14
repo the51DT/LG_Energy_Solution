@@ -2,18 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
 
-
-
-/* @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 300;
-
-    src: url('../font/SpoqaHanSansNeo-Light.eot?#iefix') format('embedded-opentype'), 
-        url('../font/SpoqaHanSansNeo-Light.woff2') format('woff2'),
-        url('../font/SpoqaHanSansNeo-Light.woff') format('woff');
-} */
-
 @font-face {
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -43,17 +31,6 @@
         url('../font/NotoSansKR-Bold.woff2') format('woff2'),
         url('../font/NotoSansKR-Bold.woff') format('woff');
 }
-
-/* @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 700;
-
-    src: url('../font/SpoqaHanSansNeo-Bold.eot?#iefix') format('embedded-opentype'), 
-        url('../font/SpoqaHanSansNeo-Bold.woff2') format('woff2'),
-        url('../font/SpoqaHanSansNeo-Bold.woff') format('woff');
-} */
-
 
 @font-face {
     font-family: 'pass';

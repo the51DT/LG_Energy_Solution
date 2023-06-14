@@ -83,5 +83,5 @@ input[type=number] {-moz-appearance:textfield;}
 input[type=password]:not(:placeholder-shown){font-family:'pass', sans-serif;}
 select::-ms-expand {display:none;}
 select:required:invalid {color:#A0A4AF;}
-option {color:#000;}
+option {color:var(--fc_01, #1E1E1E);;}
 option[value=""][disabled] {display:none;}
