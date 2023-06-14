@@ -243,6 +243,7 @@ const _form = {
             item.addEventListener("click", ()=>{
                 let msgPos = 1.7;
                 item.parentNode.querySelector("input").value = "";
+                item.parentNode.querySelector("input").focus();
                 item.style.display = "none";
                 _form.setInputSize(item, msgPos);
             })
