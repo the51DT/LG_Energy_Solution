@@ -16,7 +16,7 @@
     --placeholder:#B4B4B4;
 }
 
-body{background:var(--bg_02, #f4f4f4);}
+body{background:var(--bg_02, #f4f4f4); min-width:102.4rem;}
 
 /* header */
 .header__inner{display:flex; align-items:center; justify-content:flex-start; height:6rem; padding:0 4.8rem; background:var(--bg_01, #1E1E1E);}
