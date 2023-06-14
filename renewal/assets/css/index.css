@@ -34,12 +34,19 @@
 #fullpage .slogan p span{display:block; font-size:1.6rem; line-height:2.1rem; margin-top:2rem;}
 #fullpage .slogan .btn_detail{display:block; width:12.8rem; height:4.9rem; line-height:4.9rem; border-radius:2.5rem; background:#fff; text-align:center; font-size:1.8rem; color:var(--fc_01, #1e1e1e); font-weight:700; margin-top:6rem;}
 
-#fullpage .idxSwiper-evlife{margin-top:8rem;}
-#fullpage .idxSwiper-evlife ul{display:flex; align-items:center; justify-content:space-between;}
-#fullpage .idxSwiper-evlife li{flex:1 1 38rem;}
-#fullpage .idxSwiper-evlife li + li{margin-left:3rem;}
-#fullpage .idxSwiper-evlife li a{display:block;}
-#fullpage .idxSwiper-evlife li a img{width:100%;}
+/* evlifeSwiper */
+#fullpage .evlifeSwiper{margin-top:8rem; position:relative; width:100%; z-index:1; overflow:hidden;}
+#fullpage .evlifeSwiper.dim::after{content:''; position:absolute; right:0; top:0; display:block; width:8rem; height:100%; background:linear-gradient(270deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 48.65%); z-index:99;}
+
+#fullpage .evlifeSwiper .swiper-wrapper{position:relative; display:flex; align-items:center; width:100%; height:100%; z-index: 1;}
+#fullpage .evlifeSwiper .swiper-slide{position:relative; flex:0 0 38rem;}
+#fullpage .evlifeSwiper .swiper-slide a{display:block;}
+#fullpage .evlifeSwiper .swiper-slide img{display:block; width:100%;}
+#fullpage .evlifeSwiper .swiper-evlife-pagination{display:flex; align-items:center; justify-content:center; margin:2rem 0 0;}
+#fullpage .evlifeSwiper .swiper-evlife-pagination .swiper-pagination-bullet{display:block; width:0.6rem; height:0.6rem; border-radius:0.6rem; background:#5C5C5C;}
+#fullpage .evlifeSwiper .swiper-evlife-pagination .swiper-pagination-bullet + .swiper-pagination-bullet{margin-left:0.4rem;}
+#fullpage .evlifeSwiper .swiper-evlife-pagination .swiper-pagination-bullet-active{background:#fff;}
+
 
 /* event */
 #fullpage .bn_event{margin-top:4rem;}
@@ -48,7 +55,8 @@
 #fullpage .bn_event span{display:block; margin-top:1.2rem; color:#A2A2A2; font-size:1.5rem; line-height:2rem}
 #fullpage .bn_event span::before{content:'※'; margin-right:0.4rem;}
 
-#fullpage .bn_event_swiper{margin:4rem 2rem 0; overflow:hidden; display:none;}
+/* event_swiper */
+#fullpage .bn_event_swiper{margin:4rem 3rem 0; overflow:hidden; display:none;}
 #fullpage .bn_event_swiper .eventSwiper{position:relative; width:100%; z-index:1; overflow:hidden;}
 #fullpage .bn_event_swiper .eventSwiper .swiper-wrapper{position:relative; display:flex; align-items:center; width:100%; height:100%; z-index: 1;}
 #fullpage .bn_event_swiper .eventSwiper .swiper-slide{position:relative; flex-shrink:0;}
@@ -80,7 +88,9 @@
 
 	#fullpage .section-inner{max-width:100%;}
 	#fullpage .slogan{padding:0 4rem;}
-	#fullpage .idxSwiper-evlife{padding:0 4rem;}
+
+	#fullpage .evlifeSwiper{padding:0 4rem;}
+
 	#fullpage .bn_event{margin:3rem 4rem 0;}
 
 }
@@ -112,11 +122,10 @@
 	#fullpage .slogan p span{font-size:1.5rem; line-height:2rem; margin-top:1.4rem;}
 	#fullpage .slogan .btn_detail{width:10rem; height:3.2rem; line-height:3.2rem; font-size:1.5rem; margin-top:3rem;}
 	
-	#fullpage .idxSwiper-evlife{position:relative; margin-top:2rem; width:100%; padding:0;}
-	#fullpage .idxSwiper-evlife ul::after{content:''; position:absolute; right:0; top:0; display:block; width:8rem; height:100%; background:linear-gradient(270deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 48.65%);;}
-	#fullpage .idxSwiper-evlife ul{padding:0 3rem; overflow-y:scroll;}
-	#fullpage .idxSwiper-evlife ul li{flex:0 0 60%;}
-	#fullpage .idxSwiper-evlife ul li + li{margin-left:1.4rem;}
+
+	#fullpage .evlifeSwiper{margin-top:2rem; padding:0 3rem;}
+	#fullpage .evlifeSwiper .swiper-slide{flex:0 0 60%;}
+
 
 	#fullpage .idxSwiper .br_pc{display:none;}
 	#fullpage .idxSwiper .br_mo{display:block;}
@@ -161,7 +170,8 @@
 
 	#fullpage .bn_event{margin:4rem 2rem 0;}
 
-	#fullpage .idxSwiper-evlife ul{padding:0 2rem;}
+	#fullpage .evlifeSwiper{padding:0 2rem;}
+	#fullpage .bn_event_swiper{margin:4rem 2rem 0;}
 }
 
 @media only screen and (max-width:375px) {
