@@ -165,13 +165,16 @@ const _layout = {
                 <h1><a href="#"><span class="hidden">LG Energy Solution</span></a></h1>
                 <nav class="header__nav">
                     <ul>
-                        <li class="on"><a href="#">차량관제</a></li>
+                        <li class="on"><a href="#">종합정보</a></li>
                         <li><a href="#">차량관리</a></li>
                     </ul>
                 </nav>
             </div>
         `;
         $(document).find("header.header").html(html);
+
+        const isIndex = $("body").hasClass("index");
+        if( !isIndex ){ $(document).find("header.header .header__nav").remove() }   // index 제외페이지 nav 제거
     },
     footer: function(){
         $(document).find("footer.footer").remove();
