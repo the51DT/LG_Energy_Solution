@@ -92,10 +92,11 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .car_sum_wrap .content_box.wide{flex: 0 0 100%; display:flex; align-items:flex-start; justify-content:space-between; margin:1.6rem 0 0;}
 .car_sum_wrap .content_box.wide .col{flex:0 0 calc(50% - 4.5rem);}
 
-.car_sum_wrap h4.ttl{font-size:1.6rem; line-height:2.3rem; font-weight:500; padding-left:2.6rem; background:url(../img/index/ico_cost.png) 0 50% no-repeat; background-size:2rem auto;}
+.car_sum_wrap h4.ttl{font-size:1.8rem; line-height:2.6rem; font-weight:500; padding-left:3.2rem; background:url(../img/index/ico_cost.png) 0 50% no-repeat; background-size:2.6rem auto;}
 .car_sum_wrap .sum_cost h4.ttl{background-image:url(../img/index/ico_cost.png)}
-.car_sum_wrap .sum_drive h4.ttl{background-image:url(../img/index/ico_drive.png)}
-.car_sum_wrap .sum_stress h4.ttl{background:none; padding-left:0;}
+.car_sum_wrap .sum_drive h4.ttl{background-image:url(../img/index/ico_guage.png)}
+/* .car_sum_wrap .sum_stress h4.ttl{background:none; padding-left:0;} */
+.car_sum_wrap .sum_stress h4.ttl{background-image:url(../img/index/ico_stress.png)}
 .car_sum_wrap .sum_average h4.ttl{background-image:url(../img/index/ico_average.png)}
 .car_sum_wrap .sum_habit h4.ttl{background-image:url(../img/index/ico_drive.png)}
 .car_sum_wrap .sum_charging h4.ttl{background-image:url(../img/index/ico_charging.png)}
