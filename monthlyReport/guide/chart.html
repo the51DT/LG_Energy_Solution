@@ -1,47 +1,159 @@
-<html>
-  <head>
-    <!--Load the AJAX API-->
-    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
-    <script src="./assets/js/chart.js"></script>
-    <script type="text/javascript">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
 
-      // Load the Visualization API and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
+  <title>chart</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  
+  <link rel="stylesheet" href="../assets/css/billboard.min.css">
 
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
+  <script src="../assets/js/jquery.js"></script>
+  <script src="../assets/js/front.js"></script>
+  <script src="../assets/js/chart.js"></script>
+  
+  <script src="../assets/js/billboard.min.js"></script>
+  <script src="../assets/js/billboard.pkgd.min.js"></script>
 
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
+</head>
+<body>
+
+    <div id="chart_div"></div>
+    <div id="donut_single"></div>
+ 
+    <div id="chart"></div>
+    <div id="gaugeChart"></div>
+
+<script>
+
+    var chart = bb.generate({
+        data: {
+            columns: [
+                ["data", 0]
+            ],
+            type: "gauge", // for ESM specify as: gauge()
+            onclick: function(d, i) {
+                console.log("onclick", d, i);
+            },
+                onover: function(d, i) {
+                console.log("onover", d, i);
+            },
+                onout: function(d, i) {
+                console.log("onout", d, i);
+            }
+        },
+        arc: {
+            cornerRadius: 15
+        },
+        gauge: {
+            type: "single",
+            max: 100,
+            min: 0,
+            fullCircle: true,
+            arcLength: 100,
+            label: {
+                extents: function() { return ""; }
+            },
+            startingAngle: 0,
+            width: 24,
+        },
+        color: {
+            pattern: [
+                "#FF0000",
+                "#F97600",
+                "#F6C600",
+                "#60B044"
+            ],
+            threshold: {
+                values: [
+                    30,
+                    60,
+                    90,
+                    100
+                ]
+            }
+        },
+        size: {
+            height: 180
+        },
+        bindto: "#gaugeChart"
+    });
+
+    setTimeout(function() {
+        chart.load({
+            columns: [
+                ["data", 72]
+            ],
+        });
+    }, 2);
+
+
+
+
+
+
+
+
+    google.charts.load('current', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawChart2);
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    function drawChart() {
 
         // Create the data table.
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
         data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
+        ['Mushrooms', 3],
+        ['Onions', 1],
+        ['Olives', 1],
+        ['Zucchini', 1],
+        ['Pepperoni', 2]
         ]);
 
         // Set chart options
         var options = {'title':'How Much Pizza I Ate Last Night',
-                       'width':400,
-                       'height':300};
+                        'width':400,
+                        'height':300};
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
-      }
-    </script>
-  </head>
+    }
 
-  <body>
-    <!--Div that will hold the pie chart-->
-    <div id="chart_div"></div>
-  </body>
+
+
+    function drawChart2() {
+
+        var data = google.visualization.arrayToDataTable([
+            ['Effort', 'Amount given'],
+            ['My all',     100],
+        ]);
+
+        var options = {
+            pieHole: 0.5,
+            pieSliceTextStyle: {
+                color: 'black',
+            },
+            legend: 'none',
+            chartArea: {left:0, top:0, width:'50%', height:'75%'}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donut_single'));
+        chart.draw(data, options);
+    }
+
+
+
+</script>
+</body>
 </html>
