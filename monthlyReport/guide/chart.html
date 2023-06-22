@@ -233,6 +233,12 @@ $(()=>{
 
     Chart.register(ChartDataLabels);
 
+    let data = [2589, 1890, 2505, 1790, 2450, 1512];
+    let newData = data.map((item, idx)=>{
+        console.log('item', item);
+        return (item * 0.1).toFixed(0);
+    })
+
     new Chart(ctx, {
         type: 'bar',
         data: {
@@ -240,7 +246,7 @@ $(()=>{
                 {
                     type: 'line',
                     label: '충전량',
-                    data: [2589, 1890, 2505, 1790, 2450, 1512],
+                    data: newData,
                     backgroundColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#fff'],
                     borderColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#009AFE'],
                     borderWidth: 1,
@@ -248,14 +254,19 @@ $(()=>{
                     pointRAdius: 10,
                     pointBorderWidth: [1, 1, 1, 1, 1, 3],
                     datalabels: {
+                        value: [1,2,3,4,5,6],
                         align: 'top',
                         textAlign: 'start',
-                        color: '#656565',
+                        color: '#CDCDCD',
                         font: {
                             size: 10,
-                        }
+                        },
+                        formatter: function (value, context) {
+                            const result = data[context.dataIndex];
+                            
+                            return result;
+                        },
                     },
-                    satisfies: 'Stack 1',
                 },
                 {
                     type: 'bar',
@@ -280,7 +291,6 @@ $(()=>{
                         }
                     },
                     clip: false,
-                    satisfies: 'Stack 0',
                 },
                 {
                     type: 'bar',
@@ -297,8 +307,6 @@ $(()=>{
                             size: 10,
                         }
                     },
-                    clip: false,
-                    satisfies: 'Stack 0',
                 },
             ],
             
@@ -323,6 +331,7 @@ $(()=>{
                 legend: {
                     display: false,
                 },
+                
             },
             scales: {
                 x: {

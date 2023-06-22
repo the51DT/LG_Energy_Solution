@@ -147,7 +147,7 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .myChart_wrap2 .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#E9E9E9;}
 .myChart_wrap2 .data_label ul li:nth-child(2):before{background:#c3c3c3;}
 .myChart_wrap2 .data_label ul li:nth-child(3):before{background:none; width:1.8rem; height:1.1rem; border-radius:0; background:url(../img/index/ico_graph.png) 50% 50% no-repeat; }
-.myChart_wrap2 .data_label ul li:nth-child(4):before{background:#B1A4FF;}
+.myChart_wrap2 .data_label ul li:nth-child(4):before{background:#009AFE;}
 .myChart_wrap2 .data_info{position:absolute; right:0; bottom:0; font-size:1rem; color:#bbb; line-height:1.2rem;}
 .myChart_wrap2 .data_info::before{content:''; position:absolute; left:0; top:50%; transform:translate(-0.7rem, -50%); display:block; width:0.3rem; height:0.3rem; border-radius:0.3rem; background:#d9d9d9;}
 
