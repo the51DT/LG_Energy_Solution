@@ -263,7 +263,6 @@ $(()=>{
                         },
                         formatter: function (value, context) {
                             const result = data[context.dataIndex];
-                            
                             return result;
                         },
                     },
@@ -284,7 +283,7 @@ $(()=>{
                     borderRadius: 9999,
                     datalabels: {
                         anchor: 'end',
-                        align: 'end',
+                        align: 'bottom',
                         color: '#656565',
                         font: {
                             size: 10,
@@ -317,11 +316,6 @@ $(()=>{
             font:{size:24}
         },
         options: {
-            // responsive: false,
-            
-    // interaction: {
-    //   intersect: false,
-    // },
             maintainAspectRatio: false,
             showTooltips: false,
             plugins:{
