@@ -1,108 +1,3 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
-
-    <title>chart</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/js/front.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-    
-</head>
-<body>
-
-
-    <div class="chart_bar_vertical_double_wrap">
-        <div class="data_wrap"></div>
-        <div class="data_label">
-            <ul>
-                <li>보유EV 대수</li>
-                <li>당월</li>
-            </ul>
-        </div>
-        <p class="data_info">LPG 1,057원 기준</p>
-    </div><!-- .chart_bar_vertical_double_wrap -->
-
-
-    <div class="chart_bar_vertical_wrap">
-        <div class="data_wrap"></div>
-        <div class="data_label">
-            <ul>
-                <li>월별</li>
-                <li>당월</li>
-            </ul>
-        </div>
-    </div><!-- .chart_bar_vertical_wrap -->
-
-
-    <div class="chart_guage_wrap">
-        <svg class="circle_progress" width="190" height="190" viewBox="-20 -20 230 230">
-            <defs>
-                <linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#FF4392" />
-                    <stop offset="100%" stop-color="#FFC086" />
-                </linearGradient>
-            </defs>
-            <image href="../assets/img/index/circle_progress_bg.png" x="10" y="10" height="170" width="170" />
-            <circle class="frame" cx="95" cy="95" r="100" stroke-dashoffset="314.159" stroke-dasharray="628.319"></circle>
-            <circle class="bar" stroke="url(#myGradient)" cx="95" cy="95" r="100" stroke-dashoffset="628.319" stroke-dasharray="628.319"></circle>
-        </svg>
-        <div class="info">
-            <span class="value">
-                <strong>72</strong>점
-            </span>
-            <span class="txt">
-                전월대비 <strong class="up">2점 상승 ▲</strong>
-            </span>
-        </div>
-    </div><!-- .chart_guage_wrap -->
-
-
-
-    <div class="chart_bar_horizontal_wrap">
-        <div class="data_wrap"></div>
-        <div class="data_label">
-            <ul>
-                <li>월별</li>
-                <li>당월</li>
-            </ul>
-        </div>
-    </div><!-- .chart_bar_horizontal_wrap -->
-    
-    <div class="myChart_wrap">
-        <canvas id="myChart"></canvas>
-        <div class="data_label">
-            <ul>
-                <li>급가속</li>
-                <li>급감속</li>
-                <li>당월</li>
-            </ul>
-        </div>
-        <p class="data_info">월평균</p>
-    </div>
-    
-    <div class="myChart_wrap2">
-        <canvas id="myChart2"></canvas>
-        <div class="data_label">
-            <ul>
-                <li>총 충전횟수</li>
-                <li>급속횟수</li>
-                <li>충전량</li>
-                <li>당월</li>
-            </ul>
-        </div>
-        <p class="data_info">월평균</p>
-    </div>
-
-<script>
-
 $(()=>{
     
     const ctx = document.getElementById('myChart').getContext("2d");
@@ -259,8 +154,7 @@ $(()=>{
                         },
                         formatter: function (value, context) {
                             const result = data[context.dataIndex];
-                            const comma = result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                            return comma;
+                            return result;
                         },
                     },
                 },
@@ -562,6 +456,3 @@ let _chartGuage = {
         $(document).find(".chart_guage_wrap .info .txt").html(text);
     }
 }
-</script>
-</body>
-</html>
