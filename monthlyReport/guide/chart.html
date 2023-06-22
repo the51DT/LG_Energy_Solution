@@ -18,6 +18,9 @@
   <script src="../assets/js/billboard.min.js"></script>
   <script src="../assets/js/billboard.pkgd.min.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
 </head>
 <body>
 
@@ -27,7 +30,125 @@
     <div id="chart"></div>
     <div id="gaugeChart"></div>
 
+    <canvas id="myChart"></canvas>
+
 <script>
+
+
+    const ctx = document.getElementById('myChart').getContext("2d");
+    var gradientStroke = ctx.createLinearGradient(0, 0, 200, 200);
+    gradientStroke.addColorStop(0, "#C3C3C3");
+    gradientStroke.addColorStop(1, "#fff");
+
+    
+
+    Chart.register(ChartDataLabels);
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            datasets: [
+                // {
+                //     type: 'bar',
+                //     label: 'Bar Dataset',
+                //     data: [10, 20, 30, 40]
+                // },
+                {
+                    type: 'line',
+                    label: '급감속',
+                    data: [31, 34, 23, 45, 30, 26],
+                    backgroundColor: '#9C9C9C',
+                    borderColor: '#9C9C9C',
+                    borderWidth: 1,
+                    datalabels: {
+                        align: 'top',
+                        textAlign: 'start',
+                        color: '#656565',
+                    }
+                },
+                {
+                    type: 'bar',
+                    label: '급가속',
+                    data: [10, 12, 7, 15, 12, 10],
+                    barThickness: 20,
+                    backgroundColor: [
+                        gradientStroke,
+                        gradientStroke,
+                        gradientStroke,
+                        gradientStroke,
+                        gradientStroke,
+                        'rgba(177, 164, 255, 1)'
+                    ],
+                    borderRadius: 9999,
+                        datalabels: {
+                            align: 'top',
+                            textAlign: 'start',
+                            color: '#656565',
+                        }
+                }
+            ],
+            labels: ['12월', '1월', '2월', '3월', '4월', '당월']
+        },
+        datalabels: {
+            color:'black',
+            font:{size:24}
+        },
+        options: {
+            plugins:{
+                datalabels: {
+                    color: '#656565',
+                }
+            },
+            legend: {
+                display: false,
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem){
+                        return tooltipItem.yLabel;
+                    }
+                },
+				enabled: false
+			},
+            hover: {
+				animationDuration: 0
+			},
+            // animation: {
+			// 	// duration: 1,
+			// 	onComplete: function () {
+			// 		var chartInstance = this.chart,
+			// 			ctx = chartInstance.ctx;
+            //             ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+            //             ctx.fillStyle = 'purple';
+            //             ctx.textAlign = 'center';
+            //             ctx.textBaseline = 'bottom';
+
+			// 		this.data.datasets.forEach(function (dataset, i) {
+			// 			var meta = chartInstance.controller.getDatasetMeta(i);
+			// 			meta.data.forEach(function (bar, index) {
+			// 				var data = dataset.data[index];							
+			// 				ctx.fillText(data, bar._model.x, bar._model.y - 5);
+			// 			});
+			// 		});
+			// 	}
+			// },
+            // scales: {
+			// 	yAxes: [{
+			// 		ticks: {
+			// 			beginAtZero: true,
+			// 			stepSize : 2,
+			// 			fontSize : 14,
+			// 		}
+			// 	}]
+			// }
+        }
+    });
+
+
+
+
+
+
 
     var chart = bb.generate({
         data: {
