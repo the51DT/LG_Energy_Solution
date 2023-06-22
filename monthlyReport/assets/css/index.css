@@ -112,3 +112,86 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .car_info_wrap .car_location_ttl .btn_refresh{margin-left:0.4rem; width:2rem; height:2rem; background:url(../img/index/btn_refresh.png) 0 0 no-repeat; background-size:100% auto;}
 .car_info_wrap .car_location_ttl .btn_refresh.click{transform:rotate(360deg); transition:transform 1s;}
 .car_info_wrap .car_location img {width: 100%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 평균 스트레스 관리 : chart_guage_wrap */
+.chart_guage_wrap {position:relative; width:190px; height:190px;}
+.chart_guage_wrap .circle_progress {transform:rotate(-90deg)}
+.chart_guage_wrap .bg{background:url(../img/index/circle_progress_bg.svg) 50% 50% no-repeat; background-size:100% auto;}
+.chart_guage_wrap .frame,
+.chart_guage_wrap .bar {fill: none; stroke-width: 2.4rem; stroke-linecap:round;}
+.chart_guage_wrap .frame {stroke:#E3E3E3;}
+.chart_guage_wrap .bar {animation:guageBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
+
+.chart_guage_wrap .info {position:absolute; left:50%; top:50%; width:100%; transform:translate(-50%, -55%); text-align:center;}
+.chart_guage_wrap .info .value {display:block; line-height:4rem; font-size:1.4rem;}
+.chart_guage_wrap .info .value strong{font-size:2.8rem; font-weight:700; color:#1e1e1e;}
+.chart_guage_wrap .info .txt {display:block; font-size:1rem; color:#7C7C7C; margin-top:-0.5rem;}
+.chart_guage_wrap .info .txt strong{color:#FE8B8A;}
+.chart_guage_wrap .info .txt .up{color:#FE8B8A;}
+.chart_guage_wrap .info .txt .down{color:#50CCE0;}
+@keyframes guageBar {
+    to {stroke-dashoffset: 628.319;}
+}
+
+/* 평균전비 */
+.chart_bar_horizontal_wrap{position:relative; width:347px; height:179px;}
+.chart_bar_horizontal_wrap .data_label{position:absolute; left:0; bottom:0;}
+.chart_bar_horizontal_wrap .data_label ul{display:flex; align-items:center;}
+.chart_bar_horizontal_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
+.chart_bar_horizontal_wrap .data_label ul li + li{margin-left:1.2rem;}
+.chart_bar_horizontal_wrap .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#C3C3C3;}
+.chart_bar_horizontal_wrap .data_label ul li:nth-child(2):before{background:#F8BA72;}
+.chart_bar_horizontal_wrap .data_wrap ul li{display:flex; align-items:center; justify-content:flex-start;}
+.chart_bar_horizontal_wrap .data_wrap ul li + li{margin-top:1rem;}
+.chart_bar_horizontal_wrap .data_wrap ul li .label{flex:0 0 2.6rem; font-size:1rem; color:#bbb; line-height:1.4rem; text-align:right; margin-right:2rem;}
+.chart_bar_horizontal_wrap .data_wrap ul li .graph{flex:0 0 calc(100% - 6.4rem)}
+.chart_bar_horizontal_wrap .data_wrap ul li .guage{position:relative; display:block; height:1.8rem; border-radius:0 1.8rem 1.8rem 0; background: linear-gradient(-90deg, #C4C4C4 0%, rgba(195, 195, 195, 0.2) 100%); animation:horizontalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
+.chart_bar_horizontal_wrap .data_wrap ul li  .data{position:absolute; left:100%; top:0; display:block; padding-left:1rem; font-size:1rem; color:#656565; line-height:1.8rem;}
+.chart_bar_horizontal_wrap .data_wrap ul li:last-child .guage{background: linear-gradient(-90deg, #F8BA72 0%, rgba(248, 186, 114, 0.2) 100%);
+}
+.chart_bar_horizontal_wrap .data_wrap ul li:last-child .label{color:#1E1E1E;}
+.chart_bar_horizontal_wrap .data_wrap ul li:last-child .data{color:#FF9D2C;}
+@keyframes horizontalBar {
+    to {width:0%}
+}
+
+
+
+/* 평균주행거리 */
+.chart_bar_vertical_wrap{position:relative; width:344px; height:157px; margin-top:20px; }
+.chart_bar_vertical_wrap .data_label{position:absolute; left:0; bottom:0;}
+.chart_bar_vertical_wrap .data_label ul{display:flex; align-items:center;}
+.chart_bar_vertical_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
+.chart_bar_vertical_wrap .data_label ul li + li{margin-left:1.2rem;}
+.chart_bar_vertical_wrap .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#C3C3C3;}
+.chart_bar_vertical_wrap .data_label ul li:nth-child(2):before{background:#24D3C9;}
+.chart_bar_vertical_wrap .data_wrap{height:110px; border-bottom:1px solid #E1E1E1;}
+.chart_bar_vertical_wrap .data_wrap ul{display:flex; align-items:flex-end; justify-content: space-between; height:100%;}
+.chart_bar_vertical_wrap .data_wrap ul li{flex:1 1 auto; position:relative; align-self:stretch; display:flex; flex-direction: column; align-items:center; justify-content:flex-end;}
+.chart_bar_vertical_wrap .data_wrap .label{position:absolute; left:0; top:100%; width:100%; text-align:center; font-size:1rem; line-height:1.4rem; color:#bbb; margin-top:0.6rem;}
+.chart_bar_vertical_wrap .data_wrap .graph{position:relative; width:1.8rem; height:100%;}
+.chart_bar_vertical_wrap .data_wrap .guage{position:absolute; left:0; bottom:0; display:block; width:100%; border-radius:1.8rem 1.8rem 0 0; background: linear-gradient(180deg, #C4C4C4 0%, rgba(195, 195, 195, 0.2) 100%); animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
+.chart_bar_vertical_wrap .data_wrap .data{position:absolute; left:50%; top:0; transform:translate(-50%, -1.5rem); font-size:1rem; color:#656565;}
+.chart_bar_vertical_wrap .data_wrap ul li:last-child .guage{background: linear-gradient(180deg, #24D3C9 0%, rgba(36, 211, 201, 0.2) 100%);
+}
+.chart_bar_vertical_wrap .data_wrap ul li:last-child .label{color:#1E1E1E;}
+.chart_bar_vertical_wrap .data_wrap ul li:last-child .data{color:#24D3C9;}
+@keyframes verticalBar {
+    to {height:0%}
+}

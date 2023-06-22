@@ -1,28 +1,77 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+    <meta charset="UTF-8">
 
-  <title>chart</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
-  
-  <!-- <link rel="stylesheet" href="../assets/css/billboard.min.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
 
-  <script src="../assets/js/jquery.js"></script>
-  <script src="../assets/js/front.js"></script>
-  <!-- <script src="../assets/js/chart.js"></script> -->
-  
-  <!-- <script src="../assets/js/billboard.min.js"></script>
-  <script src="../assets/js/billboard.pkgd.min.js"></script> -->
+    <title>chart</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <!-- <link rel="stylesheet" href="../assets/css/billboard.min.css"> -->
 
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/front.js"></script>
+    <!-- <script src="../assets/js/chart.js"></script> -->
+
+    <!-- <script src="../assets/js/billboard.min.js"></script>
+    <script src="../assets/js/billboard.pkgd.min.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    
 </head>
 <body>
+
+
+
+    <div class="chart_bar_vertical_wrap">
+        <div class="data_wrap"></div>
+        <div class="data_label">
+            <ul>
+                <li>월별</li>
+                <li>당월</li>
+            </ul>
+        </div>
+    </div><!-- .chart_bar_vertical_wrap -->
+    
+
+    <div class="chart_guage_wrap">
+        <svg class="circle_progress" width="190" height="190" viewBox="-20 -20 230 230">
+            <defs>
+                <linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FF4392" />
+                    <stop offset="100%" stop-color="#FFC086" />
+                </linearGradient>
+            </defs>
+            <image href="../assets/img/index/circle_progress_bg.png" x="10" y="10" height="170" width="170" />
+            <circle class="frame" cx="95" cy="95" r="100" stroke-dashoffset="314.159" stroke-dasharray="628.319"></circle>
+            <circle class="bar" stroke="url(#myGradient)" cx="95" cy="95" r="100" stroke-dashoffset="628.319" stroke-dasharray="628.319"></circle>
+        </svg>
+        <div class="info">
+            <span class="value">
+                <strong>72</strong>점
+            </span>
+            <span class="txt">
+                전월대비 <strong class="up">2점 상승 ▲</strong>
+            </span>
+        </div>
+    </div><!-- .chart_guage_wrap -->
+
+
+
+    <div class="chart_bar_horizontal_wrap">
+        <div class="data_wrap"></div>
+        <div class="data_label">
+            <ul>
+                <li>월별</li>
+                <li>당월</li>
+            </ul>
+        </div>
+    </div><!-- .chart_bar_horizontal_wrap -->
+
+
 
     <!-- <div id="chart_div"></div>
     <div id="donut_single"></div>
@@ -39,9 +88,15 @@
 
 
     const ctx = document.getElementById('myChart').getContext("2d");
-    var gradientStroke = ctx.createLinearGradient(0, 0, 200, 200);
-    gradientStroke.addColorStop(0, "#C3C3C3");
-    gradientStroke.addColorStop(1, "#fff");
+    var gradientStroke = ctx.createLinearGradient(0, 0, 0, 200);
+    gradientStroke.addColorStop(0.5, "#C3C3C3");
+    gradientStroke.addColorStop(0.9, "#fff");
+
+    
+    var gradientStroke2 = ctx.createLinearGradient(0, 0, 0, 200);
+    gradientStroke2.addColorStop(0.5, "#B1A4FF");
+    gradientStroke2.addColorStop(0.9, "#fff");
+
 
     
 
@@ -78,7 +133,7 @@
                         gradientStroke,
                         gradientStroke,
                         gradientStroke,
-                        'rgba(177, 164, 255, 1)'
+                        gradientStroke2
                     ],
                     borderRadius: 9999,
                     datalabels: {
@@ -145,6 +200,159 @@
 
 
 
+</script>
+
+
+<script>
+    
+
+    $(()=>{
+        _chartGuage.init();
+        _chartBarHorizontal.init();
+        _chartBarVertical.init();
+    });
+
+    let _chartBarVertical = {
+        data: [11211, 8910, 7899, 13540, 12002, 1563],
+        label: ['12월', '1월', '2월', '3월', '4월', '당월'],
+        maxData: 99999,
+
+        frame: $(document).find(".chart_bar_vertical_wrap"),
+
+        init: function(){
+            this.setData();
+        },
+        setData: function(){
+
+            _chartBarVertical.frame.find(".data_wrap").html('<ul class="data_ul"></ul>');
+            const data_ul = _chartBarVertical.frame.find(".data_ul");
+
+            this.maxData = Math.max.apply(null, this.data); // get max data
+
+            this.data.map((item, idx)=>{
+
+                const per = ((item * 100) / this.maxData).toFixed(0);
+                const comma = item.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+                let text = ( this.data.length-1 == idx ) ? `${comma}Km` : `${comma}`;
+
+                let html = `
+                    <li>
+                        <div class="label">${_chartBarVertical.label[idx]}</div>
+                        <div class="graph">
+                            <span class="guage" style="height:${per}%">
+                                <span class="data">${text}</span>
+                            </span>
+                        </div>
+                    </li>
+                `;
+
+                data_ul.append(html);
+            })
+        }
+    }
+
+    let _chartBarHorizontal = {
+        data: [6.2, 6.0, 5.7, 7.0, 6.5, 6.7],
+        label: ['12월', '1월', '2월', '3월', '4월', '당월'],
+
+        frame: $(document).find(".chart_bar_horizontal_wrap"),
+
+        init: function(){
+            this.setData();
+        },
+        setData: function(){
+
+            _chartBarHorizontal.frame.find(".data_wrap").html('<ul class="data_ul"></ul>');
+            const data_ul = _chartBarHorizontal.frame.find(".data_ul");
+
+            this.data.map((item, idx)=>{
+                const per = item * 10;
+                let text = ( this.data.length-1 == idx ) ? `${item.toFixed(1)}(km/kwh)` : `${item.toFixed(1)}`;
+
+                let html = `
+                    <li>
+                        <div class="label">${_chartBarHorizontal.label[idx]}</div>
+                        <div class="graph">
+                            <span class="guage" style="width:${per}%">
+                                <span class="data">${text}</span>
+                            </span>
+                        </div>
+                    </li>
+                `;
+
+                data_ul.append(html);
+            })
+        }
+        
+    }
+
+
+    let _chartGuage = {
+            PreviousData: 70,   // 이전 데이터
+            data: 72,   // 현재 데이터
+    
+            frame: $(document).find(".chart_guage_wrap .frame"),
+            bar: $(document).find(".chart_guage_wrap .bar"),
+            value: $(document).find(".chart_guage_wrap .value"),
+            RADIUS: document.querySelector(".chart_guage_wrap .frame").getAttribute("r"),   // 100
+            init: function(){
+    
+                let gauge = _chartGuage.gauge(100);                           // 반원
+                let dasyarray = _chartGuage.dashArray();
+                let dashoffset = dasyarray * (1-gauge);
+                
+                // frame
+                _chartGuage.frame.css({ "stroke-dashoffset" : dashoffset });
+                _chartGuage.frame.css({ "stroke-dasharray" : dasyarray });
+    
+                // bar
+                _chartGuage.bar.css({ "stroke-dasharray" : dasyarray });
+    
+                _chartGuage.setData(_chartGuage.data);
+            },
+            gauge: function(per){
+                return per / 100;                   // 원 (1)
+            },
+            dashArray: function(){                  //  점선 (고정값)
+                return 2 * Math.PI * this.RADIUS;
+            },
+            dashOffset: function(per){              // 시작점 (animation)
+                // let progress = per / 200;
+                let gauge = _chartGuage.gauge(per);
+                let dashoffset = _chartGuage.dashArray() * (1-gauge);
+    
+                return dashoffset;
+            },
+            discription: function(per){
+                let text = '';
+                if( _chartGuage.PreviousData > _chartGuage.data ){
+                    let num = _chartGuage.PreviousData - _chartGuage.data;
+                    text = `전월대비 <strong class="down">${num}점 하락 ▼</strong>`;
+                } else if( _chartGuage.PreviousData < _chartGuage.data ) {
+                    let num = _chartGuage.data - _chartGuage.PreviousData;
+                    text = `전월대비 <strong class="up">${num}점 상승 ▲</strong>`;
+                } else {
+                    text ='전월과 <strong>동일</strong>';
+                }
+
+                return text;
+            },
+            setData: function(per){
+                let gauge = _chartGuage.gauge(per);   // 반원
+                let dasyarray = _chartGuage.dashArray();
+                let dashoffset = dasyarray * (1-gauge);
+    
+                _chartGuage.bar.css({ "stroke-dashoffset" : dashoffset });
+    
+                // data setting
+                $(document).find(".chart_guage_wrap .value strong").html(_chartGuage.data);
+    
+                // discription setting
+                let text = _chartGuage.discription();
+                $(document).find(".chart_guage_wrap .info .txt").html(text);
+            }
+        }
 </script>
 </body>
 </html>
