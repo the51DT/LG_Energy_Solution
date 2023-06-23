@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/jquery.js"></script>
     <script src="../assets/js/front.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="../assets/js/index_chart.js"></script>
 </head>
 <body class="index">
     <div class="wrap">
@@ -460,41 +464,113 @@
                                 <div class="content_box sum_cost">
                                     <h4 class="ttl">연료비 절감 추이</h4>
                                     <div class="car_sum_cont">
-                                        <img src="../assets/img/index/graph_cost.png" alt="그래프">
-                                    </div>
+                                        <!-- <img src="../assets/img/index/graph_cost.png" alt="그래프"> -->
+                                        <div class="chart_bar_vertical_double_wrap">
+                                            <div class="data_wrap"></div>
+                                            <div class="data_label">
+                                                <ul>
+                                                    <li>보유EV 대수</li>
+                                                    <li>당월</li>
+                                                </ul>
+                                            </div>
+                                            <p class="data_info">LPG 1,057원 기준</p>
+                                        </div><!-- .chart_bar_vertical_double_wrap -->
+                                    </div><!-- .car_sum_cont -->
                                 </div>
                                 <div class="content_box sum_drive">
                                     <h4 class="ttl">평균 주행거리</h4>
                                     <div class="car_sum_cont">
-                                        <img src="../assets/img/index/graph_drive.png" alt="그래프">
-                                    </div>
+                                        <div class="chart_bar_vertical_wrap">
+                                            <div class="data_wrap"></div>
+                                            <div class="data_label">
+                                                <ul>
+                                                    <li>월별</li>
+                                                    <li>당월</li>
+                                                </ul>
+                                            </div>
+                                        </div><!-- .chart_bar_vertical_wrap -->
+                                        <!-- <img src="../assets/img/index/graph_drive.png" alt="그래프"> -->
+                                    </div><!-- .car_sum_cont -->
                                 </div>
                                 <div class="content_box wide">
                                     <div class="col sum_stress">
                                         <h4 class="ttl">평균 스트레스 관리</h4>
                                         <div class="car_sum_cont">
-                                            <img src="../assets/img/index/graph_stress.png" alt="그래프">
-                                        </div>
+                                            <div class="chart_guage_wrap">
+                                                <svg class="circle_progress" width="190" height="190" viewBox="-20 -20 230 230">
+                                                    <defs>
+                                                        <linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                            <stop offset="0%" stop-color="#FF4392" />
+                                                            <stop offset="100%" stop-color="#FFC086" />
+                                                        </linearGradient>
+                                                    </defs>
+                                                    <image href="../assets/img/index/circle_progress_bg.png" x="15" y="15" height="160" width="160" />
+                                                    <circle class="frame" cx="95" cy="95" r="100" stroke-dashoffset="314.159" stroke-dasharray="628.319"></circle>
+                                                    <circle class="bar" stroke="url(#myGradient)" cx="95" cy="95" r="100" stroke-dashoffset="628.319" stroke-dasharray="628.319"></circle>
+                                                </svg>
+                                                <div class="info">
+                                                    <span class="value">
+                                                        <strong>72</strong>점
+                                                    </span>
+                                                    <span class="txt">
+                                                        전월대비 <strong class="up">2점 상승 ▲</strong>
+                                                    </span>
+                                                </div>
+                                            </div><!-- .chart_guage_wrap -->
+                                            <!-- <img src="../assets/img/index/graph_stress.png" alt="그래프"> -->
+                                        </div><!-- .car_sum_cont -->
                                     </div>
                                     <div class="col sum_average">
                                         <h4 class="ttl">평균 전비</h4>
                                         <div class="car_sum_cont">
-                                            <img src="../assets/img/index/graph_average.png" alt="그래프">
-                                        </div>
+                                            <div class="chart_bar_horizontal_wrap">
+                                                <div class="data_wrap"></div>
+                                                <div class="data_label">
+                                                    <ul>
+                                                        <li>월별</li>
+                                                        <li>당월</li>
+                                                    </ul>
+                                                </div>
+                                            </div><!-- .chart_bar_horizontal_wrap -->
+                                            <!-- <img src="../assets/img/index/graph_average.png" alt="그래프"> -->
+                                        </div><!-- .car_sum_cont -->
                                     </div>
                                 </div>
                                 <div class="content_box wide">
                                     <div class="col sum_habit">
                                         <h4 class="ttl">운전습관</h4>
                                         <div class="car_sum_cont">
-                                            <img src="../assets/img/index/graph_habit.png" alt="그래프">
-                                        </div>
+                                            <div class="myChart_wrap">
+                                                <canvas id="myChart"></canvas>
+                                                <div class="data_label">
+                                                    <ul>
+                                                        <li>급가속</li>
+                                                        <li>급감속</li>
+                                                        <li>당월</li>
+                                                    </ul>
+                                                </div>
+                                                <p class="data_info">월평균</p>
+                                            </div>
+                                            <!-- <img src="../assets/img/index/graph_habit.png" alt="그래프"> -->
+                                        </div><!-- .car_sum_cont -->
                                     </div>
                                     <div class="col sum_charging">
                                         <h4 class="ttl">충전정보</h4>
                                         <div class="car_sum_cont">
-                                            <img src="../assets/img/index/graph_charging.png" alt="그래프">
-                                        </div>
+                                            <div class="myChart_wrap2">
+                                                <canvas id="myChart2"></canvas>
+                                                <div class="data_label">
+                                                    <ul>
+                                                        <li>총 충전횟수</li>
+                                                        <li>급속횟수</li>
+                                                        <li>충전량</li>
+                                                        <li>당월</li>
+                                                    </ul>
+                                                </div>
+                                                <p class="data_info">월평균</p>
+                                            </div>
+                                            <!-- <img src="../assets/img/index/graph_charging.png" alt="그래프"> -->
+                                        </div><!-- .car_sum_cont -->
                                     </div>
                                 </div>
                             </div><!-- .car_sum_wrap -->
@@ -531,7 +607,58 @@
             $(document).on("click", ".btn_refresh", function(e){
                 $(this).addClass("click");
                 setTimeout(() => { $(this).removeClass("click") }, 1000);
-            })
+            });
+
+
+            // 연료비 절감 추이
+            const _chartBarVerticalDouble_data = {
+                data : [123456, 100000, 90000, 80000, 70000, 79311],
+                data2 : [18, 18, 25, 25, 28, 32],
+                label : ['12월', '1월', '2월', '3월', '4월', '당월'],
+            }
+            _chartBarVerticalDouble.init(_chartBarVerticalDouble_data);
+
+            // 평균 주행거리
+            const _chartBarVertical_data = {
+                data: [11211, 8910, 7899, 13540, 12002, 1563],
+                label: ['12월', '1월', '2월', '3월', '4월', '당월'],
+            }
+            _chartBarVertical.init(_chartBarVertical_data);
+
+            // 평균 스트레스 관리
+            const _chartGuage_data = {
+                PreviousData: 70,   // 이전 데이터
+                data: 72,           // 현재 데이터
+            }
+            _chartGuage.init(_chartGuage_data);
+
+
+            // 평균 전비
+            const _chartBarHorizontal_data = {
+                data: [6.2, 6.0, 5.7, 7.0, 6.5, 6.7],
+                label: ['12월', '1월', '2월', '3월', '4월', '당월'],
+            }
+            _chartBarHorizontal.init(_chartBarHorizontal_data);
+
+            // 운전습관
+            const setMyCart_Data = {
+                data: [10, 12, 7, 15, 12, 18],
+                data2: [31, 28, 23, 45, 30, 5],
+                labels: ['12월', '1월', '2월', '3월', '4월', '당월']
+            }
+            setMyCart(setMyCart_Data);
+
+            // 충전정보
+            const setMyCart2_data = {
+                data : [2589, 1890, 2505, 1790, 2450, 1512],
+                data2 : [55, 60, 61, 28, 62, 32],
+                data3 : [57, 62, 70, 67, 72, 61],
+                labels: ['12월', '1월', '2월', '3월', '4월', '당월'],
+            }
+            setMyCart2(setMyCart2_data);
+
+
+            
         })
     </script>
 </body>
