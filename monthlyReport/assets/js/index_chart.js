@@ -16,13 +16,13 @@ const setMyCart = function(data){
 
     const ctx = document.getElementById('myChart').getContext("2d");
     var gradientStroke = ctx.createLinearGradient(0, 0, 0, 200);
-    gradientStroke.addColorStop(0.5, "#C3C3C3");
-    gradientStroke.addColorStop(0.9, "#fff");
+    gradientStroke.addColorStop(0.3, "#C3C3C3");
+    gradientStroke.addColorStop(0.8, "#fff");
 
     
     var gradientStroke2 = ctx.createLinearGradient(0, 0, 0, 200);
-    gradientStroke2.addColorStop(0.5, "#B1A4FF");
-    gradientStroke2.addColorStop(0.9, "#fff");
+    gradientStroke2.addColorStop(0.3, "#B1A4FF");
+    gradientStroke2.addColorStop(0.8, "#fff");
 
     Chart.register(ChartDataLabels);
 
@@ -37,13 +37,13 @@ const setMyCart = function(data){
                     backgroundColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#fff'],
                     borderColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#B1A4FF'],
                     borderWidth: 1,
-                    pointStyle: ['circle', 'circle', 'circle', 'circle', 'circle', 'circle'],
-                    pointRAdius: 10,
-                    pointBorderWidth: [1, 1, 1, 1, 1, 3],
+                    // pointStyle: ['circle', 'circle', 'circle', 'circle', 'circle', 'circle'],
+                    pointRadius: [2, 2, 2, 2, 2, 4],
+                    pointBorderWidth: [1, 1, 1, 1, 1, 2],
                     datalabels: {
                         align: 'top',
                         textAlign: 'start',
-                        color: '#656565',
+                        color: ['#656565', '#656565', '#656565', '#656565', '#656565', '#B1A4FF'],
                         font: {
                             size: 10,
                         }
@@ -62,11 +62,11 @@ const setMyCart = function(data){
                         gradientStroke,
                         gradientStroke2
                     ],
-                    borderRadius: 9999,
+                    borderRadius: 999,
                     datalabels: {
                         anchor: 'end',
                         align: 'end',
-                        color: '#656565',
+                        color: ['#656565', '#656565', '#656565', '#656565', '#656565', '#B1A4FF'],
                         font: {
                             size: 10,
                         }
@@ -158,13 +158,13 @@ const setMyCart2 = function(data){
                     borderColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#009AFE'],
                     borderWidth: 1,
                     pointStyle: ['circle', 'circle', 'circle', 'circle', 'circle', 'circle'],
-                    pointRAdius: 10,
-                    pointBorderWidth: [1, 1, 1, 1, 1, 3],
+                    pointRadius: [2, 2, 2, 2, 2, 4],
+                    pointBorderWidth: [1, 1, 1, 1, 1, 2],
                     datalabels: {
                         value: [1,2,3,4,5,6],
                         align: 'top',
                         textAlign: 'start',
-                        color: '#CDCDCD',
+                        color: ['#CDCDCD', '#CDCDCD', '#CDCDCD', '#CDCDCD', '#CDCDCD', '#009AFE'],
                         font: {
                             size: 10,
                         },
@@ -192,7 +192,8 @@ const setMyCart2 = function(data){
                     datalabels: {
                         anchor: 'end',
                         align: 'bottom',
-                        color: '#656565',
+                        offset: -3,
+                        color: '#fff',
                         font: {
                             size: 10,
                         }
@@ -209,7 +210,7 @@ const setMyCart2 = function(data){
                     datalabels: {
                         anchor: 'end',
                         align: 'end',
-                        color: '#656565',
+                        color: ['#656565', '#656565', '#656565', '#656565', '#656565', '#009AFE'],
                         font: {
                             size: 10,
                         }

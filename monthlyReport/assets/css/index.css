@@ -155,9 +155,9 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 /* 평균 스트레스 관리 : chart_guage_wrap */
 .chart_guage_wrap {position:relative; width:190px; height:190px; margin:0 auto;}
 .chart_guage_wrap .circle_progress {transform:rotate(-90deg)}
-.chart_guage_wrap .bg{background:url(../img/index/circle_progress_bg.svg) 50% 50% no-repeat; background-size:100% auto;}
+/* .chart_guage_wrap .bg{background:url(../img/index/circle_progress_bg.svg) 50% 50% no-repeat; background-size:100% auto;} */
 .chart_guage_wrap .frame,
-.chart_guage_wrap .bar {fill: none; stroke-width: 2.4rem; stroke-linecap:round;}
+.chart_guage_wrap .bar {fill: none; stroke-width: 3rem; stroke-linecap:round;}
 .chart_guage_wrap .frame {stroke:#E3E3E3;}
 .chart_guage_wrap .bar {animation:guageBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
 
