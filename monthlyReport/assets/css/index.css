@@ -101,7 +101,7 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .car_sum_wrap .sum_habit h4.ttl{background-image:url(../img/index/ico_drive.png)}
 .car_sum_wrap .sum_charging h4.ttl{background-image:url(../img/index/ico_charging.png)}
 
-.car_sum_wrap .car_sum_cont{margin-top:1.5rem; text-align:center;}
+.car_sum_wrap .car_sum_cont{padding-top:1.5rem; text-align:center;}
 .car_sum_wrap .car_sum_cont img{width:100%; max-width:35.5rem; max-height:18.3rem;}
 .car_sum_wrap .sum_stress .car_sum_cont img{max-width:18.8rem; max-height:auto;}
 
@@ -126,7 +126,7 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 
 
 
-.myChart_wrap{position:relative; width:347px; height:179px; padding-bottom:20px;}
+.myChart_wrap{position:relative; width:347px; height:179px; margin:0 auto; padding-bottom:20px;}
 .myChart_wrap #myChart{margin-left:-1.8rem; width:347px;}
 .myChart_wrap .data_label{position:absolute; left:0; bottom:0;}
 .myChart_wrap .data_label ul{display:flex; align-items:center; justify-content:flex-start;}
@@ -138,7 +138,7 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .myChart_wrap .data_info{position:absolute; right:0; bottom:0; font-size:1rem; color:#bbb; line-height:1.2rem;}
 .myChart_wrap .data_info::before{content:''; position:absolute; left:0; top:50%; transform:translate(-0.7rem, -50%); display:block; width:0.3rem; height:0.3rem; border-radius:0.3rem; background:#d9d9d9;}
 
-.myChart_wrap2{position:relative; width:347px; height:179px; padding-bottom:20px;}
+.myChart_wrap2{position:relative; width:347px; height:179px; margin:0 auto; padding-bottom:20px;}
 .myChart_wrap2 #myChart2{margin-left:-1.8rem; width:347px;}
 .myChart_wrap2 .data_label{position:absolute; left:0; bottom:0;}
 .myChart_wrap2 .data_label ul{display:flex; align-items:center; justify-content:flex-start;}
@@ -153,7 +153,7 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 
 
 /* 평균 스트레스 관리 : chart_guage_wrap */
-.chart_guage_wrap {position:relative; width:190px; height:190px;}
+.chart_guage_wrap {position:relative; width:190px; height:190px; margin:0 auto;}
 .chart_guage_wrap .circle_progress {transform:rotate(-90deg)}
 .chart_guage_wrap .bg{background:url(../img/index/circle_progress_bg.svg) 50% 50% no-repeat; background-size:100% auto;}
 .chart_guage_wrap .frame,
@@ -173,7 +173,7 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 }
 
 /* 평균전비 */
-.chart_bar_horizontal_wrap{position:relative; width:347px; height:179px;}
+.chart_bar_horizontal_wrap{position:relative; width:347px; height:179px; margin:0 auto;}
 .chart_bar_horizontal_wrap .data_label{position:absolute; left:0; bottom:0;}
 .chart_bar_horizontal_wrap .data_label ul{display:flex; align-items:center;}
 .chart_bar_horizontal_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
@@ -197,7 +197,7 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 
 
 /* 평균주행거리 */
-.chart_bar_vertical_wrap{position:relative; width:344px; height:157px; margin-top:20px; }
+.chart_bar_vertical_wrap{position:relative; width:344px; height:157px; margin:20px auto 0;}
 .chart_bar_vertical_wrap .data_label{position:absolute; left:0; bottom:0;}
 .chart_bar_vertical_wrap .data_label ul{display:flex; align-items:center;}
 .chart_bar_vertical_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
@@ -221,7 +221,7 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 
 
 /* 연료비 절감 추이 */
-.chart_bar_vertical_double_wrap{position:relative; width:344px; height:157px; margin-top:20px;}
+.chart_bar_vertical_double_wrap{position:relative; width:344px; height:157px; margin:20px auto 0;}
 .chart_bar_vertical_double_wrap .data_label{position:absolute; left:0; bottom:0;}
 .chart_bar_vertical_double_wrap .data_label ul{display:flex; align-items:center;}
 .chart_bar_vertical_double_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}

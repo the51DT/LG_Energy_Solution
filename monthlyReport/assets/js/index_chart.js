@@ -1,5 +1,19 @@
 $(()=>{
-    
+    // setMyCart();
+    // setMyCart2();
+
+    // _chartGuage.init();
+    // _chartBarHorizontal.init();
+    // _chartBarVertical.init();
+    // _chartBarVerticalDouble.init();
+});
+
+
+// 운전습관
+const setMyCart = function(data){
+
+    // console.log(data);   // data, data2, labels
+
     const ctx = document.getElementById('myChart').getContext("2d");
     var gradientStroke = ctx.createLinearGradient(0, 0, 0, 200);
     gradientStroke.addColorStop(0.5, "#C3C3C3");
@@ -19,7 +33,7 @@ $(()=>{
                 {
                     type: 'line',
                     label: '급감속',
-                    data: [10, 12, 7, 15, 12, 18],
+                    data: data.data,
                     backgroundColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#fff'],
                     borderColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#B1A4FF'],
                     borderWidth: 1,
@@ -38,7 +52,7 @@ $(()=>{
                 {
                     type: 'bar',
                     label: '급가속',
-                    data: [31, 28, 23, 45, 30, 5],
+                    data: data.data2,
                     barThickness: 20,
                     backgroundColor: [
                         gradientStroke,
@@ -60,7 +74,7 @@ $(()=>{
                     clip: false,
                 }
             ],
-            labels: ['12월', '1월', '2월', '3월', '4월', '당월']
+            labels: data.labels
         },
         datalabels: {
             color:'black',
@@ -106,11 +120,14 @@ $(()=>{
             }
         }
     });
-})
+}
 
 
 
-$(()=>{
+
+const setMyCart2 = function(data){
+
+    // console.log(data);
     
     const ctx = document.getElementById('myChart2').getContext("2d");
     var gradientStroke = ctx.createLinearGradient(0, 0, 0, 200);
@@ -124,9 +141,8 @@ $(()=>{
 
     Chart.register(ChartDataLabels);
 
-    let data = [2589, 1890, 2505, 1790, 2450, 1512];
-    let newData = data.map((item, idx)=>{
-        console.log('item', item);
+    let original_data = data.data;
+    let newData = original_data.map((item, idx)=>{
         return (item * 0.1).toFixed(0);
     })
 
@@ -153,15 +169,16 @@ $(()=>{
                             size: 10,
                         },
                         formatter: function (value, context) {
-                            const result = data[context.dataIndex];
-                            return result;
+                            const result = original_data[context.dataIndex];
+                            const comma = result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            return comma;
                         },
                     },
                 },
                 {
                     type: 'bar',
                     label: '급속횟수',
-                    data: [55, 60, 61, 28, 62, 32],
+                    data: data.data2,
                     barThickness: 20,
                     backgroundColor: [
                         gradientStroke,
@@ -185,7 +202,7 @@ $(()=>{
                 {
                     type: 'bar',
                     label: '총 충전횟수',
-                    data: [57, 62, 70, 67, 72, 61],
+                    data: data.data3,
                     barThickness: 20,
                     backgroundColor: '#E9E9E9',
                     borderRadius: 9999,
@@ -200,7 +217,7 @@ $(()=>{
                 },
             ],
             
-            labels: ['12월', '1월', '2월', '3월', '4월', '당월']
+            labels: data.labels,
         },
         datalabels: {
             color:'black',
@@ -248,32 +265,27 @@ $(()=>{
             }
         }
     });
-})
+}
 
 
 
 
     
 
-$(()=>{
-    _chartGuage.init();
-    _chartBarHorizontal.init();
-    _chartBarVertical.init();
-    _chartBarVerticalDouble.init();
-});
-
+// 연료비 절감 추이
 let _chartBarVerticalDouble = {
-    data: [123456, 100000, 90000, 80000, 70000, 79311],
     maxData: 99999,
-    
-    data2: [18, 18, 25, 25, 28, 32],
     maxData2: 99999,
 
-    label: ['12월', '1월', '2월', '3월', '4월', '당월'],
+    init: function(data){
+        // console.log(data);
+        
+        _chartBarVerticalDouble.frame = $(document).find(".chart_bar_vertical_double_wrap");
+        
+        _chartBarVerticalDouble.data = data.data;
+        _chartBarVerticalDouble.data2 = data.data2;
+        _chartBarVerticalDouble.label = data.label;
 
-    frame: $(document).find(".chart_bar_vertical_double_wrap"),
-
-    init: function(){
         this.setData();
     },
     setData: function(){
@@ -314,14 +326,19 @@ let _chartBarVerticalDouble = {
     }
 }
 
+// 평균 주행거리
 let _chartBarVertical = {
-    data: [11211, 8910, 7899, 13540, 12002, 1563],
-    label: ['12월', '1월', '2월', '3월', '4월', '당월'],
+    // data: [11211, 8910, 7899, 13540, 12002, 1563],
+    // label: ['12월', '1월', '2월', '3월', '4월', '당월'],
     maxData: 99999,
 
-    frame: $(document).find(".chart_bar_vertical_wrap"),
+    // frame: $(document).find(".chart_bar_vertical_wrap"),
 
-    init: function(){
+    init: function(data){
+        _chartBarVertical.data = data.data;
+        _chartBarVertical.label = data.label;
+        _chartBarVertical.frame = $(document).find(".chart_bar_vertical_wrap");
+
         this.setData();
     },
     setData: function(){
@@ -355,13 +372,16 @@ let _chartBarVertical = {
     }
 }
 
+// 평균 전비
 let _chartBarHorizontal = {
-    data: [6.2, 6.0, 5.7, 7.0, 6.5, 6.7],
-    label: ['12월', '1월', '2월', '3월', '4월', '당월'],
+    // data: [6.2, 6.0, 5.7, 7.0, 6.5, 6.7],
+    // label: ['12월', '1월', '2월', '3월', '4월', '당월'],
+    // frame: $(document).find(".chart_bar_horizontal_wrap"),
 
-    frame: $(document).find(".chart_bar_horizontal_wrap"),
-
-    init: function(){
+    init: function(data){
+        _chartBarHorizontal.data = data.data;
+        _chartBarHorizontal.label = data.label;
+        _chartBarHorizontal.frame = $(document).find(".chart_bar_horizontal_wrap");
         this.setData();
     },
     setData: function(){
@@ -391,15 +411,24 @@ let _chartBarHorizontal = {
 }
 
 
+// 평균 스트레스 관리
 let _chartGuage = {
-    PreviousData: 70,   // 이전 데이터
-    data: 72,   // 현재 데이터
+    // PreviousData: 70,   // 이전 데이터
+    // data: 72,   // 현재 데이터
 
-    frame: $(document).find(".chart_guage_wrap .frame"),
-    bar: $(document).find(".chart_guage_wrap .bar"),
-    value: $(document).find(".chart_guage_wrap .value"),
-    RADIUS: document.querySelector(".chart_guage_wrap .frame").getAttribute("r"),   // 100
-    init: function(){
+    // frame: null,
+    // bar: null,
+    // value: null,
+    // RADIUS: null,   // 100
+    init: function(data){
+        _chartGuage.PreviousData = data.PreviousData;
+        _chartGuage.data = data.data;
+
+        _chartGuage.frame = $(document).find(".chart_guage_wrap .frame");
+        _chartGuage.bar = $(document).find(".chart_guage_wrap .bar");
+        _chartGuage.value = $(document).find(".chart_guage_wrap .value");
+        _chartGuage.RADIUS = document.querySelector(".chart_guage_wrap .frame").getAttribute("r");   // 100
+
 
         let gauge = _chartGuage.gauge(100);                           // 반원
         let dasyarray = _chartGuage.dashArray();
