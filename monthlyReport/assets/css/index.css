@@ -10,7 +10,7 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .car_info_wrap .content_box{padding:3rem 4rem 0;}
 
 /* 보유 차량 리스트 */
-.car_list_status{display:flex; align-items:center; justify-content:space-between;}
+.car_list_status{display:flex; align-items:center; justify-content:space-between;} 
 .car_list_status h3,
 .car_list_status .total{font-size:1.6rem; font-weight:700; line-height:3rem;}
 .car_list_status h3{padding-left:4.6rem; background:url(../img/index/ico_carlist.png) 0 50% no-repeat; background-size:3.6rem auto;}
