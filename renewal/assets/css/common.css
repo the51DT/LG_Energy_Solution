@@ -118,6 +118,10 @@ footer.footer .footer__inner{position:relative; width:calc(100% - 12rem); max-wi
 .bn_googleplay::before{content:''; display:block; width:100%; padding-bottom:28.571428571428573%; background:url(../img/common/app_appstore.svg) 0 0 no-repeat; background-size:100% auto;}
 .bn_googleplay::before{background-image:url(../img/common/app_googleplay.svg);}
 
+.footer_awards{position:absolute; right:0; bottom:4.7rem; width:29.6rem; border-top:1px solid #e3e3e3; padding-top:1.2rem;}
+.footer_awards .award_item{display:flex; justify-content:flex-start; align-items:center; font-size:1.4rem; line-height:1.9rem; font-weight:700; color:#1e1e1e;}
+.footer_awards .award_item:before{content:""; display:block; width:5.4rem; height:4rem; background:url(../img/common/awards.svg) 0 0 no-repeat; margin-right:1.4rem;}
+
 
 /* layout */
 .container{overflow:hidden;}
@@ -242,6 +246,7 @@ footer.footer .footer__inner{position:relative; width:calc(100% - 12rem); max-wi
     .footer_copy dl.add{margin-top:0.8rem; padding-left:0;}
     .footer_copy dl.add::before{display:none;}
     .footer_copy p{margin-top:1.4rem;}
+    .footer_awards{position:initial; width:auto; padding-top:1.2rem; margin-top:4rem;}
 }
 
 @media only screen and (max-width:640px) {

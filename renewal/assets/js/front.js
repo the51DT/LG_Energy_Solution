@@ -500,6 +500,9 @@ const _layout = {
                     </dl>
                     <p><strong>LG Energy Solution</strong> All rights Reserved.</p>
                 </div>
+                <div class="footer_awards">
+                    <p class="award_item">2023 국가서비스대상<br> 전기차 배터리 관리 앱 부문</p>
+                </div>
             </div>
         `;
         $(document).find("footer.footer").html(html);
