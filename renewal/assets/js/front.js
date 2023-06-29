@@ -37,7 +37,7 @@ const _device = {
         ( ios.test(userAgent) ) ? elem.addClass("ios") : null;
         ( aos.test(userAgent) ) ? elem.addClass("aos") : null;
     },
-    /**
+    /** 
      * 모바일 디바이스 일 때 true 반환
      * @returns boolean
      */
