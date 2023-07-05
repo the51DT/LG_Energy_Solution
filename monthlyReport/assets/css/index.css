@@ -92,7 +92,8 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .car_sum_wrap .content_box.wide{flex: 0 0 100%; display:flex; align-items:flex-start; justify-content:space-between; margin:1.6rem 0 0;}
 .car_sum_wrap .content_box.wide .col{flex:0 0 calc(50% - 4.5rem);}
 
-.car_sum_wrap h4.ttl{font-size:1.8rem; line-height:2.6rem; font-weight:500; padding-left:3.2rem; background:url(../img/index/ico_cost.png) 0 50% no-repeat; background-size:2.6rem auto;}
+.car_sum_wrap h4.ttl{display:flex; align-items:center; font-size:1.8rem; line-height:2.6rem; font-weight:500; padding-left:3.2rem; background:url(../img/index/ico_cost.png) 0 50% no-repeat; background-size:2.6rem auto;}
+.car_sum_wrap h4.ttl > span {display:inline-block; margin-left:0.8rem; color:#BBB; font-size:1rem; line-height:1.2rem;}
 .car_sum_wrap .sum_cost h4.ttl{background-image:url(../img/index/ico_cost.png)}
 .car_sum_wrap .sum_drive h4.ttl{background-image:url(../img/index/ico_guage.png)}
 /* .car_sum_wrap .sum_stress h4.ttl{background:none; padding-left:0;} */
@@ -126,7 +127,7 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 
 
 
-.myChart_wrap{position:relative; width:347px; height:179px; margin:0 auto; padding-bottom:20px;}
+/* .myChart_wrap{position:relative; width:347px; height:179px; margin:0 auto; padding-bottom:20px;}
 .myChart_wrap #myChart{margin-left:-1.8rem; width:347px;}
 .myChart_wrap .data_label{position:absolute; left:0; bottom:0;}
 .myChart_wrap .data_label ul{display:flex; align-items:center; justify-content:flex-start;}
@@ -136,7 +137,7 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .myChart_wrap .data_label ul li:nth-child(2):before{background:none; width:1.8rem; height:1.1rem; border-radius:0; background:url(../img/index/ico_graph.png) 50% 50% no-repeat; }
 .myChart_wrap .data_label ul li:nth-child(3):before{background:#B1A4FF;}
 .myChart_wrap .data_info{position:absolute; right:0; bottom:0; font-size:1rem; color:#bbb; line-height:1.2rem;}
-.myChart_wrap .data_info::before{content:''; position:absolute; left:0; top:50%; transform:translate(-0.7rem, -50%); display:block; width:0.3rem; height:0.3rem; border-radius:0.3rem; background:#d9d9d9;}
+.myChart_wrap .data_info::before{content:''; position:absolute; left:0; top:50%; transform:translate(-0.7rem, -50%); display:block; width:0.3rem; height:0.3rem; border-radius:0.3rem; background:#d9d9d9;} */
 
 .myChart_wrap2{position:relative; width:347px; height:179px; margin:0 auto; padding-bottom:20px;}
 .myChart_wrap2 #myChart2{margin-left:-1.8rem; width:347px;}
@@ -254,4 +255,35 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .chart_bar_vertical_double_wrap .data_wrap ul li:last-child .guage{background: linear-gradient(180deg, #FF98AE 0%, rgba(255, 152, 174, 0.2) 100%);}
 .chart_bar_vertical_double_wrap .data_wrap ul li:last-child .label{color:#1E1E1E;}
 .chart_bar_vertical_double_wrap .data_wrap ul li:last-child .bar1 .data{color:#FF7290;}
+
+/* 운전습관 new */
+.chartDriving_wrap{position:relative; width:356px; height:172px; margin:4px auto 0;}
+.chartDriving_wrap .data_label{position:absolute; left:0; bottom:0;}
+.chartDriving_wrap .data_label ul{display:flex; align-items:center;}
+.chartDriving_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
+.chartDriving_wrap .data_label ul li + li{margin-left:1.2rem;}
+.chartDriving_wrap .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#C3C3C3;}
+.chartDriving_wrap .data_label ul li:nth-child(2):before{background:#E9E9E9;}
+.chartDriving_wrap .data_label ul li:nth-child(3):before{background:#9C9C9C;}
+.chartDriving_wrap .data_label ul li:nth-child(4):before{background:#9C8CFF;}
+.chartDriving_wrap .data_info{display:flex; gap:1.2rem; position:absolute; right:0; bottom:0; font-size:1rem; color:#bbb; line-height:1.2rem;}
+.chartDriving_wrap .data_info>li{position:relative; padding-left:0.7rem;}
+.chartDriving_wrap .data_info>li::before{content:''; position:absolute; left:0; top:50%; transform:translateY(-50%); display:block; width:0.3rem; height:0.3rem; border-radius:0.3rem; background:#d9d9d9;}
+.chartDriving_wrap p.data_info {padding-left:0.7rem;}
+.chartDriving_wrap p.data_info::before{content:''; position:absolute; left:0; top:50%; transform:translateY(-50%); display:block; width:0.3rem; height:0.3rem; border-radius:0.3rem; background:#d9d9d9;}
+.chartDriving_wrap .data_wrap{height:126px; border-bottom:1px solid #E1E1E1; background:url(../img/index/graph_dash.png) 0 100% repeat;}
+.chartDriving_wrap .data_wrap ul{display:flex; align-items:flex-end; justify-content: space-between; height:100%;}
+.chartDriving_wrap .data_wrap ul li{flex:1 1 auto; position:relative; align-self:stretch; display:flex; flex-direction: column; align-items:center; justify-content:flex-end;}
+.chartDriving_wrap .data_wrap .label{position:absolute; top:100%; width:100%; max-width:3rem; text-align:left; font-size:1rem; line-height:1.4rem; color:#bbb; margin:0.6rem auto 0;}
+.chartDriving_wrap .data_wrap .graph{display:flex; align-items:flex-end; position:relative; width:3.8rem; height:100%;}
+/* .chartDriving_wrap .data_wrap .graph .bar {display:flex; flex-direction:column; align-items:center; justify-content:flex-end; gap:0.4rem;} */
+.chartDriving_wrap .data_wrap .graph .bar.bar1 {display:flex; align-items:flex-end; width:2.6rem; height:100%;}
+.chartDriving_wrap .data_wrap .graph .bar.bar2 {position:absolute; top:0; bottom:0;}
+.chartDriving_wrap .data_wrap .guage{display:block; position:relative; width:1.8rem; border-radius:1.8rem 1.8rem 0 0; background:#E9E9E9; animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
+.chartDriving_wrap .data_wrap .guage2{display:block; position:absolute; bottom:0; width:1.8rem; border-radius:1.8rem 1.8rem 0 0; background: linear-gradient(180deg, #C4C4C4 0%, rgba(195, 195, 195, 0.2) 100%); animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
+.chartDriving_wrap .data_wrap .guage3{display:block; width:0.4rem; height:100%; border-radius:1.8rem 1.8rem 0 0; background:#9C9C9C; animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
+.chartDriving_wrap .data_wrap .data{position:absolute; top:-1.4rem; left:50%; transform:translateX(-50%); font-size:1rem; color:#656565; line-height:1rem; word-break:keep-all;}
+.chartDriving_wrap .data_wrap ul li:last-child .guage{background: linear-gradient(180deg, #B1A4FF 0%, rgba(177, 165, 255, 0.2) 100%);}
+.chartDriving_wrap .data_wrap ul li:last-child .label{color:#1E1E1E;}
+.chartDriving_wrap .data_wrap ul li:last-child .bar1 .data{color:#9C8CFF;}
 

@@ -8,121 +8,179 @@ $(()=>{
     // _chartBarVerticalDouble.init();
 });
 
-
+// 수정중
 // 운전습관
-const setMyCart = function(data){
+// const setMyCart = function(data){
 
-    // console.log(data);   // data, data2, labels
+//     // console.log(data);   // data, data2, labels
 
-    const ctx = document.getElementById('myChart').getContext("2d");
-    var gradientStroke = ctx.createLinearGradient(0, 0, 0, 200);
-    gradientStroke.addColorStop(0.3, "#C3C3C3");
-    gradientStroke.addColorStop(0.8, "#fff");
+//     const ctx = document.getElementById('myChart').getContext("2d");
+//     var gradientStroke = ctx.createLinearGradient(0, 0, 0, 200);
+//     gradientStroke.addColorStop(0.3, "#C3C3C3");
+//     gradientStroke.addColorStop(0.8, "#fff");
 
     
-    var gradientStroke2 = ctx.createLinearGradient(0, 0, 0, 200);
-    gradientStroke2.addColorStop(0.3, "#B1A4FF");
-    gradientStroke2.addColorStop(0.8, "#fff");
+//     var gradientStroke2 = ctx.createLinearGradient(0, 0, 0, 200);
+//     gradientStroke2.addColorStop(0.3, "#B1A4FF");
+//     gradientStroke2.addColorStop(0.8, "#fff");
 
-    Chart.register(ChartDataLabels);
+//     Chart.register(ChartDataLabels);
 
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            datasets: [
-                {
-                    type: 'line',
-                    label: '급감속',
-                    data: data.data,
-                    backgroundColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#fff'],
-                    borderColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#B1A4FF'],
-                    borderWidth: 1,
-                    // pointStyle: ['circle', 'circle', 'circle', 'circle', 'circle', 'circle'],
-                    pointRadius: [2, 2, 2, 2, 2, 4],
-                    pointBorderWidth: [1, 1, 1, 1, 1, 2],
-                    datalabels: {
-                        align: 'top',
-                        textAlign: 'start',
-                        color: ['#656565', '#656565', '#656565', '#656565', '#656565', '#B1A4FF'],
-                        font: {
-                            size: 10,
-                        }
-                    },
-                },
-                {
-                    type: 'bar',
-                    label: '급가속',
-                    data: data.data2,
-                    barThickness: 20,
-                    backgroundColor: [
-                        gradientStroke,
-                        gradientStroke,
-                        gradientStroke,
-                        gradientStroke,
-                        gradientStroke,
-                        gradientStroke2
-                    ],
-                    borderRadius: 999,
-                    datalabels: {
-                        anchor: 'end',
-                        align: 'end',
-                        color: ['#656565', '#656565', '#656565', '#656565', '#656565', '#B1A4FF'],
-                        font: {
-                            size: 10,
-                        }
-                    },
-                    clip: false,
-                }
-            ],
-            labels: data.labels
-        },
-        datalabels: {
-            color:'black',
-            font:{size:24}
-        },
-        options: {
-            // responsive: false,
-            maintainAspectRatio: false,
-            showTooltips: false,
-            plugins:{
-                datalabels: {
-                    color: '#656565',
-                },
-                legend: {
-                    display: false,
-                },
-            },
-            scales: {
-                x: {
-                    grid: {
-                        display: false,
-                    },
-                    ticks: {
-                        font:{
-                            size: 10,
-                        },
-                        color: '#bbb'
-                    },
-                },
-                y: {
-                    grid: {
-                        color: "#E1E1E1",
-                        tickLength: 0,
-                    },
-                    border: {
-                        dash: [2,2],
-                    },
-                    ticks: {
-                        stepSize: 16,
-                        color: "transparent"
-                    },
-                },
-            }
-        }
-    });
+//     new Chart(ctx, {
+//         type: 'bar',
+//         data: {
+//             datasets: [
+//                 {
+//                     type: 'line',
+//                     label: '급감속',
+//                     data: data.data,
+//                     backgroundColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#fff'],
+//                     borderColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#B1A4FF'],
+//                     borderWidth: 1,
+//                     // pointStyle: ['circle', 'circle', 'circle', 'circle', 'circle', 'circle'],
+//                     pointRadius: [2, 2, 2, 2, 2, 4],
+//                     pointBorderWidth: [1, 1, 1, 1, 1, 2],
+//                     datalabels: {
+//                         align: 'top',
+//                         textAlign: 'start',
+//                         color: ['#656565', '#656565', '#656565', '#656565', '#656565', '#B1A4FF'],
+//                         font: {
+//                             size: 10,
+//                         }
+//                     },
+//                 },
+//                 {
+//                     type: 'bar',
+//                     label: '급가속',
+//                     data: data.data2,
+//                     barThickness: 20,
+//                     backgroundColor: [
+//                         gradientStroke,
+//                         gradientStroke,
+//                         gradientStroke,
+//                         gradientStroke,
+//                         gradientStroke,
+//                         gradientStroke2
+//                     ],
+//                     borderRadius: 999,
+//                     datalabels: {
+//                         anchor: 'end',
+//                         align: 'end',
+//                         color: ['#656565', '#656565', '#656565', '#656565', '#656565', '#B1A4FF'],
+//                         font: {
+//                             size: 10,
+//                         }
+//                     },
+//                     clip: false,
+//                 }
+//             ],
+//             labels: data.labels
+//         },
+//         datalabels: {
+//             color:'black',
+//             font:{size:24}
+//         },
+//         options: {
+//             // responsive: false,
+//             maintainAspectRatio: false,
+//             showTooltips: false,
+//             plugins:{
+//                 datalabels: {
+//                     color: '#656565',
+//                 },
+//                 legend: {
+//                     display: false,
+//                 },
+//             },
+//             scales: {
+//                 x: {
+//                     grid: {
+//                         display: false,
+//                     },
+//                     ticks: {
+//                         font:{
+//                             size: 10,
+//                         },
+//                         color: '#bbb'
+//                     },
+//                 },
+//                 y: {
+//                     grid: {
+//                         color: "#E1E1E1",
+//                         tickLength: 0,
+//                     },
+//                     border: {
+//                         dash: [2,2],
+//                     },
+//                     ticks: {
+//                         stepSize: 16,
+//                         color: "transparent"
+//                     },
+//                 },
+//             }
+//         }
+//     });
+// }
+
+let setChartDriving = {
+    maxData: 99999,
+    maxData2: 99999,
+    maxData3: 99999,
+
+    init: function(data){
+        // console.log(data);
+        
+        setChartDriving.frame = $(document).find(".chartDriving_wrap");
+
+        setChartDriving.data = data.data;
+        setChartDriving.data3 = data.data3;
+        setChartDriving.label = data.label;
+
+        this.setData();
+    },
+    setData: function(){
+
+        setChartDriving.frame.find(".data_wrap").html('<ul class="data_ul"></ul>');
+        const data_ul = setChartDriving.frame.find(".data_ul");
+
+        this.maxData = Math.max.apply(null, this.data) + 5000; // get max data
+        this.maxData3 = Math.max.apply(null, this.data3) + 10; // get max data
+
+        this.data.map((item, idx)=>{
+
+            const minItem = item + 2500;
+            const per = ((minItem * 100) / this.maxData).toFixed(0);
+            const per3 = ((this.data3[idx] * 100) / this.maxData3).toFixed(0);
+            const comma = item.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            const calc = (item * 0.0001).toFixed(1)
+            
+
+            let text = ( this.data.length-1 == idx ) ? `${calc}%` : `${calc}`;
+            // let text3 = this.data3[idx];
+
+            let html = `
+                <li>
+                    <div class="label">${setChartDriving.label[idx]}</div>
+                    <div class="graph">
+                        <div class="bar bar1">
+                            <span class="guage" style="height:${per}%">
+                                <span class="data">${text}</span>
+                            </span>
+                        </div>
+                        <div class="bar bar2">
+                            <span class="guage2" style="height:${per}%"></span>
+                        </div>
+                        <div class="bar bar3" style="height:${per3}%">
+                            <span class="guage3"></span>
+                        </div>
+                    </div>
+                </li>
+            `;
+
+            data_ul.append(html);
+        })
+    }
 }
-
-
 
 
 const setMyCart2 = function(data){

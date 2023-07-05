@@ -544,14 +544,17 @@
                                 </div>
                                 <div class="content_box wide">
                                     <div class="col sum_habit">
-                                        <h4 class="ttl">운전습관</h4>
+                                        <!-- [07/05] 수정 -->
+                                        <h4 class="ttl">운전습관<span>월별 총 주행거리 급가속/급감속 주행 비율</span></h4>
+                                        <!--// [07/05] 수정 -->
                                         <div class="car_sum_cont">
-                                            <div class="myChart_wrap">
-                                                <canvas id="myChart"></canvas>
+                                            <div class="chartDriving_wrap">
+                                                <div class="data_wrap"></div>
                                                 <div class="data_label">
                                                     <ul>
                                                         <li>급가속</li>
                                                         <li>급감속</li>
+                                                        <li>동종업계 평균</li>
                                                         <li>당월</li>
                                                     </ul>
                                                 </div>
@@ -658,13 +661,23 @@
 
         // [E]: 07/05 수정
 
+        // 수정중
             // 운전습관
-            const setMyCart_Data = {
-                data: [10, 12, 7, 15, 12, 18],
-                data2: [31, 28, 23, 45, 30, 5],
-                labels: ['12월', '1월', '2월', '3월', '4월', '당월']
+            // const setMyCart_Data = {
+            //     data: [10, 12, 7, 15, 12, 18],
+            //     data2: [31, 28, 23, 45, 30, 5],
+            //     labels: ['12월', '1월', '2월', '3월', '4월', '당월']
+            // }
+            // setMyCart(setMyCart_Data);
+
+            const chartDriving_data = {
+                data : [123456, 100000, 90000, 80000, 70000, 79311],
+                data2 : [10000, 50000, 45000, 40000, 35000, 59311],
+                data3: [31, 28, 23, 45, 30, 5],
+                label : ['12월', '1월', '2월', '3월', '4월', '당월'],
             }
-            setMyCart(setMyCart_Data);
+            setChartDriving.init(chartDriving_data);
+        // 수정중
 
             // 충전정보
             const setMyCart2_data = {
