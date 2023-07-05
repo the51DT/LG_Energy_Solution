@@ -8,120 +8,8 @@ $(()=>{
     // _chartBarVerticalDouble.init();
 });
 
-// 수정중
+// [S]: 07/06 수정
 // 운전습관
-// const setMyCart = function(data){
-
-//     // console.log(data);   // data, data2, labels
-
-//     const ctx = document.getElementById('myChart').getContext("2d");
-//     var gradientStroke = ctx.createLinearGradient(0, 0, 0, 200);
-//     gradientStroke.addColorStop(0.3, "#C3C3C3");
-//     gradientStroke.addColorStop(0.8, "#fff");
-
-    
-//     var gradientStroke2 = ctx.createLinearGradient(0, 0, 0, 200);
-//     gradientStroke2.addColorStop(0.3, "#B1A4FF");
-//     gradientStroke2.addColorStop(0.8, "#fff");
-
-//     Chart.register(ChartDataLabels);
-
-//     new Chart(ctx, {
-//         type: 'bar',
-//         data: {
-//             datasets: [
-//                 {
-//                     type: 'line',
-//                     label: '급감속',
-//                     data: data.data,
-//                     backgroundColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#fff'],
-//                     borderColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#B1A4FF'],
-//                     borderWidth: 1,
-//                     // pointStyle: ['circle', 'circle', 'circle', 'circle', 'circle', 'circle'],
-//                     pointRadius: [2, 2, 2, 2, 2, 4],
-//                     pointBorderWidth: [1, 1, 1, 1, 1, 2],
-//                     datalabels: {
-//                         align: 'top',
-//                         textAlign: 'start',
-//                         color: ['#656565', '#656565', '#656565', '#656565', '#656565', '#B1A4FF'],
-//                         font: {
-//                             size: 10,
-//                         }
-//                     },
-//                 },
-//                 {
-//                     type: 'bar',
-//                     label: '급가속',
-//                     data: data.data2,
-//                     barThickness: 20,
-//                     backgroundColor: [
-//                         gradientStroke,
-//                         gradientStroke,
-//                         gradientStroke,
-//                         gradientStroke,
-//                         gradientStroke,
-//                         gradientStroke2
-//                     ],
-//                     borderRadius: 999,
-//                     datalabels: {
-//                         anchor: 'end',
-//                         align: 'end',
-//                         color: ['#656565', '#656565', '#656565', '#656565', '#656565', '#B1A4FF'],
-//                         font: {
-//                             size: 10,
-//                         }
-//                     },
-//                     clip: false,
-//                 }
-//             ],
-//             labels: data.labels
-//         },
-//         datalabels: {
-//             color:'black',
-//             font:{size:24}
-//         },
-//         options: {
-//             // responsive: false,
-//             maintainAspectRatio: false,
-//             showTooltips: false,
-//             plugins:{
-//                 datalabels: {
-//                     color: '#656565',
-//                 },
-//                 legend: {
-//                     display: false,
-//                 },
-//             },
-//             scales: {
-//                 x: {
-//                     grid: {
-//                         display: false,
-//                     },
-//                     ticks: {
-//                         font:{
-//                             size: 10,
-//                         },
-//                         color: '#bbb'
-//                     },
-//                 },
-//                 y: {
-//                     grid: {
-//                         color: "#E1E1E1",
-//                         tickLength: 0,
-//                     },
-//                     border: {
-//                         dash: [2,2],
-//                     },
-//                     ticks: {
-//                         stepSize: 16,
-//                         color: "transparent"
-//                     },
-//                 },
-//             }
-//         }
-//     });
-// }
-
 let setChartDriving = {
     maxData: 99999,
     maxData2: 99999,
@@ -133,6 +21,7 @@ let setChartDriving = {
         setChartDriving.frame = $(document).find(".chartDriving_wrap");
 
         setChartDriving.data = data.data;
+        setChartDriving.data2 = data.data2;
         setChartDriving.data3 = data.data3;
         setChartDriving.label = data.label;
 
@@ -149,14 +38,15 @@ let setChartDriving = {
         this.data.map((item, idx)=>{
 
             const minItem = item + 2500;
+            const minItem2 = this.data2[idx] + 2500;
             const per = ((minItem * 100) / this.maxData).toFixed(0);
+            const per2 = ((minItem2 * 100) / this.maxData).toFixed(0);
             const per3 = ((this.data3[idx] * 100) / this.maxData3).toFixed(0);
             const comma = item.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             const calc = (item * 0.0001).toFixed(1)
             
 
             let text = ( this.data.length-1 == idx ) ? `${calc}%` : `${calc}`;
-            // let text3 = this.data3[idx];
 
             let html = `
                 <li>
@@ -166,11 +56,9 @@ let setChartDriving = {
                             <span class="guage" style="height:${per}%">
                                 <span class="data">${text}</span>
                             </span>
+                            <span class="guage2" style="height:${per2}%"></span>
                         </div>
-                        <div class="bar bar2">
-                            <span class="guage2" style="height:${per}%"></span>
-                        </div>
-                        <div class="bar bar3" style="height:${per3}%">
+                        <div class="bar bar2" style="height:${per3}%">
                             <span class="guage3"></span>
                         </div>
                     </div>
@@ -178,11 +66,19 @@ let setChartDriving = {
             `;
 
             data_ul.append(html);
+
+            const data = document.querySelectorAll(".chartDriving_wrap .data_wrap .data");
+            data.forEach((item)=>{
+                let top = item.clientHeight + 3;
+                item.style.top = `-${top}px`
+            })
         })
     }
 }
+// [E]: 07/06 수정
 
 
+// 충전정보
 const setMyCart2 = function(data){
 
     // console.log(data);
@@ -226,11 +122,17 @@ const setMyCart2 = function(data){
                         font: {
                             size: 10,
                         },
+                        // [S]: 07/06 수정
                         formatter: function (value, context) {
                             const result = original_data[context.dataIndex];
                             const comma = result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                            return comma;
+                            if(context.dataIndex === 5){
+                                return comma + "kwh"
+                            } else {
+                                return comma
+                            }
                         },
+                        // [E]: 07/06 수정
                     },
                 },
                 {
@@ -251,10 +153,19 @@ const setMyCart2 = function(data){
                         anchor: 'end',
                         align: 'bottom',
                         offset: -3,
-                        color: '#fff',
+                        // [S]: 07/06 수정
+                        color: ['#fff', '#fff', '#fff', '#fff', '#fff', '#000'],
                         font: {
                             size: 10,
-                        }
+                        },
+                        formatter: function (value, context) {
+                            if(context.dataIndex === 5){
+                                return value + "회"
+                            } else {
+                                return value
+                            }
+                        },
+                        // [E]: 07/06 수정
                     },
                     clip: false,
                 },
@@ -268,10 +179,19 @@ const setMyCart2 = function(data){
                     datalabels: {
                         anchor: 'end',
                         align: 'end',
-                        color: ['#656565', '#656565', '#656565', '#656565', '#656565', '#009AFE'],
+                        // [S]: 07/06 수정
+                        color: ['#656565', '#656565', '#656565', '#656565', '#656565', '#000'],
                         font: {
                             size: 10,
-                        }
+                        },
+                        formatter: function (value, context) {
+                            if(context.dataIndex === 5){
+                                return value + "회"
+                            } else {
+                                return value
+                            }
+                        },
+                        // [E]: 07/06 수정
                     },
                 },
             ],
@@ -302,12 +222,15 @@ const setMyCart2 = function(data){
                     ticks: {
                         font:{
                             size: 10,
+                            lineHeight: "4px"
                         },
-                        color: '#bbb'
+                        color: '#bbb',
                     },
                     stacked: true,
                 },
+                // [S]: 07/06 수정
                 y: {
+                    max: 320,
                     grid: {
                         color: "#E1E1E1",
                         tickLength: 0,
@@ -316,16 +239,16 @@ const setMyCart2 = function(data){
                         dash: [2,2],
                     },
                     ticks: {
-                        stepSize: 16,
+                        stepSize: 80,
                         color: "transparent"
                     },
                     stacked: true,
                 },
+                // [E]: 07/06 수정
             }
         }
     });
 }
-
 
 
 
@@ -357,7 +280,7 @@ let _chartBarVerticalDouble = {
 
         this.data.map((item, idx)=>{
 
-            // [S]: 07/05 수정
+            // [S]: 07/06 수정
             const minItem = item + 2500;
             const per = ((minItem * 100) / this.maxData).toFixed(0);
             const comma = item.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -373,20 +296,28 @@ let _chartBarVerticalDouble = {
                     <div class="label">${_chartBarVerticalDouble.label[idx]}</div>
                     <div class="graph">
                         <div class="bar bar1">
-                            <span class="data">${text}</span>
-                            <span class="guage" style="height:${per}%"></span>
+                            <span class="guage" style="height:${per}%">
+                                <span class="data">${text}</span>
+                            </span>
                         </div>
 
                         <div class="bar bar2">
-                            <span class="data">${text2}</span>
-                            <span class="guage2" style="height:${per2}%"></span>
+                            <span class="guage2" style="height:${per2}%">
+                                <span class="data">${text2}</span>
+                            </span>
                         </div>
                     </div>
                 </li>
             `;
-            // [E]: 07/05 수정
-
+            
             data_ul.append(html);
+            
+            const data = document.querySelectorAll(".chart_bar_vertical_double_wrap .data_wrap .data");
+            data.forEach((item)=>{
+                let top = item.clientHeight + 3;
+                item.style.top = `-${top}px`
+            })
+            // [E]: 07/06 수정
         })
     }
 }
@@ -437,46 +368,8 @@ let _chartBarVertical = {
     }
 }
 
-// [S]: 07/05 수정
-
+// [S]: 07/06 수정
 // 평균 전비
-// let _chartBarHorizontal = {
-//     // data: [6.2, 6.0, 5.7, 7.0, 6.5, 6.7],
-//     // label: ['12월', '1월', '2월', '3월', '4월', '당월'],
-//     // frame: $(document).find(".chart_bar_horizontal_wrap"),
-
-//     init: function(data){
-//         _chartBarHorizontal.data = data.data;
-//         _chartBarHorizontal.label = data.label;
-//         _chartBarHorizontal.frame = $(document).find(".chart_bar_horizontal_wrap");
-//         this.setData();
-//     },
-//     setData: function(){
-
-//         _chartBarHorizontal.frame.find(".data_wrap").html('<ul class="data_ul"></ul>');
-//         const data_ul = _chartBarHorizontal.frame.find(".data_ul");
-
-//         this.data.map((item, idx)=>{
-//             const per = item * 10;
-//             let text = ( this.data.length-1 == idx ) ? `${item.toFixed(1)}(km/kwh)` : `${item.toFixed(1)}`;
-
-//             let html = `
-//                 <li>
-//                     <div class="label">${_chartBarHorizontal.label[idx]}</div>
-//                     <div class="graph">
-//                         <span class="guage" style="width:${per}%">
-//                             <span class="data">${text}</span>
-//                         </span>
-//                     </div>
-//                 </li>
-//             `;
-
-//             data_ul.append(html);
-//         })
-//     }
-    
-// }
-
 const setAverageChart = function(data){
 
     // console.log(data);   // data, data2, labels
@@ -538,6 +431,13 @@ const setAverageChart = function(data){
                         font: {
                             size: 10,
                         },
+                        formatter: function (value, context) {
+                            if(context.dataIndex === 5){
+                                return value + "(km/kwh)"
+                            } else {
+                                return value
+                            }
+                        },
                     },
                     clip: false,
                 }
@@ -563,7 +463,7 @@ const setAverageChart = function(data){
             },
             scales: {
                 x: {
-                    max: 8,
+                    max: 9.6,
                     grid: {
                         color: "#E1E1E1",
                         tickLength: 0,
@@ -572,7 +472,7 @@ const setAverageChart = function(data){
                         dash: [2,2],
                     },
                     ticks: {
-                        stepSize: 1,
+                        stepSize: 1.2,
                         display: false,
                     },
                 },
@@ -591,8 +491,7 @@ const setAverageChart = function(data){
         }
     });
 }
-
-// [E]: 07/05 수정
+// [E]: 07/06 수정
 
 // 평균 스트레스 관리
 let _chartGuage = {

@@ -52,7 +52,6 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .badge.charging{background:var(--bg_04, #FFC045);}
 .badge.quickcharging{background:#50CCE0;}
 
-
 .pagination{margin:3rem 0 0; display:flex; align-items:center; justify-content:flex-end;}
 .pagination .state{display:flex; align-items:center; font-size:1.4rem; color:#000;}
 .pagination .state .total::before{content:'of'; display:inline-block; margin:0 1rem;}
@@ -61,7 +60,6 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .pagination .navigation button[disabled]{opacity:0.4;}
 .pagination .navigation button + button{margin-left:3.8rem;}
 .pagination .navigation .btn_prev{transform:rotate(180deg);}
-
 
 /* tab */
 .wrap-tab-list {position:relative; display:flex; align-items:center; justify-content:space-between; margin:0.5rem auto 0; overflow:hidden; z-index:0;}
@@ -85,7 +83,6 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .car_sum_ttl .form_check label::before{content:''; position:absolute; left:0; top:1px; display:block; width:1.6rem; height:1.6rem; box-sizing:border-box; background-color:#fff; background-position:50% 50%; background-repeat: no-repeat; background-size:1.6rem auto; border:1px solid #e1e1e1;}
 .car_sum_ttl .form_check input:checked + label::before{background-image:url(../img/index/ico_checked.png);}
 
-
 .car_sum_wrap{display:flex; flex-wrap:wrap; align-items:center; justify-content: space-between;}
 .car_sum_wrap .content_box{flex:0 0 calc(50% - 0.8rem); overflow:hidden;}
 .car_sum_wrap .content_box + .content_box{margin-left:1.6rem;}
@@ -106,7 +103,6 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .car_sum_wrap .car_sum_cont img{width:100%; max-width:35.5rem; max-height:18.3rem;}
 .car_sum_wrap .sum_stress .car_sum_cont img{max-width:18.8rem; max-height:auto;}
 
-
 /* 전체 차량 위치 정보 */
 .car_info_wrap .car_location_ttl{display:flex; align-items:flex-start; justify-content:space-between; height:7rem; padding:2rem 0 0; font-size:1.4rem; color:#a2a2a2; line-height:2rem; box-sizing:border-box;}
 .car_info_wrap .car_location_ttl .time_info{display:flex; align-items:center;}
@@ -114,44 +110,55 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .car_info_wrap .car_location_ttl .btn_refresh.click{transform:rotate(360deg); transition:transform 1s;}
 .car_info_wrap .car_location img {width: 100%;}
 
+/* 연료비 절감 추이 */
+.chart_bar_vertical_double_wrap{position:relative; width:356px; height:172px; margin:4px auto 0;}
+.chart_bar_vertical_double_wrap .data_label{position:absolute; left:0; bottom:0;}
+.chart_bar_vertical_double_wrap .data_label ul{display:flex; align-items:center;}
+.chart_bar_vertical_double_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
+.chart_bar_vertical_double_wrap .data_label ul li + li{margin-left:1.2rem;}
+.chart_bar_vertical_double_wrap .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#9C9C9C;}
+.chart_bar_vertical_double_wrap .data_label ul li:nth-child(2):before{background:#FF98AE;}
+.chart_bar_vertical_double_wrap .data_info{display:flex; gap:1.2rem; position:absolute; right:0; bottom:0; font-size:1rem; color:#bbb; line-height:1.2rem;}
+.chart_bar_vertical_double_wrap .data_info>li{position:relative; padding-left:0.7rem;}
+.chart_bar_vertical_double_wrap .data_info>li::before{content:''; position:absolute; left:0; top:50%; transform:translateY(-50%); display:block; width:0.3rem; height:0.3rem; border-radius:0.3rem; background:#d9d9d9;}
+.chart_bar_vertical_double_wrap .data_wrap{height:126px; border-bottom:1px solid #E1E1E1; background:url(../img/index/graph_dash.png) 0 100% repeat;}
+.chart_bar_vertical_double_wrap .data_wrap ul{display:flex; align-items:flex-end; justify-content: space-between; height:100%;}
+.chart_bar_vertical_double_wrap .data_wrap ul li{flex:1 1 auto; position:relative; align-self:stretch; display:flex; flex-direction: column; align-items:center; justify-content:flex-end;}
+.chart_bar_vertical_double_wrap .data_wrap .label{position:absolute; top:100%; width:100%; max-width:3rem; text-align:left; font-size:1rem; line-height:1.4rem; color:#bbb; margin:0.6rem auto 0;}
+.chart_bar_vertical_double_wrap .data_wrap .graph{display:flex; position:relative; width:3.8rem; height:100%;}
+.chart_bar_vertical_double_wrap .data_wrap .graph .bar {display:flex; flex-direction:column; align-items:center; justify-content:flex-end; gap:0.4rem;}
+.chart_bar_vertical_double_wrap .data_wrap .graph .bar.bar1 {width:2.6rem;}
+.chart_bar_vertical_double_wrap .data_wrap .graph .bar.bar2 {width:1.2rem;}
+.chart_bar_vertical_double_wrap .data_wrap .guage{display:block; position:relative; width:1.8rem; border-radius:1.8rem 1.8rem 0 0; background: linear-gradient(180deg, #C4C4C4 0%, rgba(195, 195, 195, 0.2) 100%); animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
+.chart_bar_vertical_double_wrap .data_wrap .guage2{display:block; position:relative; width:0.4rem; border-radius:1.8rem 1.8rem 0 0; background:#9C9C9C; animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
+.chart_bar_vertical_double_wrap .data_wrap .data{position:absolute; left:50%; transform:translateX(-50%); font-size:1rem; color:#656565; line-height:1.2rem; word-break:keep-all;}
+.chart_bar_vertical_double_wrap .data_wrap .bar2 .data {color:#1e1e1e; font-weight:600;}
+.chart_bar_vertical_double_wrap .data_wrap ul li:last-child .guage{background: linear-gradient(180deg, #FF98AE 0%, rgba(255, 152, 174, 0.2) 100%);}
+.chart_bar_vertical_double_wrap .data_wrap ul li:last-child .label{color:#1E1E1E;}
+.chart_bar_vertical_double_wrap .data_wrap ul li:last-child .bar1 .data{color:#FF7290;}
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* .myChart_wrap{position:relative; width:347px; height:179px; margin:0 auto; padding-bottom:20px;}
-.myChart_wrap #myChart{margin-left:-1.8rem; width:347px;}
-.myChart_wrap .data_label{position:absolute; left:0; bottom:0;}
-.myChart_wrap .data_label ul{display:flex; align-items:center; justify-content:flex-start;}
-.myChart_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
-.myChart_wrap .data_label ul li + li{margin-left:1.2rem;}
-.myChart_wrap .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#C3C3C3;}
-.myChart_wrap .data_label ul li:nth-child(2):before{background:none; width:1.8rem; height:1.1rem; border-radius:0; background:url(../img/index/ico_graph.png) 50% 50% no-repeat; }
-.myChart_wrap .data_label ul li:nth-child(3):before{background:#B1A4FF;}
-.myChart_wrap .data_info{position:absolute; right:0; bottom:0; font-size:1rem; color:#bbb; line-height:1.2rem;}
-.myChart_wrap .data_info::before{content:''; position:absolute; left:0; top:50%; transform:translate(-0.7rem, -50%); display:block; width:0.3rem; height:0.3rem; border-radius:0.3rem; background:#d9d9d9;} */
-
-.myChart_wrap2{position:relative; width:347px; height:179px; margin:0 auto; padding-bottom:20px;}
-.myChart_wrap2 #myChart2{margin-left:-1.8rem; width:347px;}
-.myChart_wrap2 .data_label{position:absolute; left:0; bottom:0;}
-.myChart_wrap2 .data_label ul{display:flex; align-items:center; justify-content:flex-start;}
-.myChart_wrap2 .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
-.myChart_wrap2 .data_label ul li + li{margin-left:1.2rem;}
-.myChart_wrap2 .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#E9E9E9;}
-.myChart_wrap2 .data_label ul li:nth-child(2):before{background:#c3c3c3;}
-.myChart_wrap2 .data_label ul li:nth-child(3):before{background:none; width:1.8rem; height:1.1rem; border-radius:0; background:url(../img/index/ico_graph.png) 50% 50% no-repeat; }
-.myChart_wrap2 .data_label ul li:nth-child(4):before{background:#009AFE;}
-.myChart_wrap2 .data_info{position:absolute; right:0; bottom:0; font-size:1rem; color:#bbb; line-height:1.2rem;}
-.myChart_wrap2 .data_info::before{content:''; position:absolute; left:0; top:50%; transform:translate(-0.7rem, -50%); display:block; width:0.3rem; height:0.3rem; border-radius:0.3rem; background:#d9d9d9;}
-
+/* 평균주행거리 */
+.chart_bar_vertical_wrap{position:relative; width:344px; height:157px; margin:20px auto 0;}
+.chart_bar_vertical_wrap .data_label{position:absolute; left:0; bottom:0;}
+.chart_bar_vertical_wrap .data_label ul{display:flex; align-items:center;}
+.chart_bar_vertical_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
+.chart_bar_vertical_wrap .data_label ul li + li{margin-left:1.2rem;}
+.chart_bar_vertical_wrap .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#C3C3C3;}
+.chart_bar_vertical_wrap .data_label ul li:nth-child(2):before{background:#24D3C9;}
+.chart_bar_vertical_wrap .data_wrap{height:110px; border-bottom:1px solid #E1E1E1; background:url(../img/index/graph_dash.png) 0 100% repeat;}
+.chart_bar_vertical_wrap .data_wrap ul{display:flex; align-items:flex-end; justify-content: space-between; height:100%;}
+.chart_bar_vertical_wrap .data_wrap ul li{flex:1 1 auto; position:relative; align-self:stretch; display:flex; flex-direction: column; align-items:center; justify-content:flex-end;}
+.chart_bar_vertical_wrap .data_wrap .label{position:absolute; left:0; top:100%; width:100%; text-align:center; font-size:1rem; line-height:1.4rem; color:#bbb; margin-top:0.6rem;}
+.chart_bar_vertical_wrap .data_wrap .graph{position:relative; width:1.8rem; height:100%;}
+.chart_bar_vertical_wrap .data_wrap .guage{position:absolute; left:0; bottom:0; display:block; width:100%; border-radius:1.8rem 1.8rem 0 0; background: linear-gradient(180deg, #C4C4C4 0%, rgba(195, 195, 195, 0.2) 100%); animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
+.chart_bar_vertical_wrap .data_wrap .data{position:absolute; left:50%; top:0; transform:translate(-50%, -1.5rem); font-size:1rem; color:#656565;}
+.chart_bar_vertical_wrap .data_wrap ul li:last-child .guage{background: linear-gradient(180deg, #24D3C9 0%, rgba(36, 211, 201, 0.2) 100%);
+}
+.chart_bar_vertical_wrap .data_wrap ul li:last-child .label{color:#1E1E1E;}
+.chart_bar_vertical_wrap .data_wrap ul li:last-child .data{color:#24D3C9;}
+@keyframes verticalBar {
+    to {height:0%}
+}
 
 /* 평균 스트레스 관리 : chart_guage_wrap */
 .chart_guage_wrap {position:relative; width:190px; height:190px; margin:0 auto;}
@@ -182,81 +189,8 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .chart_bar_horizontal_wrap .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#C3C3C3;}
 .chart_bar_horizontal_wrap .data_label ul li:nth-child(2):before{width:1.8rem; height:1.1rem; border-radius:0; background:url(../img/index/ico_graph.png) 50% 50% no-repeat;}
 .chart_bar_horizontal_wrap .data_label ul li:nth-child(3):before{background:#F8BA72;}
-/* .chart_bar_horizontal_wrap{position:relative; width:347px; height:179px; margin:0 auto;}
-.chart_bar_horizontal_wrap .data_label{position:absolute; left:0; bottom:0;}
-.chart_bar_horizontal_wrap .data_label ul{display:flex; align-items:center;}
-.chart_bar_horizontal_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
-.chart_bar_horizontal_wrap .data_label ul li + li{margin-left:1.2rem;}
-.chart_bar_horizontal_wrap .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#C3C3C3;}
-.chart_bar_horizontal_wrap .data_label ul li:nth-child(2):before{background:#F8BA72;}
-.chart_bar_horizontal_wrap .data_wrap ul li{display:flex; align-items:center; justify-content:flex-start;}
-.chart_bar_horizontal_wrap .data_wrap ul li + li{margin-top:1rem;}
-.chart_bar_horizontal_wrap .data_wrap ul li .label{flex:0 0 2.6rem; font-size:1rem; color:#bbb; line-height:1.4rem; text-align:right; margin-right:2rem;}
-.chart_bar_horizontal_wrap .data_wrap ul li .graph{flex:0 0 calc(100% - 6.4rem)}
-.chart_bar_horizontal_wrap .data_wrap ul li .guage{position:relative; display:block; height:1.8rem; border-radius:0 1.8rem 1.8rem 0; background: linear-gradient(-90deg, #C4C4C4 0%, rgba(195, 195, 195, 0.2) 100%); animation:horizontalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
-.chart_bar_horizontal_wrap .data_wrap ul li  .data{position:absolute; left:100%; top:0; display:block; padding-left:1rem; font-size:1rem; color:#656565; line-height:1.8rem;}
-.chart_bar_horizontal_wrap .data_wrap ul li:last-child .guage{background: linear-gradient(-90deg, #F8BA72 0%, rgba(248, 186, 114, 0.2) 100%);
-}
-.chart_bar_horizontal_wrap .data_wrap ul li:last-child .label{color:#1E1E1E;}
-.chart_bar_horizontal_wrap .data_wrap ul li:last-child .data{color:#FF9D2C;}
-@keyframes horizontalBar {
-    to {width:0%}
-} */
 
-
-
-/* 평균주행거리 */
-.chart_bar_vertical_wrap{position:relative; width:344px; height:157px; margin:20px auto 0;}
-.chart_bar_vertical_wrap .data_label{position:absolute; left:0; bottom:0;}
-.chart_bar_vertical_wrap .data_label ul{display:flex; align-items:center;}
-.chart_bar_vertical_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
-.chart_bar_vertical_wrap .data_label ul li + li{margin-left:1.2rem;}
-.chart_bar_vertical_wrap .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#C3C3C3;}
-.chart_bar_vertical_wrap .data_label ul li:nth-child(2):before{background:#24D3C9;}
-.chart_bar_vertical_wrap .data_wrap{height:110px; border-bottom:1px solid #E1E1E1; background:url(../img/index/graph_dash.png) 0 100% repeat;}
-.chart_bar_vertical_wrap .data_wrap ul{display:flex; align-items:flex-end; justify-content: space-between; height:100%;}
-.chart_bar_vertical_wrap .data_wrap ul li{flex:1 1 auto; position:relative; align-self:stretch; display:flex; flex-direction: column; align-items:center; justify-content:flex-end;}
-.chart_bar_vertical_wrap .data_wrap .label{position:absolute; left:0; top:100%; width:100%; text-align:center; font-size:1rem; line-height:1.4rem; color:#bbb; margin-top:0.6rem;}
-.chart_bar_vertical_wrap .data_wrap .graph{position:relative; width:1.8rem; height:100%;}
-.chart_bar_vertical_wrap .data_wrap .guage{position:absolute; left:0; bottom:0; display:block; width:100%; border-radius:1.8rem 1.8rem 0 0; background: linear-gradient(180deg, #C4C4C4 0%, rgba(195, 195, 195, 0.2) 100%); animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
-.chart_bar_vertical_wrap .data_wrap .data{position:absolute; left:50%; top:0; transform:translate(-50%, -1.5rem); font-size:1rem; color:#656565;}
-.chart_bar_vertical_wrap .data_wrap ul li:last-child .guage{background: linear-gradient(180deg, #24D3C9 0%, rgba(36, 211, 201, 0.2) 100%);
-}
-.chart_bar_vertical_wrap .data_wrap ul li:last-child .label{color:#1E1E1E;}
-.chart_bar_vertical_wrap .data_wrap ul li:last-child .data{color:#24D3C9;}
-@keyframes verticalBar {
-    to {height:0%}
-}
-
-
-/* 연료비 절감 추이 */
-.chart_bar_vertical_double_wrap{position:relative; width:356px; height:172px; margin:4px auto 0;}
-.chart_bar_vertical_double_wrap .data_label{position:absolute; left:0; bottom:0;}
-.chart_bar_vertical_double_wrap .data_label ul{display:flex; align-items:center;}
-.chart_bar_vertical_double_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
-.chart_bar_vertical_double_wrap .data_label ul li + li{margin-left:1.2rem;}
-.chart_bar_vertical_double_wrap .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#9C9C9C;}
-.chart_bar_vertical_double_wrap .data_label ul li:nth-child(2):before{background:#FF98AE;}
-.chart_bar_vertical_double_wrap .data_info{display:flex; gap:1.2rem; position:absolute; right:0; bottom:0; font-size:1rem; color:#bbb; line-height:1.2rem;}
-.chart_bar_vertical_double_wrap .data_info>li{position:relative; padding-left:0.7rem;}
-.chart_bar_vertical_double_wrap .data_info>li::before{content:''; position:absolute; left:0; top:50%; transform:translateY(-50%); display:block; width:0.3rem; height:0.3rem; border-radius:0.3rem; background:#d9d9d9;}
-.chart_bar_vertical_double_wrap .data_wrap{height:126px; border-bottom:1px solid #E1E1E1; background:url(../img/index/graph_dash.png) 0 100% repeat;}
-.chart_bar_vertical_double_wrap .data_wrap ul{display:flex; align-items:flex-end; justify-content: space-between; height:100%;}
-.chart_bar_vertical_double_wrap .data_wrap ul li{flex:1 1 auto; position:relative; align-self:stretch; display:flex; flex-direction: column; align-items:center; justify-content:flex-end;}
-.chart_bar_vertical_double_wrap .data_wrap .label{position:absolute; top:100%; width:100%; max-width:3rem; text-align:left; font-size:1rem; line-height:1.4rem; color:#bbb; margin:0.6rem auto 0;}
-.chart_bar_vertical_double_wrap .data_wrap .graph{display:flex; position:relative; width:3.8rem; height:100%;}
-.chart_bar_vertical_double_wrap .data_wrap .graph .bar {display:flex; flex-direction:column; align-items:center; justify-content:flex-end; gap:0.4rem;}
-.chart_bar_vertical_double_wrap .data_wrap .graph .bar.bar1 {flex:0 0 2.6rem;}
-.chart_bar_vertical_double_wrap .data_wrap .graph .bar.bar2 {flex:0 0 1.2rem;}
-.chart_bar_vertical_double_wrap .data_wrap .guage{display:block; width:1.8rem; border-radius:1.8rem 1.8rem 0 0; background: linear-gradient(180deg, #C4C4C4 0%, rgba(195, 195, 195, 0.2) 100%); animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
-.chart_bar_vertical_double_wrap .data_wrap .guage2{display:block; width:0.4rem; border-radius:1.8rem 1.8rem 0 0; background:#9C9C9C; animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
-.chart_bar_vertical_double_wrap .data_wrap .data{font-size:1rem; color:#656565; line-height:1.2rem; word-break:keep-all;}
-.chart_bar_vertical_double_wrap .data_wrap .bar2 .data {color:#1e1e1e; font-weight:600;}
-.chart_bar_vertical_double_wrap .data_wrap ul li:last-child .guage{background: linear-gradient(180deg, #FF98AE 0%, rgba(255, 152, 174, 0.2) 100%);}
-.chart_bar_vertical_double_wrap .data_wrap ul li:last-child .label{color:#1E1E1E;}
-.chart_bar_vertical_double_wrap .data_wrap ul li:last-child .bar1 .data{color:#FF7290;}
-
-/* 운전습관 new */
+/* 운전습관 */
 .chartDriving_wrap{position:relative; width:356px; height:172px; margin:4px auto 0;}
 .chartDriving_wrap .data_label{position:absolute; left:0; bottom:0;}
 .chartDriving_wrap .data_label ul{display:flex; align-items:center;}
@@ -275,15 +209,26 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .chartDriving_wrap .data_wrap ul{display:flex; align-items:flex-end; justify-content: space-between; height:100%;}
 .chartDriving_wrap .data_wrap ul li{flex:1 1 auto; position:relative; align-self:stretch; display:flex; flex-direction: column; align-items:center; justify-content:flex-end;}
 .chartDriving_wrap .data_wrap .label{position:absolute; top:100%; width:100%; max-width:3rem; text-align:left; font-size:1rem; line-height:1.4rem; color:#bbb; margin:0.6rem auto 0;}
-.chartDriving_wrap .data_wrap .graph{display:flex; align-items:flex-end; position:relative; width:3.8rem; height:100%;}
-/* .chartDriving_wrap .data_wrap .graph .bar {display:flex; flex-direction:column; align-items:center; justify-content:flex-end; gap:0.4rem;} */
+.chartDriving_wrap .data_wrap .graph{display:flex; align-items:flex-end; position:relative; height:100%;}
 .chartDriving_wrap .data_wrap .graph .bar.bar1 {display:flex; align-items:flex-end; width:2.6rem; height:100%;}
-.chartDriving_wrap .data_wrap .graph .bar.bar2 {position:absolute; top:0; bottom:0;}
 .chartDriving_wrap .data_wrap .guage{display:block; position:relative; width:1.8rem; border-radius:1.8rem 1.8rem 0 0; background:#E9E9E9; animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
 .chartDriving_wrap .data_wrap .guage2{display:block; position:absolute; bottom:0; width:1.8rem; border-radius:1.8rem 1.8rem 0 0; background: linear-gradient(180deg, #C4C4C4 0%, rgba(195, 195, 195, 0.2) 100%); animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
 .chartDriving_wrap .data_wrap .guage3{display:block; width:0.4rem; height:100%; border-radius:1.8rem 1.8rem 0 0; background:#9C9C9C; animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
-.chartDriving_wrap .data_wrap .data{position:absolute; top:-1.4rem; left:50%; transform:translateX(-50%); font-size:1rem; color:#656565; line-height:1rem; word-break:keep-all;}
-.chartDriving_wrap .data_wrap ul li:last-child .guage{background: linear-gradient(180deg, #B1A4FF 0%, rgba(177, 165, 255, 0.2) 100%);}
+.chartDriving_wrap .data_wrap .data{position:absolute; left:50%; transform:translateX(-50%); font-size:1rem; color:#656565; line-height:1.2em; word-break:keep-all;}
+.chartDriving_wrap .data_wrap ul li:last-child .guage2{background: linear-gradient(180deg, #B1A4FF 0%, rgba(177, 165, 255, 0.2) 100%);}
 .chartDriving_wrap .data_wrap ul li:last-child .label{color:#1E1E1E;}
 .chartDriving_wrap .data_wrap ul li:last-child .bar1 .data{color:#9C8CFF;}
 
+/* 충전정보 */
+.myChart_wrap2{position:relative; width:356px; height:190px; margin:0 auto; padding-bottom:32px;}
+.myChart_wrap2 #myChart2{margin-left:-1.8rem; margin-top:-1.4rem; width:356px;}
+.myChart_wrap2 .data_label{position:absolute; left:0; bottom:0;}
+.myChart_wrap2 .data_label ul{display:flex; align-items:center; justify-content:flex-start;}
+.myChart_wrap2 .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
+.myChart_wrap2 .data_label ul li + li{margin-left:1.2rem;}
+.myChart_wrap2 .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#E9E9E9;}
+.myChart_wrap2 .data_label ul li:nth-child(2):before{background:#c3c3c3;}
+.myChart_wrap2 .data_label ul li:nth-child(3):before{background:none; width:1.8rem; height:1.1rem; border-radius:0; background:url(../img/index/ico_graph.png) 50% 50% no-repeat; }
+.myChart_wrap2 .data_label ul li:nth-child(4):before{background:#009AFE;}
+.myChart_wrap2 .data_info{position:absolute; right:0; bottom:0; font-size:1rem; color:#bbb; line-height:1.2rem;}
+.myChart_wrap2 .data_info::before{content:''; position:absolute; left:0; top:50%; transform:translate(-0.7rem, -50%); display:block; width:0.3rem; height:0.3rem; border-radius:0.3rem; background:#d9d9d9;}
