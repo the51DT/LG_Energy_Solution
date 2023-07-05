@@ -473,7 +473,10 @@
                                                     <li>당월</li>
                                                 </ul>
                                             </div>
-                                            <p class="data_info">LPG 1,057원 기준</p>
+                                            <ul class="data_info">
+                                                <li>단위 : 만원</li>
+                                                <li>LPG 1,057원 기준</li>
+                                            </ul>
                                         </div><!-- .chart_bar_vertical_double_wrap -->
                                     </div><!-- .car_sum_cont -->
                                 </div>
@@ -520,14 +523,16 @@
                                             <!-- <img src="../assets/img/index/graph_stress.png" alt="그래프"> -->
                                         </div><!-- .car_sum_cont -->
                                     </div>
+                                    <!-- [07/05] 수정 -->
                                     <div class="col sum_average">
                                         <h4 class="ttl">평균 전비</h4>
                                         <div class="car_sum_cont">
                                             <div class="chart_bar_horizontal_wrap">
-                                                <div class="data_wrap"></div>
+                                                <canvas id="averageChart"></canvas>
                                                 <div class="data_label">
                                                     <ul>
                                                         <li>월별</li>
+                                                        <li>동종업계 평균</li>
                                                         <li>당월</li>
                                                     </ul>
                                                 </div>
@@ -535,6 +540,7 @@
                                             <!-- <img src="../assets/img/index/graph_average.png" alt="그래프"> -->
                                         </div><!-- .car_sum_cont -->
                                     </div>
+                                    <!--// [07/05] 수정 -->                                                                            
                                 </div>
                                 <div class="content_box wide">
                                     <div class="col sum_habit">
@@ -633,12 +639,24 @@
             _chartGuage.init(_chartGuage_data);
 
 
+        // [S]: 07/05 수정
+
             // 평균 전비
-            const _chartBarHorizontal_data = {
-                data: [6.2, 6.0, 5.7, 7.0, 6.5, 6.7],
-                label: ['12월', '1월', '2월', '3월', '4월', '당월'],
+            // const _chartBarHorizontal_data = {
+            //     data: [6.2, 6.0, 5.7, 7.0, 6.5, 6.7],
+            //     label: ['12월', '1월', '2월', '3월', '4월', '당월'],
+            // }
+            // _chartBarHorizontal.init(_chartBarHorizontal_data);
+            
+            const setAverageChart_Data = {
+                data: [5, 4, 6, 4, 5, 4],
+                data2: [6.2, 6.0, 5.7, 7.0, 6.5, 6,7],
+                // data2: [31, 28, 23, 45, 30, 5],
+                labels: ['12월', '1월', '2월', '3월', '4월', '당월']
             }
-            _chartBarHorizontal.init(_chartBarHorizontal_data);
+            setAverageChart(setAverageChart_Data);
+
+        // [E]: 07/05 수정
 
             // 운전습관
             const setMyCart_Data = {

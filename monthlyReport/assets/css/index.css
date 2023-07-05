@@ -173,7 +173,15 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 }
 
 /* 평균전비 */
-.chart_bar_horizontal_wrap{position:relative; width:347px; height:179px; margin:0 auto;}
+.chart_bar_horizontal_wrap {position:relative; width:343px; height:212px; margin:-1.5rem auto 0; padding-bottom:20px;}
+.chart_bar_horizontal_wrap .data_label{position:absolute; left:0; bottom:0;}
+.chart_bar_horizontal_wrap .data_label ul{display:flex; align-items:center;}
+.chart_bar_horizontal_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
+.chart_bar_horizontal_wrap .data_label ul li + li{margin-left:1.2rem;}
+.chart_bar_horizontal_wrap .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#C3C3C3;}
+.chart_bar_horizontal_wrap .data_label ul li:nth-child(2):before{width:1.8rem; height:1.1rem; border-radius:0; background:url(../img/index/ico_graph.png) 50% 50% no-repeat;}
+.chart_bar_horizontal_wrap .data_label ul li:nth-child(3):before{background:#F8BA72;}
+/* .chart_bar_horizontal_wrap{position:relative; width:347px; height:179px; margin:0 auto;}
 .chart_bar_horizontal_wrap .data_label{position:absolute; left:0; bottom:0;}
 .chart_bar_horizontal_wrap .data_label ul{display:flex; align-items:center;}
 .chart_bar_horizontal_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
@@ -192,7 +200,7 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .chart_bar_horizontal_wrap .data_wrap ul li:last-child .data{color:#FF9D2C;}
 @keyframes horizontalBar {
     to {width:0%}
-}
+} */
 
 
 
@@ -221,26 +229,29 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 
 
 /* 연료비 절감 추이 */
-.chart_bar_vertical_double_wrap{position:relative; width:344px; height:157px; margin:20px auto 0;}
+.chart_bar_vertical_double_wrap{position:relative; width:356px; height:172px; margin:4px auto 0;}
 .chart_bar_vertical_double_wrap .data_label{position:absolute; left:0; bottom:0;}
 .chart_bar_vertical_double_wrap .data_label ul{display:flex; align-items:center;}
 .chart_bar_vertical_double_wrap .data_label ul li{display:flex; align-items:center; font-size:1rem; color:#bbb; line-height:1.4rem;}
 .chart_bar_vertical_double_wrap .data_label ul li + li{margin-left:1.2rem;}
-.chart_bar_vertical_double_wrap .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#C3C3C3;}
+.chart_bar_vertical_double_wrap .data_label ul li:before{content:''; display:block; width:1rem; height:1rem; border-radius:1rem; margin-right:0.4rem; background:#9C9C9C;}
 .chart_bar_vertical_double_wrap .data_label ul li:nth-child(2):before{background:#FF98AE;}
-.chart_bar_vertical_double_wrap .data_info{position:absolute; right:0; bottom:0; font-size:1rem; color:#bbb; line-height:1.2rem;}
-.chart_bar_vertical_double_wrap .data_info::before{content:''; position:absolute; left:0; top:50%; transform:translate(-0.7rem, -50%); display:block; width:0.3rem; height:0.3rem; border-radius:0.3rem; background:#d9d9d9;}
-.chart_bar_vertical_double_wrap .data_wrap{height:110px; border-bottom:1px solid #E1E1E1; background:url(../img/index/graph_dash.png) 0 100% repeat;}
+.chart_bar_vertical_double_wrap .data_info{display:flex; gap:1.2rem; position:absolute; right:0; bottom:0; font-size:1rem; color:#bbb; line-height:1.2rem;}
+.chart_bar_vertical_double_wrap .data_info>li{position:relative; padding-left:0.7rem;}
+.chart_bar_vertical_double_wrap .data_info>li::before{content:''; position:absolute; left:0; top:50%; transform:translateY(-50%); display:block; width:0.3rem; height:0.3rem; border-radius:0.3rem; background:#d9d9d9;}
+.chart_bar_vertical_double_wrap .data_wrap{height:126px; border-bottom:1px solid #E1E1E1; background:url(../img/index/graph_dash.png) 0 100% repeat;}
 .chart_bar_vertical_double_wrap .data_wrap ul{display:flex; align-items:flex-end; justify-content: space-between; height:100%;}
 .chart_bar_vertical_double_wrap .data_wrap ul li{flex:1 1 auto; position:relative; align-self:stretch; display:flex; flex-direction: column; align-items:center; justify-content:flex-end;}
-.chart_bar_vertical_double_wrap .data_wrap .label{position:absolute; left:0; top:100%; width:100%; text-align:center; font-size:1rem; line-height:1.4rem; color:#bbb; margin-top:0.6rem;}
-.chart_bar_vertical_double_wrap .data_wrap .graph{position:relative; width:2.8rem; height:100%;}
-.chart_bar_vertical_double_wrap .data_wrap .guage{position:absolute; left:0; bottom:0; display:block; width:1.8rem; border-radius:1.8rem 1.8rem 0 0; background: linear-gradient(180deg, #C4C4C4 0%, rgba(195, 195, 195, 0.2) 100%); animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
-.chart_bar_vertical_double_wrap .data_wrap .guage2{position:absolute; right:0; bottom:0; display:block; width:0.4rem; border-radius:1.8rem 1.8rem 0 0; background:#9C9C9C; animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
-.chart_bar_vertical_double_wrap .data_wrap .data{position:absolute; left:50%; top:0; transform:translate(-50%, -1.5rem); font-size:1rem; color:#656565; white-space:nowrap;}
-.chart_bar_vertical_double_wrap .data_wrap .guage2 .data {color:#1e1e1e; font-weight:600;}
-.chart_bar_vertical_double_wrap .data_wrap ul li:last-child .guage{background: linear-gradient(180deg, #FF98AE 0%, rgba(255, 152, 174, 0.2) 100%);
-}
+.chart_bar_vertical_double_wrap .data_wrap .label{position:absolute; top:100%; width:100%; max-width:3rem; text-align:left; font-size:1rem; line-height:1.4rem; color:#bbb; margin:0.6rem auto 0;}
+.chart_bar_vertical_double_wrap .data_wrap .graph{display:flex; position:relative; width:3.8rem; height:100%;}
+.chart_bar_vertical_double_wrap .data_wrap .graph .bar {display:flex; flex-direction:column; align-items:center; justify-content:flex-end; gap:0.4rem;}
+.chart_bar_vertical_double_wrap .data_wrap .graph .bar.bar1 {flex:0 0 2.6rem;}
+.chart_bar_vertical_double_wrap .data_wrap .graph .bar.bar2 {flex:0 0 1.2rem;}
+.chart_bar_vertical_double_wrap .data_wrap .guage{display:block; width:1.8rem; border-radius:1.8rem 1.8rem 0 0; background: linear-gradient(180deg, #C4C4C4 0%, rgba(195, 195, 195, 0.2) 100%); animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
+.chart_bar_vertical_double_wrap .data_wrap .guage2{display:block; width:0.4rem; border-radius:1.8rem 1.8rem 0 0; background:#9C9C9C; animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
+.chart_bar_vertical_double_wrap .data_wrap .data{font-size:1rem; color:#656565; line-height:1.2rem; word-break:keep-all;}
+.chart_bar_vertical_double_wrap .data_wrap .bar2 .data {color:#1e1e1e; font-weight:600;}
+.chart_bar_vertical_double_wrap .data_wrap ul li:last-child .guage{background: linear-gradient(180deg, #FF98AE 0%, rgba(255, 152, 174, 0.2) 100%);}
 .chart_bar_vertical_double_wrap .data_wrap ul li:last-child .label{color:#1E1E1E;}
-.chart_bar_vertical_double_wrap .data_wrap ul li:last-child .guage .data{color:#FF7290;}
+.chart_bar_vertical_double_wrap .data_wrap ul li:last-child .bar1 .data{color:#FF7290;}
 

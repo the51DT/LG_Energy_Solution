@@ -282,7 +282,7 @@ let _chartBarVerticalDouble = {
         // console.log(data);
         
         _chartBarVerticalDouble.frame = $(document).find(".chart_bar_vertical_double_wrap");
-        
+
         _chartBarVerticalDouble.data = data.data;
         _chartBarVerticalDouble.data2 = data.data2;
         _chartBarVerticalDouble.label = data.label;
@@ -299,28 +299,34 @@ let _chartBarVerticalDouble = {
 
         this.data.map((item, idx)=>{
 
+            // [S]: 07/05 수정
             const minItem = item + 2500;
             const per = ((minItem * 100) / this.maxData).toFixed(0);
             const comma = item.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            const calc = (item * 0.0001).toFixed(1)
             
             const per2 = ((this.data2[idx] * 100) / this.maxData2).toFixed(0);
 
-            let text = ( this.data.length-1 == idx ) ? `${comma}원` : `${comma}`;
+            let text = ( this.data.length-1 == idx ) ? `${calc} 만원` : `${calc}`;
             let text2 = this.data2[idx];
 
             let html = `
                 <li>
                     <div class="label">${_chartBarVerticalDouble.label[idx]}</div>
                     <div class="graph">
-                        <span class="guage" style="height:${per}%">
+                        <div class="bar bar1">
                             <span class="data">${text}</span>
-                        </span>
-                        <span class="guage2" style="height:${per2}%">
+                            <span class="guage" style="height:${per}%"></span>
+                        </div>
+
+                        <div class="bar bar2">
                             <span class="data">${text2}</span>
-                        </span>
+                            <span class="guage2" style="height:${per2}%"></span>
+                        </div>
                     </div>
                 </li>
             `;
+            // [E]: 07/05 수정
 
             data_ul.append(html);
         })
@@ -373,44 +379,162 @@ let _chartBarVertical = {
     }
 }
 
+// [S]: 07/05 수정
+
 // 평균 전비
-let _chartBarHorizontal = {
-    // data: [6.2, 6.0, 5.7, 7.0, 6.5, 6.7],
-    // label: ['12월', '1월', '2월', '3월', '4월', '당월'],
-    // frame: $(document).find(".chart_bar_horizontal_wrap"),
+// let _chartBarHorizontal = {
+//     // data: [6.2, 6.0, 5.7, 7.0, 6.5, 6.7],
+//     // label: ['12월', '1월', '2월', '3월', '4월', '당월'],
+//     // frame: $(document).find(".chart_bar_horizontal_wrap"),
 
-    init: function(data){
-        _chartBarHorizontal.data = data.data;
-        _chartBarHorizontal.label = data.label;
-        _chartBarHorizontal.frame = $(document).find(".chart_bar_horizontal_wrap");
-        this.setData();
-    },
-    setData: function(){
+//     init: function(data){
+//         _chartBarHorizontal.data = data.data;
+//         _chartBarHorizontal.label = data.label;
+//         _chartBarHorizontal.frame = $(document).find(".chart_bar_horizontal_wrap");
+//         this.setData();
+//     },
+//     setData: function(){
 
-        _chartBarHorizontal.frame.find(".data_wrap").html('<ul class="data_ul"></ul>');
-        const data_ul = _chartBarHorizontal.frame.find(".data_ul");
+//         _chartBarHorizontal.frame.find(".data_wrap").html('<ul class="data_ul"></ul>');
+//         const data_ul = _chartBarHorizontal.frame.find(".data_ul");
 
-        this.data.map((item, idx)=>{
-            const per = item * 10;
-            let text = ( this.data.length-1 == idx ) ? `${item.toFixed(1)}(km/kwh)` : `${item.toFixed(1)}`;
+//         this.data.map((item, idx)=>{
+//             const per = item * 10;
+//             let text = ( this.data.length-1 == idx ) ? `${item.toFixed(1)}(km/kwh)` : `${item.toFixed(1)}`;
 
-            let html = `
-                <li>
-                    <div class="label">${_chartBarHorizontal.label[idx]}</div>
-                    <div class="graph">
-                        <span class="guage" style="width:${per}%">
-                            <span class="data">${text}</span>
-                        </span>
-                    </div>
-                </li>
-            `;
+//             let html = `
+//                 <li>
+//                     <div class="label">${_chartBarHorizontal.label[idx]}</div>
+//                     <div class="graph">
+//                         <span class="guage" style="width:${per}%">
+//                             <span class="data">${text}</span>
+//                         </span>
+//                     </div>
+//                 </li>
+//             `;
 
-            data_ul.append(html);
-        })
-    }
+//             data_ul.append(html);
+//         })
+//     }
     
+// }
+
+const setAverageChart = function(data){
+
+    // console.log(data);   // data, data2, labels
+
+    const ctx = document.getElementById('averageChart').getContext("2d");
+    var gradientStroke = ctx.createLinearGradient(0, 0, 200, 0);
+    gradientStroke.addColorStop(0, "rgba(195,195,195,0.2)");
+    gradientStroke.addColorStop(1, "#C3C3C3");
+
+    
+    var gradientStroke2 = ctx.createLinearGradient(0, 0, 200, 0);
+    gradientStroke2.addColorStop(0, "rgba(248,186,114,0.2)");
+    gradientStroke2.addColorStop(1, "#F8BA72");
+
+    Chart.register(ChartDataLabels);
+
+    const averageChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            datasets: [
+                {
+                    type: 'line',
+                    label: '동종업계 평균',
+                    data: data.data,
+                    backgroundColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#fff'],
+                    borderColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#FF9D2C'],
+                    borderWidth: 1,
+                    // pointStyle: ['circle', 'circle', 'circle', 'circle', 'circle', 'circle'],
+                    pointRadius: [2, 2, 2, 2, 2, 4],
+                    pointBorderWidth: [1, 1, 1, 1, 1, 2],
+                    datalabels: {
+                        align: 'top',
+                        textAlign: 'start',
+                        // color: ['#656565', '#656565', '#656565', '#656565', '#656565', '#F8BA72'],
+                        color: 'transparent',
+                        font: {
+                            size: 10,
+                        },
+                    },
+                },
+                {
+                    type: 'bar',
+                    label: '월별',
+                    data: data.data2,
+                    barThickness: 18,
+                    backgroundColor: [
+                        gradientStroke,
+                        gradientStroke,
+                        gradientStroke,
+                        gradientStroke,
+                        gradientStroke,
+                        gradientStroke2
+                    ],
+                    borderRadius: 999,
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'end',
+                        color: ['#656565', '#656565', '#656565', '#656565', '#656565', '#FF9D2C'],
+                        font: {
+                            size: 10,
+                        },
+                    },
+                    clip: false,
+                }
+            ],
+            labels: data.labels
+        },
+        datalabels: {
+            color:'black',
+            font:{size:24}
+        },
+        options: {
+            // responsive: false,
+            indexAxis: 'y',
+            maintainAspectRatio: false,
+            showTooltips: false,
+            plugins:{
+                datalabels: {
+                    color: '#656565',
+                },
+                legend: {
+                    display: false,
+                },
+            },
+            scales: {
+                x: {
+                    max: 8,
+                    grid: {
+                        color: "#E1E1E1",
+                        tickLength: 0,
+                    },
+                    border: {
+                        dash: [2,2],
+                    },
+                    ticks: {
+                        stepSize: 1,
+                        display: false,
+                    },
+                },
+                y: {
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        font:{
+                            size: 10,
+                        },
+                        color: '#bbb'
+                    },
+                },
+            }
+        }
+    });
 }
 
+// [E]: 07/05 수정
 
 // 평균 스트레스 관리
 let _chartGuage = {
