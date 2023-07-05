@@ -524,7 +524,7 @@
                                         </div><!-- .car_sum_cont -->
                                     </div>
 
-                                    <!-- [07/06] 수정 -->
+                                    <!-- [S]: 07/06 수정 -->
                                     <div class="col sum_average">
                                         <h4 class="ttl">평균 전비</h4>
                                         <div class="car_sum_cont">
@@ -541,15 +541,15 @@
                                             <!-- <img src="../assets/img/index/graph_average.png" alt="그래프"> -->
                                         </div><!-- .car_sum_cont -->
                                     </div>
-                                    <!--// [07/06] 수정 -->
+                                    <!--// [E]: 07/06 수정 -->
 
                                 </div>
                                 <div class="content_box wide">
                                     <div class="col sum_habit">
 
-                                        <!-- [07/06] 수정 -->
+                                        <!-- [S]: 07/06 수정 -->
                                         <h4 class="ttl">운전습관<span>월별 총 주행거리 급가속/급감속 주행 비율</span></h4>
-                                        <!--// [07/06] 수정 -->
+                                        <!--// [E]: 07/06 수정 -->
                                         
                                         <div class="car_sum_cont">
                                             <div class="chartDriving_wrap">
@@ -646,27 +646,26 @@
             _chartGuage.init(_chartGuage_data);
 
 
-        // [S]: 07/6 수정
+            // [S]: 07/06 수정
             // 평균 전비
             const setAverageChart_Data = {
-                data: [5, 4, 7, 4, 5, 4],
-                data2: [6.2, 6.0, 5.7, 7.0, 6.5, 6.7],
-                // data2: [31, 28, 23, 45, 30, 5],
+                data: [6.2, 6.0, 5.7, 7.0, 6.5, 6.7],   // 월별
+                data2: [5, 4, 7, 4, 5, 4],              // 동종업계 평균
                 labels: ['12월', '1월', '2월', '3월', '4월', '당월']
             }
             setAverageChart(setAverageChart_Data);
-        // [E]: 07/06 수정
+            // [E]: 07/06 수정
 
-        // [S]: 07/6 수정
+            // [S]: 07/06 수정
             // 운전습관
             const chartDriving_data = {
-                data : [120000, 100000, 90000, 80000, 70000, 79311],
-                data2 : [60000, 50000, 45000, 40000, 35000, 29311],
-                data3: [31, 28, 23, 45, 30, 5],
+                data: [10, 8, 7, 15, 12, 18],       // 급감속
+                data2: [31, 28, 23, 45, 30, 5],     // 급가속
+                data3: [18, 18, 25, 25, 28, 32],    // 동종업계 평균
                 label : ['12월', '1월', '2월', '3월', '4월', '당월'],
             }
             setChartDriving.init(chartDriving_data);
-        // [E]: 07/06 수정
+            // [E]: 07/06 수정
 
             // 충전정보
             const setMyCart2_data = {

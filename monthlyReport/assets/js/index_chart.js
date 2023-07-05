@@ -32,18 +32,18 @@ let setChartDriving = {
         setChartDriving.frame.find(".data_wrap").html('<ul class="data_ul"></ul>');
         const data_ul = setChartDriving.frame.find(".data_ul");
 
-        this.maxData = Math.max.apply(null, this.data) + 5000; // get max data
-        this.maxData3 = Math.max.apply(null, this.data3) + 10; // get max data
+        this.maxData = Math.ceil((Math.max.apply(null, this.data2)) / 10) * 10; // get max data
+        this.maxData2 = Math.ceil((Math.max.apply(null, this.data2)) / 10) * 10; // get max data
+        this.maxData3 = Math.ceil((Math.max.apply(null, this.data3)) / 10) * 10; // get max data
 
         this.data.map((item, idx)=>{
+            console.log(this.maxData)
 
-            const minItem = item + 2500;
-            const minItem2 = this.data2[idx] + 2500;
-            const per = ((minItem * 100) / this.maxData).toFixed(0);
-            const per2 = ((minItem2 * 100) / this.maxData).toFixed(0);
-            const per3 = ((this.data3[idx] * 100) / this.maxData3).toFixed(0);
+            const per = ((item / this.maxData) * 100).toFixed(0);
+            const per2 = ((this.data2[idx] / this.maxData2) * 100).toFixed(0);
+            const per3 = ((this.data3[idx] / this.maxData3) * 100).toFixed(0);
             const comma = item.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            const calc = (item * 0.0001).toFixed(1)
+            const calc = ((this.data2[idx]) / item).toFixed(2);
             
 
             let text = ( this.data.length-1 == idx ) ? `${calc}%` : `${calc}`;
@@ -53,13 +53,13 @@ let setChartDriving = {
                     <div class="label">${setChartDriving.label[idx]}</div>
                     <div class="graph">
                         <div class="bar bar1">
-                            <span class="guage" style="height:${per}%">
+                            <span class="guage" style="height:${per2}%">
                                 <span class="data">${text}</span>
                             </span>
-                            <span class="guage2" style="height:${per2}%"></span>
+                            <span class="guage2" style="height:${per}%"></span>
                         </div>
-                        <div class="bar bar2" style="height:${per3}%">
-                            <span class="guage3"></span>
+                        <div class="bar bar2">
+                            <span class="guage3" style="height:${per3}%"></span>
                         </div>
                     </div>
                 </li>
@@ -393,7 +393,7 @@ const setAverageChart = function(data){
                 {
                     type: 'line',
                     label: '동종업계 평균',
-                    data: data.data,
+                    data: data.data2,
                     backgroundColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#fff'],
                     borderColor: ['#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#9C9C9C', '#FF9D2C'],
                     borderWidth: 1,
@@ -413,7 +413,7 @@ const setAverageChart = function(data){
                 {
                     type: 'bar',
                     label: '월별',
-                    data: data.data2,
+                    data: data.data,
                     barThickness: 18,
                     backgroundColor: [
                         gradientStroke,
@@ -440,7 +440,7 @@ const setAverageChart = function(data){
                         },
                     },
                     clip: false,
-                }
+                },
             ],
             labels: data.labels
         },

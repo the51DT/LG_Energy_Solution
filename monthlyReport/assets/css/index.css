@@ -210,7 +210,9 @@ body.index .container{display:flex; align-items:flex-start; justify-content:spac
 .chartDriving_wrap .data_wrap ul li{flex:1 1 auto; position:relative; align-self:stretch; display:flex; flex-direction: column; align-items:center; justify-content:flex-end;}
 .chartDriving_wrap .data_wrap .label{position:absolute; top:100%; width:100%; max-width:3rem; text-align:left; font-size:1rem; line-height:1.4rem; color:#bbb; margin:0.6rem auto 0;}
 .chartDriving_wrap .data_wrap .graph{display:flex; align-items:flex-end; position:relative; height:100%;}
-.chartDriving_wrap .data_wrap .graph .bar.bar1 {display:flex; align-items:flex-end; width:2.6rem; height:100%;}
+.chartDriving_wrap .data_wrap .graph .bar {display:flex; flex-direction:column; align-items:center; justify-content:flex-end; gap:0.4rem;}
+.chartDriving_wrap .data_wrap .graph .bar.bar1 {width:2.6rem; height:100%;}
+.chartDriving_wrap .data_wrap .graph .bar.bar2 {width:1.2rem; height:100%;}
 .chartDriving_wrap .data_wrap .guage{display:block; position:relative; width:1.8rem; border-radius:1.8rem 1.8rem 0 0; background:#E9E9E9; animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
 .chartDriving_wrap .data_wrap .guage2{display:block; position:absolute; bottom:0; width:1.8rem; border-radius:1.8rem 1.8rem 0 0; background: linear-gradient(180deg, #C4C4C4 0%, rgba(195, 195, 195, 0.2) 100%); animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
 .chartDriving_wrap .data_wrap .guage3{display:block; width:0.4rem; height:100%; border-radius:1.8rem 1.8rem 0 0; background:#9C9C9C; animation:verticalBar 1.2s reverse cubic-bezier(0.445, 0.05, 0.055, 0.95);}
